@@ -26,4 +26,4 @@ Please see the [Sample Apps](https://docs.docusign.com/ios_sdk/developer.html) s
 License
 =======
 
-The DocuSign Native iOS Offline Templates SDK 2.0 is licensed under the following [License](LICENSE.docx).
+The DocuSign Native iOS Offline Templates SDK is licensed under the following [License](LICENSE.docx).
