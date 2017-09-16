@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCAC47AADB9EDD280BACA1C9 /* Pods_docusign_sdk_sample_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF1A4A7E1C12F710D762798 /* Pods_docusign_sdk_sample_swift.framework */; };
+		C90C9E711F4233A900163557 /* Portfolio.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C90C9E701F4233A900163557 /* Portfolio.pdf */; };
+		C92BA8311F3B560A00C1B0E9 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BA8301F3B560A00C1B0E9 /* PortfolioViewController.swift */; };
+		C92BA8331F3B5AC000C1B0E9 /* DocuSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BA8321F3B5AC000C1B0E9 /* DocuSignViewController.swift */; };
+		C92BA8351F3B5EBB00C1B0E9 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BA8341F3B5EBB00C1B0E9 /* AgreementsViewController.swift */; };
+		C92BA8371F3B83FA00C1B0E9 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BA8361F3B83FA00C1B0E9 /* AttachmentViewController.swift */; };
+		C9828BDE1F3E2CD70023A794 /* InvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9828BDD1F3E2CD70023A794 /* InvestmentViewController.swift */; };
+		C9828BE01F3E54F00023A794 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9828BDF1F3E54F00023A794 /* ContactViewController.swift */; };
+		C9FF310B1F321A000076D6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF310A1F321A000076D6CA /* AppDelegate.swift */; };
+		C9FF31101F321A000076D6CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9FF310E1F321A000076D6CA /* Main.storyboard */; };
+		C9FF31131F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31111F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodeld */; };
+		C9FF31151F321A000076D6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31141F321A000076D6CA /* Assets.xcassets */; };
+		C9FF31181F321A000076D6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31161F321A000076D6CA /* LaunchScreen.storyboard */; };
+		C9FF31241F323BBD0076D6CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31231F323BBD0076D6CA /* LoginViewController.swift */; };
+		C9FF31271F323C860076D6CA /* tgk-financial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31261F323C860076D6CA /* tgk-financial.jpg */; };
+		C9FF312D1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */; };
+		C9FF312E1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */; };
+		C9FF313A1F3243D00076D6CA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312F1F3243D00076D6CA /* LICENSE.txt */; };
+		C9FF313B1F3243D00076D6CA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31301F3243D00076D6CA /* OpenSans-Bold.ttf */; };
+		C9FF313C1F3243D00076D6CA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31311F3243D00076D6CA /* OpenSans-BoldItalic.ttf */; };
+		C9FF313D1F3243D00076D6CA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31321F3243D00076D6CA /* OpenSans-ExtraBold.ttf */; };
+		C9FF313E1F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31331F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf */; };
+		C9FF313F1F3243D00076D6CA /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31341F3243D00076D6CA /* OpenSans-Italic.ttf */; };
+		C9FF31401F3243D00076D6CA /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31351F3243D00076D6CA /* OpenSans-Light.ttf */; };
+		C9FF31411F3243D00076D6CA /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31361F3243D00076D6CA /* OpenSans-LightItalic.ttf */; };
+		C9FF31421F3243D00076D6CA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31371F3243D00076D6CA /* OpenSans-Regular.ttf */; };
+		C9FF31431F3243D00076D6CA /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31381F3243D00076D6CA /* OpenSans-SemiBold.ttf */; };
+		C9FF31441F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */; };
+		C9FF31471F3249D90076D6CA /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31461F3249D90076D6CA /* MainContainerViewController.swift */; };
+		C9FF31491F3258100076D6CA /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31481F3258100076D6CA /* ProfileManager.swift */; };
+		C9FF314B1F3258A80076D6CA /* DocuSignSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */; };
+		C9FF314D1F3258C50076D6CA /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9FF31501F3259130076D6CA /* DocuSignSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */; };
+		C9FF31551F3371580076D6CA /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31541F3371580076D6CA /* ClientViewController.swift */; };
+		C9FF31571F3371940076D6CA /* TemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31561F3371940076D6CA /* TemplatesViewController.swift */; };
+		C9FF31591F3371C80076D6CA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31581F3371C80076D6CA /* OverviewViewController.swift */; };
+		C9FF315B1F33755E0076D6CA /* CustomNavTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FF315A1F33755E0076D6CA /* CustomNavTitle.xib */; };
+		C9FF315D1F3397C60076D6CA /* AppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FF315C1F3397C60076D6CA /* AppointmentTableViewCell.xib */; };
+		C9FF315F1F339D160076D6CA /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF315E1F339D160076D6CA /* AppointmentTableViewCell.swift */; };
+		C9FF31611F33B1AA0076D6CA /* TemplateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31601F33B1AA0076D6CA /* TemplateTableViewCell.xib */; };
+		C9FF31631F33B3BC0076D6CA /* TemplateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31621F33B3BC0076D6CA /* TemplateTableViewCell.swift */; };
+		C9FF31661F33BB550076D6CA /* ContainerWithTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31651F33BB550076D6CA /* ContainerWithTableView.swift */; };
+		C9FF31681F33BEAD0076D6CA /* TemplatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31671F33BEAD0076D6CA /* TemplatesManager.swift */; };
+		C9FF316A1F33BEF70076D6CA /* EnvelopesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31691F33BEF70076D6CA /* EnvelopesManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9FF314E1F3258C50076D6CA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9FF314D1F3258C50076D6CA /* DocuSignSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		55934BA433CE7A268F417193 /* Pods-docusign-sdk-sample-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		5FF1A4A7E1C12F710D762798 /* Pods_docusign_sdk_sample_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_docusign_sdk_sample_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB37B84E32C35A44CB7B992 /* Pods-docusign-sdk-sample-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift.release.xcconfig"; sourceTree = "<group>"; };
+		C90C9E701F4233A900163557 /* Portfolio.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Portfolio.pdf; sourceTree = "<group>"; };
+		C92BA8301F3B560A00C1B0E9 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortfolioViewController.swift; path = Controllers/PortfolioViewController.swift; sourceTree = "<group>"; };
+		C92BA8321F3B5AC000C1B0E9 /* DocuSignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocuSignViewController.swift; path = Controllers/DocuSignViewController.swift; sourceTree = "<group>"; };
+		C92BA8341F3B5EBB00C1B0E9 /* AgreementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgreementsViewController.swift; path = Controllers/AgreementsViewController.swift; sourceTree = "<group>"; };
+		C92BA8361F3B83FA00C1B0E9 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentViewController.swift; path = Controllers/AttachmentViewController.swift; sourceTree = "<group>"; };
+		C9828BDD1F3E2CD70023A794 /* InvestmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvestmentViewController.swift; path = Controllers/InvestmentViewController.swift; sourceTree = "<group>"; };
+		C9828BDF1F3E54F00023A794 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Controllers/ContactViewController.swift; sourceTree = "<group>"; };
+		C9FF31071F321A000076D6CA /* docusign-sdk-sample-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "docusign-sdk-sample-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FF310A1F321A000076D6CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9FF310F1F321A000076D6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9FF31121F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = docusign_sdk_sample_swift.xcdatamodel; sourceTree = "<group>"; };
+		C9FF31141F321A000076D6CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9FF31171F321A000076D6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9FF31191F321A000076D6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9FF31231F323BBD0076D6CA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		C9FF31261F323C860076D6CA /* tgk-financial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tgk-financial.jpg"; sourceTree = "<group>"; };
+		C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adobe Garamond Pro Bold.ttf"; sourceTree = "<group>"; };
+		C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adobe Garamond Pro Bold Italic.ttf"; sourceTree = "<group>"; };
+		C9FF312F1F3243D00076D6CA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C9FF31301F3243D00076D6CA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		C9FF31311F3243D00076D6CA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C9FF31321F3243D00076D6CA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C9FF31331F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C9FF31341F3243D00076D6CA /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		C9FF31351F3243D00076D6CA /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		C9FF31361F3243D00076D6CA /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		C9FF31371F3243D00076D6CA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		C9FF31381F3243D00076D6CA /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C9FF31461F3249D90076D6CA /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewController.swift; path = Controllers/MainContainerViewController.swift; sourceTree = "<group>"; };
+		C9FF31481F3258100076D6CA /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileManager.swift; path = Managers/ProfileManager.swift; sourceTree = "<group>"; };
+		C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
+		C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DocuSignSDK.bundle; path = DocuSignSDK.framework/DocuSignSDK.bundle; sourceTree = "<group>"; };
+		C9FF31541F3371580076D6CA /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientViewController.swift; path = Controllers/ClientViewController.swift; sourceTree = "<group>"; };
+		C9FF31561F3371940076D6CA /* TemplatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplatesViewController.swift; path = Controllers/TemplatesViewController.swift; sourceTree = "<group>"; };
+		C9FF31581F3371C80076D6CA /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewViewController.swift; path = Controllers/OverviewViewController.swift; sourceTree = "<group>"; };
+		C9FF315A1F33755E0076D6CA /* CustomNavTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavTitle.xib; sourceTree = "<group>"; };
+		C9FF315C1F3397C60076D6CA /* AppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		C9FF315E1F339D160076D6CA /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		C9FF31601F33B1AA0076D6CA /* TemplateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemplateTableViewCell.xib; sourceTree = "<group>"; };
+		C9FF31621F33B3BC0076D6CA /* TemplateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateTableViewCell.swift; sourceTree = "<group>"; };
+		C9FF31651F33BB550076D6CA /* ContainerWithTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerWithTableView.swift; sourceTree = "<group>"; };
+		C9FF31671F33BEAD0076D6CA /* TemplatesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplatesManager.swift; path = Managers/TemplatesManager.swift; sourceTree = "<group>"; };
+		C9FF31691F33BEF70076D6CA /* EnvelopesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnvelopesManager.swift; path = Managers/EnvelopesManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9FF31041F321A000076D6CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FF314B1F3258A80076D6CA /* DocuSignSDK.framework in Frameworks */,
+				BCAC47AADB9EDD280BACA1C9 /* Pods_docusign_sdk_sample_swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FE4AA69A2D6154341423A42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FF1A4A7E1C12F710D762798 /* Pods_docusign_sdk_sample_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3D2E5239DCCEA128FF6A199 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55934BA433CE7A268F417193 /* Pods-docusign-sdk-sample-swift.debug.xcconfig */,
+				7CB37B84E32C35A44CB7B992 /* Pods-docusign-sdk-sample-swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C9FF30FE1F321A000076D6CA = {
+			isa = PBXGroup;
+			children = (
+				C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */,
+				C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */,
+				C9FF31091F321A000076D6CA /* docusign-sdk-sample-swift */,
+				C9FF31081F321A000076D6CA /* Products */,
+				B3D2E5239DCCEA128FF6A199 /* Pods */,
+				2FE4AA69A2D6154341423A42 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C9FF31081F321A000076D6CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF31071F321A000076D6CA /* docusign-sdk-sample-swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9FF31091F321A000076D6CA /* docusign-sdk-sample-swift */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF310A1F321A000076D6CA /* AppDelegate.swift */,
+				C9FF310E1F321A000076D6CA /* Main.storyboard */,
+				C9FF31161F321A000076D6CA /* LaunchScreen.storyboard */,
+				C9FF31221F323B7F0076D6CA /* Controllers */,
+				C9FF31451F3247690076D6CA /* Managers */,
+				C9FF31641F33B96A0076D6CA /* Protocols */,
+				C9FF311F1F3222850076D6CA /* Views */,
+				C9FF31141F321A000076D6CA /* Assets.xcassets */,
+				C9FF31191F321A000076D6CA /* Info.plist */,
+				C9FF31111F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodeld */,
+				C9FF31251F323C740076D6CA /* Images */,
+				C9FF31281F323E630076D6CA /* Resources */,
+			);
+			path = "docusign-sdk-sample-swift";
+			sourceTree = "<group>";
+		};
+		C9FF311F1F3222850076D6CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF315A1F33755E0076D6CA /* CustomNavTitle.xib */,
+				C9FF315C1F3397C60076D6CA /* AppointmentTableViewCell.xib */,
+				C9FF315E1F339D160076D6CA /* AppointmentTableViewCell.swift */,
+				C9FF31601F33B1AA0076D6CA /* TemplateTableViewCell.xib */,
+				C9FF31621F33B3BC0076D6CA /* TemplateTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9FF31221F323B7F0076D6CA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C92BA8341F3B5EBB00C1B0E9 /* AgreementsViewController.swift */,
+				C92BA8361F3B83FA00C1B0E9 /* AttachmentViewController.swift */,
+				C9FF31541F3371580076D6CA /* ClientViewController.swift */,
+				C9828BDF1F3E54F00023A794 /* ContactViewController.swift */,
+				C92BA8321F3B5AC000C1B0E9 /* DocuSignViewController.swift */,
+				C9828BDD1F3E2CD70023A794 /* InvestmentViewController.swift */,
+				C9FF31231F323BBD0076D6CA /* LoginViewController.swift */,
+				C9FF31461F3249D90076D6CA /* MainContainerViewController.swift */,
+				C9FF31581F3371C80076D6CA /* OverviewViewController.swift */,
+				C92BA8301F3B560A00C1B0E9 /* PortfolioViewController.swift */,
+				C9FF31561F3371940076D6CA /* TemplatesViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C9FF31251F323C740076D6CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF31261F323C860076D6CA /* tgk-financial.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C9FF31281F323E630076D6CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C90C9E701F4233A900163557 /* Portfolio.pdf */,
+				C9FF312F1F3243D00076D6CA /* LICENSE.txt */,
+				C9FF31301F3243D00076D6CA /* OpenSans-Bold.ttf */,
+				C9FF31311F3243D00076D6CA /* OpenSans-BoldItalic.ttf */,
+				C9FF31321F3243D00076D6CA /* OpenSans-ExtraBold.ttf */,
+				C9FF31331F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf */,
+				C9FF31341F3243D00076D6CA /* OpenSans-Italic.ttf */,
+				C9FF31351F3243D00076D6CA /* OpenSans-Light.ttf */,
+				C9FF31361F3243D00076D6CA /* OpenSans-LightItalic.ttf */,
+				C9FF31371F3243D00076D6CA /* OpenSans-Regular.ttf */,
+				C9FF31381F3243D00076D6CA /* OpenSans-SemiBold.ttf */,
+				C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */,
+				C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */,
+				C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9FF31451F3247690076D6CA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF31691F33BEF70076D6CA /* EnvelopesManager.swift */,
+				C9FF31481F3258100076D6CA /* ProfileManager.swift */,
+				C9FF31671F33BEAD0076D6CA /* TemplatesManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		C9FF31641F33B96A0076D6CA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF31651F33BB550076D6CA /* ContainerWithTableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9FF31061F321A000076D6CA /* docusign-sdk-sample-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FF311C1F321A000076D6CA /* Build configuration list for PBXNativeTarget "docusign-sdk-sample-swift" */;
+			buildPhases = (
+				CB0F0ABEEA06C70C5C4F3F1A /* [CP] Check Pods Manifest.lock */,
+				C9FF31031F321A000076D6CA /* Sources */,
+				C9FF31041F321A000076D6CA /* Frameworks */,
+				C9FF31051F321A000076D6CA /* Resources */,
+				C9FF314E1F3258C50076D6CA /* Embed Frameworks */,
+				C9FF31531F32593F0076D6CA /* ShellScript */,
+				D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */,
+				A7A97D3D422CC3A6FC01F60A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "docusign-sdk-sample-swift";
+			productName = "docusign-sdk-sample-swift";
+			productReference = C9FF31071F321A000076D6CA /* docusign-sdk-sample-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9FF30FF1F321A000076D6CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = DocuSign;
+				TargetAttributes = {
+					C9FF31061F321A000076D6CA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C9FF31021F321A000076D6CA /* Build configuration list for PBXProject "docusign-sdk-sample-swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9FF30FE1F321A000076D6CA;
+			productRefGroup = C9FF31081F321A000076D6CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9FF31061F321A000076D6CA /* docusign-sdk-sample-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9FF31051F321A000076D6CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FF31611F33B1AA0076D6CA /* TemplateTableViewCell.xib in Resources */,
+				C9FF315B1F33755E0076D6CA /* CustomNavTitle.xib in Resources */,
+				C9FF31501F3259130076D6CA /* DocuSignSDK.bundle in Resources */,
+				C9FF31401F3243D00076D6CA /* OpenSans-Light.ttf in Resources */,
+				C9FF31271F323C860076D6CA /* tgk-financial.jpg in Resources */,
+				C90C9E711F4233A900163557 /* Portfolio.pdf in Resources */,
+				C9FF31411F3243D00076D6CA /* OpenSans-LightItalic.ttf in Resources */,
+				C9FF31181F321A000076D6CA /* LaunchScreen.storyboard in Resources */,
+				C9FF31431F3243D00076D6CA /* OpenSans-SemiBold.ttf in Resources */,
+				C9FF313B1F3243D00076D6CA /* OpenSans-Bold.ttf in Resources */,
+				C9FF312E1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf in Resources */,
+				C9FF312D1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf in Resources */,
+				C9FF31151F321A000076D6CA /* Assets.xcassets in Resources */,
+				C9FF313C1F3243D00076D6CA /* OpenSans-BoldItalic.ttf in Resources */,
+				C9FF31101F321A000076D6CA /* Main.storyboard in Resources */,
+				C9FF31421F3243D00076D6CA /* OpenSans-Regular.ttf in Resources */,
+				C9FF31441F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				C9FF313A1F3243D00076D6CA /* LICENSE.txt in Resources */,
+				C9FF315D1F3397C60076D6CA /* AppointmentTableViewCell.xib in Resources */,
+				C9FF313F1F3243D00076D6CA /* OpenSans-Italic.ttf in Resources */,
+				C9FF313E1F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				C9FF313D1F3243D00076D6CA /* OpenSans-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7A97D3D422CC3A6FC01F60A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9FF31531F32593F0076D6CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/DocuSignSDK.framework/strip-frameworks.sh\"\n";
+		};
+		CB0F0ABEEA06C70C5C4F3F1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9FF31031F321A000076D6CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FF316A1F33BEF70076D6CA /* EnvelopesManager.swift in Sources */,
+				C92BA8371F3B83FA00C1B0E9 /* AttachmentViewController.swift in Sources */,
+				C9828BE01F3E54F00023A794 /* ContactViewController.swift in Sources */,
+				C9FF31241F323BBD0076D6CA /* LoginViewController.swift in Sources */,
+				C9FF31571F3371940076D6CA /* TemplatesViewController.swift in Sources */,
+				C92BA8351F3B5EBB00C1B0E9 /* AgreementsViewController.swift in Sources */,
+				C9FF315F1F339D160076D6CA /* AppointmentTableViewCell.swift in Sources */,
+				C9FF31681F33BEAD0076D6CA /* TemplatesManager.swift in Sources */,
+				C92BA8311F3B560A00C1B0E9 /* PortfolioViewController.swift in Sources */,
+				C9FF31631F33B3BC0076D6CA /* TemplateTableViewCell.swift in Sources */,
+				C9FF31491F3258100076D6CA /* ProfileManager.swift in Sources */,
+				C9FF31471F3249D90076D6CA /* MainContainerViewController.swift in Sources */,
+				C92BA8331F3B5AC000C1B0E9 /* DocuSignViewController.swift in Sources */,
+				C9FF31551F3371580076D6CA /* ClientViewController.swift in Sources */,
+				C9FF31591F3371C80076D6CA /* OverviewViewController.swift in Sources */,
+				C9FF310B1F321A000076D6CA /* AppDelegate.swift in Sources */,
+				C9828BDE1F3E2CD70023A794 /* InvestmentViewController.swift in Sources */,
+				C9FF31661F33BB550076D6CA /* ContainerWithTableView.swift in Sources */,
+				C9FF31131F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C9FF310E1F321A000076D6CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9FF310F1F321A000076D6CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9FF31161F321A000076D6CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9FF31171F321A000076D6CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9FF311A1F321A000076D6CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9FF311B1F321A000076D6CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9FF311D1F321A000076D6CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55934BA433CE7A268F417193 /* Pods-docusign-sdk-sample-swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "docusign-sdk-sample-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C9FF311E1F321A000076D6CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB37B84E32C35A44CB7B992 /* Pods-docusign-sdk-sample-swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "docusign-sdk-sample-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9FF31021F321A000076D6CA /* Build configuration list for PBXProject "docusign-sdk-sample-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FF311A1F321A000076D6CA /* Debug */,
+				C9FF311B1F321A000076D6CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FF311C1F321A000076D6CA /* Build configuration list for PBXNativeTarget "docusign-sdk-sample-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FF311D1F321A000076D6CA /* Debug */,
+				C9FF311E1F321A000076D6CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9FF31111F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9FF31121F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodel */,
+			);
+			currentVersion = C9FF31121F321A000076D6CA /* docusign_sdk_sample_swift.xcdatamodel */;
+			path = docusign_sdk_sample_swift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C9FF30FF1F321A000076D6CA /* Project object */;
+}

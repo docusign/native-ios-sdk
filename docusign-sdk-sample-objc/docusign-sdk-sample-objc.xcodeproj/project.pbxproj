@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C904902E1F2A49B400EAD899 /* AttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C904902D1F2A49B400EAD899 /* AttachmentViewController.m */; };
+		C90C9E6F1F422EBE00163557 /* AccidentChecklist.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C90C9E6E1F422EBE00163557 /* AccidentChecklist.pdf */; };
+		C9110DC41F13D3850009D3B5 /* ProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9110DC31F13D3850009D3B5 /* ProfileManager.m */; };
+		C92471411F1D2C630019A899 /* DownloadTemplateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92471401F1D2C630019A899 /* DownloadTemplateCell.m */; };
+		C924716B1F1D3CCD0019A899 /* DownloadTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */; };
+		C92832FE1F0EB91D009C5DBA /* DocuSignSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */; };
+		C92832FF1F0EB91D009C5DBA /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C92833021F0EB953009C5DBA /* DocuSignSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */; };
+		C92833081F0EC4AA009C5DBA /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C92833071F0EC4AA009C5DBA /* beach.jpg */; };
+		C92833151F0EC80C009C5DBA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C928330A1F0EC80C009C5DBA /* LICENSE.txt */; };
+		C92833161F0EC80C009C5DBA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330B1F0EC80C009C5DBA /* OpenSans-Bold.ttf */; };
+		C92833171F0EC80C009C5DBA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330C1F0EC80C009C5DBA /* OpenSans-BoldItalic.ttf */; };
+		C92833181F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330D1F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf */; };
+		C92833191F0EC80C009C5DBA /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330E1F0EC80C009C5DBA /* OpenSans-ExtraBoldItalic.ttf */; };
+		C928331A1F0EC80C009C5DBA /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330F1F0EC80C009C5DBA /* OpenSans-Italic.ttf */; };
+		C928331B1F0EC80C009C5DBA /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C92833101F0EC80C009C5DBA /* OpenSans-Light.ttf */; };
+		C928331C1F0EC80C009C5DBA /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C92833111F0EC80C009C5DBA /* OpenSans-LightItalic.ttf */; };
+		C928331D1F0EC80C009C5DBA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C92833121F0EC80C009C5DBA /* OpenSans-Regular.ttf */; };
+		C928331E1F0EC80C009C5DBA /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C92833131F0EC80C009C5DBA /* OpenSans-SemiBold.ttf */; };
+		C928331F1F0EC80C009C5DBA /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C92833141F0EC80C009C5DBA /* OpenSans-SemiBoldItalic.ttf */; };
+		C93349F71F13F72A008C2E49 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93349F61F13F72A008C2E49 /* LoginViewController.m */; };
+		C95F1C4C1F0E936E00612CDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C95F1C4B1F0E936E00612CDC /* main.m */; };
+		C95F1C4F1F0E936E00612CDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C95F1C4E1F0E936E00612CDC /* AppDelegate.m */; };
+		C95F1C551F0E936E00612CDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95F1C531F0E936E00612CDC /* Main.storyboard */; };
+		C95F1C581F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95F1C561F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodeld */; };
+		C95F1C5A1F0E936F00612CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95F1C591F0E936F00612CDC /* Assets.xcassets */; };
+		C95F1C5D1F0E936F00612CDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95F1C5B1F0E936F00612CDC /* LaunchScreen.storyboard */; };
+		C994F7701F26F2080036C996 /* EnvelopesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C994F76F1F26F2080036C996 /* EnvelopesManager.m */; };
+		C994F7731F29371E0036C996 /* DocuSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C994F7721F29371E0036C996 /* DocuSignViewController.m */; };
+		C9A75FC91F1FB03900EC263B /* TemplatesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A75FC81F1FB03900EC263B /* TemplatesManager.m */; };
+		C9DE9B211F15680D0011FB6B /* TemplatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B201F15680D0011FB6B /* TemplatesViewController.m */; };
+		C9DE9B241F1571E80011FB6B /* MainContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B231F1571E80011FB6B /* MainContainerViewController.m */; };
+		C9DE9B271F15721A0011FB6B /* DownloadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B261F15721A0011FB6B /* DownloadsViewController.m */; };
+		C9DE9B2A1F15795A0011FB6B /* ClaimsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B291F15795A0011FB6B /* ClaimsViewController.m */; };
+		C9DE9B2D1F16675E0011FB6B /* PolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B2C1F16675E0011FB6B /* PolicyViewController.m */; };
+		C9DE9B361F1811910011FB6B /* DamageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE9B351F1811910011FB6B /* DamageViewController.m */; };
+		C9FF31211F3226780076D6CA /* CustomNavTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31201F3226780076D6CA /* CustomNavTitle.xib */; };
+		E83868C0DB56F968BA49877A /* libPods-docusign-sdk-sample-objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C92833001F0EB91E009C5DBA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C92832FF1F0EB91D009C5DBA /* DocuSignSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc.release.xcconfig"; sourceTree = "<group>"; };
+		7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-docusign-sdk-sample-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C904902C1F2A49B400EAD899 /* AttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentViewController.h; sourceTree = "<group>"; };
+		C904902D1F2A49B400EAD899 /* AttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentViewController.m; sourceTree = "<group>"; };
+		C90C9E6E1F422EBE00163557 /* AccidentChecklist.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AccidentChecklist.pdf; sourceTree = "<group>"; };
+		C9110DC31F13D3850009D3B5 /* ProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileManager.m; sourceTree = "<group>"; };
+		C9110DC61F13D4420009D3B5 /* ProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileManager.h; sourceTree = "<group>"; };
+		C924713F1F1D2C630019A899 /* DownloadTemplateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTemplateCell.h; sourceTree = "<group>"; };
+		C92471401F1D2C630019A899 /* DownloadTemplateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTemplateCell.m; sourceTree = "<group>"; };
+		C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTemplateCell.xib; sourceTree = "<group>"; };
+		C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
+		C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DocuSignSDK.bundle; path = DocuSignSDK.framework/DocuSignSDK.bundle; sourceTree = "<group>"; };
+		C92833071F0EC4AA009C5DBA /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
+		C928330A1F0EC80C009C5DBA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C928330B1F0EC80C009C5DBA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		C928330C1F0EC80C009C5DBA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C928330D1F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C928330E1F0EC80C009C5DBA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C928330F1F0EC80C009C5DBA /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		C92833101F0EC80C009C5DBA /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		C92833111F0EC80C009C5DBA /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		C92833121F0EC80C009C5DBA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		C92833131F0EC80C009C5DBA /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C92833141F0EC80C009C5DBA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C93349F51F13F72A008C2E49 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C93349F61F13F72A008C2E49 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C95F1C471F0E936E00612CDC /* docusign-sdk-sample-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "docusign-sdk-sample-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C95F1C4B1F0E936E00612CDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C95F1C4D1F0E936E00612CDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C95F1C4E1F0E936E00612CDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C95F1C541F0E936E00612CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C95F1C571F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = docusign_sdk_sample_objc.xcdatamodel; sourceTree = "<group>"; };
+		C95F1C591F0E936F00612CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C95F1C5C1F0E936F00612CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C95F1C5E1F0E936F00612CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C994F76E1F26F2080036C996 /* EnvelopesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvelopesManager.h; sourceTree = "<group>"; };
+		C994F76F1F26F2080036C996 /* EnvelopesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvelopesManager.m; sourceTree = "<group>"; };
+		C994F7711F29371E0036C996 /* DocuSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocuSignViewController.h; sourceTree = "<group>"; };
+		C994F7721F29371E0036C996 /* DocuSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocuSignViewController.m; sourceTree = "<group>"; };
+		C9A75FC71F1FAC5500EC263B /* ContainerWithTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerWithTableView.h; sourceTree = "<group>"; };
+		C9A75FC81F1FB03900EC263B /* TemplatesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatesManager.m; sourceTree = "<group>"; };
+		C9A75FCA1F1FB05800EC263B /* TemplatesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatesManager.h; sourceTree = "<group>"; };
+		C9DE9B1F1F15680D0011FB6B /* TemplatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatesViewController.h; sourceTree = "<group>"; };
+		C9DE9B201F15680D0011FB6B /* TemplatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatesViewController.m; sourceTree = "<group>"; };
+		C9DE9B221F1571E80011FB6B /* MainContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainContainerViewController.h; sourceTree = "<group>"; };
+		C9DE9B231F1571E80011FB6B /* MainContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainContainerViewController.m; sourceTree = "<group>"; };
+		C9DE9B251F15721A0011FB6B /* DownloadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadsViewController.h; sourceTree = "<group>"; };
+		C9DE9B261F15721A0011FB6B /* DownloadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadsViewController.m; sourceTree = "<group>"; };
+		C9DE9B281F15795A0011FB6B /* ClaimsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClaimsViewController.h; sourceTree = "<group>"; };
+		C9DE9B291F15795A0011FB6B /* ClaimsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClaimsViewController.m; sourceTree = "<group>"; };
+		C9DE9B2B1F16675E0011FB6B /* PolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolicyViewController.h; sourceTree = "<group>"; };
+		C9DE9B2C1F16675E0011FB6B /* PolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolicyViewController.m; sourceTree = "<group>"; };
+		C9DE9B341F1811910011FB6B /* DamageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamageViewController.h; sourceTree = "<group>"; };
+		C9DE9B351F1811910011FB6B /* DamageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DamageViewController.m; sourceTree = "<group>"; };
+		C9FF31201F3226780076D6CA /* CustomNavTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavTitle.xib; sourceTree = "<group>"; };
+		E35ECD273256C0DCB098DCDF /* Pods-docusign-sdk-sample-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-objc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C95F1C441F0E936E00612CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92832FE1F0EB91D009C5DBA /* DocuSignSDK.framework in Frameworks */,
+				E83868C0DB56F968BA49877A /* libPods-docusign-sdk-sample-objc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE54E1A3D36FD778D748D2D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9110DC51F13D3AD0009D3B5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C994F76E1F26F2080036C996 /* EnvelopesManager.h */,
+				C994F76F1F26F2080036C996 /* EnvelopesManager.m */,
+				C9110DC61F13D4420009D3B5 /* ProfileManager.h */,
+				C9110DC31F13D3850009D3B5 /* ProfileManager.m */,
+				C9A75FCA1F1FB05800EC263B /* TemplatesManager.h */,
+				C9A75FC81F1FB03900EC263B /* TemplatesManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C92833061F0EC48E009C5DBA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C92833071F0EC4AA009C5DBA /* beach.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C92833091F0EC7D0009C5DBA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C90C9E6E1F422EBE00163557 /* AccidentChecklist.pdf */,
+				C928330A1F0EC80C009C5DBA /* LICENSE.txt */,
+				C928330B1F0EC80C009C5DBA /* OpenSans-Bold.ttf */,
+				C928330C1F0EC80C009C5DBA /* OpenSans-BoldItalic.ttf */,
+				C928330D1F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf */,
+				C928330E1F0EC80C009C5DBA /* OpenSans-ExtraBoldItalic.ttf */,
+				C928330F1F0EC80C009C5DBA /* OpenSans-Italic.ttf */,
+				C92833101F0EC80C009C5DBA /* OpenSans-Light.ttf */,
+				C92833111F0EC80C009C5DBA /* OpenSans-LightItalic.ttf */,
+				C92833121F0EC80C009C5DBA /* OpenSans-Regular.ttf */,
+				C92833131F0EC80C009C5DBA /* OpenSans-SemiBold.ttf */,
+				C92833141F0EC80C009C5DBA /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C93349F41F13F6F7008C2E49 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C904902C1F2A49B400EAD899 /* AttachmentViewController.h */,
+				C904902D1F2A49B400EAD899 /* AttachmentViewController.m */,
+				C9DE9B281F15795A0011FB6B /* ClaimsViewController.h */,
+				C9DE9B291F15795A0011FB6B /* ClaimsViewController.m */,
+				C9DE9B341F1811910011FB6B /* DamageViewController.h */,
+				C9DE9B351F1811910011FB6B /* DamageViewController.m */,
+				C994F7711F29371E0036C996 /* DocuSignViewController.h */,
+				C994F7721F29371E0036C996 /* DocuSignViewController.m */,
+				C9DE9B251F15721A0011FB6B /* DownloadsViewController.h */,
+				C9DE9B261F15721A0011FB6B /* DownloadsViewController.m */,
+				C93349F51F13F72A008C2E49 /* LoginViewController.h */,
+				C93349F61F13F72A008C2E49 /* LoginViewController.m */,
+				C9DE9B221F1571E80011FB6B /* MainContainerViewController.h */,
+				C9DE9B231F1571E80011FB6B /* MainContainerViewController.m */,
+				C9DE9B2B1F16675E0011FB6B /* PolicyViewController.h */,
+				C9DE9B2C1F16675E0011FB6B /* PolicyViewController.m */,
+				C9DE9B1F1F15680D0011FB6B /* TemplatesViewController.h */,
+				C9DE9B201F15680D0011FB6B /* TemplatesViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C95F1C3E1F0E936E00612CDC = {
+			isa = PBXGroup;
+			children = (
+				C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */,
+				C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */,
+				C95F1C491F0E936E00612CDC /* docusign-sdk-sample-objc */,
+				C95F1C481F0E936E00612CDC /* Products */,
+				F5CAEE1DD29C8E0C267ACB0D /* Pods */,
+				AE54E1A3D36FD778D748D2D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C95F1C481F0E936E00612CDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C95F1C471F0E936E00612CDC /* docusign-sdk-sample-objc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C95F1C491F0E936E00612CDC /* docusign-sdk-sample-objc */ = {
+			isa = PBXGroup;
+			children = (
+				C95F1C4D1F0E936E00612CDC /* AppDelegate.h */,
+				C95F1C4E1F0E936E00612CDC /* AppDelegate.m */,
+				C95F1C531F0E936E00612CDC /* Main.storyboard */,
+				C95F1C5B1F0E936F00612CDC /* LaunchScreen.storyboard */,
+				C93349F41F13F6F7008C2E49 /* Controllers */,
+				C9110DC51F13D3AD0009D3B5 /* Managers */,
+				C9A75FC61F1F9D1100EC263B /* Protocols */,
+				C9A75FCB1F1FFA8C00EC263B /* Views */,
+				C95F1C591F0E936F00612CDC /* Assets.xcassets */,
+				C95F1C5E1F0E936F00612CDC /* Info.plist */,
+				C95F1C561F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodeld */,
+				C92833061F0EC48E009C5DBA /* Images */,
+				C92833091F0EC7D0009C5DBA /* Resources */,
+				C95F1C4A1F0E936E00612CDC /* Supporting Files */,
+			);
+			path = "docusign-sdk-sample-objc";
+			sourceTree = "<group>";
+		};
+		C95F1C4A1F0E936E00612CDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C95F1C4B1F0E936E00612CDC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9A75FC61F1F9D1100EC263B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9A75FC71F1FAC5500EC263B /* ContainerWithTableView.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C9A75FCB1F1FFA8C00EC263B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */,
+				C924713F1F1D2C630019A899 /* DownloadTemplateCell.h */,
+				C92471401F1D2C630019A899 /* DownloadTemplateCell.m */,
+				C9FF31201F3226780076D6CA /* CustomNavTitle.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F5CAEE1DD29C8E0C267ACB0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E35ECD273256C0DCB098DCDF /* Pods-docusign-sdk-sample-objc.debug.xcconfig */,
+				0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C95F1C461F0E936E00612CDC /* docusign-sdk-sample-objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C95F1C611F0E936F00612CDC /* Build configuration list for PBXNativeTarget "docusign-sdk-sample-objc" */;
+			buildPhases = (
+				58B3D37A065172618370C475 /* [CP] Check Pods Manifest.lock */,
+				C95F1C431F0E936E00612CDC /* Sources */,
+				C95F1C441F0E936E00612CDC /* Frameworks */,
+				C95F1C451F0E936E00612CDC /* Resources */,
+				C92833001F0EB91E009C5DBA /* Embed Frameworks */,
+				C92833051F0EB9B3009C5DBA /* ShellScript */,
+				C7A77B80236DF2C662D00DF9 /* [CP] Embed Pods Frameworks */,
+				8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "docusign-sdk-sample-objc";
+			productName = "docusign-sdk-sample-objc";
+			productReference = C95F1C471F0E936E00612CDC /* docusign-sdk-sample-objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C95F1C3F1F0E936E00612CDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = DocuSign;
+				TargetAttributes = {
+					C95F1C461F0E936E00612CDC = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C95F1C421F0E936E00612CDC /* Build configuration list for PBXProject "docusign-sdk-sample-objc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C95F1C3E1F0E936E00612CDC;
+			productRefGroup = C95F1C481F0E936E00612CDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C95F1C461F0E936E00612CDC /* docusign-sdk-sample-objc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C95F1C451F0E936E00612CDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C924716B1F1D3CCD0019A899 /* DownloadTemplateCell.xib in Resources */,
+				C9FF31211F3226780076D6CA /* CustomNavTitle.xib in Resources */,
+				C928331F1F0EC80C009C5DBA /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				C928331E1F0EC80C009C5DBA /* OpenSans-SemiBold.ttf in Resources */,
+				C90C9E6F1F422EBE00163557 /* AccidentChecklist.pdf in Resources */,
+				C92833181F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf in Resources */,
+				C928331B1F0EC80C009C5DBA /* OpenSans-Light.ttf in Resources */,
+				C92833021F0EB953009C5DBA /* DocuSignSDK.bundle in Resources */,
+				C95F1C5D1F0E936F00612CDC /* LaunchScreen.storyboard in Resources */,
+				C928331A1F0EC80C009C5DBA /* OpenSans-Italic.ttf in Resources */,
+				C928331D1F0EC80C009C5DBA /* OpenSans-Regular.ttf in Resources */,
+				C92833171F0EC80C009C5DBA /* OpenSans-BoldItalic.ttf in Resources */,
+				C92833151F0EC80C009C5DBA /* LICENSE.txt in Resources */,
+				C92833191F0EC80C009C5DBA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				C92833161F0EC80C009C5DBA /* OpenSans-Bold.ttf in Resources */,
+				C95F1C5A1F0E936F00612CDC /* Assets.xcassets in Resources */,
+				C92833081F0EC4AA009C5DBA /* beach.jpg in Resources */,
+				C95F1C551F0E936E00612CDC /* Main.storyboard in Resources */,
+				C928331C1F0EC80C009C5DBA /* OpenSans-LightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58B3D37A065172618370C475 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7A77B80236DF2C662D00DF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C92833051F0EB9B3009C5DBA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/DocuSignSDK.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C95F1C431F0E936E00612CDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95F1C581F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodeld in Sources */,
+				C994F7731F29371E0036C996 /* DocuSignViewController.m in Sources */,
+				C95F1C4F1F0E936E00612CDC /* AppDelegate.m in Sources */,
+				C95F1C4C1F0E936E00612CDC /* main.m in Sources */,
+				C9110DC41F13D3850009D3B5 /* ProfileManager.m in Sources */,
+				C9DE9B211F15680D0011FB6B /* TemplatesViewController.m in Sources */,
+				C92471411F1D2C630019A899 /* DownloadTemplateCell.m in Sources */,
+				C9DE9B271F15721A0011FB6B /* DownloadsViewController.m in Sources */,
+				C994F7701F26F2080036C996 /* EnvelopesManager.m in Sources */,
+				C9DE9B361F1811910011FB6B /* DamageViewController.m in Sources */,
+				C93349F71F13F72A008C2E49 /* LoginViewController.m in Sources */,
+				C9DE9B2A1F15795A0011FB6B /* ClaimsViewController.m in Sources */,
+				C9DE9B2D1F16675E0011FB6B /* PolicyViewController.m in Sources */,
+				C904902E1F2A49B400EAD899 /* AttachmentViewController.m in Sources */,
+				C9A75FC91F1FB03900EC263B /* TemplatesManager.m in Sources */,
+				C9DE9B241F1571E80011FB6B /* MainContainerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C95F1C531F0E936E00612CDC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C95F1C541F0E936E00612CDC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C95F1C5B1F0E936F00612CDC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C95F1C5C1F0E936F00612CDC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C95F1C5F1F0E936F00612CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C95F1C601F0E936F00612CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C95F1C621F0E936F00612CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E35ECD273256C0DCB098DCDF /* Pods-docusign-sdk-sample-objc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "docusign-sdk-sample-objc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C95F1C631F0E936F00612CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "docusign-sdk-sample-objc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C95F1C421F0E936E00612CDC /* Build configuration list for PBXProject "docusign-sdk-sample-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C95F1C5F1F0E936F00612CDC /* Debug */,
+				C95F1C601F0E936F00612CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C95F1C611F0E936F00612CDC /* Build configuration list for PBXNativeTarget "docusign-sdk-sample-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C95F1C621F0E936F00612CDC /* Debug */,
+				C95F1C631F0E936F00612CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C95F1C561F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C95F1C571F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodel */,
+			);
+			currentVersion = C95F1C571F0E936F00612CDC /* docusign_sdk_sample_objc.xcdatamodel */;
+			path = docusign_sdk_sample_objc.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C95F1C3F1F0E936E00612CDC /* Project object */;
+}
