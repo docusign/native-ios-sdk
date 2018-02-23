@@ -1,4 +1,4 @@
-﻿"Documents.Overview" = "Document Overview";
+"Documents.Overview" = "Document Overview";
 "Account.NoEmail" = "(no email)";
 "Recipients.hosted.by" = "Hosted by %1$@";
 "Signing.UnknownSigner" = "Unknown Signer";
@@ -131,6 +131,7 @@
 "Documents.Host" = "Host";
 "Templates.DuplicateSignersOffline.Error" = "You cannot repeat a signer in offline.";
 "General.NoInternetConnection" = "No Internet Connection";
+"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
 "Templates.SendingTemplate" = "Sending Template…";
 "Templates.ErrorIncomplete" = "Template Incomplete";
 "Templates.ErrorAllRecipientsMustBeComplete" = "All recipients must be completed before sending the template.";

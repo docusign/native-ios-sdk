@@ -88,6 +88,9 @@
     }
 }
 
+- (IBAction)passwordFieldPrimaryAction:(id)sender {
+    [sender resignFirstResponder];
+}
 
 #pragma mark - Private Methods
 
