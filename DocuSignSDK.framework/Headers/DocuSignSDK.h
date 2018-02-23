@@ -50,6 +50,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMRecipientSignatureInformation.h>
 #import <DocuSignSDK/DSMSigner.h>
 #import <DocuSignSDK/DSMSignHere.h>
+#import <DocuSignSDK/DSMSigningMode.h>
 #import <DocuSignSDK/DSMTab.h>
 #import <DocuSignSDK/DSMTabFrame.h>
 #import <DocuSignSDK/DSMTabImageData.h>
@@ -64,7 +65,16 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMUserInfo.h>
 #import <DocuSignSDK/DSMLoggingLevel.h>
 #import <DocuSignSDK/DSMDocumentInsertAtPosition.h>
+#import <DocuSignSDK/DSMContactManager.h>
 
 
 //Appearance
 #import <DocuSignSDK/DSMAppearance.h>
+
+//categories
+#import <DocuSignSDK/UIBarButtonItem+DSMBlocks.h>
+#import <DocuSignSDK/NSArray+DSMQuery.h>
+#import <DocuSignSDK/NSString+DSMAdditions.h>
+#import <DocuSignSDK/DSMGlobalTypeDefines.h>
+
+
