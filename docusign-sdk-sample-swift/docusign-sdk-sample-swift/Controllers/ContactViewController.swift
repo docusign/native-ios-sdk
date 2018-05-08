@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ContactViewController: UIViewController
+class ContactViewController: UIViewController,UITextFieldDelegate
 {
     // MARK: UI Elements
     
@@ -58,14 +58,31 @@ class ContactViewController: UIViewController
         let clientData = ProfileManager.sharedInstance.getClientData();
         
         self.tf_firstName.text = clientData["firstName"];
+        self.tf_firstName.delegate = self ;
+        
         self.tf_lastName.text = clientData["lastName"];
+        self.tf_lastName.delegate = self ;
+        
         self.tf_phone.text = clientData["phone"];
+        self.tf_phone.delegate = self ;
+
         self.tf_email.text = clientData["email"];
+        self.tf_email.delegate = self ;
+
         self.tf_address.text = clientData["address"];
+        self.tf_address.delegate = self ;
+
         self.tf_city.text = clientData["city"];
+        self.tf_city.delegate = self ;
+
         self.tf_state.text = clientData["state"];
+        self.tf_state.delegate = self ;
+
         self.tf_country.text = clientData["country"];
+        self.tf_country.delegate = self ;
+
         self.tf_zipCode.text = clientData["zipCode"];
+        self.tf_zipCode.delegate = self ;
     }
     
     
@@ -73,6 +90,11 @@ class ContactViewController: UIViewController
     {
         // set custom nav title
         self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true);
+        return true ;
     }
 
 }
