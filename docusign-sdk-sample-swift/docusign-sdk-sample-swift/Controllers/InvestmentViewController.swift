@@ -9,7 +9,7 @@
 import UIKit
 
 
-class InvestmentViewController: UIViewController
+class InvestmentViewController: UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var tf_clientNumber: UITextField!
     @IBOutlet weak var tf_investmentAmount: UITextField!
@@ -46,7 +46,10 @@ class InvestmentViewController: UIViewController
         let clientData = ProfileManager.sharedInstance.getClientData();
         
         self.tf_clientNumber.text = clientData["clientNumber"];
+        self.tf_clientNumber.delegate = self;
+        
         self.tf_investmentAmount.text = clientData["investmentAmount"];
+        self.tf_investmentAmount.delegate = self;
     }
     
     
@@ -54,6 +57,11 @@ class InvestmentViewController: UIViewController
     {
         // set custom nav title
         self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true);
+        return true;
     }
 
 }
