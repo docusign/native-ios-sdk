@@ -2,7 +2,7 @@
 # DocuSign Native iOS Offline Templates SDK
 
 The DocuSign Native iOS Offline Templates SDK is a framework for Objective-C and Swift projects. Using the SDK,  you can integrate the online and offline signing features of DocuSign into your own iOS application.
-For detailed instructions, please refer to the [official site](https://docs.docusign.com/ios_sdk/).
+For detailed instructions, please refer to the [official site](https://developers.docusign.com/ios_sdk/).
 
 Requirements
 ============
@@ -13,15 +13,15 @@ Requirements
 
 Install
 =============
-Please see the [Getting Started](https://docs.docusign.com/ios_sdk/developer.html) and [Integration](https://docs.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details.
+Please see the [Getting Started](https://developers.docusign.com/ios_sdk/developer.html) and [Integration](https://developers.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details.
 
 Reference Docs
 ==============
-Please see the [Reference Docs](https://docs.docusign.com/ios_sdk/refdocs/html/annotated.html) section on the **Developer's Site** for more details.
+Please see the [Reference Docs](https://developers.docusign.com/ios_sdk/refdocs/html/annotated.html) section on the **Developer's Site** for more details.
 
 Sample Apps
 ===========
-Please see the [Sample Apps](https://docs.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details.
+Please see the [Sample Apps](https://developers.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details.
 
 License
 =======
