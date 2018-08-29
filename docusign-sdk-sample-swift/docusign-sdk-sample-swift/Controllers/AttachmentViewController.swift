@@ -45,7 +45,9 @@ class AttachmentViewController: UIViewController
     @IBAction func attachButtonTapped(_ sender: Any)
     {
         // load PDF included in bundle
-        if let documentURL = Bundle.main.url(forResource: "Portfolio", withExtension: "pdf", subdirectory: nil, localization: nil)
+        //var pdfFileName = "Portfolio";
+        var pdfFileName = "UtilityBill";
+        if let documentURL = Bundle.main.url(forResource: pdfFileName, withExtension: "pdf", subdirectory: nil, localization: nil)
         {
             do {
                 let data = try Data(contentsOf: documentURL);
@@ -63,7 +65,9 @@ class AttachmentViewController: UIViewController
                 ProfileManager.sharedInstance.setAttachmentPath(attachmentUrl: documentURL);
                 
                 // display developer's notes
-                self.promptDevAttachment();
+                if ProfileManager.Static.displayDeveloperNotes {
+                    self.promptDevAttachment();
+                }
             }
             catch {
                 NSLog("Error loading PDF file as attachment.");

@@ -108,6 +108,7 @@
 "Documents.HostName" = "ホストの名前";
 "Documents.HostEmail" = "ホストのメールアドレス";
 "BuildEnvelope.EditSigner" = "署名者の編集";
+"BuildEnvelope.SwitchSigner" = "署名者の切り替え";
 "BuildEnvelope.DeleteSigner" = "署名者の削除";
 "BuildEnvelope.AddSigner" = "署名者の追加";
 "Recipients.AddRecipient" = "受信者の追加";
@@ -131,7 +132,7 @@
 "Documents.Host" = "ホスト";
 "Templates.DuplicateSignersOffline.Error" = "オフラインで同じ署名者を複数回指定することはできません。";
 "General.NoInternetConnection" = "インターネットに接続していません";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "オフライン署名機能がアカウントで無効になっています。";
 "Templates.SendingTemplate" = "テンプレートを送信しています...";
 "Templates.ErrorIncomplete" = "テンプレートが不完全です";
 "Templates.ErrorAllRecipientsMustBeComplete" = "テンプレートを送信する前にすべての受信者を指定する必要があります。";

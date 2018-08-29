@@ -77,7 +77,7 @@ class TemplatesManager
     }
 
 
-    func displayTemplateForSignature(templateId: String, controller: UIViewController, tabData: Dictionary<String, String>, onlineSign: Bool, attachmentUrl: URL?, completionHandler: @escaping ((UIViewController?, Error?) -> Void))
+    func displayTemplateForSignature(templateId: String, controller: UIViewController, tabData: Dictionary<String, String>, recipientData: Array<DSMRecipientDefault>, customFields:DSMCustomFields?, onlineSign: Bool, attachmentUrl: URL?, completionHandler: @escaping ((UIViewController?, Error?) -> Void))
     {
         // load PDF data
         var pdfData: Data?;
@@ -91,7 +91,12 @@ class TemplatesManager
             }
         }
         
-        self.mDSMTemplatesManager?.presentSendTemplateControllerWithTemplate(withId: templateId, tabValueDefaults: tabData, pdfToInsert: pdfData, insertAtPosition: DSMDocumentInsertAtPosition.beginning, signingMode: onlineSign ? DSMSigningMode.online :DSMSigningMode.offline , presenting: controller, animated: true, completion: completionHandler);
+        let mDSMEnvelopeDefaults = DSMEnvelopeDefaults();
+        mDSMEnvelopeDefaults.recipientDefaults = recipientData.count > 0 ? recipientData : nil;
+        mDSMEnvelopeDefaults.tabValueDefaults = tabData;
+        mDSMEnvelopeDefaults.customFields = customFields
+        
+        self.mDSMTemplatesManager?.presentSendTemplateControllerWithTemplate(withId: templateId, envelopeDefaults: mDSMEnvelopeDefaults, pdfToInsert: pdfData, insertAtPosition: DSMDocumentInsertAtPosition.end, signingMode: onlineSign ? DSMSigningMode.online : DSMSigningMode.offline, presenting: controller, animated: true, completion: completionHandler);
     }
     
 }

@@ -66,7 +66,9 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMLoggingLevel.h>
 #import <DocuSignSDK/DSMDocumentInsertAtPosition.h>
 #import <DocuSignSDK/DSMContactManager.h>
-
+#import <DocuSignSDK/DSMRecipientDefault.h>
+#import <DocuSignSDK/DSMEnvelopeDefaults.h>
+#import <DocuSignSDK/DSMEnvelopeDefaultsUniqueRecipientSelectorType.h>
 
 //Appearance
 #import <DocuSignSDK/DSMAppearance.h>

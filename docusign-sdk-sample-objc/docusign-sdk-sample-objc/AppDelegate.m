@@ -19,8 +19,11 @@
     // Override point for customization after application launch.
 
     // initialize DS sdk manager
-    [DSMManager setup];
-
+    NSMutableDictionary *configuration = [[DSMManager defaultConfigurations] mutableCopy];
+    // hide offline signing alerts
+    configuration[DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY] = DSM_SETUP_TRUE_VALUE;
+    [DSMManager setupWithConfiguration:configuration];
+    
     return YES;
 }
 

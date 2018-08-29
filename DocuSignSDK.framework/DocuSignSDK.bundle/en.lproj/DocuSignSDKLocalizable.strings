@@ -108,6 +108,7 @@
 "Documents.HostName" = "Host Name";
 "Documents.HostEmail" = "Host Email";
 "BuildEnvelope.EditSigner" = "Edit Signer";
+"BuildEnvelope.SwitchSigner" = "Switch Signer";
 "BuildEnvelope.DeleteSigner" = "Delete Signer";
 "BuildEnvelope.AddSigner" = "Add Signer";
 "Recipients.AddRecipient" = "Add Recipient";

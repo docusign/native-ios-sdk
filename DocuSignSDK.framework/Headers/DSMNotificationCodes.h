@@ -98,7 +98,7 @@ extern NSString * const DSMEnvelopeIdKey;
 extern NSString * const DSMErrorKey;
 /*!
  * @brief Notification userInfo key to represent envelope signing mode (online vs offline).
- * @see DSMSigningMode.h
+ * @see DSMSigningMode
  */
 extern NSString * const DSMSigningModeKey;
 

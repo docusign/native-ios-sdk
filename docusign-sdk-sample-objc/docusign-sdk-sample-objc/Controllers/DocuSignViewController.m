@@ -37,14 +37,18 @@
     NSString * templateId = [profileManager getClientTemplateId];
     
     // retrieve client data for insertion into template
-    NSDictionary * tabData = [profileManager getTemplateTabData];
+    NSDictionary * tabData = [profileManager getTemplateTabDataForId:templateId];
+    NSArray * recipientData = [profileManager getTemplateRecipientDataForId:templateId];
+    
+    // retrive customFields for insertion into template
+    DSMCustomFields *customFields = [profileManager getCustomFieldsDataForTemplateId:templateId];
     
     BOOL useOffline = [profileManager useOfflineFlow];
     
     NSString * attachmentPath = [profileManager getAttachmentPath];
     
     // display template via sdk
-    [[TemplatesManager sharedInstance] displayTemplateForSignature:templateId forController:self withTabs:tabData useOfflineFlow:useOffline withAttachmentAtPath:attachmentPath withCompletion:^(UIViewController * controller, NSError *error)
+    [[TemplatesManager sharedInstance] displayTemplateForSignature:templateId forController:self withTabs:tabData withRecipients:recipientData withCustomFields:customFields useOfflineFlow:useOffline withAttachmentAtPath:attachmentPath withCompletion:^(UIViewController * controller, NSError *error)
      {
          NSLog(@"Done displaying template.");
 

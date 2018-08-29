@@ -108,6 +108,7 @@
 "Documents.HostName" = "Naam van host";
 "Documents.HostEmail" = "E-mail van host";
 "BuildEnvelope.EditSigner" = "Ondertekenaar bewerken";
+"BuildEnvelope.SwitchSigner" = "Van ondertekenaar wisselen";
 "BuildEnvelope.DeleteSigner" = "Ondertekenaar verwijderen";
 "BuildEnvelope.AddSigner" = "Ondertekenaar toevoegen";
 "Recipients.AddRecipient" = "Ontvanger toevoegen";
@@ -131,7 +132,7 @@
 "Documents.Host" = "Host";
 "Templates.DuplicateSignersOffline.Error" = "U kunt in de offline-modus een ondertekenaar niet herhalen.";
 "General.NoInternetConnection" = "Geen internetverbinding";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "Offline ondertekenen is niet beschikbaar voor account.";
 "Templates.SendingTemplate" = "Sjabloon verzenden…";
 "Templates.ErrorIncomplete" = "Sjabloon onvolledig";
 "Templates.ErrorAllRecipientsMustBeComplete" = "Alle ontvangers moeten voltooid zijn voordat u het sjabloon kunt verzenden.";

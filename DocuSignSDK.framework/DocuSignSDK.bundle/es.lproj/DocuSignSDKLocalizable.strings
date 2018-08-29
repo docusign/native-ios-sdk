@@ -108,6 +108,7 @@
 "Documents.HostName" = "Nombre del iniciador";
 "Documents.HostEmail" = "Correo electrónico del iniciador";
 "BuildEnvelope.EditSigner" = "Editar signatario";
+"BuildEnvelope.SwitchSigner" = "Cambiar firmante";
 "BuildEnvelope.DeleteSigner" = "Borrar signatario";
 "BuildEnvelope.AddSigner" = "Agregar signatario";
 "Recipients.AddRecipient" = "Agregar destinatario";
@@ -131,7 +132,7 @@
 "Documents.Host" = "Iniciador";
 "Templates.DuplicateSignersOffline.Error" = "No puede repetir un signatario sin conexión.";
 "General.NoInternetConnection" = "Sin conexión a Internet";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "La firma sin conexión no está disponible para la cuenta.";
 "Templates.SendingTemplate" = "Enviando plantilla…";
 "Templates.ErrorIncomplete" = "Plantilla incompleta";
 "Templates.ErrorAllRecipientsMustBeComplete" = "Deben completarse todos los destinatarios antes de enviar la plantilla.";

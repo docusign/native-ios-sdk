@@ -6,11 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DocuSignSDK/DocuSignSDK.h"
 
 @interface ProfileManager : NSObject
 
 // get singleton instance of manager
 + (id) sharedInstance;
++ (BOOL)autoDownloadTemplates;
++ (BOOL)displayDeveloperNotes;
 
 // static methods
 + (UIColor *) getAppNavColor;
@@ -44,6 +47,7 @@
 - (NSString *) getAttachmentPath;
 
 // manage data for the template
-- (NSDictionary *) getTemplateTabData;
-
+- (NSDictionary *) getTemplateTabDataForId:(NSString *)templateId;
+- (NSArray *)getTemplateRecipientDataForId:(NSString *)templateId;
+- (DSMCustomFields *)getCustomFieldsDataForTemplateId:(NSString *)templateId;
 @end
