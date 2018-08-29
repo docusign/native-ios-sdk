@@ -5,12 +5,18 @@
 #import "DSMTemplateCacheState.h"
 #import "DSMDocumentInsertAtPosition.h"
 #import "DSMSigningMode.h"
+#import "DSMTextCustomField.h"
 
 @class UIViewController;
 @class DSMEnvelopeTemplate;
 @class DSMEnvelopeTemplateDefinition;
 @class DSMFolder;
+@class DSMRecipientDefault;
+@class DSMEnvelopeDefaults;
 
+/*!
+ @abstract Various options to influence the template name matching.
+ */
 typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
     DSMSearchOptionContainsMatch,
     DSMSearchOptionExactMatch,
@@ -20,6 +26,11 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
 
 @protocol DSMTemplatesManagerDelegate;
 
+/*!
+ @class DSMTemplatesManager
+ @abstract It contains methods provide methods that can be used to list, cache and uncache templates. Also, to initiate the signing ceremony with DocuSignSDK provided UI components for online/offline signing mode.
+ @see DSMTemplatesManager.h
+ */
 @interface DSMTemplatesManager : NSObject
 
 /*!
@@ -48,7 +59,7 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
 /*!
  * @discussion Retrieves the list of templates available to the currently logged in user for given template name.
  * @param templateName The name of the template to retrieve.
- * @param searchOptions Specifies the type of search conducted on the template name.
+ * @param options Specifies the type of search conducted on the template name.
  * @param completionBlock The completion block to be execute once the list of templates is retrieved.
  */
 - (void)listTemplatesWithTemplateName:(NSString *)templateName searchOptions:(DSMSearchOptions)options completion:(void(^)(NSArray<DSMEnvelopeTemplateDefinition *> *envelopeTemplateDefinitions, NSError *error))completionBlock;
@@ -119,14 +130,14 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  * @see DSMSigningMode.h
  */
 - (void)presentSendTemplateControllerWithTemplateWithId:(NSString *)templateId
-                                          signingMode:(DSMSigningMode)signingMode
+                                            signingMode:(DSMSigningMode)signingMode
                                    presentingController:(UIViewController *)presentingController
                                                animated:(BOOL)animated
                                              completion:(void(^)(UIViewController *viewController, NSError *error))completion;
 /*!
  * @discussion Start Signing/Sending envelope off of a template with the given templateId.
- * @param tabValueDefaults Can be used to default the tabvalues NSDictionary<tab.tabLabel *, tab.value *>
- * @param pdfToInsert Can be used to pass a PDF to be inserted at begining or end of envelope documents.
+ * @param envelopeDefaults [Optional] Customizable envelope data before starting the signing ceremony @see DSMEnvelopeDefaults.h
+ * @param pdfToInsert [Optional] Offline signing only, include a PDF to be inserted at begining or end of envelope documents. if signingMode is DSMSigningModeOnline, pdfToInsert would be silently ignored.
  * @param insertAtPosition specigies if the pdf needs to eb inserted at the beginging or end of Envelope.
  * @param signingMode is DSMSigningModeOnline, if sign and send needs to happen online(using online web signing component) OR it will be DSMSigningModeOffline if signing in Offline (using native signing components).
  * @param presentingController signing component/controller will be presented on top of the given presentingController passed.
@@ -138,10 +149,10 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  * @see DSMSigningMode.h
  */
 - (void)presentSendTemplateControllerWithTemplateWithId:(NSString *)templateId
-                                       tabValueDefaults:(NSDictionary<NSString *, NSString *> *)tabValueDefaults
+                                       envelopeDefaults:(DSMEnvelopeDefaults *)envelopeDefaults
                                             pdfToInsert:(NSData *)pdfToInsert
                                        insertAtPosition:(DSMDocumentInsertAtPosition)insertAtPosition
-                                          signingMode:(DSMSigningMode)signingMode
+                                            signingMode:(DSMSigningMode)signingMode
                                    presentingController:(UIViewController *)presentingController
                                                animated:(BOOL)animated
                                              completion:(void(^)(UIViewController *viewController, NSError *error))completion;

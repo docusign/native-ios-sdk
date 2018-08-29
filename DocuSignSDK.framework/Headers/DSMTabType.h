@@ -2,7 +2,6 @@
 #define DSMTabType_h
 
 /*!
- * @typedef DSMTabType
  * @brief A list of tab types for envelopes & templates.
  * @constant DSMTabTypeUnsupported Unsupported, default value.
  * @constant DSMTabTypeSignHere SignHere Tab. @see DSMSignHere.h
@@ -13,6 +12,8 @@
  * @constant DSMTabTypeTitle Title Tab. @see DSMTitle.h
  * @constant DSMTabTypeFullName FullName Tab. @see DSMFullName.h
  * @constant DSMTabTypeDateSigned DateSigned Tab. @see DSMDateSigned.h
+ * @constant DSMTabTypeFormula Formula Tab. @see DSMFormula.h
+ * @constant DSMTabTypeRadio Radio Tab. @see DSMRadio.h
  */
 typedef NS_ENUM(NSUInteger, DSMTabType) {
     DSMTabTypeUnsupported = 0,
@@ -23,7 +24,9 @@ typedef NS_ENUM(NSUInteger, DSMTabType) {
     DSMTabTypeCompany,
     DSMTabTypeTitle,
     DSMTabTypeFullName,
-    DSMTabTypeDateSigned
+    DSMTabTypeDateSigned,
+    DSMTabTypeFormula,
+    DSMTabTypeRadio
 };
 
 #endif /* DSMTabType_h */

@@ -6,6 +6,8 @@
 @class DSMRecipients;
 @class DSMDocument;
 @class DSMTab;
+@class DSMRadioGroup;
+@class DSMRadio;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -67,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isSelfSign;
 
 - (void)setSubjectIfNeeded;
+
+- (DSMRadioGroup *)radioGroupWith:(DSMRadio *)radioTab forRecipient:(DSMRecipient * _Nullable)signer;
 
 @end
 

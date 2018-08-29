@@ -108,6 +108,7 @@
 "Documents.HostName" = "Nome host";
 "Documents.HostEmail" = "E-mail host";
 "BuildEnvelope.EditSigner" = "Modifica firmatario";
+"BuildEnvelope.SwitchSigner" = "Cambia firmatario";
 "BuildEnvelope.DeleteSigner" = "Elimina firmatario";
 "BuildEnvelope.AddSigner" = "Aggiungi firmatario";
 "Recipients.AddRecipient" = "Aggiungi destinatario";
@@ -131,7 +132,7 @@
 "Documents.Host" = "Host";
 "Templates.DuplicateSignersOffline.Error" = "Impossibile ripetere un firmatario nella modalità offline.";
 "General.NoInternetConnection" = "Connessione Internet assente";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "La firma offline non è disponibile per l'account.";
 "Templates.SendingTemplate" = "Invio modello…";
 "Templates.ErrorIncomplete" = "Modello non completato";
 "Templates.ErrorAllRecipientsMustBeComplete" = "Per inviare il modello, è necessario completare tutti i destinatari.";

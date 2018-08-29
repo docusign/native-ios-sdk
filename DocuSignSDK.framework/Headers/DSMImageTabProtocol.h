@@ -7,11 +7,14 @@
  */
 @protocol DSMImageTabProtocol
 
-/*! @brief TODO:Empty:Tab imageData. */
+/*! @brief TabImageData contains NSData representing the adopted image based tabs (e.g. signatures, initials) */
 @property(nonatomic, retain) DSMTabImageData *imageData;
-/*! @brief TODO:Empty:Tab scaleValue. */
+/*! @brief Scale of the image based tabs. */
 @property(nonatomic, copy) NSNumber *scaleValue;
-/*! @brief TODO:Empty:Tab optional. */
+/*!
+ @brief Optional flag to determin if the image tab is required.
+ @see DSMTextTabProtocol.h
+ */
 @property(nonatomic, assign) BOOL optional;
 
 @end

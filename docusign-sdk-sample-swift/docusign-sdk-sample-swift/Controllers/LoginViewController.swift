@@ -77,7 +77,7 @@ class LoginViewController: UIViewController
     {
         // check username is non-empty
         // TODO perform additional validation
-        return ((username?.characters.count)! > 0);
+        return ((username?.count)! > 0);
     }
     
     
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController
     {
         // check password is non-empty
         // TODO Perform additional validation
-        return ((password?.characters.count)! > 0);
+        return ((password?.count)! > 0);
     }
 
     

@@ -62,7 +62,9 @@
     [[ProfileManager sharedInstance] setAttachmentPath:path];
 
     // display developer's prompt
-    [self promptAttachmentIncluded];
+    if ([ProfileManager displayDeveloperNotes]) {
+        [self promptAttachmentIncluded];
+    }
 }
 
 
