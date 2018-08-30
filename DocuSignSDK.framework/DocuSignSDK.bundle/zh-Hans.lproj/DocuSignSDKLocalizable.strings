@@ -108,6 +108,7 @@
 "Documents.HostName" = "负责人名称";
 "Documents.HostEmail" = "负责人电子邮件";
 "BuildEnvelope.EditSigner" = "编辑签名者";
+"BuildEnvelope.SwitchSigner" = "切换机签名人";
 "BuildEnvelope.DeleteSigner" = "删除签名者";
 "BuildEnvelope.AddSigner" = "添加签名者";
 "Recipients.AddRecipient" = "添加收件人";
@@ -131,7 +132,7 @@
 "Documents.Host" = "负责人";
 "Templates.DuplicateSignersOffline.Error" = "您不能在离线状态重复签名者。";
 "General.NoInternetConnection" = "无网络连接";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "帐户不可使用离线签名。";
 "Templates.SendingTemplate" = "正在发送模板…";
 "Templates.ErrorIncomplete" = "模板不完整";
 "Templates.ErrorAllRecipientsMustBeComplete" = "在发送模板之前，必须完成所有收件人。";

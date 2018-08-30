@@ -34,7 +34,9 @@ class ClientViewController: UIViewController
             EnvelopesManager.sharedInstance.syncEnvelopes();
 
             // prompt with developer notes
-            self.promptSyncEnvelopes();
+            if ProfileManager.Static.displayDeveloperNotes {
+                self.promptSyncEnvelopes();
+            }
         }
     }
     

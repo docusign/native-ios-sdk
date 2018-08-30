@@ -1,5 +1,5 @@
 /*! @protocol DSMTextTabProtocol
- *  @discussion Conforming to this protocol indicates instances can represent a text based annotation, such as DSMFullNameTab.
+ *  @brief Conforming to this protocol indicates instances can represent a text based annotation, such as DSMFullNameTab.
  *  @see DSMFullName.h
  *  @see DSMText.h
  *  @see DSMDateSigned.h

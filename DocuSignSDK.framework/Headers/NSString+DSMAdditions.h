@@ -19,6 +19,7 @@
 @interface NSString (DSMComparison)
 
 - (BOOL)dsm_caseAndDiacriticInsensitivelyMatches:(NSString *)aString;
+- (BOOL)dsm_caseInsensitivelyMatches:(NSString *)aString;
 - (NSString *)dsm_uniqueStringByAppendingNumberAmongstStrings:(NSArray *)otherStrings;
 
 @end

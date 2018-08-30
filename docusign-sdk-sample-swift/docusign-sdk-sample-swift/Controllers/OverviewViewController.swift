@@ -65,7 +65,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         {
             case 0:
                 // first cell
-                apptCell.lbl_date.text = "July 15, 2017";
+                apptCell.lbl_date.text = "June 20, 2018";
                 apptCell.lbl_clientName.text = "Tom Wood";
                 apptCell.lbl_profileStatus.text = "Unsigned";
                 apptCell.lbl_profileStatus.textColor = UIColor(red: 208.0/255, green: 2.0/255, blue: 27.0/255, alpha: 1.0);
@@ -76,8 +76,8 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
 
             case 1:
                 // second cell
-                apptCell.lbl_date.text = "July 17, 2017";
-                apptCell.lbl_clientName.text = "Terry Williams";
+                apptCell.lbl_date.text = "June 19, 2018";
+                apptCell.lbl_clientName.text = "Andrea G Kuhn";
                 apptCell.lbl_profileStatus.text = "Signed";
                 apptCell.lbl_profileStatus.textColor = UIColor(red: 126.0/255, green: 211.0/255, blue: 33.0/255, alpha: 1.0);
                 break;

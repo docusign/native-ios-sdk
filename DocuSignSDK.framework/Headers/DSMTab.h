@@ -28,9 +28,9 @@ typedef NS_ENUM(NSUInteger, DSMTabType);
 @property (nonatomic, assign) BOOL templateLocked;
 /*! @brief When set to **true**, the sender may not remove the recipient. Used only when working with template recipients. [optional]. */
 @property (nonatomic, assign) BOOL templateRequired;
-/*! @brief TODO:Empty:Tab tabOrder. */
+/*! @brief Order of tab */
 @property (nonatomic, copy) NSNumber *tabOrder;
-/*! @brief TODO:Empty:Tab name. */
+/*! @brief Name of tab */
 @property (nonatomic, copy) NSString *name;
 /*! @brief The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties. [optional]. */
 @property (nonatomic, copy) NSString *customTabId;
@@ -44,11 +44,11 @@ typedef NS_ENUM(NSUInteger, DSMTabType);
 @property (nonatomic, copy) NSString *anchorUnits;
 /*! @brief When set to **true**, this tab is ignored if anchorString is not found in the document. [optional]. */
 @property (nonatomic, assign) BOOL anchorIgnoreIfNotPresent;
-/*! @brief TODO:Empty:Tab anchorCaseSensitive. */
+/*! @brief Determines if the anchor text is caseSensitive. */
 @property (nonatomic, assign) BOOL anchorCaseSensitive;
-/*! @brief TODO:Empty:Tab anchorMatchWholeWord. */
+/*! @brief Determines if the anchor text has to match whole word. */
 @property (nonatomic, assign) BOOL anchorMatchWholeWord;
-/*! @brief TODO:Empty:Tab anchorHorizontalAlignment. */
+/*! @brief Determines if the anchor tabs horizontal alignment setting. */
 @property (nonatomic, copy) NSString *anchorHorizontalAlignment;
 /*! @brief For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility. [optional]. */
 @property (nonatomic, copy) NSString *conditionalParentLabel;
@@ -75,11 +75,11 @@ typedef NS_ENUM(NSUInteger, DSMTabType);
 //@property (nonatomic, retain) DSMCDTabImageData *imageData;
 
 /*! @brief Specifies the value of the tab. [optional]. */
-@property (nonatomic, copy) NSString *value; // TODO: (SDK) added this as it's being used for checkbox, text, etc. Find a better way instead.
+@property (nonatomic, copy) NSString *value;
 
-/*! @brief TODO:Empty:Method value. */
+/*! @brief Returns frame rectangle of the tab. */
 - (CGRect)frameAsCGRect;
-/*! @brief TODO:Empty:Method value. */
+/*! @brief Set rect to be used as the frame for tab. */
 - (void)setFrameWithCGRect:(CGRect)frame;
 
 @end

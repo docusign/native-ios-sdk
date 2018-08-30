@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <DocuSignSDK/DocuSignSDK.h>
 #import "ProfileManager.h"
 
 
@@ -43,6 +44,14 @@ static NSString * tabKey_damageDate = @"Text 2407d40f-8711-4457-a217-26b743ea886
 static NSString * tabKey_damageType = @"Text 6e9f67ac-5e76-4a39-9b2f-f0777f0e3c1b";
 static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f288439";
 
+// Momentum demo template
+static NSString * templateIdMomemtumDemo = @"606f0e95-a419-4280-86ac-234913037962";
+static NSString * tabLabelIdFullName = @"Text FullName";
+static NSString * tabLabelIdAddressLine1 = @"Text Address Line 1";
+static NSString * tabLabelIdAddressLine2 = @"Text Address Line 2";
+static NSString * tabLabelIdAddressLine3 = @"Text Address Line 3";
+static NSString * tabLabelIdClientNumber = @"Text Client Number";
+static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
 
 @implementation ProfileManager
 
@@ -77,10 +86,17 @@ static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f2
     return @{@"defaultUsername":defaultUsername, @"defaultPassword":defaultPassword};
 }
 
++ (BOOL)autoDownloadTemplates {
+    return NO;
+}
+
++ (BOOL)displayDeveloperNotes {
+    return NO;
+}
 
 + (NSDictionary *) getFakeClientInfo
 {
-    NSDictionary * fakeClientInfo = @{@"policyNum":@"A1-34287-03", @"firstName":@"Tom", @"lastName":@"Wood", @"address":@"726 Tennessee St", @"city":@"San Francisco", @"state":@"California", @"country":@"U.S.A.", @"zipCode":@"94107", @"phone":@"415-555-1234", @"email":@"tom.wood@digital.com", @"driversLicense":@"N2148870", @"licensePlate":@"6DZG261"};
+    NSDictionary * fakeClientInfo = @{@"policyNum":@"A1-34287-03", @"firstName":@"Tom", @"lastName":@"Wood", @"address":@"726 Tennessee St", @"city":@"San Francisco", @"state":@"California", @"country":@"U.S.A.", @"zipCode":@"94107", @"phone":@"415-555-1234", @"email":@"tom.wood@dsxtr.com", @"driversLicense":@"N2148870", @"licensePlate":@"6DZG261"};
     return fakeClientInfo;
 }
 
@@ -90,7 +106,6 @@ static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f2
     NSDictionary * fakeDamageInfo = @{@"damageType":@"Single Automobile Collision", @"damageDate":@"2017-04-14", @"damageEstimate":@"$12,000.00", @"damageComments":@"Driver lost control of the automobile, jumped the sidewalk and crashed into a tree. The incident occurred at dusk with a light rain falling. Poor visibility and wet pavement appear to have contributed to the incident."};
     return fakeDamageInfo;
 }
-
 
 + (id) sharedInstance
 {
@@ -186,9 +201,40 @@ static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f2
 
 
 /**
+ Returns NSArray of the recipient data that will be passed into the template
+ */
+- (NSArray *)getTemplateRecipientDataForId:(NSString *)templateId {
+    if (![templateId isEqualToString:templateIdMomemtumDemo]) {
+        return nil;
+    }
+    
+    /*Recipients can be defaulted using either RoleName or RecipientId.
+     Using RoleName:
+     recipientIPS1.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorTypeRecipientRoleName;
+     recipientIPS1.recipientRoleName = @"In Person Signer";
+     */
+    NSMutableArray *recipientDefaults = [NSMutableArray arrayWithCapacity:1];
+    
+    NSString *recipientIdIPS1 = @"18375691"; // IPS 1
+    
+    DSMRecipientDefault *recipientIPS1 = [[DSMRecipientDefault alloc] init];
+    recipientIPS1.recipientId = recipientIdIPS1;
+    recipientIPS1.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorTypeRecipientId;
+    recipientIPS1.recipientType = DSMRecipientTypeInPersonSigner;
+    recipientIPS1.inPersonSignerName = @"Tom Wood";
+    recipientIPS1.recipientName = @"docusignsdk user";
+    recipientIPS1.recipientEmail = @"docusignsdk.user@dsxtr.com";
+    
+    [recipientDefaults addObject:recipientIPS1];
+    
+    return [recipientDefaults copy];
+}
+
+
+/**
  Returns NSDictionary of the data that will be passed into the template
  */
-- (NSDictionary *) getTemplateTabData
+- (NSDictionary *) getTemplateTabDataForId:(NSString *)templateId
 {
     // gather client data
     NSString * client_full_name = [NSString stringWithFormat:@"%@ %@",
@@ -198,15 +244,51 @@ static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f2
     NSString * damageDate = [NSString stringWithFormat:@"%@",self.mDamageInfo[@"damageDate"]];
     NSString * damageType = [NSString stringWithFormat:@"%@",self.mDamageInfo[@"damageType"]];
     NSString * damageEstimate = [NSString stringWithFormat:@"%@",self.mDamageInfo[@"damageEstimate"]];
+    NSString * addressLine1 = [NSString stringWithFormat:@"%@",self.mClientInfo[@"address"]];
+    NSString * addressLine2 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"city"],self.mClientInfo[@"state"]];
+    NSString * addressLine3 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"country"], self.mClientInfo[@"zipCode"]];
+
+    if ([templateId isEqualToString:templateIdMomemtumDemo]) {
+        // map the client data to custom fields in the template
+        NSDictionary * tabData = @{tabLabelIdFullName:client_full_name,
+                                   tabLabelIdClientNumber:policyNum,
+                                   tabLabelIdAddressLine1:addressLine1,
+                                   tabLabelIdAddressLine2:addressLine2,
+                                   tabLabelIdAddressLine3:addressLine3,
+                                   tabLabelIdInvestmentAmount:damageEstimate
+                                   };
+        return tabData;
+    } else {
+        // map the client data to custom fields in the template
+        NSDictionary * tabData = @{tabKey_name:client_full_name,
+                                   tabKey_policyNum:policyNum,
+                                   tabKey_damageDate:damageDate,
+                                   tabKey_damageType:damageType,
+                                   tabKey_damageEstimate:damageEstimate
+                                   };
+        return tabData;
+    }
+}
+
+/**
+ Returns CustomFields that will be passed into the template
+ */
+- (DSMCustomFields *)getCustomFieldsDataForTemplateId:(NSString *)templateId {
+    if (![templateId isEqualToString:templateIdMomemtumDemo]) {
+        return nil;
+    }
     
-    // map the client data to custom fields in the template
-    NSDictionary * tabData = @{tabKey_name:client_full_name,
-                               tabKey_policyNum:policyNum,
-                               tabKey_damageDate:damageDate,
-                               tabKey_damageType:damageType,
-                               tabKey_damageEstimate:damageEstimate
-                               };
-    return tabData;
+    //Create Text CustomField
+    DSMTextCustomField *textCustomField = [[DSMTextCustomField alloc]init];
+    textCustomField.name = @"Investor";
+    textCustomField.value = @"Tom Wood";
+    textCustomField.show = YES;
+    
+    //Link to CustomFields
+    DSMCustomFields *customFields = [[DSMCustomFields alloc] init];
+    customFields.textCustomFields = [NSSet setWithObject:textCustomField];
+    
+    return customFields;
 }
 
 

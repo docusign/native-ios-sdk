@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class DSMEditor, DSMAgent, DSMInPersonSigner, DSMSigner, DSMCarbonCopy, DSMCertifiedDelivery, DSMIntermediary;
+@class DSMEditor, DSMAgent, DSMInPersonSigner, DSMSigner, DSMCarbonCopy, DSMCertifiedDelivery, DSMIntermediary, DSMRecipient;
 /*!
  @class DSMRecipients
  */
@@ -85,5 +85,38 @@
  * @return BOOL
  */
 - (BOOL)allRecipientsHaveCompletedOrDeclined;
+/*!
+ * @discussion Return a recipient with given recipient Id.
+ */
+- (DSMRecipient *)recipientWithId:(NSString *)recipientId;
+/*!
+ * @discussion Return a recipient with given recipient RoleName.
+ */
+- (DSMRecipient *)recipientWithRoleName:(NSString *)recipientRoleName;
+
+/*!
+ * @discussion Removes a recipient from corresponding recipients array.
+ */
+- (void)removeRecipient:(DSMRecipient *)recipient;
+
+#pragma mark - Recipient Switching (Native)
+/*!
+ * @discussion return a signer created from inPersonSigner object data.
+ * @param inPersonSigner in person signer object
+ * @param name name of remote signer
+ * @param email email of remote signer
+ * @see DSMSigner.h DSMInPersonSigner.h
+ */
+- (void)signerFromInPersonSigner:(DSMInPersonSigner *)inPersonSigner name:(NSString *)name email:(NSString *)email;
+/*!
+ * @discussion return an inPersonSigner created from signer object data.
+ * @param signer signer object
+ * @param hostName name of host for in person signer
+ * @param hostEmail email of host for in person signer
+ * @param signerName name of in person signer
+ * @param signerEmail email of in person signer
+ * @see DSMSigner.h DSMInPersonSigner.h
+ */
+- (void)inPersonSignerFromSigner:(DSMSigner *)signer hostName:(NSString *)hostName hostEmail:(NSString *)hostEmail signerName:(NSString *)signerName signerEmail:(NSString *)signerEmail;
 
 @end

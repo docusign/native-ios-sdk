@@ -171,43 +171,35 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func promptUseOfflineFlow()
     {
-        let title = "Developer's Notes";
-        let message = "Would you like to proceed with the offline or online signing flow?";
-        let offlineAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        // offline
-        offlineAlert.addAction(UIAlertAction(title: "Offline", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
-            NSLog("Use Offline");
-            ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: true);
-            
-            // check if template is cached
-            let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId();
-            if (TemplatesManager.sharedInstance.templateIsCachedWithId(templateId: templateId))
-            {
-                // segue to attachment screen
-                self.performSegue(withIdentifier: "segueAgreementsAttachment", sender: self)
-            }
-            else
-            {
-                // template needs to be downloaded
-                self.displayErrorPrompt(errMsg: "Template must be cached on device before proceeding with offline flow.");
-            }
-        }))
+        let defaultToOffline = true;
+        if !ProfileManager.Static.displayDeveloperNotes && defaultToOffline {
+            self.performOfflineSigning();
+        } else {
+            let title = "Developer's Notes";
+            let message = "Would you like to proceed with the offline or online signing flow?";
+            let offlineAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
 
-        // online
-        offlineAlert.addAction(UIAlertAction(title: "Online", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
-            NSLog("Use Online");
-            ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: false);
-            
-            // segue to docusign screen
-            self.performSegue(withIdentifier: "segueAgreementsDocusign", sender: self)
+            // offline
+            offlineAlert.addAction(UIAlertAction(title: "Offline", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
+                NSLog("Use Offline");
+                self.performOfflineSigning();
+            }))
 
-        }));
+            // online
+            offlineAlert.addAction(UIAlertAction(title: "Online", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
+                NSLog("Use Online");
+                ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: false);
+                
+                // segue to docusign screen
+                self.performSegue(withIdentifier: "segueAgreementsDocusign", sender: self)
 
-        // cancel
-        offlineAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+            }));
 
-        self.present(offlineAlert, animated: true, completion: nil)
+            // cancel
+            offlineAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+
+            self.present(offlineAlert, animated: true, completion: nil)
+        }
     }
     
     
@@ -218,6 +210,23 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alert, animated: true, completion: nil)
     }
 
+    
+    private func performOfflineSigning() {
+        ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: true);
+        
+        // check if template is cached
+        let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId();
+        if (TemplatesManager.sharedInstance.templateIsCachedWithId(templateId: templateId))
+        {
+            // segue to attachment screen
+            self.performSegue(withIdentifier: "segueAgreementsAttachment", sender: self)
+        }
+        else
+        {
+            // template needs to be downloaded
+            self.displayErrorPrompt(errMsg: "Template must be cached on device before proceeding with offline flow.");
+        }
+    }
     
     private func styleUIElements()
     {

@@ -26,13 +26,14 @@ class DocuSignViewController: UIViewController
         DSMAppearance.setBarButtonItemsTintColor(UIColor.white);
 
         let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId();
-        let tabData: Dictionary = ProfileManager.sharedInstance.getTemplateTabData();
+        let tabData: Dictionary = ProfileManager.sharedInstance.getTemplateTabData(templateId:templateId);
+        let recipientData: Array = ProfileManager.sharedInstance.getTemplateRecipientData(templateId:templateId);
         let onlineSign: Bool = !ProfileManager.sharedInstance.getUseOfflineFlow();
         let attachmentUrl: URL? = ProfileManager.sharedInstance.getAttachmentUrl();
-
+        let customFields = ProfileManager.sharedInstance.getCustomFieldsData(templateId:templateId)
 
         // display template via sdk
-        TemplatesManager.sharedInstance.displayTemplateForSignature(templateId: templateId, controller: self, tabData: tabData, onlineSign: onlineSign, attachmentUrl: attachmentUrl)
+        TemplatesManager.sharedInstance.displayTemplateForSignature(templateId: templateId, controller: self, tabData: tabData, recipientData: recipientData, customFields:customFields, onlineSign: onlineSign, attachmentUrl: attachmentUrl)
         { (errMsg) in
             
             // return to client screen

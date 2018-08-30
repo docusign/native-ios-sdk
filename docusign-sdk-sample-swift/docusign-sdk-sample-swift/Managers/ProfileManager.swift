@@ -60,6 +60,36 @@ class ProfileManager
                                                                  "clientNumber":"FA-45231-005",
                                                                  "investmentAmount":"$25,000.00"
         ];
+        
+        // Momentum demo template
+        static let templateIdMomemtumDemo = "606f0e95-a419-4280-86ac-234913037962";
+        static let tabLabelIdFullName = "Text FullName";
+        static let tabLabelIdAddressLine1 = "Text Address Line 1";
+        static let tabLabelIdAddressLine2 = "Text Address Line 2";
+        static let tabLabelIdAddressLine3 = "Text Address Line 3";
+        static let tabLabelIdClientNumber = "Text Client Number";
+        static let tabLabelIdInvestmentAmount = "Text Investment Amount";
+
+        // Momentum demo template - WireTransfer
+        static let templateIdMomemtumDemoWireTransfer = "ff088ecf-5d8b-42c5-9160-569f26beb3a2";
+        static let tabLabelIdOwnerFullName = "Text OwnerFullName";
+        static let tabLabelIdOwnerEmailAddress = "Text EmailAddress";
+        static let tabLabelIdTransferAmount = "Text Amount";
+        static let tabLabelIdCurrency = "Text Currency";
+        static let tabLabelIdRoutingNumber = "Text RoutingNumber";
+        static let tabLabelIdBankName = "Text BankName";
+        static let tabLabelIdAccountNumber = "Text AccountNumber";
+        static let tabLabelIdAdditionalDetails = "Text AdditionalDetails";
+        static let tabLabelIdNameOfWireRecipient = "Text NameOfWireRecipient";
+        static let tabLabelIdAddressOfWireRecipient = "Text AddressOfWireRecipient";
+        static let tabLabelIdSWIFTCode = "Text SWIFTCode";
+        static let tabLabelIdCountry = "Text Country";
+        static let tabLabelIdSourceRoutingNumber = "Text SourceRoutingNumber";
+        static let tabLabelIdSourceAccountNumber = "Text SourceAccountNumber";
+        static let tabLabelIdSenderFullName = "Text SenderFullName";
+        
+        static let autoDownloadTemplates = true;
+        static let displayDeveloperNotes = false;
     }
 
     
@@ -157,17 +187,90 @@ class ProfileManager
     /**
      Returns Dictionary of the data that will be passed into the template
      */
-    func getTemplateTabData() -> Dictionary<String,String>
+    func getTemplateTabData(templateId:String) -> Dictionary<String,String>
     {
         var tabData = Dictionary<String, String>();
-        tabData[ProfileManager.Static.tabKey_name] = self.getClientName();
-        tabData[ProfileManager.Static.tabKey_address1] = self.clientData["address"];
-        tabData[ProfileManager.Static.tabKey_address2] = self.clientData["city"]! + ", " + self.clientData["state"]!;
-        tabData[ProfileManager.Static.tabKey_address3] = self.clientData["country"]! + " " + self.clientData["zipCode"]!;
-        tabData[ProfileManager.Static.tabKey_clientNumber] = self.clientData["clientNumber"];
-        tabData[ProfileManager.Static.tabKey_investmentAmount] = self.clientData["investmentAmount"];
-
+        if templateId == ProfileManager.Static.templateIdMomemtumDemo {
+            tabData[ProfileManager.Static.tabLabelIdFullName] = self.getClientName();
+            tabData[ProfileManager.Static.tabLabelIdAddressLine1] = self.clientData["address"];
+            tabData[ProfileManager.Static.tabLabelIdAddressLine2] = self.clientData["city"]! + ", " + self.clientData["state"]!;
+            tabData[ProfileManager.Static.tabLabelIdAddressLine3] = self.clientData["country"]! + " " + self.clientData["zipCode"]!;
+            tabData[ProfileManager.Static.tabLabelIdClientNumber] = self.clientData["clientNumber"];
+            tabData[ProfileManager.Static.tabLabelIdInvestmentAmount] = self.clientData["investmentAmount"];
+        } else if templateId == ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
+            // 1
+            tabData[ProfileManager.Static.tabLabelIdOwnerFullName] = self.getClientName();
+            tabData[ProfileManager.Static.tabLabelIdOwnerEmailAddress] = "tom.wood@dsxtr.com";
+            // 2
+            tabData[ProfileManager.Static.tabLabelIdTransferAmount] = self.clientData["investmentAmount"];
+            tabData[ProfileManager.Static.tabLabelIdCurrency] = "USD"
+            // 3
+            tabData[ProfileManager.Static.tabLabelIdRoutingNumber] = "121000358";
+            tabData[ProfileManager.Static.tabLabelIdBankName] = "Bank of Andromeda";
+            tabData[ProfileManager.Static.tabLabelIdAccountNumber] = "AFK-786650001-0X";
+            tabData[ProfileManager.Static.tabLabelIdAdditionalDetails] = "Initial investment amount, September 2018";
+            tabData[ProfileManager.Static.tabLabelIdNameOfWireRecipient] = "TGK Capital Financial, LLC.";
+            tabData[ProfileManager.Static.tabLabelIdAddressOfWireRecipient] = self.clientData["address"]! + ", " + self.clientData["city"]! + ", " + self.clientData["state"]! + ", " + self.clientData["country"]! + " " + self.clientData["zipCode"]!;
+            tabData[ProfileManager.Static.tabLabelIdSWIFTCode] = "BOAAUS3N";
+            tabData[ProfileManager.Static.tabLabelIdCountry] = self.clientData["country"];
+            // 4
+            tabData[ProfileManager.Static.tabLabelIdSourceRoutingNumber] = "121000358";
+            tabData[ProfileManager.Static.tabLabelIdSourceAccountNumber] = "AFK-650001788-0X";
+            // 5
+            tabData[ProfileManager.Static.tabLabelIdSenderFullName] = self.getClientName();
+        } else {
+            tabData[ProfileManager.Static.tabKey_name] = self.getClientName();
+            tabData[ProfileManager.Static.tabKey_address1] = self.clientData["address"];
+            tabData[ProfileManager.Static.tabKey_address2] = self.clientData["city"]! + ", " + self.clientData["state"]!;
+            tabData[ProfileManager.Static.tabKey_address3] = self.clientData["country"]! + " " + self.clientData["zipCode"]!;
+            tabData[ProfileManager.Static.tabKey_clientNumber] = self.clientData["clientNumber"];
+            tabData[ProfileManager.Static.tabKey_investmentAmount] = self.clientData["investmentAmount"];
+        }
         return tabData;
+    }
+
+    /**
+     Returns Array of the recipient data that will be passed into the template
+     */
+    func getTemplateRecipientData(templateId:String) -> Array<DSMRecipientDefault>
+    {
+        if templateId != ProfileManager.Static.templateIdMomemtumDemo && templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
+            return [];
+        }
+        
+        /*Recipients can be defaulted using either RoleName or RecipientId.
+         Using RoleName:
+            recipientDatum.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorType.recipientRoleName
+            recipientDatum.recipientRoleName = "In Person Signer"
+        */
+        let recipientDatum = DSMRecipientDefault.init();
+        recipientDatum.recipientId = "18375691";
+        recipientDatum.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorType.recipientId
+        recipientDatum.recipientType = DSMRecipientType.inPersonSigner;
+        recipientDatum.inPersonSignerName = "Tom Wood";
+        recipientDatum.recipientName = "docusignsdk user";
+        recipientDatum.recipientEmail = "docusignsdk.user@dsxtr.com";
+        return [recipientDatum];
+    }
+    
+    /**
+     Returns CustomFields that will be passed into the template
+     */
+    func getCustomFieldsData(templateId:String) -> DSMCustomFields? {
+        if templateId != ProfileManager.Static.templateIdMomemtumDemo && templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
+            return nil;
+        }
+        
+        //Create Text CustomField
+        let textCustomField = DSMTextCustomField()
+        textCustomField.name = "Investor"
+        textCustomField.value = "Tom Wood"
+        textCustomField.show = true
+        
+        //Link to CustomFields
+        let customFields = DSMCustomFields()
+        customFields.textCustomFields = [textCustomField]
+        return customFields
     }
 
 }
