@@ -6,9 +6,9 @@
 * Supports Radio Tabs with offline Signing.
 * Recipients can be defaulted and switched from an InPersonSigner type to a RemoteSigner type and ViceVersa before initiating the offline signing ceremony with `DSMRecipientDefault`.
 * Tab value defaulting for text based tabs for offline signing through `tabValueDefaults` .
-* Account level Envelope Custom Fields can be passed is supported and can be passed with `DSMCustomFields` through `DSMEnvelopeDefaults`. 
-* Setup configuration updated to hide alerts that are shown during offline signing. The Setup Constants can be found in `DSMSetupConstants` .
-* Support for Date Signed Formula Fields.
+* Account level Envelope Custom Fields are now supported and can be created with `DSMCustomFields` through `DSMEnvelopeDefaults`. 
+* Setup configuration updated to hide alerts that are shown during offline signing. The Setup constants can be found in `DSMSetupConstants` .
+* Supports Formula Fields in offline signing that are only based on Date Signed Tabs.
 * Enhanced Signature Pad to capture signatures.
 
 ### Fixed 
