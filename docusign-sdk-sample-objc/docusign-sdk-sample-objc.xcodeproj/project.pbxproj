@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41DDA5B320C73F3D00191AF2 /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C904902E1F2A49B400EAD899 /* AttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C904902D1F2A49B400EAD899 /* AttachmentViewController.m */; };
 		C90C9E6F1F422EBE00163557 /* AccidentChecklist.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C90C9E6E1F422EBE00163557 /* AccidentChecklist.pdf */; };
 		C9110DC41F13D3850009D3B5 /* ProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9110DC31F13D3850009D3B5 /* ProfileManager.m */; };
 		C92471411F1D2C630019A899 /* DownloadTemplateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92471401F1D2C630019A899 /* DownloadTemplateCell.m */; };
 		C924716B1F1D3CCD0019A899 /* DownloadTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */; };
-		C92832FE1F0EB91D009C5DBA /* DocuSignSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */; };
-		C92832FF1F0EB91D009C5DBA /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C92833021F0EB953009C5DBA /* DocuSignSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */; };
 		C92833081F0EC4AA009C5DBA /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C92833071F0EC4AA009C5DBA /* beach.jpg */; };
 		C92833151F0EC80C009C5DBA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C928330A1F0EC80C009C5DBA /* LICENSE.txt */; };
@@ -54,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C92832FF1F0EB91D009C5DBA /* DocuSignSDK.framework in Embed Frameworks */,
+				41DDA5B320C73F3D00191AF2 /* DocuSignSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc.release.xcconfig"; sourceTree = "<group>"; };
+		41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
 		7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-docusign-sdk-sample-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C904902C1F2A49B400EAD899 /* AttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentViewController.h; sourceTree = "<group>"; };
 		C904902D1F2A49B400EAD899 /* AttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentViewController.m; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		C924713F1F1D2C630019A899 /* DownloadTemplateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTemplateCell.h; sourceTree = "<group>"; };
 		C92471401F1D2C630019A899 /* DownloadTemplateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTemplateCell.m; sourceTree = "<group>"; };
 		C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTemplateCell.xib; sourceTree = "<group>"; };
-		C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
 		C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DocuSignSDK.bundle; path = DocuSignSDK.framework/DocuSignSDK.bundle; sourceTree = "<group>"; };
 		C92833071F0EC4AA009C5DBA /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
 		C928330A1F0EC80C009C5DBA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92832FE1F0EB91D009C5DBA /* DocuSignSDK.framework in Frameworks */,
 				E83868C0DB56F968BA49877A /* libPods-docusign-sdk-sample-objc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,8 +207,8 @@
 		C95F1C3E1F0E936E00612CDC = {
 			isa = PBXGroup;
 			children = (
+				41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */,
 				C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */,
-				C92832F91F0E9579009C5DBA /* DocuSignSDK.framework */,
 				C95F1C491F0E936E00612CDC /* docusign-sdk-sample-objc */,
 				C95F1C481F0E936E00612CDC /* Products */,
 				F5CAEE1DD29C8E0C267ACB0D /* Pods */,
@@ -319,6 +317,7 @@
 				TargetAttributes = {
 					C95F1C461F0E936E00612CDC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RR65JMWDP3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -383,7 +382,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */ = {
@@ -570,7 +569,7 @@
 			baseConfigurationReference = E35ECD273256C0DCB098DCDF /* Pods-docusign-sdk-sample-objc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RR65JMWDP3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +589,7 @@
 			baseConfigurationReference = 0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RR65JMWDP3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

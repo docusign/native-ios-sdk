@@ -108,6 +108,7 @@
 "Documents.HostName" = "호스트 이름";
 "Documents.HostEmail" = "호스트 이메일";
 "BuildEnvelope.EditSigner" = "서명인 편집";
+"BuildEnvelope.SwitchSigner" = "서명인 전환";
 "BuildEnvelope.DeleteSigner" = "서명인 삭제";
 "BuildEnvelope.AddSigner" = "서명인 추가";
 "Recipients.AddRecipient" = "받는 사람 추가";
@@ -131,7 +132,7 @@
 "Documents.Host" = "호스트";
 "Templates.DuplicateSignersOffline.Error" = "오프라인에서는 서명인을 반복할 수 없습니다.";
 "General.NoInternetConnection" = "인터넷에 연결 안 됨";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "오프라인 서명은 계정에 대해 사용할 수 없습니다.";
 "Templates.SendingTemplate" = "템플릿 전송 중…";
 "Templates.ErrorIncomplete" = "템플릿 불완전";
 "Templates.ErrorAllRecipientsMustBeComplete" = "템플릿을 전송하려면 모든 수신인이 완료해야 합니다.";

@@ -108,6 +108,7 @@
 "Documents.HostName" = "Name des Ausrichters";
 "Documents.HostEmail" = "E-Mail-Adresse des Ausrichters";
 "BuildEnvelope.EditSigner" = "Unterzeichner bearbeiten";
+"BuildEnvelope.SwitchSigner" = "Unterzeichner wechseln";
 "BuildEnvelope.DeleteSigner" = "Unterzeichner löschen";
 "BuildEnvelope.AddSigner" = "Unterzeichner hinzufügen";
 "Recipients.AddRecipient" = "Empfänger hinzufügen";
@@ -131,7 +132,7 @@
 "Documents.Host" = "Ausrichter";
 "Templates.DuplicateSignersOffline.Error" = "Unterzeichner dürfen für Offlinemodus nicht wiederholt werden.";
 "General.NoInternetConnection" = "Keine Internetverbindung";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "Kein Offline-Signieren für Konto verfügbar.";
 "Templates.SendingTemplate" = "Vorlage wird gesendet ...";
 "Templates.ErrorIncomplete" = "Unvollständige Vorlage";
 "Templates.ErrorAllRecipientsMustBeComplete" = "Alle Empfänger müssen vollständig angegeben werden, bevor die Vorlage gesendet werden kann.";

@@ -26,6 +26,6 @@
 // remove the cached template with id
 - (void) removeTemplateWithId:(NSString *)templateId;
 
-- (void) displayTemplateForSignature:(NSString *)templateId forController:(UIViewController *)controller withTabs:(id)tabs useOfflineFlow:(BOOL)useOffline withAttachmentAtPath:(NSString *)attachmentPath withCompletion:(void(^)(UIViewController *viewController, NSError *error))completionHandler;
+- (void) displayTemplateForSignature:(NSString *)templateId forController:(UIViewController *)controller withTabs:(id)tabs withRecipients:(id)recipients withCustomFields:(DSMCustomFields *)customFields useOfflineFlow:(BOOL)useOffline withAttachmentAtPath:(NSString *)attachmentPath withCompletion:(void(^)(UIViewController *viewController, NSError *error))completionHandler;
 
 @end

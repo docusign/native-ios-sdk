@@ -91,7 +91,7 @@
 
 
 - (void) displayTemplateForSignature:(NSString *)templateId forController:(UIViewController *)controller
-                            withTabs:(id)tabs useOfflineFlow:(BOOL)useOffline withAttachmentAtPath:(NSString *)attachmentPath withCompletion:(void(^)(UIViewController *viewController, NSError *error))completionHandler
+                            withTabs:(id)tabs withRecipients:(id)recipients withCustomFields:(DSMCustomFields *)customFields useOfflineFlow:(BOOL)useOffline withAttachmentAtPath:(NSString *)attachmentPath withCompletion:(void(^)(UIViewController *viewController, NSError *error))completionHandler
 {
     // if an attachment was included, load PDF as NSData
     NSData * attachmentData = nil;
@@ -100,9 +100,21 @@
         attachmentData = [[NSFileManager defaultManager] contentsAtPath:attachmentPath];
     }
     
-    [self.mDSMTemplatesManager presentSendTemplateControllerWithTemplateWithId:templateId tabValueDefaults:tabs pdfToInsert:attachmentData insertAtPosition:DSMDocumentInsertAtPositionBeginning signingMode:(!useOffline) ? DSMSigningModeOnline :DSMSigningModeOffline presentingController:controller animated:YES completion:completionHandler];
+    DSMEnvelopeDefaults *envelopeDefauts = [[DSMEnvelopeDefaults alloc] init];
+    envelopeDefauts.recipientDefaults = recipients;
+    envelopeDefauts.tabValueDefaults = tabs;
+    envelopeDefauts.customFields = customFields;
+    
+    [self.mDSMTemplatesManager
+     presentSendTemplateControllerWithTemplateWithId:templateId
+     envelopeDefaults:envelopeDefauts
+     pdfToInsert:attachmentData
+     insertAtPosition:DSMDocumentInsertAtPositionEnd
+     signingMode:(!useOffline) ? DSMSigningModeOnline :DSMSigningModeOffline
+     presentingController:controller
+     animated:YES
+     completion:completionHandler];
 }
-
 
 @end
 

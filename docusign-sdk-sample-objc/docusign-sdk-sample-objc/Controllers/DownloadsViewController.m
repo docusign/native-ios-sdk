@@ -12,7 +12,7 @@
 #import "DownloadTemplateCell.h"
 #import "ProgressHUD.h"
 #import "TemplatesManager.h"
-
+#import "ProfileManager.h"
 
 @interface DownloadsViewController ()
 
@@ -147,6 +147,16 @@ static NSString *tableCellId = @"downloadTemplateCell";
         
         // store template defitions
         self.mTemplateList = templates;
+        
+        if ([ProfileManager autoDownloadTemplates]) {
+            for (DSMEnvelopeTemplateDefinition *template in templates) {
+                [self.mTemplatesManager cacheTemplateWithId:template.templateId withCompletion:^(NSString * errorMsg) {
+                    if (errorMsg == nil) {
+                        [self.tableView reloadData];
+                    }
+                }];
+            }
+        }
         
         // refresh table view
         [self.tableView reloadData];

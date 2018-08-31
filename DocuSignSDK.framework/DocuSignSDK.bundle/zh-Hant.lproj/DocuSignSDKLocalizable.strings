@@ -108,6 +108,7 @@
 "Documents.HostName" = "主控姓名";
 "Documents.HostEmail" = "主控電子郵件";
 "BuildEnvelope.EditSigner" = "編輯簽署人";
+"BuildEnvelope.SwitchSigner" = "切換簽署人";
 "BuildEnvelope.DeleteSigner" = "刪除簽署人";
 "BuildEnvelope.AddSigner" = "新增簽署人";
 "Recipients.AddRecipient" = "新增收件人";
@@ -131,7 +132,7 @@
 "Documents.Host" = "主控";
 "Templates.DuplicateSignersOffline.Error" = "您不能在離線狀態下重複簽署人。";
 "General.NoInternetConnection" = "無網際網路連線";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "此帳戶無法使用離線簽署功能。";
 "Templates.SendingTemplate" = "正在傳送範本…";
 "Templates.ErrorIncomplete" = "範本不完整";
 "Templates.ErrorAllRecipientsMustBeComplete" = "必須完成所有收件人，才能傳送範本。";

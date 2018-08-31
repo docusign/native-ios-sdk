@@ -9,6 +9,8 @@
 @class DSMFullName;
 @class DSMText;
 @class DSMCompany;
+@class DSMRadioGroup;
+@class DSMFormula;
 
 /*!
  @class DSMTabs
@@ -50,7 +52,14 @@
  * @see DSMCheckbox.h
  */
 @property(nonatomic, copy) NSArray<DSMCheckbox *> *checkboxTabs;
-
+/*! @brief An array containing radiogroup tabs. [optional]
+ * @see DSMRadioGroup.h
+ */
+@property(nonatomic, copy) NSArray<DSMRadioGroup *> *radioGroupTabs;
+/*! @brief An array containing Formula tabs. [optional]
+ * @see DSMFormula.h
+ */
+@property(nonatomic, copy) NSArray<DSMFormula *> *formulaTabs;
 /*!
  @method allTabs
  @abstract Return a set containing all tabs.

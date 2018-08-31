@@ -23,9 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        
         // initialize DS sdk manager
-        DSMManager.setup();
+        var configuration = DSMManager.defaultConfigurations()!;
+        // hide offline signing alerts
+        configuration[DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY] = DSM_SETUP_TRUE_VALUE;
+        //configuration[DSM_SETUP_DISABLE_CONTACTS_USAGE_KEY] = DSM_SETUP_TRUE_VALUE;
+
+        // initialize DS sdk manager
+        DSMManager.setup(withConfiguration: configuration);
 
         return true
     }

@@ -108,6 +108,7 @@
 "Documents.HostName" = "Имя инициатора/руководителя";
 "Documents.HostEmail" = "Адрес электронной почты инициатора/руководителя";
 "BuildEnvelope.EditSigner" = "Изменить подписанта";
+"BuildEnvelope.SwitchSigner" = "Сменить подписанта";
 "BuildEnvelope.DeleteSigner" = "Удалить подписанта";
 "BuildEnvelope.AddSigner" = "Добавить подписанта";
 "Recipients.AddRecipient" = "Добавить получателя";
@@ -131,7 +132,7 @@
 "Documents.Host" = "Инициатор/Руководитель";
 "Templates.DuplicateSignersOffline.Error" = "Невозможно поставить вторую подпись в автономном режиме.";
 "General.NoInternetConnection" = "Отсутствует подключение к Интернету";
-"General.OfflineSigningUnavailable" = "Offline Signing is unavailable for account.";
+"General.OfflineSigningUnavailable" = "Автономное подписание недоступно для этой учетной записи.";
 "Templates.SendingTemplate" = "Отправка шаблона…";
 "Templates.ErrorIncomplete" = "Работа с шаблоном завершена";
 "Templates.ErrorAllRecipientsMustBeComplete" = "Перед отправкой шаблона необходимо завершить работу со всеми получателями.";

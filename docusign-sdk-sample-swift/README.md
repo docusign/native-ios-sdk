@@ -1,2 +1,2 @@
 # docusign-sdk-sample-swift
-DocuSign iOS SDK 2.0 - Sample App in Swift
+DocuSign iOS SDK 1.2 - Sample App in Swift
