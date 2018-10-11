@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGX-Ov-DEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="851.42428785607206"/>
+            <point key="canvasLocation" x="2840.8000000000002" y="851.23152709359613"/>
         </scene>
         <!--Overview View Controller-->
         <scene sceneID="Loy-C7-1Jj">
@@ -413,24 +413,37 @@
                                         <rect key="frame" x="0.0" y="286" width="359" height="270"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="TGK Portfolios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-Tj-Yir">
-                                                <rect key="frame" x="131" y="7.9999999999999982" width="96" height="19.333333333333329"/>
+                                                <rect key="frame" x="131" y="33" width="96" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                 <color key="textColor" red="0.18039215689999999" green="0.42745098040000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphs" translatesAutoresizingMaskIntoConstraints="NO" id="nC3-sg-EHj">
-                                                <rect key="frame" x="16" y="35.3333333333333" width="327" height="214.66666666666663"/>
+                                                <rect key="frame" x="16" y="-2.6666666666666856" width="327" height="420"/>
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTN-ud-i4f">
+                                                <rect key="frame" x="85.666666666666686" y="0.0" width="187" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.15294117647058825" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                                <state key="normal" title="Create New Agreement">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCreateNewAgreementTapped:" destination="i0o-Rd-YLM" eventType="touchUpInside" id="0B0-fc-Qbq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="nC3-sg-EHj" secondAttribute="bottom" constant="12" id="2jm-Rf-HTr"/>
                                             <constraint firstItem="nC3-sg-EHj" firstAttribute="leading" secondItem="JaV-jP-kqi" secondAttribute="leadingMargin" constant="8" id="6Cl-Hb-P70"/>
                                             <constraint firstItem="nFw-Tj-Yir" firstAttribute="centerX" secondItem="JaV-jP-kqi" secondAttribute="centerX" id="BRO-ii-O4s"/>
-                                            <constraint firstItem="nFw-Tj-Yir" firstAttribute="top" secondItem="JaV-jP-kqi" secondAttribute="topMargin" id="bkN-8f-hDA"/>
-                                            <constraint firstItem="nC3-sg-EHj" firstAttribute="top" secondItem="nFw-Tj-Yir" secondAttribute="bottom" constant="8.5" id="l47-fJ-RC5"/>
+                                            <constraint firstItem="zTN-ud-i4f" firstAttribute="top" secondItem="JaV-jP-kqi" secondAttribute="top" id="V6o-pL-zA2"/>
+                                            <constraint firstItem="nFw-Tj-Yir" firstAttribute="top" secondItem="zTN-ud-i4f" secondAttribute="bottom" constant="3" id="aYi-Xp-ox9"/>
+                                            <constraint firstItem="nC3-sg-EHj" firstAttribute="top" secondItem="nFw-Tj-Yir" secondAttribute="bottom" constant="-55" id="l47-fJ-RC5"/>
                                             <constraint firstItem="nC3-sg-EHj" firstAttribute="trailing" secondItem="JaV-jP-kqi" secondAttribute="trailingMargin" constant="-8" id="rv1-BD-4DT"/>
+                                            <constraint firstItem="zTN-ud-i4f" firstAttribute="centerX" secondItem="JaV-jP-kqi" secondAttribute="centerX" id="tU4-E6-6gv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -452,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHz-Ih-L3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816.8000000000002" y="135.38230884557723"/>
+            <point key="canvasLocation" x="2816.8000000000002" y="135.22167487684729"/>
         </scene>
         <!--Client View Controller-->
         <scene sceneID="qhk-NW-le2">

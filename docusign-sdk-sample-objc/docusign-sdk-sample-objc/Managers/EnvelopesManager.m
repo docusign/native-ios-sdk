@@ -65,5 +65,10 @@
     [self.mDSMEnvelopesManager removeCachedEnvelopeWithId:envelopeId];
 }
 
+// present compose envelope view controller
+- (void) presentComposeEnvelopeViewControllerWithPresentingController:(UIViewController *)controller signingMode:(DSMSigningMode)signingMode {
+    // you can use method hasCachedDraftEnvelope to determine whether you'd like to resume a draft or not
+    [self.mDSMEnvelopesManager presentComposeEnvelopeControllerWithPresentingController:controller signingMode:signingMode resumeWithDraft:YES animated:YES completion:nil];
+}
 
 @end

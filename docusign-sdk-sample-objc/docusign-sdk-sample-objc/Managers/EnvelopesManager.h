@@ -25,4 +25,7 @@
 // remove cached envelope by id
 - (void) removeCachedEnvelopeById:(NSString *)envelopeId;
 
+// present compose envelope view controller
+- (void) presentComposeEnvelopeViewControllerWithPresentingController:(UIViewController *)controller signingMode:(DSMSigningMode)signingMode;
+
 @end
