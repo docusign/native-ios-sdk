@@ -42,4 +42,10 @@ class EnvelopesManager
         self.mDSMEnvelopesManager?.syncEnvelopes();
     }
     
+    func presentComposeEnvelopeViewController(_ presentingController:UIViewController, _ signingMode:DSMSigningMode) -> Void
+    {
+        // you can use method hasCachedDraftEnvelope() to determine whether you'd like to resume a draft or not
+        self.mDSMEnvelopesManager?.presentComposeEnvelopeController(withPresenting:presentingController, signingMode:signingMode, resumeWithDraft: true, animated: true, completion: nil)
+    }
+    
 }

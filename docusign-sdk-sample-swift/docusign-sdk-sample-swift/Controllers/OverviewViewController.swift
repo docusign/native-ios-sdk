@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import DocuSignSDK
 
 class OverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
@@ -32,6 +32,19 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
     }
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.lockPortraitOrientation = false;
+    }
+
+    // MARK: actions
+    @IBAction func onCreateNewAgreementTapped(_ sender: Any)
+    {
+        self.promptDevAction(composeEnvelopeHandler: presentComposeEnvelope)
+    }
     
     // MARK: TableView Methods
 
@@ -96,4 +109,39 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             self.performSegue(withIdentifier: "segueOverviewClient", sender: self)
         }
     }
+    
+    // MARK: private methods
+    private func promptDevAction(composeEnvelopeHandler handler: @escaping (_ signingMode: DSMSigningMode) -> Void)
+    {
+        let title = "Developer's Notes";
+        let message = "You can either compose an envelope in online or offline mode. You would need to check for network connectivity and present the appropriate view controller.";
+        let agreementAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add Ok action
+        agreementAlert.addAction(UIAlertAction(title: "Online Envelope", style: .default, handler: { (action) in
+            handler(.online)
+        }));
+        
+        agreementAlert.addAction(UIAlertAction(title: "Offline Envelope", style: .default, handler: { (action) in
+            handler(.offline)
+        }));
+        agreementAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil));
+        self.present(agreementAlert, animated: true, completion: nil)
+    }
+    
+    private func presentComposeEnvelope(_ signingMode: DSMSigningMode) -> Void
+    {
+        if #available(iOS 11.0, *) {
+            EnvelopesManager.sharedInstance.presentComposeEnvelopeViewController(self, signingMode)
+        } else {
+            let alertController = UIAlertController(title: "iCloud Entitlement required", message: "For iOS 10 and below, iCloud entitlements must be added and DSM_SETUP_ICLOUD_DOCUMENT_ENABLED set to true for document picker usage.", preferredStyle: .actionSheet)
+            
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                EnvelopesManager.sharedInstance.presentComposeEnvelopeViewController(self, signingMode)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
 }

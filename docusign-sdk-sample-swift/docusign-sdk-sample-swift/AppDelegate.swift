@@ -27,6 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         var configuration = DSMManager.defaultConfigurations()!;
         // hide offline signing alerts
         configuration[DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY] = DSM_SETUP_TRUE_VALUE;
+        
+        if #available(iOS 11.0, *) {
+            // icloud entitlement is not required for iOS 11+ - set constant to true to enable document picker usage
+            configuration[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_TRUE_VALUE;
+        } else {
+            // icloud entitlement (icloud documents) is required for iOS 10 and below for document picker usage
+            // if icloud is enabled, then this constant should be set to DSM_SETUP_TRUE_VALUE
+            configuration[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_FALSE_VALUE;
+        }
+        
         //configuration[DSM_SETUP_DISABLE_CONTACTS_USAGE_KEY] = DSM_SETUP_TRUE_VALUE;
 
         // initialize DS sdk manager

@@ -51,8 +51,7 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-
-
+    
     // MARK: TableView Methods
     
     // number of sections in table view

@@ -1,4 +1,14 @@
-# DocuSign Native iOS Offline Templates SDK Changelog
+# DocuSign Native iOS SDK Changelog
+
+## [v2.0] - 10/11/2018
+
+### Added
+* Support for compose envelope functionality for both online and offline capability. Start creating an envelope to manually add documents, recipients and tags using the method `presentComposeEnvelopeControllerWithPresentingController:signingMode:resumeWithDraft:animated:completion:` on `DSMEnvelopesManager`.                                              
+* Utility method to determine whether there is a previously cached draft envelope (there can only be one at a time) by invoking `hasCachedDraftEnvelope` on `DSMEnvelopesManager`.
+* Powered By DocuSign footer for online and offline signing ceremony. This feature can be enabled or disabled using setup configuration and the constants can be found in `DSMSetupConstants`.
+
+### Changed
+* Updated Swift and Objective-C Sample Apps.
 
 ## [v1.2] - 8/30/2018
 
@@ -33,4 +43,4 @@
 ## [v1.0] - 9/15/2017
 
 ### Added
-* DocuSign Native iOS Offline Templates SDK launch.
+* DocuSign Native iOS SDK launch.

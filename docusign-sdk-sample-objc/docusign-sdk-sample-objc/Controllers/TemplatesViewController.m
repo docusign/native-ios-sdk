@@ -8,15 +8,17 @@
 #import "TemplatesViewController.h"
 
 #import <DocuSignSDK/DocuSignSDK.h>
+#import "AppDelegate.h"
 #import "DownloadTemplateCell.h"
 #import "ProfileManager.h"
 #import "ProgressHUD.h"
 #import "TemplatesManager.h"
-
+#import "EnvelopesManager.h"
 
 @interface TemplatesViewController ()
 
 @property (nonatomic, strong) TemplatesManager * mTemplatesManager;
+@property (nonatomic, strong) EnvelopesManager * mEnvelopesManager;
 @property (nonatomic, strong) NSArray<DSMEnvelopeTemplateDefinition *> * mTemplateList;
 @property (nonatomic, strong) UIRefreshControl * refreshController;
 
@@ -37,7 +39,8 @@ static NSString *tableCellId = @"downloadTemplateCell";
 
     // attach template manager
     self.mTemplatesManager = [TemplatesManager sharedInstance];
-
+    self.mEnvelopesManager = [EnvelopesManager sharedInstance];
+    
     // add refresh control for table view
     self.refreshController = [[UIRefreshControl alloc] init];
     [self.refreshController addTarget:self action:@selector(handleTableRefresh:)
@@ -50,8 +53,31 @@ static NSString *tableCellId = @"downloadTemplateCell";
 {
     // get list of template definitions
     [self fetchTemplateList];
+
+    // allow landscape orientation for sdk screens
+    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.restrictRotation = NO;
 }
 
+#pragma mark - actions
+
+- (IBAction)onOfflineClaimTapped:(id)sender {
+    
+    [self promptDevActionWithHandler:^(DSMSigningMode signingMode) {
+        if (@available(iOS 11.0, *)) {
+            [self.mEnvelopesManager presentComposeEnvelopeViewControllerWithPresentingController:self signingMode:signingMode];
+        } else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"iCloud Entitlement required" message:@"For iOS 10 and below, iCloud entitlements must be added and DSM_SETUP_ICLOUD_DOCUMENT_ENABLED set to true for document picker usage." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.mEnvelopesManager presentComposeEnvelopeViewControllerWithPresentingController:self signingMode:signingMode];
+            }];
+            
+            [alertController addAction:action];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }];
+    
+}
 
 #pragma mark - TableView Delegate Methods
 
@@ -192,6 +218,24 @@ static NSString *tableCellId = @"downloadTemplateCell";
     // add custom nav title
     UIView * navTitleView = [[[NSBundle mainBundle] loadNibNamed:@"CustomNavTitle" owner:self options:nil] lastObject];
     self.navigationItem.titleView = navTitleView;
+}
+
+- (void) promptDevActionWithHandler:(void(^)(DSMSigningMode signingMode))handler
+{
+    UIAlertAction *onlineAction = [UIAlertAction actionWithTitle:@"Online Envelope" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        handler(DSMSigningModeOnline);
+    }];
+    UIAlertAction *offlineAction = [UIAlertAction actionWithTitle:@"Offline Envelope" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        handler(DSMSigningModeOffline);
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer's Notes" message:@"You can either compose an envelope in online or offline mode. You would need to check for network connectivity and present the appropriate view controller." preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:onlineAction];
+    [alertController addAction:offlineAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

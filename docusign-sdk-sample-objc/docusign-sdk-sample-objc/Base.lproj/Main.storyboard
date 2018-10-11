@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -322,7 +322,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="fgD-Qb-bsf">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="fgD-Qb-bsf">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -359,18 +359,36 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Rpd-1h-yBx">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIST OF TEMPLATES: AUTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-eC-PwI">
-                                    <rect key="frame" x="8" y="15" width="359" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIST OF TEMPLATES: AUTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-eC-PwI">
+                                    <rect key="frame" x="8" y="15" width="359" height="16.5"/>
                                     <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
                                     <color key="textColor" red="0.027450980619999999" green="0.24313725529999999" blue="0.34117648010000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-Zy-eKz" userLabel="Create Claim Offline">
+                                    <rect key="frame" x="112" y="41.5" width="151" height="30"/>
+                                    <color key="backgroundColor" red="1" green="0.15294117647058825" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                    <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                    <state key="normal" title="Create New Claim">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onOfflineClaimTapped:" destination="EY2-KZ-vYY" eventType="touchUpInside" id="kra-7N-9f0"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="wuR-Zy-eKz" firstAttribute="centerX" secondItem="Rpd-1h-yBx" secondAttribute="centerX" id="Hpt-Q3-gdZ"/>
+                                <constraint firstItem="MZw-eC-PwI" firstAttribute="bottom" secondItem="wuR-Zy-eKz" secondAttribute="top" constant="-10" id="aFi-32-zEg"/>
+                                <constraint firstItem="MZw-eC-PwI" firstAttribute="top" secondItem="Rpd-1h-yBx" secondAttribute="top" constant="15" id="ddr-uO-r08"/>
+                                <constraint firstAttribute="trailing" secondItem="MZw-eC-PwI" secondAttribute="trailing" constant="8" id="idi-aB-XhT"/>
+                                <constraint firstItem="MZw-eC-PwI" firstAttribute="leading" secondItem="Rpd-1h-yBx" secondAttribute="leading" constant="8" id="t7C-uE-4hg"/>
+                            </constraints>
                         </view>
                         <connections>
                             <outlet property="dataSource" destination="EY2-KZ-vYY" id="LNq-xo-LUk"/>
