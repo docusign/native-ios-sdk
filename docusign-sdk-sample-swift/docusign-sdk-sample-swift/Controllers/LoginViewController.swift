@@ -50,15 +50,15 @@ class LoginViewController: UIViewController
         
         if (isUsernameFormatValid(username: username) && isPasswordFormatValid(password: password))
         {
-            DSMManager.login(withUserId: username, password: password, integratorKey: integratorKey, host: hostUrl, completionBlock: { (err: Error?) in
+            DSMManager.login(withUserId: username, password: password, integratorKey: integratorKey, host: hostUrl) { (accountInfo: DSMAccountInfo?, error: Error?) in
 
                 SVProgressHUD.dismiss();
 
-                if (err != nil)
+                if (error != nil)
                 {
                     NSLog("Error logging in");
                     // display error prompt
-                    self.promptError(err: err);
+                    self.promptError(err: error);
                 }
                 else
                 {
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController
                     // segue to main navigation controller
                     self.performSegue(withIdentifier: "segueMainNav", sender: nil);
                 }
-            })
+            }
         }
     }
 

@@ -39,9 +39,6 @@
 		C9FF31441F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */; };
 		C9FF31471F3249D90076D6CA /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31461F3249D90076D6CA /* MainContainerViewController.swift */; };
 		C9FF31491F3258100076D6CA /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31481F3258100076D6CA /* ProfileManager.swift */; };
-		C9FF314B1F3258A80076D6CA /* DocuSignSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */; };
-		C9FF314D1F3258C50076D6CA /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C9FF31501F3259130076D6CA /* DocuSignSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */; };
 		C9FF31551F3371580076D6CA /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31541F3371580076D6CA /* ClientViewController.swift */; };
 		C9FF31571F3371940076D6CA /* TemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31561F3371940076D6CA /* TemplatesViewController.swift */; };
 		C9FF31591F3371C80076D6CA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31581F3371C80076D6CA /* OverviewViewController.swift */; };
@@ -62,7 +59,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C9FF314D1F3258C50076D6CA /* DocuSignSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,8 +102,6 @@
 		C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		C9FF31461F3249D90076D6CA /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewController.swift; path = Controllers/MainContainerViewController.swift; sourceTree = "<group>"; };
 		C9FF31481F3258100076D6CA /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileManager.swift; path = Managers/ProfileManager.swift; sourceTree = "<group>"; };
-		C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
-		C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DocuSignSDK.bundle; path = DocuSignSDK.framework/DocuSignSDK.bundle; sourceTree = "<group>"; };
 		C9FF31541F3371580076D6CA /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientViewController.swift; path = Controllers/ClientViewController.swift; sourceTree = "<group>"; };
 		C9FF31561F3371940076D6CA /* TemplatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplatesViewController.swift; path = Controllers/TemplatesViewController.swift; sourceTree = "<group>"; };
 		C9FF31581F3371C80076D6CA /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewViewController.swift; path = Controllers/OverviewViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FF314B1F3258A80076D6CA /* DocuSignSDK.framework in Frameworks */,
 				BCAC47AADB9EDD280BACA1C9 /* Pods_docusign_sdk_sample_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,8 +147,6 @@
 		C9FF30FE1F321A000076D6CA = {
 			isa = PBXGroup;
 			children = (
-				C9FF314F1F3259130076D6CA /* DocuSignSDK.bundle */,
-				C9FF314A1F3258A80076D6CA /* DocuSignSDK.framework */,
 				C9FF31091F321A000076D6CA /* docusign-sdk-sample-swift */,
 				C9FF31081F321A000076D6CA /* Products */,
 				B3D2E5239DCCEA128FF6A199 /* Pods */,
@@ -281,9 +272,8 @@
 				C9FF31041F321A000076D6CA /* Frameworks */,
 				C9FF31051F321A000076D6CA /* Resources */,
 				C9FF314E1F3258C50076D6CA /* Embed Frameworks */,
-				C9FF31531F32593F0076D6CA /* ShellScript */,
 				D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */,
-				A7A97D3D422CC3A6FC01F60A /* [CP] Copy Pods Resources */,
+				6884546DF994F2FFC873B3FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,7 +326,6 @@
 			files = (
 				C9FF31611F33B1AA0076D6CA /* TemplateTableViewCell.xib in Resources */,
 				C9FF315B1F33755E0076D6CA /* CustomNavTitle.xib in Resources */,
-				C9FF31501F3259130076D6CA /* DocuSignSDK.bundle in Resources */,
 				C9FF31401F3243D00076D6CA /* OpenSans-Light.ttf in Resources */,
 				C9FF31271F323C860076D6CA /* tgk-financial.jpg in Resources */,
 				C90C9E711F4233A900163557 /* Portfolio.pdf in Resources */,
@@ -364,33 +353,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A7A97D3D422CC3A6FC01F60A /* [CP] Copy Pods Resources */ = {
+		6884546DF994F2FFC873B3FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DocuSignSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		C9FF31531F32593F0076D6CA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/DocuSignSDK.framework/strip-frameworks.sh\"\n";
 		};
 		CB0F0ABEEA06C70C5C4F3F1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -398,13 +381,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-docusign-sdk-sample-swift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */ = {
@@ -413,13 +399,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-frameworks.sh",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
