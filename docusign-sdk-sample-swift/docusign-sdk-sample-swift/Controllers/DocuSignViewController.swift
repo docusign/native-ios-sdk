@@ -49,13 +49,6 @@ class DocuSignViewController: UIViewController
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = false;
-    }
-
-
     // MARK: Private Methods
     
     private func styleUIElements()

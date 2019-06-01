@@ -53,13 +53,6 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = true;
-    }
-
-    
     // MARK: TableView Methods
     
     // number of sections in table view

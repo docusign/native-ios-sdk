@@ -25,10 +25,7 @@ class PortfolioViewController: UIViewController
     }
  
     override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = true;
-        
+
         // set client name
         lbl_clientName.text = ProfileManager.sharedInstance.getClientName();
         
