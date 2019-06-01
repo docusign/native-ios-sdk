@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         }
         
         //configuration[DSM_SETUP_DISABLE_CONTACTS_USAGE_KEY] = DSM_SETUP_TRUE_VALUE;
+        
+        //configuration[DSM_SETUP_OFFLINE_SIGNING_USE_PLACEHOLDER_TAB_VALUE] = DSM_SETUP_FALSE_VALUE;
 
         // initialize DS sdk manager
         DSMManager.setup(withConfiguration: configuration);

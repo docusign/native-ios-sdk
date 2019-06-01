@@ -26,7 +26,7 @@ class EnvelopesManager
     {
         if (self.mDSMEnvelopesManager == nil)
         {
-            self.mDSMEnvelopesManager = DSMEnvelopesManager.init();
+            self.mDSMEnvelopesManager = DSMEnvelopesManager()
         }
     }
     

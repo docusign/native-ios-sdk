@@ -62,7 +62,9 @@ class ProfileManager
         ];
         
         // Momentum demo template
-        static let templateIdMomemtumDemo = "606f0e95-a419-4280-86ac-234913037962";
+        static let templateIdsMomemtumDemo = ["606f0e95-a419-4280-86ac-234913037962",
+                                              "c0f2e494-f418-4793-891a-6087500ae6dc",
+                                              "938c63f0-67ad-4561-8e0e-0be3f0f4d73e"]
         static let tabLabelIdFullName = "Text FullName";
         static let tabLabelIdAddressLine1 = "Text Address Line 1";
         static let tabLabelIdAddressLine2 = "Text Address Line 2";
@@ -190,7 +192,10 @@ class ProfileManager
     func getTemplateTabData(templateId:String) -> Dictionary<String,String>
     {
         var tabData = Dictionary<String, String>();
-        if templateId == ProfileManager.Static.templateIdMomemtumDemo {
+        if templateId == ProfileManager.Static.templateIdsMomemtumDemo[0]
+            || templateId == ProfileManager.Static.templateIdsMomemtumDemo[1]
+            || templateId == ProfileManager.Static.templateIdsMomemtumDemo[2]
+        {
             tabData[ProfileManager.Static.tabLabelIdFullName] = self.getClientName();
             tabData[ProfileManager.Static.tabLabelIdAddressLine1] = self.clientData["address"];
             tabData[ProfileManager.Static.tabLabelIdAddressLine2] = self.clientData["city"]! + ", " + self.clientData["state"]!;
@@ -234,30 +239,35 @@ class ProfileManager
      */
     func getTemplateRecipientData(templateId:String) -> Array<DSMRecipientDefault>
     {
-        if templateId != ProfileManager.Static.templateIdMomemtumDemo && templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
-            return [];
+        if templateId != ProfileManager.Static.templateIdsMomemtumDemo[0] &&
+            templateId != ProfileManager.Static.templateIdsMomemtumDemo[1] &&
+            templateId != ProfileManager.Static.templateIdsMomemtumDemo[2] &&
+            templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
+            NSLog("Warning: Recipient Data not found for given templateId. Returning empty data.")
+            return []
         }
         
-        /*Recipients can be defaulted using either RoleName or RecipientId.
-         Using RoleName:
-            recipientDatum.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorType.recipientRoleName
-            recipientDatum.recipientRoleName = "In Person Signer"
-        */
-        let recipientDatum = DSMRecipientDefault.init();
-        recipientDatum.recipientId = "18375691";
-        recipientDatum.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorType.recipientId
-        recipientDatum.recipientType = DSMRecipientType.inPersonSigner;
-        recipientDatum.inPersonSignerName = "Tom Wood";
-        recipientDatum.recipientName = "docusignsdk user";
-        recipientDatum.recipientEmail = "docusignsdk.user@dsxtr.com";
-        return [recipientDatum];
+        let recipientDatum = DSMRecipientDefault()
+        // Use recipient roleName (other option to use recipient-id) to find unique recipient in the template
+        recipientDatum.recipientRoleName = "claimant-roleName"
+        recipientDatum.recipientSelectorType = .recipientRoleName
+        recipientDatum.recipientType = .inPersonSigner
+        // In-person-signer name
+        recipientDatum.inPersonSignerName = "Tom Wood"
+        // Host name (must match the name on the account) and email
+        recipientDatum.recipientName = "docusignsdk user"
+        recipientDatum.recipientEmail = "docusignsdk.user@dsxtr.com"
+        return [recipientDatum]
     }
     
     /**
      Returns CustomFields that will be passed into the template
      */
     func getCustomFieldsData(templateId:String) -> DSMCustomFields? {
-        if templateId != ProfileManager.Static.templateIdMomemtumDemo && templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
+        if templateId != ProfileManager.Static.templateIdsMomemtumDemo[0]
+            && templateId != ProfileManager.Static.templateIdsMomemtumDemo[1]
+            && templateId != ProfileManager.Static.templateIdsMomemtumDemo[2]
+            && templateId != ProfileManager.Static.templateIdMomemtumDemoWireTransfer {
             return nil;
         }
         
