@@ -9,9 +9,9 @@ Requirements
 ============
 - The SDK is written in Objective-C, but will work with projects in Objective-C or Swift (4.x and later).
 - Requires iOS 9.0 or later.
-- It is recommended developers use Xcode 10.x or later.
+- It is recommended that developers use Xcode 10.x or later.
 
-Install
+Installation
 =============
 
 **CocoaPods**
