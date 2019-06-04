@@ -32,14 +32,6 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
     }
 
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = false;
-    }
-
     // MARK: actions
     @IBAction func onCreateNewAgreementTapped(_ sender: Any)
     {

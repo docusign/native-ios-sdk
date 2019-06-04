@@ -27,26 +27,26 @@ class TemplatesManager
 
         if (self.mDSMTemplatesManager == nil)
         {
-            self.mDSMTemplatesManager = DSMTemplatesManager.init();
+            self.mDSMTemplatesManager = DSMTemplatesManager();
         }
     }
 
-
     typealias templateDefinitionsCompletionHandler = (_ templateDefinitions: [DSMEnvelopeTemplateDefinition]?) -> Void;
+    
     func getTemplateListWithCompletion(completionHandler: @escaping templateDefinitionsCompletionHandler)
     {
         // retrieve list of template definitions
-        self.mDSMTemplatesManager?.listTemplates(completion: { (templateDefinitions, errMsg) in
+        self.mDSMTemplatesManager?.listTemplates() { (templates, error) in
             NSLog("Get Template Definitions");
     
-            if (errMsg != nil) {
-                NSLog("Error: " + errMsg!.localizedDescription);
+            if let error = error {
+                NSLog("Error: \(error.localizedDescription)");
             }
             else {
-                self.mTemplateDefinitions = templateDefinitions;
-                completionHandler(templateDefinitions);
+                self.mTemplateDefinitions = templates;
+                completionHandler(templates);
             }
-        })
+        }
     }
     
 
@@ -57,11 +57,12 @@ class TemplatesManager
     
 
     //typealias cacheTemplateCompletionHandler = (_ errMsg: String?) -> Void;
+    
     func cacheTemplateWithId(templateId: String, completionHandler: @escaping (String?) -> Void) {
        
-        self.mDSMTemplatesManager?.cacheTemplate(withId: templateId, completion: { (err: Error?) in
-            if (err != nil) {
-                completionHandler(err?.localizedDescription);
+        self.mDSMTemplatesManager?.cacheTemplate(withId: templateId, completion: { (error: Error?) in
+            if let error = error {
+                completionHandler(error.localizedDescription);
             }
             else {
                 completionHandler(nil);
@@ -96,7 +97,21 @@ class TemplatesManager
         mDSMEnvelopeDefaults.tabValueDefaults = tabData;
         mDSMEnvelopeDefaults.customFields = customFields
         
-        self.mDSMTemplatesManager?.presentSendTemplateControllerWithTemplate(withId: templateId, envelopeDefaults: mDSMEnvelopeDefaults, pdfToInsert: pdfData, insertAtPosition: DSMDocumentInsertAtPosition.end, signingMode: onlineSign ? DSMSigningMode.online : DSMSigningMode.offline, presenting: controller, animated: true, completion: completionHandler);
+        self.mDSMTemplatesManager?.presentSendTemplateControllerWithTemplate (
+            withId: templateId,
+            envelopeDefaults: mDSMEnvelopeDefaults,
+            pdfToInsert: pdfData,
+            insertAtPosition: .end,
+            signingMode: onlineSign ? .online : .offline,
+            presenting: controller,
+            animated: true) { (view, error) in
+                if let error = error {
+                    NSLog("Error encountered during signing: \(error.localizedDescription)")
+                }
+                if view == nil {
+                    NSLog("Error encountered during signing: nil view")
+
+                }
+        }
     }
-    
 }

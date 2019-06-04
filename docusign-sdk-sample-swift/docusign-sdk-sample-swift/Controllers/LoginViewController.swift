@@ -12,7 +12,7 @@ import SVProgressHUD
 import UIKit
 
 
-class LoginViewController: UIViewController
+class LoginViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var tf_username: UITextField!
     @IBOutlet weak var tf_password: UITextField!
@@ -27,15 +27,8 @@ class LoginViewController: UIViewController
         // pre-populate the user credentials fields with defaults (if provided)
         tf_username.text = ProfileManager.Static.defaultUsername;
         tf_password.text = ProfileManager.Static.defaultPassword;
-
+        tf_password.delegate = self;
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = true;
-    }
-
     
     // MARK: IBAction Methods
 
@@ -50,10 +43,12 @@ class LoginViewController: UIViewController
         
         if (isUsernameFormatValid(username: username) && isPasswordFormatValid(password: password))
         {
-            DSMManager.login(withUserId: username, password: password, integratorKey: integratorKey, host: hostUrl) { (accountInfo: DSMAccountInfo?, error: Error?) in
-
+            DSMManager.login(withUserId: username,
+                             password: password,
+                             integratorKey: integratorKey,
+                             host: hostUrl) { (accountInfo, error) in
                 SVProgressHUD.dismiss();
-
+                
                 if (error != nil)
                 {
                     NSLog("Error logging in");
@@ -70,6 +65,10 @@ class LoginViewController: UIViewController
         }
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.tf_password.resignFirstResponder();
+        return true;
+    }
 
     // MARK: Private Methods
     

@@ -44,8 +44,6 @@ static NSString * tabKey_damageDate = @"Text 2407d40f-8711-4457-a217-26b743ea886
 static NSString * tabKey_damageType = @"Text 6e9f67ac-5e76-4a39-9b2f-f0777f0e3c1b";
 static NSString * tabKey_damageEstimate = @"Text 59a404aa-1b09-4787-bfa3-61d04f288439";
 
-// Momentum demo template
-static NSString * templateIdMomemtumDemo = @"606f0e95-a419-4280-86ac-234913037962";
 static NSString * tabLabelIdFullName = @"Text FullName";
 static NSString * tabLabelIdAddressLine1 = @"Text Address Line 1";
 static NSString * tabLabelIdAddressLine2 = @"Text Address Line 2";
@@ -93,6 +91,14 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
 + (BOOL)displayDeveloperNotes {
     return NO;
 }
+
+// Momentum demo template
++ (NSArray *) templateIdsDemo
+{
+    NSArray * templateIds = @[@"606f0e95-a419-4280-86ac-234913037962", @"c0f2e494-f418-4793-891a-6087500ae6dc", @"938c63f0-67ad-4561-8e0e-0be3f0f4d73e"];
+    return templateIds;
+}
+
 
 + (NSDictionary *) getFakeClientInfo
 {
@@ -204,22 +210,15 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
  Returns NSArray of the recipient data that will be passed into the template
  */
 - (NSArray *)getTemplateRecipientDataForId:(NSString *)templateId {
-    if (![templateId isEqualToString:templateIdMomemtumDemo]) {
+    if (![ProfileManager.templateIdsDemo containsObject:templateId]) {
         return nil;
     }
     
-    /*Recipients can be defaulted using either RoleName or RecipientId.
-     Using RoleName:
-     recipientIPS1.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorTypeRecipientRoleName;
-     recipientIPS1.recipientRoleName = @"In Person Signer";
-     */
     NSMutableArray *recipientDefaults = [NSMutableArray arrayWithCapacity:1];
     
-    NSString *recipientIdIPS1 = @"18375691"; // IPS 1
-    
     DSMRecipientDefault *recipientIPS1 = [[DSMRecipientDefault alloc] init];
-    recipientIPS1.recipientId = recipientIdIPS1;
-    recipientIPS1.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorTypeRecipientId;
+    recipientIPS1.recipientRoleName = @"claimant-roleName";
+    recipientIPS1.recipientSelectorType = DSMEnvelopeDefaultsUniqueRecipientSelectorTypeRecipientRoleName;
     recipientIPS1.recipientType = DSMRecipientTypeInPersonSigner;
     recipientIPS1.inPersonSignerName = @"Tom Wood";
     recipientIPS1.recipientName = @"docusignsdk user";
@@ -248,7 +247,7 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
     NSString * addressLine2 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"city"],self.mClientInfo[@"state"]];
     NSString * addressLine3 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"country"], self.mClientInfo[@"zipCode"]];
 
-    if ([templateId isEqualToString:templateIdMomemtumDemo]) {
+    if ([ProfileManager.templateIdsDemo containsObject:templateId]) {
         // map the client data to custom fields in the template
         NSDictionary * tabData = @{tabLabelIdFullName:client_full_name,
                                    tabLabelIdClientNumber:policyNum,
@@ -274,7 +273,7 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
  Returns CustomFields that will be passed into the template
  */
 - (DSMCustomFields *)getCustomFieldsDataForTemplateId:(NSString *)templateId {
-    if (![templateId isEqualToString:templateIdMomemtumDemo]) {
+    if (![ProfileManager.templateIdsDemo containsObject:templateId]) {
         return nil;
     }
     

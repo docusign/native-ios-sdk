@@ -36,14 +36,6 @@ class MainContainerViewController: UIViewController {
         self.bt_navEdit.isEnabled = false;
         self.bt_navEdit.title = "";
     }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = true;
-    }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {

@@ -32,6 +32,8 @@
         configuration[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_FALSE_VALUE;
     }
     
+    //configuration[DSM_SETUP_OFFLINE_SIGNING_USE_PLACEHOLDER_TAB_VALUE] = DSM_SETUP_FALSE_VALUE;
+    
     [DSMManager setupWithConfiguration:configuration];
     
     return YES;

@@ -17,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
 
-    // manages whether rotation is allowed per screen
-    var lockPortraitOrientation: Bool = true;
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         // initialize DS sdk manager
@@ -38,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         }
         
         //configuration[DSM_SETUP_DISABLE_CONTACTS_USAGE_KEY] = DSM_SETUP_TRUE_VALUE;
+        
+        //configuration[DSM_SETUP_OFFLINE_SIGNING_USE_PLACEHOLDER_TAB_VALUE] = DSM_SETUP_FALSE_VALUE;
 
         // initialize DS sdk manager
         DSMManager.setup(withConfiguration: configuration);
@@ -83,12 +81,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) ->
         UIInterfaceOrientationMask
     {
-            if (lockPortraitOrientation) {
-                return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
-            }
-            else {
-                return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.all.rawValue)
-            }
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {
+            return .all
+        } else {
+            //return .portrait // to mimic the crash for IOSSDK-494
+            return .allButUpsideDown
+        }
     }
 
     

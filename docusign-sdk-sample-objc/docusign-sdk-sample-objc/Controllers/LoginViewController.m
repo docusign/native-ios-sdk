@@ -13,7 +13,7 @@
 #import "ProgressHUD.h"
 
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 
 // ui elements
 @property (nonatomic, strong) IBOutlet UITextField * usernameInput;
@@ -35,6 +35,8 @@
     NSDictionary * defaultUserCredentials = [ProfileManager getDefaultUserCredentials];
     self.usernameInput.text = defaultUserCredentials[@"defaultUsername"];
     self.passwordInput.text = defaultUserCredentials[@"defaultPassword"];
+    
+    self.passwordInput.delegate = self;
 }
 
 
@@ -89,6 +91,11 @@
 
 - (IBAction)passwordFieldPrimaryAction:(id)sender {
     [sender resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.passwordInput resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - Private Methods

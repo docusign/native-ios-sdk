@@ -286,8 +286,8 @@
 				C95F1C441F0E936E00612CDC /* Frameworks */,
 				C95F1C451F0E936E00612CDC /* Resources */,
 				C92833001F0EB91E009C5DBA /* Embed Frameworks */,
-				C7A77B80236DF2C662D00DF9 /* [CP] Embed Pods Frameworks */,
 				8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */,
+				75BAF25B1F67781FCCA0E20E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,13 +379,35 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		75BAF25B1F67781FCCA0E20E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh",
 				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
 				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
 			);
@@ -396,25 +418,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7A77B80236DF2C662D00DF9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh",
-				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -26,13 +26,6 @@ class AttachmentViewController: UIViewController
         super.viewDidLoad();
         self.styleUIElements();
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        // allow only portrait orientation
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.lockPortraitOrientation = true;
-    }
-
     
     // MARK: IBAction Methods
     

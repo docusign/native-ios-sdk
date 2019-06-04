@@ -147,16 +147,16 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
             let templateId = mTemplateList[(indexPath?.row)!].templateId;
         
             if (templateId != nil) {
+                // initialize the template Manager
+                let templatesManager = DSMTemplatesManager()
                 // cache the specified template
-                TemplatesManager.sharedInstance.cacheTemplateWithId(templateId: templateId!) { (errMsg) in
+                templatesManager.cacheTemplate(withId: templateId) { (errorMessage) in
                     SVProgressHUD.dismiss();
                     
-                    if (errMsg != nil)
-                    {
-                        self.displayErrorPrompt(errMsg: errMsg!);
+                    if let errorMessage = errorMessage {
+                        self.displayErrorPrompt(errorMessage: errorMessage.localizedDescription);
                     }
-                    else
-                    {
+                    else {
                         self.tableView.reloadData();
                     }
                 }
@@ -180,11 +180,11 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     
-    private func displayErrorPrompt(errMsg: String)
+    private func displayErrorPrompt(errorMessage: String)
     {
-        NSLog("Display error prompt: " + errMsg);
+        NSLog("Display error prompt: " + errorMessage);
         
-        let alert = UIAlertController(title: "Error", message: errMsg, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

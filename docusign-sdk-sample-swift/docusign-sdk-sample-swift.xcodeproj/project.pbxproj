@@ -273,7 +273,7 @@
 				C9FF31051F321A000076D6CA /* Resources */,
 				C9FF314E1F3258C50076D6CA /* Embed Frameworks */,
 				D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */,
-				6884546DF994F2FFC873B3FD /* [CP] Copy Pods Resources */,
+				B488346EF55C69F9CC0C784D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,7 +353,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6884546DF994F2FFC873B3FD /* [CP] Copy Pods Resources */ = {
+		B488346EF55C69F9CC0C784D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -574,6 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -594,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

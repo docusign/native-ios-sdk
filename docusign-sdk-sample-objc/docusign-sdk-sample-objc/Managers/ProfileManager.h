@@ -21,6 +21,7 @@
 + (NSString *) getIntegratorKey;
 + (NSString *) getHostApiUrl;
 + (NSDictionary *) getDefaultUserCredentials;
++ (NSArray *) templateIdsDemo;
 + (NSDictionary *) getFakeClientInfo;
 + (NSDictionary *) getFakeDamageInfo;
 
