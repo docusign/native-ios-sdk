@@ -1,6 +1,54 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.0] - 10/11/2018
+## [v2.1.3] - 05/17/2019
+
+### Added
+* New setup configuration `DSM_SETUP_OFFLINE_SIGNING_USE_PLACEHOLDER_TAB_VALUE` exposed to allow replacing placeholder values for empty text-based tabs (for example "Text", "Company", "Title", etc) with empty strings during offline signing.
+
+### Changed
+* `Next Field Navigation` ignores the non-editable text tabs in all cases and keeps the previous assigned tab value unchanged. (bug-fix)
+* DocuSign branding update for Momentum 2019
+
+## [v2.1.2] - 04/18/2019
+
+### Added
+* `TransactionId` is sent in addition with `EnvelopeId` and `TemplateId` with notifications to help track templates and corresponding envelopes.
+* Ability to track and link the offline & corresponding online envelope using `TransactionId` for updated `EnvelopeId` upon successful sync.
+
+### Changed
+* `Consumer Disclosure` is dismissed in all cases; earlier misconfigured tabs in templates caused `Consumer Disclosure` to not get dismissed if error alerts were also hidden via setup configuration.
+
+## [v2.1.1] - 03/12/2019
+
+### Added
+* *CocoaPods* support added for Native iOS SDK. Use `pod 'DocuSign'` to fetch the latest SDK framework. Note: Recommended to use CocoaPods `v1.4.0` and up.
+* New notification `DSMOfflineEnvelopeSigningErrorNotification` added to track misc offline signing errors related to template setup (for example invalid formula used). 
+
+## [v2.1] - 01/18/2019
+
+### Added
+* Three Properties such as `syncFailureReason(String)`, `failedAttemptsToSync (Integer)` and `lastModifiedDateTime` shall be updated on `DSMEnvelopeDefinition` when envelope fails to Sync (meta data to track envelopes & sync process).
+
+## [v2.1] - 12/20/2018
+
+### Added
+* New notification `DSMFoundReadonlyAndRequiredTabsWithInvalidDefaultsNotification` is added to notify when Readonly AND Required AND nil-value Text based tabs are detected during envelope creation. Related configuration`DSM_SETUP_OFFLINE_SIGNING_CONVERT_INVALID_READONLY_REQUIRED_TEXTTABS_TO_EDITABLE` to auto-convert such tabs to non-Readonly is exposed, it's default value is `true` to allow signers to finish offline signing such envelopes.
+
+### Changed
+* `DSMTemplateIdKey` ("templateId") is sent in addition with `DSMEnvelopeIdKey` ("envelopeId") for some notifications.
+
+## [v2.1] - 11/06/2018
+
+### Added
+* Support for `DSMAccountInfo` with all `login*` methods in the `DSMManager`. `DSMAccountInfo` object is retuned with the completion `completion:^(DSMAccountInfo *accountInfo, NSError *error)` for login methods exposed in `DSMManager`.
+
+### Changed
+* Method signatures for following `loginWith*` methods now include additional `networkMode` parameter and `completion:^(DSMAccountInfo *accountInfo, NSError *error)` has additional parameter `DSMAccountInfo *accountInfo`:
+   - `loginWithUserId:password:integratorKey:host:completion:`
+   - `loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:networkMode:completion:`
+   - `loginWithAPIPassword:accountId:userId:userName:email:host:integratorKey:networkMode:completion:`
+
+## [v2.0] - 10/9/2018
 
 ### Added
 * Support for compose envelope functionality for both online and offline capability. Start creating an envelope to manually add documents, recipients and tags using the method `presentComposeEnvelopeControllerWithPresentingController:signingMode:resumeWithDraft:animated:completion:` on `DSMEnvelopesManager`.                                              
@@ -23,7 +71,7 @@
 ### Changed
 * Updated signature drawing tools on signature pad
 
-### Fixed 
+### Fixed
 * Enhanced visual representation of tabs when highlighted.
 * Maintain aspect ratio of captured signature during signing ceremony.
 
