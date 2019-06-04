@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41DDA5B320C73F3D00191AF2 /* DocuSignSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C904902E1F2A49B400EAD899 /* AttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C904902D1F2A49B400EAD899 /* AttachmentViewController.m */; };
 		C90C9E6F1F422EBE00163557 /* AccidentChecklist.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C90C9E6E1F422EBE00163557 /* AccidentChecklist.pdf */; };
 		C9110DC41F13D3850009D3B5 /* ProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9110DC31F13D3850009D3B5 /* ProfileManager.m */; };
 		C92471411F1D2C630019A899 /* DownloadTemplateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92471401F1D2C630019A899 /* DownloadTemplateCell.m */; };
 		C924716B1F1D3CCD0019A899 /* DownloadTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */; };
-		C92833021F0EB953009C5DBA /* DocuSignSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */; };
 		C92833081F0EC4AA009C5DBA /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C92833071F0EC4AA009C5DBA /* beach.jpg */; };
 		C92833151F0EC80C009C5DBA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C928330A1F0EC80C009C5DBA /* LICENSE.txt */; };
 		C92833161F0EC80C009C5DBA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C928330B1F0EC80C009C5DBA /* OpenSans-Bold.ttf */; };
@@ -53,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				41DDA5B320C73F3D00191AF2 /* DocuSignSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +59,6 @@
 
 /* Begin PBXFileReference section */
 		0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc.release.xcconfig"; sourceTree = "<group>"; };
-		41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocuSignSDK.framework; sourceTree = "<group>"; };
 		7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-docusign-sdk-sample-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C904902C1F2A49B400EAD899 /* AttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentViewController.h; sourceTree = "<group>"; };
 		C904902D1F2A49B400EAD899 /* AttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentViewController.m; sourceTree = "<group>"; };
@@ -72,7 +68,6 @@
 		C924713F1F1D2C630019A899 /* DownloadTemplateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTemplateCell.h; sourceTree = "<group>"; };
 		C92471401F1D2C630019A899 /* DownloadTemplateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTemplateCell.m; sourceTree = "<group>"; };
 		C924716A1F1D3CCD0019A899 /* DownloadTemplateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTemplateCell.xib; sourceTree = "<group>"; };
-		C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DocuSignSDK.bundle; path = DocuSignSDK.framework/DocuSignSDK.bundle; sourceTree = "<group>"; };
 		C92833071F0EC4AA009C5DBA /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
 		C928330A1F0EC80C009C5DBA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C928330B1F0EC80C009C5DBA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -207,8 +202,6 @@
 		C95F1C3E1F0E936E00612CDC = {
 			isa = PBXGroup;
 			children = (
-				41DDA5B120C73F3D00191AF2 /* DocuSignSDK.framework */,
-				C92833011F0EB953009C5DBA /* DocuSignSDK.bundle */,
 				C95F1C491F0E936E00612CDC /* docusign-sdk-sample-objc */,
 				C95F1C481F0E936E00612CDC /* Products */,
 				F5CAEE1DD29C8E0C267ACB0D /* Pods */,
@@ -293,7 +286,6 @@
 				C95F1C441F0E936E00612CDC /* Frameworks */,
 				C95F1C451F0E936E00612CDC /* Resources */,
 				C92833001F0EB91E009C5DBA /* Embed Frameworks */,
-				C92833051F0EB9B3009C5DBA /* ShellScript */,
 				C7A77B80236DF2C662D00DF9 /* [CP] Embed Pods Frameworks */,
 				8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */,
 			);
@@ -352,7 +344,6 @@
 				C90C9E6F1F422EBE00163557 /* AccidentChecklist.pdf in Resources */,
 				C92833181F0EC80C009C5DBA /* OpenSans-ExtraBold.ttf in Resources */,
 				C928331B1F0EC80C009C5DBA /* OpenSans-Light.ttf in Resources */,
-				C92833021F0EB953009C5DBA /* DocuSignSDK.bundle in Resources */,
 				C95F1C5D1F0E936F00612CDC /* LaunchScreen.storyboard in Resources */,
 				C928331A1F0EC80C009C5DBA /* OpenSans-Italic.ttf in Resources */,
 				C928331D1F0EC80C009C5DBA /* OpenSans-Regular.ttf in Resources */,
@@ -376,13 +367,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-docusign-sdk-sample-objc-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */ = {
@@ -391,9 +385,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
+				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DocuSignSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -406,27 +405,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		C92833051F0EB9B3009C5DBA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/DocuSignSDK.framework/strip-frameworks.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

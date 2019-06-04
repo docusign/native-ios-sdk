@@ -62,9 +62,8 @@
         // log user into docusign api
         NSString * integratorKey = [ProfileManager getIntegratorKey];
         NSString * hostApiUrl = [ProfileManager getHostApiUrl];
-        [DSMManager loginWithUserId:username password:password integratorKey:integratorKey host:[NSURL URLWithString:hostApiUrl]
-                    completionBlock:^(NSError *error)
-            {
+        [DSMManager loginWithUserId:username password:password integratorKey:integratorKey host:[NSURL URLWithString:hostApiUrl] completion:^(DSMAccountInfo *accountInfo, NSError *error) {
+            
                 if (error != nil) {
                     NSLog(@"An error occurred attempting to log into DocuSign: %@", error);
                     [ProgressHUD dismiss];
