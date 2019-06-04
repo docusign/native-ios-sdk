@@ -7,5 +7,6 @@ target 'docusign-sdk-sample-swift' do
 
   # Pods for docusign-sdk-sample-swift
   pod 'SVProgressHUD'
+  pod 'DocuSign'
 
 end
