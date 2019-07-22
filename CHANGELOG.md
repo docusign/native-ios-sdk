@@ -1,5 +1,12 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.1.4] - 07/22/2019
+
+### Changed
+* Improved Next Field Navigation -  The initial navigation moves to the next empty required field. New setup configuration. `DSM_SETUP_OFFLINE_SIGNING_NAVIGATE_BLANK_REQUIRED_FIELDS` to enable `Navigate blank required fields`.
+* Enhanced client logging - Verbose error logging for ‘login, persistence, & sync’ related methods.
+* Responsive signing is disabled for DocuSign SDK.
+
 ## [v2.1.3] - 05/17/2019
 
 ### Added
