@@ -237,7 +237,7 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
 {
     // gather client data
     NSString * client_full_name = [NSString stringWithFormat:@"%@ %@",
-                            self.mClientInfo[@"firstName"], self.mClientInfo[@"lastName"]];
+                                   self.mClientInfo[@"firstName"], self.mClientInfo[@"lastName"]];
     
     NSString * policyNum = [NSString stringWithFormat:@"%@",self.mClientInfo[@"policyNum"]];
     NSString * damageDate = [NSString stringWithFormat:@"%@",self.mDamageInfo[@"damageDate"]];
@@ -246,7 +246,7 @@ static NSString * tabLabelIdInvestmentAmount = @"Text Investment Amount";
     NSString * addressLine1 = [NSString stringWithFormat:@"%@",self.mClientInfo[@"address"]];
     NSString * addressLine2 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"city"],self.mClientInfo[@"state"]];
     NSString * addressLine3 = [NSString stringWithFormat:@"%@ %@",self.mClientInfo[@"country"], self.mClientInfo[@"zipCode"]];
-
+    
     if ([ProfileManager.templateIdsDemo containsObject:templateId]) {
         // map the client data to custom fields in the template
         NSDictionary * tabData = @{tabLabelIdFullName:client_full_name,

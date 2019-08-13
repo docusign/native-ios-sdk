@@ -7,6 +7,7 @@
 
 #import "DamageViewController.h"
 #import "ProfileManager.h"
+#import "ConfigurationConstants.h"
 
 
 @interface DamageViewController ()
@@ -44,11 +45,16 @@
     [[ProfileManager sharedInstance] setDamageInfo:[self createDamageInfoDict]];
     
     // for demo: determine whether user wants online or offline flow
-    [self promptOnlineOrOffline];
-    
-    
-    // for online flow, segue...
-    // TODO
+    if (CONFIGURATION_SHOW_OFFLINE_ONLINE_SIGNING_DEV_PROMPT) {
+        [self promptOnlineOrOffline];
+    } else {
+        if (CONFIGURATION_DEFAULT_TO_OFFLINE_SIGNING) {
+            [[ProfileManager sharedInstance] setOfflineFlow:YES];
+        } else {
+            [[ProfileManager sharedInstance] setOfflineFlow:NO];
+        }
+        [self performSegueWithIdentifier:@"segue_docusign" sender:self];
+    }
 }
 
 
@@ -91,7 +97,7 @@
         [[ProfileManager sharedInstance] setOfflineFlow:FALSE];
 
         // for offline flow, segue to attachment screen
-        [self performSegueWithIdentifier:@"segue_online" sender:self];
+        [self performSegueWithIdentifier:@"segue_docusign" sender:self];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];

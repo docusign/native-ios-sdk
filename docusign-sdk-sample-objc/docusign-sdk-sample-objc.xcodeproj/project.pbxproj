@@ -59,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		0B6168D03A19BAF45174E9FC /* Pods-docusign-sdk-sample-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc.release.xcconfig"; sourceTree = "<group>"; };
+		41A7ACB122A9BC2A00F48959 /* ConfigurationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationConstants.h; sourceTree = "<group>"; };
 		7DE7CBC9AADC1B54146D8B2B /* libPods-docusign-sdk-sample-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-docusign-sdk-sample-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C904902C1F2A49B400EAD899 /* AttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentViewController.h; sourceTree = "<group>"; };
 		C904902D1F2A49B400EAD899 /* AttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentViewController.m; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 		C95F1C491F0E936E00612CDC /* docusign-sdk-sample-objc */ = {
 			isa = PBXGroup;
 			children = (
+				41A7ACB122A9BC2A00F48959 /* ConfigurationConstants.h */,
 				C95F1C4D1F0E936E00612CDC /* AppDelegate.h */,
 				C95F1C4E1F0E936E00612CDC /* AppDelegate.m */,
 				C95F1C531F0E936E00612CDC /* Main.storyboard */,

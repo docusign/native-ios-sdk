@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -358,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Rpd-1h-yBx">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Rpd-1h-yBx">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -440,7 +438,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H95-Ur-usR">
-                                        <rect key="frame" x="287" y="36" width="80" height="33"/>
+                                        <rect key="frame" x="287" y="35.5" width="80" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="PR0-to-7aR"/>
                                         </constraints>
@@ -740,7 +738,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9e4-MD-eJb">
-                                <rect key="frame" x="16" y="190" width="343" height="355"/>
+                                <rect key="frame" x="16" y="190.5" width="343" height="354.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -798,7 +796,7 @@
                         <outlet property="tf_damageType" destination="gwM-cK-ZJe" id="SgY-yj-YMB"/>
                         <outlet property="tv_damageComments" destination="9e4-MD-eJb" id="WEj-SG-ufJ"/>
                         <segue destination="zak-GO-vGE" kind="show" identifier="segue_damage_attachment" id="8U0-99-V2M"/>
-                        <segue destination="Luc-Qi-bwZ" kind="show" identifier="segue_online" id="0up-Hq-0fx"/>
+                        <segue destination="Luc-Qi-bwZ" kind="show" identifier="segue_docusign" id="0up-Hq-0fx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wb-Zs-Lci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -808,7 +806,7 @@
         <!--Attachment View Controller-->
         <scene sceneID="uyW-nx-Iqy">
             <objects>
-                <viewController id="zak-GO-vGE" userLabel="Attachment View Controller" customClass="AttachmentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AttachmentViewController" id="zak-GO-vGE" userLabel="Attachment View Controller" customClass="AttachmentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="je0-bM-9jo"/>
                         <viewControllerLayoutGuide type="bottom" id="pC1-yQ-v8Y"/>
@@ -822,7 +820,7 @@
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKJ-4H-aGW">
-                                <rect key="frame" x="88" y="152" width="200" height="250"/>
+                                <rect key="frame" x="87.5" y="151.5" width="200" height="250"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="4kZ-kW-MDq"/>
@@ -864,7 +862,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Skip" id="zni-1v-CX7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Luc-Qi-bwZ" kind="show" id="Q5Q-SR-HBV"/>
+                                <segue destination="Luc-Qi-bwZ" kind="show" identifier="segue_offline" id="Q5Q-SR-HBV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -915,7 +913,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-R4-6jY">
-                                <rect key="frame" x="36" y="319" width="303" height="30"/>
+                                <rect key="frame" x="36" y="318.5" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Svk-jf-7QI"/>
                                 </constraints>
@@ -924,7 +922,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-V1-klz">
-                                <rect key="frame" x="36" y="357" width="303" height="30"/>
+                                <rect key="frame" x="36" y="356.5" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="T8e-GM-IgZ"/>
                                 </constraints>
@@ -936,7 +934,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3M-PR-EUr">
-                                <rect key="frame" x="36" y="515" width="187.5" height="16"/>
+                                <rect key="frame" x="36" y="514.5" width="187.5" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Don't have an account? Signup">
                                         <attributes>
@@ -950,7 +948,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VET-Ic-OQT">
-                                <rect key="frame" x="36" y="467" width="303" height="40"/>
+                                <rect key="frame" x="36" y="466.5" width="303" height="40"/>
                                 <color key="backgroundColor" red="0.027450980618596077" green="0.24313725531101227" blue="0.34117648005485535" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="REe-kD-w4P"/>
@@ -970,7 +968,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Wm-duQ">
-                                <rect key="frame" x="36" y="395" width="108" height="16"/>
+                                <rect key="frame" x="36" y="394.5" width="108" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Forgot password?">
                                         <attributes>
@@ -984,7 +982,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jj8-TQ-yGc" userLabel="TitleView">
-                                <rect key="frame" x="57" y="140" width="260" height="54"/>
+                                <rect key="frame" x="57.5" y="140" width="260" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nO-V0-rie">
                                         <rect key="frame" x="10" y="4" width="90.5" height="44"/>
@@ -1057,6 +1055,6 @@
         <image name="circle_w_plus" width="59" height="59"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q5Q-SR-HBV"/>
+        <segue reference="0up-Hq-0fx"/>
     </inferredMetricsTieBreakers>
 </document>
