@@ -12,6 +12,7 @@
 #import "EnvelopesManager.h"
 #import "ProfileManager.h"
 #import "ProgressHUD.h"
+#import "ConfigurationConstants.h"
 
 
 @interface ClaimsViewController ()
@@ -60,11 +61,12 @@
     // retrieve cached envelopes
     [self fetchEnvelopeList];
 
-    // check if envelopes waiting to be cached
-    long claimsCount = [self.mEnvelopeIds count];
-    if (claimsCount > 0)
-    {
-        [self promptToSyncEnvelopes];
+    if (CONFIGURATION_SHOW_SYNC_DEV_PROMPT) {
+        // check if envelopes waiting to be cached
+        long claimsCount = [self.mEnvelopeIds count];
+        if (claimsCount > 0) {
+            [self promptToSyncEnvelopes];
+        }
     }
 }
 
@@ -92,14 +94,17 @@
     [self.refreshController endRefreshing];
 }
 
+- (void)syncEnvelopes
+{
+    // sync envelopes
+    [ProgressHUD show:@"Sync Claims..."];
+    [[EnvelopesManager sharedInstance] syncCachedEnvelopes];
+}
 
 - (void) promptToSyncEnvelopes
 {
     UIAlertAction *syncAction = [UIAlertAction actionWithTitle:@"Sync Claims" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
-        // sync envelopes
-        [ProgressHUD show:@"Sync Claims..."];
-        [[EnvelopesManager sharedInstance] syncCachedEnvelopes];
+        [self syncEnvelopes];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Don't Sync" style:UIAlertActionStyleCancel handler:nil];
@@ -127,8 +132,7 @@
     
     // reuse cell object (or create a new object if needed)
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellId];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellId];
     }
     
@@ -139,6 +143,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (CONFIGURATION_SHOW_SYNC_DEV_PROMPT) {
+        [self promptToSyncEnvelopes];
+    } else {
+        [self syncEnvelopes];
+    }
+}
 
 #pragma mark - Event Handlers
 

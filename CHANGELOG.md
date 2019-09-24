@@ -1,9 +1,17 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.1.5] - 08/13/2019
+
+### Added
+* New setup configuration `DSM_SETUP_RECIPIENT_DEFAULTS_CASE_INSENSITIVELY_MATCH_ROLE_NAME` allows more flexible recipient matching based on case insensitive `roleName` comparasion in the templates. This can be used to override the default strict `roleName` match behaviour during application of recipient-default-values.
+* New setup configuration `DSM_SETUP_TAB_DEFAULTS_COMPARISION` allows more flexible tab matching based on data-label comparasion during application of tab-default-values. `DSMTabComparision` enum values `DSMTabComparisionCaseAndDiacriticInsensitive` and `DSMTabComparisionContains` can be used to override the default `DSMTabComparisionStrictMatch` behaviour.
+
 ## [v2.1.4] - 07/22/2019
 
+### Added
+* Improved Next Field Navigation -  The initial navigation moves to the next empty required field. New setup configuration `DSM_SETUP_OFFLINE_SIGNING_NAVIGATE_BLANK_REQUIRED_FIELDS` to enable `Navigate blank required fields`.
+
 ### Changed
-* Improved Next Field Navigation -  The initial navigation moves to the next empty required field. New setup configuration. `DSM_SETUP_OFFLINE_SIGNING_NAVIGATE_BLANK_REQUIRED_FIELDS` to enable `Navigate blank required fields`.
 * Enhanced client logging - Verbose error logging for ‘login, persistence, & sync’ related methods.
 * Responsive signing is disabled for DocuSign SDK.
 
