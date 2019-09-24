@@ -36,8 +36,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         SVProgressHUD.show(withStatus: "Authenticating...");
         
-        let username = tf_username.text;
-        let password = tf_password.text;
+        guard let username = tf_username.text else {
+            return
+        }
+        guard let password = tf_password.text else {
+            return
+        }
         let integratorKey = ProfileManager.Static.integratorKey;
         let hostUrl: URL! = ProfileManager.Static.demoHostApi;
         
