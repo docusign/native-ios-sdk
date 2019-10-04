@@ -1,5 +1,26 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.1.6] - 10/03/2019
+
+### Removed
+* NetworkMode - Removed all instances of NetworkMode. Login methods have been updated to remove NetworkMode parameter.
+* Login with userId - Class method for login with userId `+[DSMManager loginWithUserId:password:integratorKey:host:completion:]` has been removed in favor of login with email class method `+[DSMManager loginWithEmail:password:integratorKey:host:completion]`.
+* Clear credentials and cached templates: Class method `+[DSMManager clearCredentialsAndCachedTemplates]` is removed in favour of `+[DSMManager logout]`.
+
+### Added
+* Login with email: Class method for login with email `+[DSMManager loginWithEmail:password:integratorKey:host:completion]`.
+* Account Setup: Class method to fetch additional account data `+[DSMManager fetchSettingsWithAccountInfo:completion]`. This gets additional account data that includes consumer disclosure and various settings. 
+* Logout: Class method to perform user logout with credential and cache document deletion `+[DSMManager logout]`.
+* Is Session Active: Class method to query if there is an active user authentication session `+[DSMManager isSessionActiveWithEmail:password:integratorKey:host]`.
+* API Timeout: New setup configuration `DSM_SETUP_DEFAULT_API_TIMEOUT` to customize the API session timeout. Class method to query configured value of API timeout `+[DSMManager configuredValueForSetupKeyAPITimeout]`.
+* Setup Constants: Constants to query API timeouts defined in `DSMSetupConstants header`. New constants: `DSM_SETUP_API_TIMEOUT_MIN_VALUE`, `DSM_SETUP_API_TIMEOUT_MAX_VALUE` and `DSM_SETUP_API_TIMEOUT_DEFAULT_VALUE`. 
+
+### Changed
+* Login Session - Authentication sessions are cached and reused whenever applicable to reduce the API calls related to user login and account data persistence.
+* Persistence - Improved keychain handling with the data persistence.
+* Login with accessToken - Removed `networkMode` parameter from the class method `+[DSMManager loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:networkMode:completion:]`. It's now changed to `+[DSMManager loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:completion:]`.
+* Login with apiPassword - Removed `networkMode` parameter from the class method `+[DSMManager loginWithApiPassword:accountId:userId:userName:email:host:integratorKey:networkMode:completion:]`. It's now changed to `+[DSMManager loginWithApiPassword:accountId:userId:userName:email:host:integratorKey:completion:]`.
+
 ## [v2.1.5] - 08/13/2019
 
 ### Added
