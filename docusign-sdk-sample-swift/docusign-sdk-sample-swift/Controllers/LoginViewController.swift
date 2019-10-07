@@ -25,53 +25,54 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
 
         // pre-populate the user credentials fields with defaults (if provided)
-        tf_username.text = ProfileManager.Static.defaultUsername;
-        tf_password.text = ProfileManager.Static.defaultPassword;
-        tf_password.delegate = self;
+        tf_username.text = ProfileManager.Static.defaultUsername
+        tf_password.text = ProfileManager.Static.defaultPassword
+        tf_password.delegate = self
     }
     
     // MARK: IBAction Methods
 
     @IBAction func signInButtonTapped(_ sender: Any)
     {
-        SVProgressHUD.show(withStatus: "Authenticating...");
+        SVProgressHUD.show(withStatus: "Authenticating...")
         
-        guard let username = tf_username.text else {
+        guard let email = tf_username.text else {
             return
         }
+        
         guard let password = tf_password.text else {
             return
         }
-        let integratorKey = ProfileManager.Static.integratorKey;
-        let hostUrl: URL! = ProfileManager.Static.demoHostApi;
+        let integratorKey = ProfileManager.Static.integratorKey
+        let hostUrl: URL! = ProfileManager.Static.demoHostApi
         
-        if (isUsernameFormatValid(username: username) && isPasswordFormatValid(password: password))
+        if (isUsernameFormatValid(username: email) && isPasswordFormatValid(password: password))
         {
-            DSMManager.login(withUserId: username,
+            DSMManager.login(withEmail: email,
                              password: password,
                              integratorKey: integratorKey,
                              host: hostUrl) { (accountInfo, error) in
-                SVProgressHUD.dismiss();
+                SVProgressHUD.dismiss()
                 
                 if (error != nil)
                 {
-                    NSLog("Error logging in");
+                    NSLog("Error logging in")
                     // display error prompt
-                    self.promptError(err: error);
+                    self.promptError(err: error)
                 }
                 else
                 {
-                    NSLog("User authenticated");
+                    NSLog("User authenticated")
                     // segue to main navigation controller
-                    self.performSegue(withIdentifier: "segueMainNav", sender: nil);
+                    self.performSegue(withIdentifier: "segueMainNav", sender: nil)
                 }
             }
         }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.tf_password.resignFirstResponder();
-        return true;
+        self.tf_password.resignFirstResponder()
+        return true
     }
 
     // MARK: Private Methods
@@ -80,7 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         // check username is non-empty
         // TODO perform additional validation
-        return ((username?.count)! > 0);
+        return ((username?.count)! > 0)
     }
     
     
@@ -88,18 +89,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         // check password is non-empty
         // TODO Perform additional validation
-        return ((password?.count)! > 0);
+        return ((password?.count)! > 0)
     }
 
     
     func promptError(err: Error?)
     {
-        let title = "Error";
-        let message = err?.localizedDescription;
+        let title = "Error"
+        let message = err?.localizedDescription
 
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { action in });
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { action in })
         
-        self.present(alert, animated: true);
+        self.present(alert, animated: true)
     }
 }

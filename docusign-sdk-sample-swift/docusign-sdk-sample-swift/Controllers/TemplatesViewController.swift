@@ -19,8 +19,8 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: Private Variables / Members
 
-    private let cellReuseIdentifier = "cell_template";
-    private var mTemplateList = [DSMEnvelopeTemplateDefinition]();
+    private let cellReuseIdentifier = "cell_template"
+    private var mTemplateList = [DSMEnvelopeTemplateDefinition]()
     private var refreshControl: UIRefreshControl!
 
 
@@ -30,8 +30,8 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
     {
         super.viewDidLoad()
 
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = self
+        tableView.dataSource = self
         
         let nib = UINib(nibName: "TemplateTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
@@ -39,15 +39,15 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
         // add refresh control to table view
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged);
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
         // fetch list of template definitions
         TemplatesManager.sharedInstance.getTemplateListWithCompletion { (templateDefinitions) in
             if (templateDefinitions != nil)
             {
-                self.mTemplateList = templateDefinitions!;
-                self.tableView.reloadData();
+                self.mTemplateList = templateDefinitions!
+                self.tableView.reloadData()
             }
         }
     }
@@ -64,7 +64,7 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return mTemplateList.count;
+        return mTemplateList.count
     }
     
     
@@ -74,49 +74,49 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
         // create a new cell if needed or reuse an old one
         let cell: TemplateTableViewCell =  self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TemplateTableViewCell!
         
-        return cell;
+        return cell
     }
 
 
     // configure cell before display
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        let template: DSMEnvelopeTemplateDefinition = mTemplateList[indexPath.row];
-        let templateCell: TemplateTableViewCell = cell as! TemplateTableViewCell;
-        templateCell.lbl_templateName.text = template.name;
+        let template: DSMEnvelopeTemplateDefinition = mTemplateList[indexPath.row]
+        let templateCell: TemplateTableViewCell = cell as! TemplateTableViewCell
+        templateCell.lbl_templateName.text = template.name
         
         // set image and action for download button
         if (TemplatesManager.sharedInstance.templateIsCachedWithId(templateId: template.templateId))
         {
             // template is already cached
-            templateCell.btn_download.setBackgroundImage(UIImage(named: "download_done"), for: UIControlState.normal);
-            templateCell.btn_download.removeTarget(self, action: nil, for: .touchUpInside);
+            templateCell.btn_download.setBackgroundImage(UIImage(named: "download_done"), for: .normal)
+            templateCell.btn_download.removeTarget(self, action: nil, for: .touchUpInside)
         }
         else
         {
             // template needs to be downloaded
-            templateCell.btn_download.setBackgroundImage(UIImage(named: "download"), for: UIControlState.normal);
+            templateCell.btn_download.setBackgroundImage(UIImage(named: "download"), for: .normal)
             templateCell.btn_download.addTarget(self, action: #selector(downloadButtonTapped(_:)), for: .touchUpInside)
         }
     }
     
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if (editingStyle == UITableViewCellEditingStyle.delete)
+        if (editingStyle == .delete)
         {
             // remove specified template
-            let templateId = self.mTemplateList[indexPath.row].templateId;
-            TemplatesManager.sharedInstance.removeTemplateWithId(templateId: templateId!);
+            let templateId = self.mTemplateList[indexPath.row].templateId
+            TemplatesManager.sharedInstance.removeTemplateWithId(templateId: templateId)
             
             // reload table to update template download status
-            self.tableView.reloadData();
+            self.tableView.reloadData()
         }
     }
 
 
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "Uncache";
+        return "Uncache"
     }
     
     
@@ -124,40 +124,40 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func startEditModeOnTableView()
     {
-        tableView.setEditing(true, animated: true);
+        tableView.setEditing(true, animated: true)
     }
     
     
     func endEditModeOnTableView()
     {
-        tableView.setEditing(false, animated: true);
+        tableView.setEditing(false, animated: true)
     }
 
 
     // MARK: Selector or Helper Methods
 
-    func downloadButtonTapped(_ sender:UIButton)
+    @objc func downloadButtonTapped(_ sender:UIButton)
     {
         if let cell = sender.superview?.superview as? UITableViewCell
         {
-            SVProgressHUD.show(withStatus: "Downloading...");
+            SVProgressHUD.show(withStatus: "Downloading...")
             
             // determine table row index and associated template id
             let indexPath = self.tableView.indexPath(for: cell)
-            let templateId = mTemplateList[(indexPath?.row)!].templateId;
+            let templateId = mTemplateList[(indexPath?.row)!].templateId
         
             if (templateId != nil) {
                 // initialize the template Manager
                 let templatesManager = DSMTemplatesManager()
                 // cache the specified template
                 templatesManager.cacheTemplate(withId: templateId) { (errorMessage) in
-                    SVProgressHUD.dismiss();
+                    SVProgressHUD.dismiss()
                     
                     if let errorMessage = errorMessage {
-                        self.displayErrorPrompt(errorMessage: errorMessage.localizedDescription);
+                        self.displayErrorPrompt(errorMessage: errorMessage.localizedDescription)
                     }
                     else {
-                        self.tableView.reloadData();
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -167,13 +167,13 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: Private Methods
     
-    func refresh(_ sender:Any) {
+    @objc func refresh(_ sender:Any) {
 
         TemplatesManager.sharedInstance.getTemplateListWithCompletion { (templateDefinitions) in
             if (templateDefinitions != nil)
             {
-                self.mTemplateList = templateDefinitions!;
-                self.tableView.reloadData();
+                self.mTemplateList = templateDefinitions!
+                self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
         }
@@ -182,10 +182,10 @@ class TemplatesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private func displayErrorPrompt(errorMessage: String)
     {
-        NSLog("Display error prompt: " + errorMessage);
+        NSLog("Display error prompt: " + errorMessage)
         
-        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 

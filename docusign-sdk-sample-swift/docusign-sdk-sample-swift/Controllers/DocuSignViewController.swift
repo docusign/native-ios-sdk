@@ -19,22 +19,21 @@ class DocuSignViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.styleUIElements();
+        self.styleUIElements()
 
         // set sdk styling
-        DSMAppearance.setNavigationBarTintColor(UIColor(red: 46.0/255, green: 109.0/255, blue: 164.0/255, alpha: 1.0));
-        DSMAppearance.setBarButtonItemsTintColor(UIColor.white);
+        DSMAppearance.setNavigationBarTintColor(UIColor(red: 46.0/255, green: 109.0/255, blue: 164.0/255, alpha: 1.0))
+        DSMAppearance.setBarButtonItemsTintColor(UIColor.white)
 
-        let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId();
-        let tabData: Dictionary = ProfileManager.sharedInstance.getTemplateTabData(templateId:templateId);
-        let recipientData: Array = ProfileManager.sharedInstance.getTemplateRecipientData(templateId:templateId);
-        let onlineSign: Bool = !ProfileManager.sharedInstance.getUseOfflineFlow();
-        let attachmentUrl: URL? = ProfileManager.sharedInstance.getAttachmentUrl();
+        let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId()
+        let tabData: Dictionary = ProfileManager.sharedInstance.getTemplateTabData(templateId:templateId)
+        let recipientData: Array = ProfileManager.sharedInstance.getTemplateRecipientData(templateId:templateId)
+        let onlineSign: Bool = !ProfileManager.sharedInstance.getUseOfflineFlow()
+        let attachmentUrl: URL? = ProfileManager.sharedInstance.getAttachmentUrl()
         let customFields = ProfileManager.sharedInstance.getCustomFieldsData(templateId:templateId)
 
         // display template via sdk
-        TemplatesManager.sharedInstance.displayTemplateForSignature(templateId: templateId, controller: self, tabData: tabData, recipientData: recipientData, customFields:customFields, onlineSign: onlineSign, attachmentUrl: attachmentUrl)
-        { (errMsg) in
+        TemplatesManager.sharedInstance.displayTemplateForSignature(templateId: templateId, controller: self, tabData: tabData, recipientData: recipientData, customFields:customFields, onlineSign: onlineSign, attachmentUrl: attachmentUrl) { (controller, errMsg) in
             
             // return to client screen
             let vcIndex = self.navigationController?.viewControllers.index(where: { (viewController) -> Bool in
@@ -42,9 +41,9 @@ class DocuSignViewController: UIViewController
                     return true
                 }
                 return false
-            });
+            })
             
-            let clientVC = self.navigationController?.viewControllers[vcIndex!] as! ClientViewController;
+            let clientVC = self.navigationController?.viewControllers[vcIndex!] as! ClientViewController
             self.navigationController?.popToViewController(clientVC, animated: true)
         }
     }
@@ -54,7 +53,7 @@ class DocuSignViewController: UIViewController
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
 
 }

@@ -10,6 +10,6 @@ import Foundation
 
 protocol ContainerWithTableView {
 
-    func startEditModeOnTableView();
-    func endEditModeOnTableView();
+    func startEditModeOnTableView()
+    func endEditModeOnTableView()
 }

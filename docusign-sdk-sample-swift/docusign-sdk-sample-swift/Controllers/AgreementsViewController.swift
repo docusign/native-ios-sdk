@@ -18,8 +18,8 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     // private variables / members
-    private let cellReuseIdentifier = "cell_template";
-    private var mTemplateList = [DSMEnvelopeTemplateDefinition]();
+    private let cellReuseIdentifier = "cell_template"
+    private var mTemplateList = [DSMEnvelopeTemplateDefinition]()
     private var refreshControl: UIRefreshControl!
 
     
@@ -27,27 +27,27 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad()
     {
-        super.viewDidLoad();
-        self.styleUIElements();
+        super.viewDidLoad()
+        self.styleUIElements()
 
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        let nib = UINib(nibName: "TemplateTableViewCell", bundle: nil);
-        tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier);
+        let nib = UINib(nibName: "TemplateTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         
         // add refresh control to table view
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged);
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
 
         // fetch list of template definitions
         TemplatesManager.sharedInstance.getTemplateListWithCompletion { (templateDefinitions) in
             if (templateDefinitions != nil)
             {
-                self.mTemplateList = templateDefinitions!;
-                self.tableView.reloadData();
+                self.mTemplateList = templateDefinitions!
+                self.tableView.reloadData()
             }
         }
 
@@ -58,14 +58,14 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     // number of sections in table view
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return 1;
+        return 1
     }
     
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return mTemplateList.count;
+        return mTemplateList.count
     }
     
     
@@ -73,32 +73,32 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // create a new cell if needed or reuse an old one
-        let cell: TemplateTableViewCell =  self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TemplateTableViewCell!;
+        let cell: TemplateTableViewCell =  self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TemplateTableViewCell!
         
-        return cell;
+        return cell
     }
     
     
     // configure cell before display
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        let template: DSMEnvelopeTemplateDefinition = mTemplateList[indexPath.row];
-        let templateCell: TemplateTableViewCell = cell as! TemplateTableViewCell;
-        templateCell.lbl_templateName.text = template.name;
+        let template: DSMEnvelopeTemplateDefinition = mTemplateList[indexPath.row]
+        let templateCell: TemplateTableViewCell = cell as! TemplateTableViewCell
+        templateCell.lbl_templateName.text = template.name
         
         // set image and action for download button
         if (TemplatesManager.sharedInstance.templateIsCachedWithId(templateId: template.templateId))
         {
             // template is already cached
-            templateCell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator;
-            templateCell.btn_download.removeTarget(self, action: nil, for: .touchUpInside);
-            templateCell.btn_download.isHidden = true;
+            templateCell.accessoryType = .disclosureIndicator
+            templateCell.btn_download.removeTarget(self, action: nil, for: .touchUpInside)
+            templateCell.btn_download.isHidden = true
         }
         else
         {
             // template needs to be downloaded
-            templateCell.btn_download.setBackgroundImage(UIImage(named: "download"), for: UIControlState.normal);
-            templateCell.btn_download.addTarget(self, action: #selector(downloadButtonTapped(_:)), for: .touchUpInside);
+            templateCell.btn_download.setBackgroundImage(UIImage(named: "download"), for: .normal)
+            templateCell.btn_download.addTarget(self, action: #selector(downloadButtonTapped(_:)), for: .touchUpInside)
         }
     }
 
@@ -106,54 +106,51 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // fetch template for selected row
-        let template: DSMEnvelopeTemplateDefinition = self.mTemplateList[indexPath.row];
-        let templateId: String = template.templateId;
-        ProfileManager.sharedInstance.setCurrentTemplateId(templateId: templateId);
+        let template: DSMEnvelopeTemplateDefinition = self.mTemplateList[indexPath.row]
+        let templateId: String = template.templateId
+        ProfileManager.sharedInstance.setCurrentTemplateId(templateId: templateId)
 
         // prompt offline or online
-        self.promptUseOfflineFlow();
+        self.promptUseOfflineFlow()
     }
 
     
     // MARK: Selector or Helper Methods
     
-    func downloadButtonTapped(_ sender:UIButton) {
+    @objc func downloadButtonTapped(_ sender:UIButton) {
         
         if let cell = sender.superview?.superview as? UITableViewCell
         {
-            SVProgressHUD.show(withStatus: "Downloading...");
+            SVProgressHUD.show(withStatus: "Downloading...")
             
             // determine table row index and associated template id
             let indexPath = self.tableView.indexPath(for: cell)
-            let templateId = mTemplateList[(indexPath?.row)!].templateId;
+            let templateId = mTemplateList[(indexPath?.row)!].templateId
             
-            if (templateId != nil)
-            {
-                // cache the specified template
-                TemplatesManager.sharedInstance.cacheTemplateWithId(templateId: templateId!) { (errMsg) in
-                    SVProgressHUD.dismiss();
-                    
-                    if (errMsg != nil)
-                    {
-                        self.displayErrorPrompt(errMsg: errMsg!);
-                    }
-                    else
-                    {
-                        self.tableView.reloadData();
-                    }
-                };
+            // cache the specified template
+            TemplatesManager.sharedInstance.cacheTemplateWithId(templateId: templateId) { (errMsg) in
+                SVProgressHUD.dismiss()
+                
+                if (errMsg != nil)
+                {
+                    self.displayErrorPrompt(errMsg: errMsg!)
+                }
+                else
+                {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
     
 
-    func refresh(_ sender:Any) {
+    @objc func refresh(_ sender:Any) {
         
         TemplatesManager.sharedInstance.getTemplateListWithCompletion { (templateDefinitions) in
             if (templateDefinitions != nil)
             {
-                self.mTemplateList = templateDefinitions!;
-                self.tableView.reloadData();
+                self.mTemplateList = templateDefinitions!
+                self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
         }
@@ -164,32 +161,32 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func promptUseOfflineFlow()
     {
-        let defaultToOffline = true;
+        let defaultToOffline = true
         if !ProfileManager.Static.displayDeveloperNotes && defaultToOffline {
-            self.performOfflineSigning();
+            self.performOfflineSigning()
         } else {
-            let title = "Developer's Notes";
-            let message = "Would you like to proceed with the offline or online signing flow?";
-            let offlineAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+            let title = "Developer's Notes"
+            let message = "Would you like to proceed with the offline or online signing flow?"
+            let offlineAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
             // offline
-            offlineAlert.addAction(UIAlertAction(title: "Offline", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
-                NSLog("Use Offline");
-                self.performOfflineSigning();
+            offlineAlert.addAction(UIAlertAction(title: "Offline", style: .default, handler: { (alert: UIAlertAction) in
+                NSLog("Use Offline")
+                self.performOfflineSigning()
             }))
 
             // online
-            offlineAlert.addAction(UIAlertAction(title: "Online", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction) in
-                NSLog("Use Online");
-                ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: false);
+            offlineAlert.addAction(UIAlertAction(title: "Online", style: .default, handler: { (alert: UIAlertAction) in
+                NSLog("Use Online")
+                ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: false)
                 
                 // segue to docusign screen
                 self.performSegue(withIdentifier: "segueAgreementsDocusign", sender: self)
 
-            }));
+            }))
 
             // cancel
-            offlineAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+            offlineAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
 
             self.present(offlineAlert, animated: true, completion: nil)
         }
@@ -198,17 +195,17 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func displayErrorPrompt(errMsg: String)
     {
-        let alert = UIAlertController(title: "Error", message: errMsg, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Error", message: errMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
     
     private func performOfflineSigning() {
-        ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: true);
+        ProfileManager.sharedInstance.setUseOfflineFlow(useOffline: true)
         
         // check if template is cached
-        let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId();
+        let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId()
         if (TemplatesManager.sharedInstance.templateIsCachedWithId(templateId: templateId))
         {
             // segue to attachment screen
@@ -217,14 +214,14 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
         else
         {
             // template needs to be downloaded
-            self.displayErrorPrompt(errMsg: "Template must be cached on device before proceeding with offline flow.");
+            self.displayErrorPrompt(errMsg: "Template must be cached on device before proceeding with offline flow.")
         }
     }
     
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
 
 }

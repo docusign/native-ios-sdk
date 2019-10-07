@@ -27,22 +27,22 @@ class PortfolioViewController: UIViewController
     override func viewWillAppear(_ animated: Bool) {
 
         // set client name
-        lbl_clientName.text = ProfileManager.sharedInstance.getClientName();
+        lbl_clientName.text = ProfileManager.sharedInstance.getClientName()
         
         // set signed label based on whether envelopes need to sync
-        let envelopeIdsToSync = EnvelopesManager.sharedInstance.getCachedEnvelopeIds();
+        let envelopeIdsToSync = EnvelopesManager.sharedInstance.getCachedEnvelopeIds()
 
         if (envelopeIdsToSync != nil && (envelopeIdsToSync?.count)! > 0)
         {
             // envelopes need to sync, mark as signed
-            self.lbl_signedStatus.text = "Signed";
-            self.lbl_signedStatus.textColor = UIColor(red: 126.0/255, green: 211.0/255, blue: 33.0/255, alpha: 1.0);
+            self.lbl_signedStatus.text = "Signed"
+            self.lbl_signedStatus.textColor = UIColor(red: 126.0/255, green: 211.0/255, blue: 33.0/255, alpha: 1.0)
         }
         else
         {
             // mark unsigned
-            self.lbl_signedStatus.text = "Unsigned";
-            self.lbl_signedStatus.textColor = UIColor(red: 208.0/255, green: 2.0/255, blue: 27.0/255, alpha: 1.0);
+            self.lbl_signedStatus.text = "Unsigned"
+            self.lbl_signedStatus.textColor = UIColor(red: 208.0/255, green: 2.0/255, blue: 27.0/255, alpha: 1.0)
         }
     }
 }

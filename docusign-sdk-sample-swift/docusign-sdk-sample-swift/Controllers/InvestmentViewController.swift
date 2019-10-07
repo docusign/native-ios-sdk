@@ -19,10 +19,10 @@ class InvestmentViewController: UIViewController,UITextFieldDelegate
     
     override func viewDidLoad()
     {
-        super.viewDidLoad();
-        self.styleUIElements();
+        super.viewDidLoad()
+        self.styleUIElements()
         
-        self.loadInvestmentData();
+        self.loadInvestmentData()
     }
 
 
@@ -32,10 +32,10 @@ class InvestmentViewController: UIViewController,UITextFieldDelegate
     {
         // Store investment details
         ProfileManager.sharedInstance.setClientInvestmentInfo(clientNumber: self.tf_clientNumber.text!,
-                                                              investmentAmount: self.tf_investmentAmount.text!);
+                                                              investmentAmount: self.tf_investmentAmount.text!)
         
         // segue to agreement screen
-        self.performSegue(withIdentifier: "segueInvestmentAgreements", sender: self);
+        self.performSegue(withIdentifier: "segueInvestmentAgreements", sender: self)
     }
 
     
@@ -43,25 +43,25 @@ class InvestmentViewController: UIViewController,UITextFieldDelegate
     
     private func loadInvestmentData()
     {
-        let clientData = ProfileManager.sharedInstance.getClientData();
+        let clientData = ProfileManager.sharedInstance.getClientData()
         
-        self.tf_clientNumber.text = clientData["clientNumber"];
-        self.tf_clientNumber.delegate = self;
+        self.tf_clientNumber.text = clientData["clientNumber"]
+        self.tf_clientNumber.delegate = self
         
-        self.tf_investmentAmount.text = clientData["investmentAmount"];
-        self.tf_investmentAmount.delegate = self;
+        self.tf_investmentAmount.text = clientData["investmentAmount"]
+        self.tf_investmentAmount.delegate = self
     }
     
     
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true);
-        return true;
+        self.view.endEditing(true)
+        return true
     }
 
 }

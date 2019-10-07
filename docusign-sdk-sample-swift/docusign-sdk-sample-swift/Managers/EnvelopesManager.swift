@@ -16,10 +16,10 @@ class EnvelopesManager
     static let sharedInstance = EnvelopesManager()
 
     // DSM Envelopes Manager
-    var mDSMEnvelopesManager: DSMEnvelopesManager?;
+    var mDSMEnvelopesManager: DSMEnvelopesManager?
     
     // list of template definitions
-    var mEnvelopeDefinitions: [DSMEnvelopeDefinition]?;
+    var mEnvelopeDefinitions: [DSMEnvelopeDefinition]?
 
     //This prevents others from using the default '()' initializer for this class.
     private init()
@@ -33,13 +33,13 @@ class EnvelopesManager
 
     func getCachedEnvelopeIds() -> [String]?
     {
-        return self.mDSMEnvelopesManager?.cachedEnvelopeIds();
+        return self.mDSMEnvelopesManager?.cachedEnvelopeIds()
     }
 
 
     func syncEnvelopes() -> Void
     {
-        self.mDSMEnvelopesManager?.syncEnvelopes();
+        self.mDSMEnvelopesManager?.syncEnvelopes()
     }
     
     func presentComposeEnvelopeViewController(_ presentingController:UIViewController, _ signingMode:DSMSigningMode) -> Void
