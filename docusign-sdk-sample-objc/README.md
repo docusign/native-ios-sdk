@@ -3,7 +3,6 @@ DocuSign Native iOS SDK - Sample App in Objective-C
 
 Install
 =============
-* Download the `DocuSignSDK-framework.zip` and unarchieve it. Copy the `DocuSignSDK.framework` to root folder of sample app `docusign-sdk-sample-objc`.
 * Launch Terminal and change directory to `docusign-sdk-sample-objc`
 * Perform `pod install` to fetch latest `DocuSign` pod.
   * Or run `pod update 'DocuSign'` command on terminal to update 'DocuSign' pod to the latest version from a previous version.
