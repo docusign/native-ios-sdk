@@ -28,11 +28,11 @@ class ContactViewController: UIViewController,UITextFieldDelegate
     
     override func viewDidLoad()
     {
-        super.viewDidLoad();
-        self.styleUIElements();
+        super.viewDidLoad()
+        self.styleUIElements()
         
         // for demo purposes, pre-populate with fake data
-        self.loadContactData();
+        self.loadContactData()
     }
 
 
@@ -47,7 +47,7 @@ class ContactViewController: UIViewController,UITextFieldDelegate
             country: self.tf_country.text,
             zipCode: self.tf_zipCode.text,
             email: self.tf_email.text,
-            phone: self.tf_phone.text);
+            phone: self.tf_phone.text)
     }
     
     
@@ -55,46 +55,46 @@ class ContactViewController: UIViewController,UITextFieldDelegate
     
     private func loadContactData()
     {
-        let clientData = ProfileManager.sharedInstance.getClientData();
+        let clientData = ProfileManager.sharedInstance.getClientData()
         
-        self.tf_firstName.text = clientData["firstName"];
-        self.tf_firstName.delegate = self ;
+        self.tf_firstName.text = clientData["firstName"]
+        self.tf_firstName.delegate = self 
         
-        self.tf_lastName.text = clientData["lastName"];
-        self.tf_lastName.delegate = self ;
+        self.tf_lastName.text = clientData["lastName"]
+        self.tf_lastName.delegate = self 
         
-        self.tf_phone.text = clientData["phone"];
-        self.tf_phone.delegate = self ;
+        self.tf_phone.text = clientData["phone"]
+        self.tf_phone.delegate = self 
 
-        self.tf_email.text = clientData["email"];
-        self.tf_email.delegate = self ;
+        self.tf_email.text = clientData["email"]
+        self.tf_email.delegate = self 
 
-        self.tf_address.text = clientData["address"];
-        self.tf_address.delegate = self ;
+        self.tf_address.text = clientData["address"]
+        self.tf_address.delegate = self 
 
-        self.tf_city.text = clientData["city"];
-        self.tf_city.delegate = self ;
+        self.tf_city.text = clientData["city"]
+        self.tf_city.delegate = self 
 
-        self.tf_state.text = clientData["state"];
-        self.tf_state.delegate = self ;
+        self.tf_state.text = clientData["state"]
+        self.tf_state.delegate = self 
 
-        self.tf_country.text = clientData["country"];
-        self.tf_country.delegate = self ;
+        self.tf_country.text = clientData["country"]
+        self.tf_country.delegate = self 
 
-        self.tf_zipCode.text = clientData["zipCode"];
-        self.tf_zipCode.delegate = self ;
+        self.tf_zipCode.text = clientData["zipCode"]
+        self.tf_zipCode.delegate = self 
     }
     
     
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true);
-        return true ;
+        self.view.endEditing(true)
+        return true 
     }
 
 }

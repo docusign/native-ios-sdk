@@ -19,29 +19,29 @@ class MainContainerViewController: UIViewController {
 
     // reference to the embeded templates view controller
     // used to reference ui objects inside container from outer nav bar
-    private var templatesVC: TemplatesViewController?;
+    private var templatesVC: TemplatesViewController?
 
 
     // used to track if downloads table view is in edit mode
-    private var editModeEnabled: Bool = false;
+    private var editModeEnabled: Bool = false
 
 
     // MARK: UI Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.styleUIElements();
+        self.styleUIElements()
         
         // hide edit button from nav bar
-        self.bt_navEdit.isEnabled = false;
-        self.bt_navEdit.title = "";
+        self.bt_navEdit.isEnabled = false
+        self.bt_navEdit.title = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if (segue.identifier == "segueMainNavTemplates")
         {
-            templatesVC = segue.destination as? TemplatesViewController;
+            templatesVC = segue.destination as? TemplatesViewController
         }
     }
 
@@ -54,54 +54,54 @@ class MainContainerViewController: UIViewController {
         {
             case 0:
                 // show overview screen
-                vw_overviewContainer.isHidden = false;
-                vw_clientContainer.isHidden = true;
-                vw_templatesContainer.isHidden = true;
-                bt_navEdit.isEnabled = false;
-                bt_navEdit.title = "";
-                break;
+                vw_overviewContainer.isHidden = false
+                vw_clientContainer.isHidden = true
+                vw_templatesContainer.isHidden = true
+                bt_navEdit.isEnabled = false
+                bt_navEdit.title = ""
+                break
 
             case 1:
                 // show clients screen
-                vw_overviewContainer.isHidden = true;
-                vw_clientContainer.isHidden = false;
-                vw_templatesContainer.isHidden = true;
-                bt_navEdit.isEnabled = false;
-                bt_navEdit.title = "";
-                break;
+                vw_overviewContainer.isHidden = true
+                vw_clientContainer.isHidden = false
+                vw_templatesContainer.isHidden = true
+                bt_navEdit.isEnabled = false
+                bt_navEdit.title = ""
+                break
             
             case 2:
                 // show templates screen
-                vw_overviewContainer.isHidden = true;
-                vw_clientContainer.isHidden = true;
-                vw_templatesContainer.isHidden = false;
-                bt_navEdit.isEnabled = true;
-                bt_navEdit.title = "Edit";
-                break;
+                vw_overviewContainer.isHidden = true
+                vw_clientContainer.isHidden = true
+                vw_templatesContainer.isHidden = false
+                bt_navEdit.isEnabled = true
+                bt_navEdit.title = "Edit"
+                break
             
             default:
-                break;
+                break
         }
     }
 
     
     @IBAction func editButtonTapped(_ sender: Any)
     {
-        NSLog("Edit button tapped");
+        NSLog("Edit button tapped")
 
         if (editModeEnabled)
         {
             // end edit mode on tableview
-            editModeEnabled = false;
-            bt_navEdit.title = "Edit";
-            templatesVC?.endEditModeOnTableView();
+            editModeEnabled = false
+            bt_navEdit.title = "Edit"
+            templatesVC?.endEditModeOnTableView()
         }
         else
         {
             // enter edit mode on tableview
-            editModeEnabled = true;
-            bt_navEdit.title = "Cancel";
-            templatesVC?.startEditModeOnTableView();
+            editModeEnabled = true
+            bt_navEdit.title = "Cancel"
+            templatesVC?.startEditModeOnTableView()
         }
     }
 
@@ -111,6 +111,6 @@ class MainContainerViewController: UIViewController {
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
 }

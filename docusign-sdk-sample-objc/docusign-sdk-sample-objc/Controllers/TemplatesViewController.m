@@ -8,10 +8,10 @@
 #import "TemplatesViewController.h"
 
 #import <DocuSignSDK/DocuSignSDK.h>
+#import <ProgressHUD/ProgressHUD.h>
 #import "AppDelegate.h"
 #import "DownloadTemplateCell.h"
 #import "ProfileManager.h"
-#import "ProgressHUD.h"
 #import "TemplatesManager.h"
 #import "EnvelopesManager.h"
 

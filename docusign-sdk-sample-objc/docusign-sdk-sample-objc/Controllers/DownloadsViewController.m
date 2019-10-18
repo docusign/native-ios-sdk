@@ -9,8 +9,8 @@
 
 #import "AppDelegate.h"
 #import <DocuSignSDK/DocuSignSDK.h>
+#import <ProgressHUD/ProgressHUD.h>
 #import "DownloadTemplateCell.h"
-#import "ProgressHUD.h"
 #import "TemplatesManager.h"
 #import "ProfileManager.h"
 

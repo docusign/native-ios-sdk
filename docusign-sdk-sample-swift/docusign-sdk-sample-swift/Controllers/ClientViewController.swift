@@ -22,20 +22,20 @@ class ClientViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.styleUIElements();
+        self.styleUIElements()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         // check for envelopes waiting to sync
-        let envelopeIdsToSync = EnvelopesManager.sharedInstance.getCachedEnvelopeIds();
+        let envelopeIdsToSync = EnvelopesManager.sharedInstance.getCachedEnvelopeIds()
         if (envelopeIdsToSync != nil && (envelopeIdsToSync?.count)! > 0)
         {
             // sync envelopes
-            EnvelopesManager.sharedInstance.syncEnvelopes();
+            EnvelopesManager.sharedInstance.syncEnvelopes()
 
             // prompt with developer notes
             if ProfileManager.Static.displayDeveloperNotes {
-                self.promptSyncEnvelopes();
+                self.promptSyncEnvelopes()
             }
         }
     }
@@ -49,18 +49,18 @@ class ClientViewController: UIViewController
         {
         case 0:
             // show portfolio screen
-            vw_portfolioContainer.isHidden = false;
-            vw_contactContainer.isHidden = true;
-            break;
+            vw_portfolioContainer.isHidden = false
+            vw_contactContainer.isHidden = true
+            break
             
         case 1:
             // show contact screen
-            vw_portfolioContainer.isHidden = true;
-            vw_contactContainer.isHidden = false;
-            break;
+            vw_portfolioContainer.isHidden = true
+            vw_contactContainer.isHidden = false
+            break
             
         default:
-            break;
+            break
         }
     }
 
@@ -69,12 +69,12 @@ class ClientViewController: UIViewController
     
     private func promptSyncEnvelopes()
     {
-        let title = "Developer's Notes";
-        let message = "For sample purposes, we've drawn attention to the fact that completed envelopes are now syncing with the server. However, you will likely perform this task automatically in the background, once a network connection is available.";
-        let syncAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let title = "Developer's Notes"
+        let message = "For sample purposes, we've drawn attention to the fact that completed envelopes are now syncing with the server. However, you will likely perform this task automatically in the background, once a network connection is available."
+        let syncAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         // add Ok action
-        syncAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        syncAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
         self.present(syncAlert, animated: true, completion: nil)
     }
@@ -83,7 +83,7 @@ class ClientViewController: UIViewController
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
 
 }

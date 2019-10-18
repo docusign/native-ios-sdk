@@ -19,7 +19,8 @@ Installation
 Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-started.html) to install CocoaPods via `gem install cocoapods` command and initialize the project. Take a look at sample projects included here [swift app](docusign-sdk-sample-swift/) and [objective-c app](docusign-sdk-sample-objc/).
 
 * Add `pod 'DocuSign'` to podfile to target(s) in your project. Example: [Swift Sample App Podfile](docusign-sdk-sample-swift/Podfile)
-* Run `pod install` in the same directory as your `Podfile` to get the DocuSign Native iOS SDK pod. This should result in `Installing DocuSign (2.1.5)` output on the console and corresponding changes in the `Podfile.lock`.
+* Run `pod install` in the same directory as your `Podfile` to get the DocuSign Native iOS SDK pod. This should result in `Installing DocuSign (2.1.6)` output on the console and corresponding changes in the `Podfile.lock`.
+  * In case of an existing project that uses older version of 'DocuSign' pod, run `pod update 'DocuSign'` command to update to `v2.1.6` from a previously installed 'DocuSign pod' version.
 * Launch modified `.xcworkspace` project file with Xcode and use workspace going forward instead of `.xcodeproj` file.
 
 

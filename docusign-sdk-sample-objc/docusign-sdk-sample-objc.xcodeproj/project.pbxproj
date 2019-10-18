@@ -289,7 +289,7 @@
 				C95F1C451F0E936E00612CDC /* Resources */,
 				C92833001F0EB91E009C5DBA /* Embed Frameworks */,
 				8F3EB764428B5DD2AFFE1B21 /* [CP] Copy Pods Resources */,
-				CF1C8D12D2B1D502E7AB9177 /* [CP] Embed Pods Frameworks */,
+				C1913883366FA229C166FD75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,20 +401,16 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF1C8D12D2B1D502E7AB9177 /* [CP] Embed Pods Frameworks */ = {
+		C1913883366FA229C166FD75 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh",
 				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
 			);

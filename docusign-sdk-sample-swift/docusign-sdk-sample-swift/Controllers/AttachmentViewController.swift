@@ -23,8 +23,8 @@ class AttachmentViewController: UIViewController
     
     override func viewDidLoad()
     {
-        super.viewDidLoad();
-        self.styleUIElements();
+        super.viewDidLoad()
+        self.styleUIElements()
     }
     
     // MARK: IBAction Methods
@@ -38,32 +38,32 @@ class AttachmentViewController: UIViewController
     @IBAction func attachButtonTapped(_ sender: Any)
     {
         // load PDF included in bundle
-        //var pdfFileName = "Portfolio";
-        var pdfFileName = "UtilityBill";
+        //var pdfFileName = "Portfolio"
+        var pdfFileName = "UtilityBill"
         if let documentURL = Bundle.main.url(forResource: pdfFileName, withExtension: "pdf", subdirectory: nil, localization: nil)
         {
             do {
-                let data = try Data(contentsOf: documentURL);
-                self.vw_document.load(data, mimeType: "application/pdf", textEncodingName: "", baseURL: documentURL.deletingLastPathComponent());
-                self.vw_document.isHidden = false;
+                let data = try Data(contentsOf: documentURL)
+                self.vw_document.load(data, mimeType: "application/pdf", textEncodingName: "", baseURL: documentURL.deletingLastPathComponent())
+                self.vw_document.isHidden = false
                 
                 // hide attach button
-                self.btn_attach.isHidden = true;
-                self.lbl_attach.isHidden = true;
+                self.btn_attach.isHidden = true
+                self.lbl_attach.isHidden = true
                 
                 // update navigation button
-                self.btn_barSkip.title = "Next";
+                self.btn_barSkip.title = "Next"
                 
                 // capture url for attachment
-                ProfileManager.sharedInstance.setAttachmentPath(attachmentUrl: documentURL);
+                ProfileManager.sharedInstance.setAttachmentPath(attachmentUrl: documentURL)
                 
                 // display developer's notes
                 if ProfileManager.Static.displayDeveloperNotes {
-                    self.promptDevAttachment();
+                    self.promptDevAttachment()
                 }
             }
             catch {
-                NSLog("Error loading PDF file as attachment.");
+                NSLog("Error loading PDF file as attachment.")
             }
         }
     }
@@ -73,12 +73,12 @@ class AttachmentViewController: UIViewController
     
     private func promptDevAttachment()
     {
-        let title = "Developer's Notes";
-        let message = "For sample purposes, we have included a PDF document that has been attached. Ordinarily, you would guide the user through selecting an external PDF document to attach to the envelope.";
-        let attachmentAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let title = "Developer's Notes"
+        let message = "For sample purposes, we have included a PDF document that has been attached. Ordinarily, you would guide the user through selecting an external PDF document to attach to the envelope."
+        let attachmentAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         // add Ok action
-        attachmentAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        attachmentAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
         self.present(attachmentAlert, animated: true, completion: nil)
     }
@@ -86,7 +86,7 @@ class AttachmentViewController: UIViewController
     private func styleUIElements()
     {
         // set custom nav title
-        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?;
+        self.navigationItem.titleView = Bundle.main.loadNibNamed("CustomNavTitle", owner: nil, options: nil)?.first as! UIView?
     }
 
 }

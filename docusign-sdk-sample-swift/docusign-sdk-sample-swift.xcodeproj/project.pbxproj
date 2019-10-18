@@ -273,7 +273,7 @@
 				C9FF31051F321A000076D6CA /* Resources */,
 				C9FF314E1F3258C50076D6CA /* Embed Frameworks */,
 				D7F5219825D2683BE85691CB /* [CP] Embed Pods Frameworks */,
-				B404EC989341483553ABFED0 /* [CP] Copy Pods Resources */,
+				930D5A50A0BA3E8519DB6F8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,6 +306,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -353,20 +354,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B404EC989341483553ABFED0 /* [CP] Copy Pods Resources */ = {
+		930D5A50A0BA3E8519DB6F8D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh",
 				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DocuSignSDK.bundle",
 			);
@@ -573,7 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -594,7 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
