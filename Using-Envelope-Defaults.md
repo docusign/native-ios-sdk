@@ -6,8 +6,7 @@ This guide explains how to use the Default Values for *Recipients*, *Tabs* and *
 
 A good place to start to learn more about templates is [template creation guide](https://support.docusign.com/en/guides/ndse-user-guide-create-templates), here is a sample [template file](support-files/Home_insurance_claim_adjuster_template.json). Templates can be used to sign and send envelopes with ease in online or offline mode. Some important attributes to take note of are:
 - Template Id: `"templateId": "606f0e95-a419-4280-86ac-234913037962"`
-  - Note: `templateId` is regenerated when a template is uploaded successfully. Update the new templateId in the sample code below for it to work.
-- Email Subject: `"emailSubject": "Please DocuSign: Momentum Account Application and Client Agreement.pdf",`
+  - Note: `templateId` is regenerated when a template is uploaded successfully. Update the new `templateId` in the sample code below for it to work.
 - Recipient Details, such as `recipientId`, `roleName` & `recipientType`. For extra information on these and other attributes refer the [API Guide](https://developers.docusign.com/esign-rest-api/guides/concepts/recipients):
     ```
     "recipients": {
@@ -209,6 +208,7 @@ Once the `DSMEnvelopeDefaults` is prepared, proceed to use it with template flow
 This should result in loading the SDK UI components and proceed with signing flow. 
 
 Files/screenshots for reference: 
+- Swift Sample app [ProfileManager.swift](docusign-sdk-sample-swift/docusign-sdk-sample-swift/Managers/ProfileManager.swift) for more examples.
 - [Certificate of Completion PDF](support-files/Summary.pdf)
 - [Signed Document](support-files/Investment_Agreement.pdf)
 - [Signing ceremony](support-files/Car_insurance_claim_adjuster_template-with-tab-defaults.png) with Tab Default values, such as "Tom Wood", "726 Tennessee St", etc.
