@@ -271,16 +271,21 @@ class ProfileManager
             return nil
         }
         
-        //Create Text CustomField
+        // Create a new text Custom Field
         let textCustomField = DSMTextCustomField()
         textCustomField.name = "Investor"
         textCustomField.value = "Tom Wood"
         textCustomField.show = true
+
+        // Modify an existing Custom Field matching the name "templateUsageRestriction"
+        let existingTextCustomField = DSMTextCustomField()
+        existingTextCustomField.name = "templateUsageRestriction"
+        existingTextCustomField.value = "Code-A-123-444-California"
+        existingTextCustomField.show = true
         
-        //Link to CustomFields
+        // Link to CustomFields
         let customFields = DSMCustomFields()
-        customFields.textCustomFields = [textCustomField]
+        customFields.textCustomFields = [textCustomField, existingTextCustomField]
         return customFields
     }
-
 }

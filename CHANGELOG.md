@@ -1,5 +1,14 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.2] - 10/18/2019
+
+### Changed
+* Native iOS SDK is built with Xcode 11.1 and supports iOS13 & iPadOS. 
+* Dark Mode - The SDK UI Components uses light mode and overrides the dark mode.
+
+### Fixed
+* Signature adoption fix for iOS13 & iPadOS.
+
 ## [v2.1.6] - 10/03/2019
 
 ### Removed

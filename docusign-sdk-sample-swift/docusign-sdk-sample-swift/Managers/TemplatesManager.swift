@@ -2,13 +2,12 @@
 //  TemplatesManager.swift
 //  docusign-sdk-sample-swift
 //
-//  
+//
 //  Copyright © 2017 DocuSign. All rights reserved.
 //
 
 import DocuSignSDK
 import Foundation
-
 
 class TemplatesManager
 {
@@ -16,51 +15,51 @@ class TemplatesManager
     static let sharedInstance = TemplatesManager()
     
     // DSM Template Manager
-    var mDSMTemplatesManager: DSMTemplatesManager?
+    var templatesManager: DSMTemplatesManager?
     
     // list of template definitions
-    var mTemplateDefinitions: [DSMEnvelopeTemplateDefinition]?
+    var templateDefinitions: [DSMEnvelopeTemplateDefinition]?
     
-
+    
     //This prevents others from using the default '()' initializer for this class.
     private init() {
-
-        if (self.mDSMTemplatesManager == nil)
+        
+        if (templatesManager == nil)
         {
-            self.mDSMTemplatesManager = DSMTemplatesManager()
+            templatesManager = DSMTemplatesManager()
         }
     }
-
+    
     typealias templateDefinitionsCompletionHandler = (_ templateDefinitions: [DSMEnvelopeTemplateDefinition]?) -> Void
     
     func getTemplateListWithCompletion(completionHandler: @escaping templateDefinitionsCompletionHandler)
     {
         // retrieve list of template definitions
-        self.mDSMTemplatesManager?.listTemplates() { (templates, error) in
+        templatesManager?.listTemplates() { (templates, error) in
             NSLog("Get Template Definitions")
-    
+            
             if let error = error {
                 NSLog("Error: \(error.localizedDescription)")
             }
             else {
-                self.mTemplateDefinitions = templates
+                self.templateDefinitions = templates
                 completionHandler(templates)
             }
         }
     }
     
-
+    
     // check if template with templateId is cached on device
     func templateIsCachedWithId(templateId: String) -> Bool {
-        return (self.mDSMTemplatesManager?.cacheStateOfTemplate(withId: templateId) == DSMTemplateCacheState.cached)
+        return (templatesManager?.cacheStateOfTemplate(withId: templateId) == DSMTemplateCacheState.cached)
     }
     
-
+    
     //typealias cacheTemplateCompletionHandler = (_ errMsg: String?) -> Void
     
     func cacheTemplateWithId(templateId: String, completionHandler: @escaping (String?) -> Void) {
-       
-        self.mDSMTemplatesManager?.cacheTemplate(withId: templateId, completion: { (error: Error?) in
+        
+        templatesManager?.cacheTemplate(withId: templateId, completion: { (error: Error?) in
             if let error = error {
                 completionHandler(error.localizedDescription)
             }
@@ -70,14 +69,14 @@ class TemplatesManager
         })
     }
     
-
+    
     func removeTemplateWithId(templateId: String)
     {
         // remove the specified template
-        self.mDSMTemplatesManager?.removeCachedTemplate(withId: templateId)
+        templatesManager?.removeCachedTemplate(withId: templateId)
     }
-
-
+    
+    
     func displayTemplateForSignature(templateId: String, controller: UIViewController, tabData: Dictionary<String, String>, recipientData: Array<DSMRecipientDefault>, customFields:DSMCustomFields?, onlineSign: Bool, attachmentUrl: URL?, completionHandler: @escaping ((UIViewController?, Error?) -> Void))
     {
         // load PDF data
@@ -92,14 +91,14 @@ class TemplatesManager
             }
         }
         
-        let mDSMEnvelopeDefaults = DSMEnvelopeDefaults()
-        mDSMEnvelopeDefaults.recipientDefaults = recipientData.count > 0 ? recipientData : nil
-        mDSMEnvelopeDefaults.tabValueDefaults = tabData
-        mDSMEnvelopeDefaults.customFields = customFields
+        let envelopeDefaults = DSMEnvelopeDefaults()
+        envelopeDefaults.recipientDefaults = recipientData.count > 0 ? recipientData : nil
+        envelopeDefaults.tabValueDefaults = tabData
+        envelopeDefaults.customFields = customFields
         
-        self.mDSMTemplatesManager?.presentSendTemplateControllerWithTemplate (
+        templatesManager?.presentSendTemplateControllerWithTemplate (
             withId: templateId,
-            envelopeDefaults: mDSMEnvelopeDefaults,
+            envelopeDefaults: envelopeDefaults,
             pdfToInsert: pdfData,
             insertAtPosition: .end,
             signingMode: onlineSign ? .online : .offline,
@@ -109,9 +108,15 @@ class TemplatesManager
                     NSLog("Error encountered during signing: \(error.localizedDescription)")
                 }
                 if view == nil {
-                    NSLog("Error encountered during signing: nil view")
-
+                    // `view` is `nil` if all of the signers pending for signature are remote
+                    // A) Envelope is sent to next remote signer, should receive `DSMSigningCompletedNotification` during online signing.
+                    // B) Or in case of offline signing, envelope is successfully cached and now awaiting sync.
+                    NSLog("Warning: Encountered `nil view` during signing.")
+                } else {
+                    // DocuSign SDK UI components are active if >=1 local signers are pending signature
+                    NSLog("DocuSign Native iOS SDK - UI components active")
                 }
         }
     }
 }
+
