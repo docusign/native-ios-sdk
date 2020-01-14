@@ -1,5 +1,7 @@
 # DocuSign Native iOS SDK - Using Envelope Defaults
 
+## Overview
+
 This guide explains how to use the Default Values for *Recipients*, *Tabs* and *Document Custom Fields* with a sample template. The swift sample code in sections below uses the values defined in the sample [template file](support-files/Home_insurance_claim_adjuster_template.json) and this can be uploaded to your account to get sample code to work with minimum modification. Do ensure that `templateId` matches the template uploaded in your sandbox.
 
 [`DSMEnvelopeDefault`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_envelope_defaults.html) allows customizing the envelope during sign and send flow with a template. 
