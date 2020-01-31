@@ -1,9 +1,17 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.2.1] - 01/28/2020
+
+### Changed
+* Native iOS SDK is built with Xcode 11.3
+
+### Fixed
+* Patch for App Store Connect error code `ERROR ITMS-90535` related to `Unexpected CFBundleExecutable Key in Tools.Bundle/Info.plist`.
+
 ## [v2.2] - 10/18/2019
 
 ### Changed
-* Native iOS SDK is built with Xcode 11.1 and supports iOS13 & iPadOS. 
+* Native iOS SDK is built with Xcode 11.1 and supports iOS13 & iPadOS.
 * Dark Mode - The SDK UI Components uses light mode and overrides the dark mode.
 
 ### Fixed
@@ -18,11 +26,11 @@
 
 ### Added
 * Login with email: Class method for login with email `+[DSMManager loginWithEmail:password:integratorKey:host:completion]`.
-* Account Setup: Class method to fetch additional account data `+[DSMManager fetchSettingsWithAccountInfo:completion]`. This gets additional account data that includes consumer disclosure and various settings. 
+* Account Setup: Class method to fetch additional account data `+[DSMManager fetchSettingsWithAccountInfo:completion]`. This gets additional account data that includes consumer disclosure and various settings.
 * Logout: Class method to perform user logout with credential and cache document deletion `+[DSMManager logout]`.
 * Is Session Active: Class method to query if there is an active user authentication session `+[DSMManager isSessionActiveWithEmail:password:integratorKey:host]`.
 * API Timeout: New setup configuration `DSM_SETUP_DEFAULT_API_TIMEOUT` to customize the API session timeout. Class method to query configured value of API timeout `+[DSMManager configuredValueForSetupKeyAPITimeout]`.
-* Setup Constants: Constants to query API timeouts defined in `DSMSetupConstants header`. New constants: `DSM_SETUP_API_TIMEOUT_MIN_VALUE`, `DSM_SETUP_API_TIMEOUT_MAX_VALUE` and `DSM_SETUP_API_TIMEOUT_DEFAULT_VALUE`. 
+* Setup Constants: Constants to query API timeouts defined in `DSMSetupConstants header`. New constants: `DSM_SETUP_API_TIMEOUT_MIN_VALUE`, `DSM_SETUP_API_TIMEOUT_MAX_VALUE` and `DSM_SETUP_API_TIMEOUT_DEFAULT_VALUE`.
 
 ### Changed
 * Login Session - Authentication sessions are cached and reused whenever applicable to reduce the API calls related to user login and account data persistence.
@@ -67,7 +75,7 @@
 
 ### Added
 * *CocoaPods* support added for Native iOS SDK. Use `pod 'DocuSign'` to fetch the latest SDK framework. Note: Recommended to use CocoaPods `v1.4.0` and up.
-* New notification `DSMOfflineEnvelopeSigningErrorNotification` added to track misc offline signing errors related to template setup (for example invalid formula used). 
+* New notification `DSMOfflineEnvelopeSigningErrorNotification` added to track misc offline signing errors related to template setup (for example invalid formula used).
 
 ## [v2.1] - 01/18/2019
 
