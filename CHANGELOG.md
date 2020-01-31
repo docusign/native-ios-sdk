@@ -1,12 +1,17 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.2.2] - 01/30/2020
+
+### Fixed
+* Patch for App Store Connect error code `ERROR ITMS-90542` related to `Unexpected CFBundleSupportedPlatforms Key in Tools.Bundle/Info.plist` of a 3rd party library.
+
 ## [v2.2.1] - 01/28/2020
 
 ### Changed
 * Native iOS SDK is built with Xcode 11.3
 
 ### Fixed
-* Patch for App Store Connect error code `ERROR ITMS-90535` related to `Unexpected CFBundleExecutable Key in Tools.Bundle/Info.plist`.
+* Patch for App Store Connect error code `ERROR ITMS-90535` related to `Unexpected CFBundleExecutable Key in Tools.Bundle/Info.plist` of a 3rd party library.
 
 ## [v2.2] - 10/18/2019
 
