@@ -1,7 +1,5 @@
 # DocuSign Native iOS SDK - Using Envelope Defaults
 
-## Overview
-
 This guide explains how to use the Default Values for *Recipients*, *Tabs* and *Document Custom Fields* with a sample template. The swift sample code in sections below uses the values defined in the sample [template file](support-files/Home_insurance_claim_adjuster_template.json) and this can be uploaded to your account to get sample code to work with minimum modification. Do ensure that `templateId` matches the template uploaded in your sandbox.
 
 [`DSMEnvelopeDefault`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_envelope_defaults.html) allows customizing the envelope during sign and send flow with a template. 
@@ -154,7 +152,7 @@ Tab default values are set using the `tabLabel` attribute for text based tab(s) 
 
 ## Document Custom Fields
 
-[Document Custom Fields](https://support.docusign.com/en/guides/ndse-admin-guide-custom-fields) are different than just [Custom Fields](https://support.docusign.com/guides/ndse-user-guide-custom-fields). This section of the guide deals with Document Custom Fields. `customFields` property on [`DSMEnvelopeDefault`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_envelope_defaults.html) contains an object of [`DSMCustomField`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_custom_fields.html) representing String or List baesd Document Custom Fields in the template. For Custom Field Tabs Refer to [Tab Default Values](#tab-default-values) for details on setting tab default value. 
+[Document Custom Fields](https://support.docusign.com/en/guides/ndse-admin-guide-custom-fields) are different than just [Custom Fields](https://support.docusign.com/guides/ndse-user-guide-custom-fields). This section of the guide deals with Document Custom Fields. `customFields` property on [`DSMEnvelopeDefault`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_envelope_defaults.html) contains an object of [`DSMCustomField`](https://developers.docusign.com/ios_sdk/refdocs/html/interface_d_s_m_custom_fields.html) representing String or List based Document Custom Fields in the template. For Custom Field Tabs Refer to [Tab Default Values](#tab-default-values) for details on setting tab default value. 
 
 When an envelope is completed, Document Custom Fields are added to the [Certificate of Completion](https://support.docusign.com/en/guides/ndse-user-guide-history-coc).
 

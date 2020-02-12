@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.2.3] - 02/11/2020
+
+### Added
+* Ability to save signing session of an offline envelop locally on a device and ability to resume signing progress for the saved envelope at a later time. `DSMEnvelopesManager` allows presenting an offline signing session with a previously saved envelope on same device using `+[DSMEnvelopesManager resumeSigningEnvelopeWithPresentingController:envelopeId:completion`.
+* New setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` to enable the UI components to prompt users to save progress of an offline signed envelope to a device locally. If this configuration is enabled, by default it's disabled, `DSMEnvelopeCachedNotification` is sent whenever a local signer finishes signing session, this notification also contains the `envelopeId` that can be used later to resume signing progress of a saved envelope.
+* Additional notification `DSMOfflineEnvelopeSaveErrorNotification` is sent if an envelope fails to save on device with error under `DSM_ENVELOPE_SAVE_ERROR` domain. 
+* Resuming a fully signed envelope, which is ready for sync, is not allowed and it results in a new error under `DSM_ENVELOPE_RESUME_ERROR` domain. 
+
 ## [v2.2.2] - 01/30/2020
 
 ### Fixed
