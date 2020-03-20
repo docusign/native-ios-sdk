@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.2.4] - 03/20/2020
+
+### Fixed
+* Replaced deprecated instances of UIWebView with WKWebView.
+
 ## [v2.2.3] - 02/11/2020
 
 ### Added
