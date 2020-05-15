@@ -94,14 +94,14 @@ NS_ASSUME_NONNULL_BEGIN
                                            completion:(void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
 /*!
- * @discussion Retrive all cached envelopes. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
+ * @discussion Retrieve all cached envelopes. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
  * @return NSArray <DSMEnvelopeDefinition *>, array containing entire envelope definition(s)
  * @see DSMEnvelopeDefinition DSMNotificationCodes DSMTemplatesManager
  */
 - (NSArray *)cachedEnvelopes;
 
 /*!
- * @discussion Retrive envelopeIds for all cached envelopes. Compared to cachedEnvelopes, this has only envelopeId in the array. This call can be made when device is offline.
+ * @discussion Retrieve envelopeIds for all cached envelopes. Compared to cachedEnvelopes, this has only envelopeId in the array. This call can be made when device is offline.
  * @return NSArray <NSString *> array containing strings representing unique envelopeId(s)
  */
 - (NSArray <NSString *> *)cachedEnvelopeIds;

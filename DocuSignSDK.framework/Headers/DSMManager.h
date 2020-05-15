@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
  @method loginWithEmail
  @brief Sets up DocuSign user account for SDK usage. Only supported login mode is online.
  @param email  DocuSign username (email) of the user using SDK for sign and send
- @param password  DocuSign pasword of the user using SDK for sign and send
+ @param password  DocuSign password of the user using SDK for sign and send
  @param integratorKey DocuSign integratorKey for the client application
  @param host DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @param completion block to be executed after user account is setup
@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
  @param userName  DocuSign username of the user using SDK for sign and send
- @param email  DocuSign registered emaildId of the user using SDK for sign and send
+ @param email  DocuSign registered emaild of the user using SDK for sign and send
  @param host  DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @param integratorKey DocuSign integratorKey for the client application
  @param completion block to be executed after user account is setup
@@ -121,7 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
  @param userName  DocuSign username of the user using SDK for sign and send
- @param email  DocuSign registered emaildId of the user using SDK for sign and send
+ @param email  DocuSign registered emaild of the user using SDK for sign and send
  @param host  DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @param integratorKey DocuSign integratorKey for the client application
  @param completion block to be executed after user account is setup
@@ -156,7 +156,7 @@ NS_ASSUME_NONNULL_BEGIN
  @method isSessionActiveWithEmail
  @brief Returns whether there is an active user authentication session.
  @param email DocuSign username (email) of the user using SDK for sign and send
- @param password DocuSign pasword of the user using SDK for sign and send
+ @param password DocuSign password of the user using SDK for sign and send
  @param integratorKey DocuSign integratorKey for the client application
  @param host DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @return Whether there is an active user authentication session

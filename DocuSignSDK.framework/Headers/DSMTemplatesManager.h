@@ -78,8 +78,8 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
 - (DSMTemplateCacheState)cacheStateOfTemplateWithId:(NSString *)templateId;
 /*!
  * @discussion Gives previously cached template details. This call can be made when device is offline.
- * @param templateId An ID of the template to be retrived.
- * @param includePdfs retrive/include the pdf's or not.
+ * @param templateId An ID of the template to be retrieve.
+ * @param includePdfs retrieve/include the pdf's or not.
  * @return DSMEnvelopeTemplate
  */
 - (DSMEnvelopeTemplate *)cachedTemplateWithId:(NSString *)templateId includePdfs:(BOOL)includePdfs;
@@ -99,12 +99,12 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  */
 - (void)removeCachedTemplates;
 /*!
- * @discussion Retrive a list of templates which are cached.  This call can be made when device is offline.
+ * @discussion Retrieve a list of templates which are cached.  This call can be made when device is offline.
  * @return NSArray <DSMEnvelopeTemplate *>
  */
 - (NSArray *)cachedTemplates;
 /*!
- * @discussion Retrive a list of templateIds for cached templates. This call can be made when device is offline.
+ * @discussion Retrieve a list of templateIds for cached templates. This call can be made when device is offline.
  * @return NSArray <NSString *>
  */
 - (NSArray *)cachedTemplateIds;
@@ -118,12 +118,12 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  * @param envelopeTemplate template to be cached.
  * @param error If error is passed it will be updated with the reason for unavailability for signing/cache in mobile.
  * @return BOOL
- * @warning This will default to NO and unable to cache reason is passed back only when error instence is passed while calling this.
+ * @warning This will default to NO and unable to cache reason is passed back only when error instance is passed while calling this.
  */
 - (BOOL)canCacheEnvelopeTemplate:(DSMEnvelopeTemplate *)envelopeTemplate error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 /*!
  * @discussion Start Signing/Sending envelope off of a template with given templateId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
- * Depending on the recipient configuration (e.g. all remote signers), envelopes may directly be sent for online signining, or during offline signing, cached directly for sync later. In such case, observe DSMSigningCompletedNotification (online) and DSMEnvelopeCachedNotification (offline) notifications to keep track of signing process.
+ * Depending on the recipient configuration (e.g. all remote signers), envelopes may directly be sent for online signing, or during offline signing, cached directly for sync later. In such case, observe DSMSigningCompletedNotification (online) and DSMEnvelopeCachedNotification (offline) notifications to keep track of signing process.
  * @param signingMode is DSMSigningModeOnline, if sign and send needs to happen online(using online web signing component) OR it will be DSMSigningModeOffline if signing in Offline (using native signing components).
  * @param presentingController signing component/controller will be presented on top of the given presentingController passed.
  * @param animated If the presentation of sign and send be animated or not.
@@ -138,10 +138,10 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
                                              completion:(nullable void(^)(UIViewController *_Nullable viewController, NSError *_Nullable error))completion;
 /*!
  * @discussion Start Signing/Sending envelope off of a template with the given templateId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
- * Depending on the recipient configuration (e.g. all remote signers), envelopes may directly be sent for online signining, or during offline signing, cached directly for sync later. In such case, observe DSMSigningCompletedNotification (online) and DSMEnvelopeCachedNotification (offline) notifications to keep track of signing process.
+ * Depending on the recipient configuration (e.g. all remote signers), envelopes may directly be sent for online signing, or during offline signing, cached directly for sync later. In such case, observe DSMSigningCompletedNotification (online) and DSMEnvelopeCachedNotification (offline) notifications to keep track of signing process.
  * @param envelopeDefaults [Optional] Customizable envelope data before starting the signing ceremony @see DSMEnvelopeDefaults.h
- * @param pdfToInsert [Optional] Offline signing only, include a PDF to be inserted at begining or end of envelope documents. if signingMode is DSMSigningModeOnline, pdfToInsert would be silently ignored.
- * @param insertAtPosition specigies if the pdf needs to eb inserted at the beginging or end of Envelope.
+ * @param pdfToInsert [Optional] Offline signing only, include a PDF to be inserted at beginning or end of envelope documents. if signingMode is DSMSigningModeOnline, pdfToInsert would be silently ignored.
+ * @param insertAtPosition specifies if the pdf needs to be inserted at the beginning or end of Envelope.
  * @param signingMode is DSMSigningModeOnline, if sign and send needs to happen online(using online web signing component) OR it will be DSMSigningModeOffline if signing in Offline (using native signing components).
  * @param presentingController signing component/controller will be presented on top of the given presentingController passed.
  * @param animated if the presentation of sign and send be animated or not.

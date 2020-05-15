@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 //TODO do we need a success attribute here
 
 /*!
- * @discussion Initilize the notification object
+ * @discussion Initialize the notification object
  * @param templateId ID of a template.
  * @return instancetype
  */
