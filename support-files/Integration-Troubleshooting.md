@@ -20,13 +20,13 @@
 
 ![Valid DocuSign SDK binary file - Screenshot](docusignsdk-binary-via-pods.png)
 
-### Fix: Ensure Client is fetching DocuSignSDK Binary
+### Fix A: Fetch DocuSignSDK binary after `pod deintegrate` & `pod cache clean`
 
 * Close Xcode
 * Go to the solution directory and perform `pod deintegrate` to uninitialize the pods.
 * Remove pods & lock file with `rm Podfile.lock` & `rm -rf Pods/`
+* Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 * Make sure `Podfile` has a correct entry for the beta branch, e.g.:
   * pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta/responsive-online-signing"
 * `pod install` or `pod install --repo-update`
-* Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`
-* Open workspace and build
+* Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`, If yes, open workspace and build. Report an issue if problem still persists.
