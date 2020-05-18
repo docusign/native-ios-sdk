@@ -22,6 +22,7 @@ Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-star
 * Run `pod install` in the same directory as your `Podfile` to get the DocuSign Native iOS SDK pod. This should result in `Installing DocuSign (2.2.5)` output on the console and corresponding changes in the `Podfile.lock`.
   * In case of an existing project that uses older version of 'DocuSign' pod, run `pod update 'DocuSign'` command on terminal to update 'DocuSign' pod to the latest version from a previous version.
 * Launch modified `.xcworkspace` project file with Xcode and use workspace going forward instead of `.xcodeproj` file.
+  * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
 
 
 **Manual Integration Guide**
@@ -34,7 +35,7 @@ Support
 
 * Refer the [Getting Started](https://developers.docusign.com/ios_sdk/developer.html) and [Integration](https://developers.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details on creating DocuSign Sandbox Account, Integration and using SDK Core Interfaces.
 * [Reference Docs](https://developers.docusign.com/ios_sdk/refdocs/html/annotated.html) to browse the latest developer documentation including API reference and public header files.
-* Review [Change Log](ChangeLog.md)
+* Review [Change Log](CHANGELOG.md)
 * Guide: [Using Envelope Defaults](Using-Envelope-Defaults.md)
 * Raise an issue here on GitHub.
 * We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
