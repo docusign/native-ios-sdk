@@ -23,9 +23,9 @@
 ### Fix: Ensure Client is fetching DocuSignSDK Binary
 
 * Close Xcode
-* Go to the solution direction and perform `pod deintegrate` to uninitialize the pods.
+* Go to the solution directory and perform `pod deintegrate` to uninitialize the pods.
 * Remove pods & lock file with `rm Podfile.lock` & `rm -rf Pods/`
-* Make sure Podfile has a correct entry for beta branch, e.g.:
+* Make sure `Podfile` has a correct entry for the beta branch, e.g.:
   * pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta/responsive-online-signing"
 * `pod install` or `pod install --repo-update`
 * Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`
