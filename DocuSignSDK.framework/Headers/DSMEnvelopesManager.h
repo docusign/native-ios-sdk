@@ -129,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                       completion:(nullable void(^)(UIViewController *_Nullable presentedController))completion;
 
 /*!
- * @discussion Start Signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
+ * @discussion Start signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.

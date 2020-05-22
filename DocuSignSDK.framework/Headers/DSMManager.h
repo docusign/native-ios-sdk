@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
  @param userName  DocuSign username of the user using SDK for sign and send
- @param email  DocuSign registered emaild of the user using SDK for sign and send
+ @param email  DocuSign registered email Id of the user using SDK for sign and send
  @param host  DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @param integratorKey DocuSign integratorKey for the client application
  @param completion block to be executed after user account is setup
@@ -121,7 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
  @param userName  DocuSign username of the user using SDK for sign and send
- @param email  DocuSign registered emaild of the user using SDK for sign and send
+ @param email  DocuSign registered email Id of the user using SDK for sign and send
  @param host  DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
  @param integratorKey DocuSign integratorKey for the client application
  @param completion block to be executed after user account is setup

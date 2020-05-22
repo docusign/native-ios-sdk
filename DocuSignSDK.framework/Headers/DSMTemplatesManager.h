@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
 - (DSMTemplateCacheState)cacheStateOfTemplateWithId:(NSString *)templateId;
 /*!
  * @discussion Gives previously cached template details. This call can be made when device is offline.
- * @param templateId An ID of the template to be retrieve.
+ * @param templateId An ID of the template to retrieve.
  * @param includePdfs retrieve/include the pdf's or not.
  * @return DSMEnvelopeTemplate
  */
