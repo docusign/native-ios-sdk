@@ -1,6 +1,15 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.2.5] - 04/09/2020
+## [v2.3] - 05/29/2020
+
+### Added
+* New setup configuration `DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` to disable the native components such as SignatureAdoption, ConsumerDisclosure during Online Signing. When native components are disabled, online web signing components are used instead.
+* Ability to online sign a remote envelope that has been sent to get signatures using `+[DSMEnvelopesManager presentSigningWithPresentingController:envelopeId:animated:completion]`.
+
+### Changed
+* Native iOS SDK is built with Xcode 11.5
+
+## [v2.2.5] - 04/03/2020
 
 ### Fixed
 * Replaced deprecated instances of UIWebView with WKWebView in settings storyboard.
