@@ -54,6 +54,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMNotification.h>
 #import <DocuSignSDK/DSMNotificationCodes.h>
 #import <DocuSignSDK/DSMOfflineAttributes.h>
+#import <DocuSignSDK/DSMPDFDocumentType.h>
 #import <DocuSignSDK/DSMRecipient.h>
 #import <DocuSignSDK/DSMRecipientDefault.h>
 #import <DocuSignSDK/DSMRecipientEmailNotification.h>
