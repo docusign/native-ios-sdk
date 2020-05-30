@@ -20,7 +20,7 @@
 
 ![Valid DocuSign SDK binary file - Screenshot](docusignsdk-binary-via-pods.png)
 
-### Fix A: Fetch DocuSignSDK binary after `pod deintegrate` & `pod cache clean`
+### Fix: Ensure Client is fetching DocuSignSDK Binary
 
 * Close Xcode
 * Go to the solution directory and perform `pod deintegrate` to uninitialize the pods.
