@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.3.1] - 06/03/2020
+
+### Fixed
+* Offline Signing Crash related to `NSInvalidArgumentException` with `[DSMPTNPDFViewController toolOverlayView]` on `v2.3`.
+
 ## [v2.3] - 05/29/2020
 
 ### Added

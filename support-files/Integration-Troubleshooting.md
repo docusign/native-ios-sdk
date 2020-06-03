@@ -28,6 +28,6 @@
 * Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 * Make sure `Podfile` has a correct entry, for example:
   * pod 'DocuSign'
-  * pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3"
+  * pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.1"
 * `pod install` or `pod install --repo-update`
 * Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`, If yes, open workspace and build. Report an issue if problem still persists.
