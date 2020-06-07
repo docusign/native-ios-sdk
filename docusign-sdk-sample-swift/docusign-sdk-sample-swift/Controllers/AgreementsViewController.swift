@@ -165,7 +165,7 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
         if !ProfileManager.Static.displayDeveloperNotes && defaultToOffline {
             self.performOfflineSigning()
         } else {
-            let title = "Developer's Notes"
+            let title = String.developerNotesTitle(with: true)
             let message = "Would you like to proceed with the offline or online signing flow?"
             let offlineAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 

@@ -73,7 +73,7 @@ class AttachmentViewController: UIViewController
     
     private func promptDevAttachment()
     {
-        let title = "Developer's Notes"
+        let title = String.developerNotesTitle(with: true)
         let message = "For sample purposes, we have included a PDF document that has been attached. Ordinarily, you would guide the user through selecting an external PDF document to attach to the envelope."
         let attachmentAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

@@ -91,7 +91,7 @@ class ProfileManager
         static let tabLabelIdSenderFullName = "Text SenderFullName"
         
         static let autoDownloadTemplates = true
-        static let displayDeveloperNotes = false
+        static let displayDeveloperNotes = true
     }
 
     
