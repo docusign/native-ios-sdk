@@ -13,7 +13,7 @@
 #import "EnvelopesManager.h"
 #import "ProfileManager.h"
 #import "ConfigurationConstants.h"
-
+#import "NSString+Additions.h"
 
 @interface ClaimsViewController ()
 
@@ -109,7 +109,7 @@
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Don't Sync" style:UIAlertActionStyleCancel handler:nil];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer's Notes" message:@"For sample purposes, we've drawn attention to the fact that completed envelopes need to sync with the server. However, you will likely want to detect when a network connection is available and perform this task in the background." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString titleWithSDKVersion:YES] message:@"For sample purposes, we've drawn attention to the fact that completed envelopes need to sync with the server. However, you will likely want to detect when a network connection is available and perform this task in the background." preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:syncAction];
     [alertController addAction:cancelAction];

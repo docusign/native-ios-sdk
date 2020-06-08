@@ -8,7 +8,7 @@
 #import "DamageViewController.h"
 #import "ProfileManager.h"
 #import "ConfigurationConstants.h"
-
+#import "NSString+Additions.h"
 
 @interface DamageViewController ()
 
@@ -102,7 +102,7 @@
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer's Notes" message:@"Would you like to proceed with the offline or online signing flow?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString titleWithSDKVersion:YES] message:@"Would you like to proceed with the offline or online signing flow?" preferredStyle:UIAlertControllerStyleAlert];
 
     [alertController addAction:selectOfflineAction];
     [alertController addAction:selectOnlineAction];

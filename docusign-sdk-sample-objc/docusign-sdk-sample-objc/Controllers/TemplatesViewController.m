@@ -14,6 +14,7 @@
 #import "ProfileManager.h"
 #import "TemplatesManager.h"
 #import "EnvelopesManager.h"
+#import "NSString+Additions.h"
 
 @interface TemplatesViewController ()
 
@@ -230,7 +231,7 @@ static NSString *tableCellId = @"downloadTemplateCell";
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer's Notes" message:@"You can either compose an envelope in online or offline mode. You would need to check for network connectivity and present the appropriate view controller." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString titleWithSDKVersion:YES] message:@"You can either compose an envelope in online or offline mode. You would need to check for network connectivity and present the appropriate view controller." preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:onlineAction];
     [alertController addAction:offlineAction];

@@ -9,7 +9,7 @@
 
 #import "AppDelegate.h"
 #import "ProfileManager.h"
-
+#import "NSString+Additions.h"
 
 @interface AttachmentViewController ()
 
@@ -87,8 +87,7 @@
 {
     // display developer's notes regarding PDF attachment
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer's Notes" message:@"For sample purposes, we have included a PDF document that has been attached. Ordinarily, you would guide the user through selecting an external PDF document to attach to the envelope." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString titleWithSDKVersion:YES] message:@"For sample purposes, we have included a PDF document that has been attached. Ordinarily, you would guide the user through selecting an external PDF document to attach to the envelope." preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];

@@ -105,7 +105,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: private methods
     private func promptDevAction(composeEnvelopeHandler handler: @escaping (_ signingMode: DSMSigningMode) -> Void)
     {
-        let title = "Developer's Notes"
+        let title = String.developerNotesTitle(with: true)
         let message = "You can either compose an envelope in online or offline mode. You would need to check for network connectivity and present the appropriate view controller."
         let agreementAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

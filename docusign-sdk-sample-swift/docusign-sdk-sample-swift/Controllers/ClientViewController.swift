@@ -69,7 +69,7 @@ class ClientViewController: UIViewController
     
     private func promptSyncEnvelopes()
     {
-        let title = "Developer's Notes"
+        let title = String.developerNotesTitle(with: true)
         let message = "For sample purposes, we've drawn attention to the fact that completed envelopes are now syncing with the server. However, you will likely perform this task automatically in the background, once a network connection is available."
         let syncAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
