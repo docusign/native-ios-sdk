@@ -27,7 +27,10 @@
 * Remove pods & lock file with `rm Podfile.lock` & `rm -rf Pods/`
 * Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 * Make sure `Podfile` has a correct entry, for example:
-  * pod 'DocuSign'
-  * pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.1"
-* `pod install` or `pod install --repo-update`
+  * `pod 'DocuSign'` or
+  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.1"`
+    * In case you are using specific branch to fetch `DocuSign` pod, additional steps to install [git-lfs](https://git-lfs.github.com/) are required as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
+    * Install git-lfs via brew: `brew install git-lfs`
+    * Activate git-lfs next: `git lfs install`
+* `pod install` or `pod install --repo-update` 
 * Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`, If yes, open workspace and build. Report an issue if problem still persists.
