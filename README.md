@@ -14,6 +14,8 @@ Requirements
 Installation
 =============
 
+**CocoaPods** is the recommended way to integrate DocuSign Native iOS SDK. 
+
 **CocoaPods**
 
 Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-started.html) to install CocoaPods via `gem install cocoapods` command and initialize the project. Take a look at sample projects included here [swift app](docusign-sdk-sample-swift/) and [objective-c app](docusign-sdk-sample-objc/).
@@ -22,10 +24,13 @@ Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-star
 * Run `pod install` in the same directory as your `Podfile` to get the DocuSign Native iOS SDK pod. This should result in `Installing DocuSign (2.2.5)` output on the console and corresponding changes in the `Podfile.lock`.
   * In case of an existing project that uses older version of 'DocuSign' pod, run `pod update 'DocuSign'` command on terminal to update 'DocuSign' pod to the latest version from a previous version.
 * Launch modified `.xcworkspace` project file with Xcode and use workspace going forward instead of `.xcodeproj` file.
-  * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
+  * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md) with the CocoaPods
 
 
 **Manual Integration Guide**
+
+Use these steps to manually integrate the DocuSign framework in case your project doesn't use CocoaPods.
+
 * Download the [DocuSignSDK.zip](DocuSignSDK.zip) and unarchive it. 
 * Copy the `DocuSignSDK.framework` to root folder of your app and follow the steps on the [Integration](https://developers.docusign.com/ios_sdk/developer.html) section.
 
