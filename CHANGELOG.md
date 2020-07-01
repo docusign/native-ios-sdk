@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.3.2] - 07/01/2020
+
+### Added
+* New setup configuration `DSM_SETUP_ENABLE_TELEMETRY` to configure client telemetry. When this configuration is enabled, SDK captures various events using DocuSign Telemetry API.
+
 ## [v2.3.1] - 06/08/2020
 
 ### Fixed

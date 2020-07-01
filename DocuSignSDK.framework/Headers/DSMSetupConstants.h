@@ -164,3 +164,13 @@ extern NSString * const DSM_SETUP_RECIPIENT_DEFAULTS_CASE_INSENSITIVELY_MATCH_RO
  * Acceptable value is either "true" or "false".
  */
 extern NSString * const DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS;
+
+#pragma mark - Setup Constants - Telemtry
+
+/*! @brief Allows SDK to capture events with DocuSign Telemetry API.
+ * Setting to "true" allows us to store events during critical flows such as login and signing. we also capture necessary data in case of crashes.
+ * Note: If user logout from SDK, all unsynced events will be cleared from the cache.
+ * Default value is "true"
+ * Acceptable value is either "true" or "false".
+ */
+extern NSString * const DSM_SETUP_ENABLE_TELEMETRY;
