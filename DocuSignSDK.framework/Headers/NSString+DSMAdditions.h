@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (DSMBoolean)
 
 + (instancetype)dsm_stringWithBool:(BOOL)boolValue;
-
++ (instancetype)dsm_stringWithErrorCode:(NSInteger)errorCode withErrorReason:(NSString *)errorReason;
 @end
 
 NS_ASSUME_NONNULL_END
