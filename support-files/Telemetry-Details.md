@@ -1,6 +1,6 @@
 ## Telemetry Details
 
-Release `v2.3.2` includes the addition of telemetry to track SDK events on the app side, such as starting signing and any of the errors that result during different phase. Telemetry is turned on by default and will help DocuSign debug any issues that may arise, but should you prefer to disable this you may set the `DSM_SETUP_ENABLE_TELEMETRY` flag to `false` when passing in the configuration flags to our SDK’s `DSMManager.setupWithConfiguration()` method
+Release `v2.3.2` includes the addition of telemetry to track SDK events on the app side, such as starting signing and any of the errors that result during different phases. Telemetry is turned on by default and will help DocuSign debug any issues that may arise, but should you prefer to disable this you may set the `DSM_SETUP_ENABLE_TELEMETRY` flag to `false` when passing in the configuration flags to our SDK’s `DSMManager.setupWithConfiguration()` method
 
 Following are the **telemetry events** (and associated **event-specific properties** listed in parentheses) that are now tracked via DocuSign Native iOS SDK:
  

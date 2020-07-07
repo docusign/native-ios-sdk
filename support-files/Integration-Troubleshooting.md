@@ -1,7 +1,7 @@
 
 # Troubleshooting DocuSignSDK Integration issues
 
-## Bitcode
+## 1. Bitcode
 
 ### DocuSignSDK does not contain bitcode
 
@@ -15,7 +15,7 @@ Native SDK as of `v2.3.2` does not support bitcode, if your integration is depen
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
-## Undefined Symbols
+## 2. Undefined Symbols
 
 ### Error when building project:
 
