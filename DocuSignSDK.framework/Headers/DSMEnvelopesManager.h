@@ -17,14 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @discussion Inform delegate that select a recipient will show before starting offline signing.
- @use May use it to modify the recipient by switching between types before select a recipient is shown
+ @use May use it to modify the recipient by switching between types before select a recipient is shown.
  @see DSMNotificationCodes
  */
 - (void)willShowSelectRecipientAmongCurrentRecipients:(NSOrderedSet *)recipients offlineSigningEnvelope:(DSMEnvelopeDefinition *)envelope;
 
 /*!
  @discussion Inform delegate that recipient will start signing envelope in offline mode.
- @use May use it to modify the recipient by switching between types before signing starts
+ @use May use it to modify the recipient by switching between types before signing starts.
  @see DSMNotificationCodes
  */
 - (void)recipient:(DSMRecipient *)recipient willBeginOfflineSigningEnvelope:(DSMEnvelopeDefinition *)envelope;
