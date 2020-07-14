@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.3.3] - 07/13/2020
+
+### Fixed
+* Fix to allow Offline Signing to complete in single session for a resumed envelope with signers in later routing order.
+
 ## [v2.3.2] - 07/01/2020
 
 ### Added

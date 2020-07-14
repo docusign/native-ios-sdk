@@ -8,10 +8,13 @@
 #pragma mark notification name
 
 /*!
- * @brief Notification sent when signing is completed in online or offline mode.
+ * @brief Notification sent when envelope signing is completed in online or offline mode by all current signers.
  * @discussion Returned userInfo contains signingMode associated with DSMSigningModeKey and templateId associated with DSMTemplateIdkey. Returned userInfo also contains envelopeId associated with DSMEnvelopeIdKey only when online signing; during offline signing, envelopeId for signed envelope is sent with DSMEnvelopeCachedNotification.
+ * Conforming to DSMEnvelopesManagerOfflineSigningDelegate allows client apps to receive callback events associated with recipient selection or individual recipient events for start and finish offline signing.
  * This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMSigningCompletedNotification object:viewController userInfo:userInfo];
+ * @see DSMEnvelopesManager.h
+ * @see DSMEnvelopesManagerOfflineSigningDelegate
  */
 extern NSString * const DSMSigningCompletedNotification;
 
