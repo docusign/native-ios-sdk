@@ -1,5 +1,6 @@
 #import "DSMTab.h"
 #import "DSMTextTabProtocol.h"
+#import "DSMTextTabFontProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -9,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion Specifies a that that is an adaptable field that allows the recipient to enter different text information.\n\nWhen getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
  @see DSMTextTabProtocol.h
  */
-@interface DSMText : DSMTab <DSMTextTabProtocol>
+@interface DSMText : DSMTab <DSMTextTabProtocol, DSMTextTabFontProtocol>
 
 /*! @brief When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. [optional]. */
 @property (nonatomic, assign) BOOL isPaymentAmount;
@@ -35,18 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL disableAutoSize;
 /*! @brief An optional value that describes the maximum length of the property when the property is a string. [optional]. */
 @property (nonatomic, copy) NSNumber *maxLength;
-/*! @brief The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default. [optional]. */
-@property(nonatomic, copy) NSString *font;
-/*! @brief When set to **true**, the information in the tab is bold. [optional]. */
-@property(nonatomic, assign) BOOL bold;
-/*! @brief When set to **true**, the information in the tab is italic. [optional]. */
-@property(nonatomic, assign) BOOL italic;
-/*! @brief When set to **true**, the information in the tab is underlined. [optional]. */
-@property(nonatomic, assign) BOOL underline;
-/*! @brief The font color used for the information in the tab.\n\nPossible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White. [optional]. */
-@property(nonatomic, copy) NSString *fontColor;
-/*! @brief The font size used for the information in the tab.\n\nPossible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72. [optional]. */
-@property(nonatomic, copy) NSString *fontSize;
 
 //@property (nonatomic, copy) NSString *value;
 

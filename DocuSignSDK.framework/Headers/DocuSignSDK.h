@@ -77,6 +77,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMText.h>
 #import <DocuSignSDK/DSMTextCustomField.h>
 #import <DocuSignSDK/DSMTextTabProtocol.h>
+#import <DocuSignSDK/DSMTextTabFontProtocol.h>
 #import <DocuSignSDK/DSMTitle.h>
 #import <DocuSignSDK/DSMUserInfo.h>
 
