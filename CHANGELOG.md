@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.3.4] - 07/18/2020
+## [v2.3.4] - 07/17/2020
 
 ### Added
 * Now `fontSize` property on the text tabs is used during offline signing. Tab level, `fontSize` ranges from `size7` to `size72`.  
