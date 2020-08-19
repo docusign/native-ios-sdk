@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.3.5-beta] - 08/19/2020
+
+### Added
+* New setup configuration `DSM_SETUP_DISABLE_EMAIL_IPS_FIELD_CD` to allow client apps to hide the email field when the consumer disclosure screen is displayed.
+
+### Fixed
+* Bug fixes and enhancements. 
+
 ## [v2.3.4] - 07/17/2020
 
 ### Added

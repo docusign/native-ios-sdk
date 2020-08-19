@@ -11,7 +11,7 @@
 }
 ```
 
-Native SDK as of `v2.3.4` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround for now is to have all app targets build without bitcode. In order to disable bitcode, client app would need to set `Enable Bitcode` under `Build Options` to `No` for each of the targets.
+Native SDK as of `v2.3.5` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround for now is to have all app targets build without bitcode. In order to disable bitcode, client app would need to set `Enable Bitcode` under `Build Options` to `No` for each of the targets.
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
@@ -42,7 +42,7 @@ Native SDK as of `v2.3.4` does not support bitcode, if your integration is depen
 * Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 * Make sure `Podfile` has a correct entry, for example:
   * `pod 'DocuSign'` or
-  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.4"`
+  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.5-beta"`
     * In case you are using specific branch to fetch `DocuSign` pod, additional steps to install [git-lfs](https://git-lfs.github.com/) are required as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
     * Install git-lfs via brew: `brew install git-lfs`
     * Activate git-lfs next: `git lfs install`
