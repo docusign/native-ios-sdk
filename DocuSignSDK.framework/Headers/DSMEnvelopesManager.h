@@ -137,8 +137,53 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completion Completion block to be executed after signing is complete.
  * @warning passing nil to a presentationController will not be able to load the Signing.
  */
+- (void)presentSigningWithPresentingController:(UIViewController *)presentingController
+                                    envelopeId:(NSString *)envelopeId
+                                      animated:(BOOL)animated
+                                    completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
-- (void)presentSigningWithPresentingController:(UIViewController *)presentingController envelopeId:(NSString *)envelopeId  animated:(BOOL)animated completion:(void (^ _Nullable)(UIViewController *, NSError *))completion;
+/*!
+ * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
+ * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
+ * @param presentingController controller will be presented on top of the given presentingController passed.
+ * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
+ * @param userName userName of the captive signer in the envelope.
+ * @param email email of the captive signer in the envelope.
+ * @param clientUserId clientUserId of the captive signer in the envelope.
+ * @param animated If the presentation of sign and send be animated or not.
+ * @param completion Completion block to be executed after signing is complete.
+ * @warning passing nil to a presentationController will not be able to load the Signing.
+*/
+- (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
+                                           envelopeId:(NSString *)envelopeId
+                                             userName:(NSString *)userName
+                                                email:(NSString *)email
+                                         clientUserId:(NSString *)clientUserId
+                                             animated:(BOOL)animated
+                                           completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
+
+/*!
+ * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
+ * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
+ * @param presentingController controller will be presented on top of the given presentingController passed.
+ * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
+ * @param userName userName of the captive signer in the envelope.
+ * @param email email of the captive signer in the envelope.
+ * @param clientUserId clientUserId of the captive signer in the envelope.
+ * @param recipientId recipientId [Optional] of the captive signer in the envelope.
+ * @param animated If the presentation of sign and send be animated or not.
+ * @param completion Completion block to be executed after signing is complete.
+ * @warning passing nil to a presentationController will not be able to load the Signing.
+*/
+- (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
+                                           envelopeId:(NSString *)envelopeId
+                                             userName:(NSString *)userName
+                                                email:(NSString *)email
+                                         clientUserId:(NSString *)clientUserId
+                                          recipientId:(NSString *_Nullable)recipientId
+                                             animated:(BOOL)animated
+                                           completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
+
 /*!
  * @discussion Returns whether there is a current cached envelope in draft status. Once an envelope is successfully synced, it's deleted from the cache on the device. This can be used to determine whether presenting compose envelope flow should be resumed with the draft envelope. There can only be one draft cached envelope at a given time. This call can be made when device is offline.
  * @return BOOL, true if there is a cached draft envelope

@@ -1,8 +1,9 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.3.5-beta] - 08/19/2020
+## [v2.3.5-beta-2] - 08/20/2020
 
 ### Added
+* Embedded (Captive) Signing is now supported with `presentCaptiveSigningWithPresentingController` via `DSMEnvelopesManager`. API reference available at [Embedded Signing](https://developers.docusign.com/esign-rest-api/guides/concepts/embedding). 
 * New setup configuration `DSM_SETUP_DISABLE_EMAIL_IPS_FIELD_CD` to allow client apps to hide the email field when the consumer disclosure screen is displayed.
 
 ### Fixed
