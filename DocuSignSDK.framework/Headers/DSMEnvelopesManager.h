@@ -87,7 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion Resume signing with a cached envelope. This call can be made when device is offline.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId An Id of the envelope to be resumed.
- * @param completion completion block to be executed after envelope signing is resumed.
+ * @param completion completion block to be executed after envelope signing has been resumed.
  */
 - (void)resumeSigningEnvelopeWithPresentingController:(UIViewController *)presentingController
                                            envelopeId:(NSString *)envelopeId
@@ -117,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param signingMode compose envelope in either online or offline mode, see DSMSigningMode
  * @param resumeWithDraft determines whether to initialize flow with a previously saved draft (if any)
  * @param animated if the presentation of sign and send be animated or not.
- * @param completion completion block to be executed after compose envelope controller is presented
+ * @param completion completion block to be executed after compose envelope controller has been presented.
  * @warning passing nil to a presentationController will not be able to load the offline envelope flow.
  * @discussion Relevant Notifications that can be used to track the progress of an envelope sync task: DSMEnvelopeOnlineSendFailedNotification.
  * @see DSMNotificationCodes
@@ -134,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
  * @param animated If the presentation of sign and send be animated or not.
- * @param completion Completion block to be executed after signing is complete.
+ * @param completion Completion block to be executed after signing has been presented.
  * @warning passing nil to a presentationController will not be able to load the Signing.
  */
 - (void)presentSigningWithPresentingController:(UIViewController *)presentingController
@@ -147,18 +147,18 @@ NS_ASSUME_NONNULL_BEGIN
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
- * @param userName userName of the captive signer in the envelope.
- * @param email email of the captive signer in the envelope.
- * @param clientUserId clientUserId of the captive signer in the envelope.
+ * @param recipientUserName userName of the captive recipient in the envelope.
+ * @param recipientEmail email of the captive recipient in the envelope.
+ * @param recipientClientUserId clientUserId of the captive recipient in the envelope.
  * @param animated If the presentation of sign and send be animated or not.
- * @param completion Completion block to be executed after signing is complete.
+ * @param completion Completion block to be executed after signing has been presented.
  * @warning passing nil to a presentationController will not be able to load the Signing.
 */
 - (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
                                            envelopeId:(NSString *)envelopeId
-                                             userName:(NSString *)userName
-                                                email:(NSString *)email
-                                         clientUserId:(NSString *)clientUserId
+                                    recipientUserName:(NSString *)recipientUserName
+                                       recipientEmail:(NSString *)recipientEmail
+                                recipientClientUserId:(NSString *)recipientClientUserId
                                              animated:(BOOL)animated
                                            completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
@@ -167,19 +167,19 @@ NS_ASSUME_NONNULL_BEGIN
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
- * @param userName userName of the captive signer in the envelope.
- * @param email email of the captive signer in the envelope.
- * @param clientUserId clientUserId of the captive signer in the envelope.
+ * @param recipientUserName userName of the captive recipient in the envelope.
+ * @param recipientEmail email of the captive recipient in the envelope.
+ * @param recipientClientUserId clientUserId of the captive recipient in the envelope.
  * @param recipientId recipientId [Optional] of the captive signer in the envelope.
  * @param animated If the presentation of sign and send be animated or not.
- * @param completion Completion block to be executed after signing is complete.
+ * @param completion Completion block to be executed after signing has been presented.
  * @warning passing nil to a presentationController will not be able to load the Signing.
 */
 - (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
                                            envelopeId:(NSString *)envelopeId
-                                             userName:(NSString *)userName
-                                                email:(NSString *)email
-                                         clientUserId:(NSString *)clientUserId
+                                    recipientUserName:(NSString *)recipientUserName
+                                       recipientEmail:(NSString *)recipientEmail
+                                recipientClientUserId:(NSString *)recipientClientUserId
                                           recipientId:(NSString *_Nullable)recipientId
                                              animated:(BOOL)animated
                                            completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
