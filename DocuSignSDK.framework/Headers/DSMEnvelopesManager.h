@@ -144,6 +144,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
+ * Note: a) `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
+ * b) An extra API call is made to fetch `recipientUserName` & `recipientEmail` for the given `envelopeId` and `recipientClientUserId`.
+ * c) In case if no unique recipient is found with given `recipientClientUserId`, `DSMSigningCancelledNotification` notification is sent with additional details.
+ * @param presentingController controller will be presented on top of the given presentingController passed.
+ * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
+ * @param recipientClientUserId clientUserId of the captive recipient in the envelope.
+ * @param animated If the presentation of sign and send be animated or not.
+ * @param completion Completion block to be executed after signing has been presented or if an error is encountered.
+ * @warning passing nil to a presentationController will not be able to load the Signing.
+ * @see DSMNotificationCodes.h
+ */
+- (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
+                                           envelopeId:(NSString *)envelopeId
+                                recipientClientUserId:(NSString *)recipientClientUserId
+                                             animated:(BOOL)animated
+                                           completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
+
+/*!
+ * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
