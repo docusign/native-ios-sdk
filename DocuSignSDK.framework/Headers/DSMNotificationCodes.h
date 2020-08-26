@@ -132,6 +132,9 @@ extern NSString * const DSMEnvelopeIdKey;
 extern NSString * const DSMTemplateIdKey;
 /*! @brief Notification userInfo key to represent TransactionId of an envelope. TransactionIds are only used for offline envelopes which are created on the device using a template or pdf documents. */
 extern NSString * const DSMTransactionIdKey;
+/*! @brief Notification userInfo key to represent any additional info sent in addition.
+ */
+extern NSString * const DSMAdditionalInfo;
 /*! @brief Notification userInfo key to represent Error of an envelope. */
 extern NSString * const DSMErrorKey;
 /*!
