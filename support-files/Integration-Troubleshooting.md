@@ -42,7 +42,7 @@ Native SDK as of `v2.3.5` does not support bitcode, if your integration is depen
 4. Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 5. Make sure `Podfile` has a correct entry, for example:
   * `pod 'DocuSign'` or
-  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.5-beta-3"`
+  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
     * In case you are using specific branch to fetch `DocuSign` pod, **additional steps are required** to install [git-lfs](https://git-lfs.github.com/) as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
     * Install git-lfs via brew: `brew install git-lfs`
     * Activate git-lfs next: `git lfs install`
