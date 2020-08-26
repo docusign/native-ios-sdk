@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "서명을 완료하는 중…";
 "Signing.FinishingSigning" = "서명을 완료하는 중…";
 "Signing.Error.NoTagsPlaced" = "서명을 완료하지 못했습니다. 문서에 태그를 지정했는지 확인하십시오.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "문서 다운로드 중…";
 "done" = "완료";
 "General.Next" = "다음";

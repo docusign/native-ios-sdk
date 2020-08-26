@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "Fin du processus de signature…";
 "Signing.FinishingSigning" = "Fin du processus de signature…";
 "Signing.Error.NoTagsPlaced" = "La signature n’a pas abouti. Assurez‑vous d’avoir bien disposé une balise sur le document.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "Téléchargement du document…";
 "done" = "Terminé";
 "General.Next" = "Suivant";

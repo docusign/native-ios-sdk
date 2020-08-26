@@ -19,7 +19,10 @@
 extern NSString * const DSMSigningCompletedNotification;
 
 /*!
- * @brief Notification sent when signing is cancelled.
+ * @brief Notification sent when signing is cancelled upon error or dismissed based on user-actions.
+ * User actions which may trigger this notifications during Online or Offline Signing are:
+ * - Exit Offline Signing by saving or discarding the envelope currently being signed
+ * - Exit Online Signing by cancelling or choosing to 'Sign Later' the envelope
  * @discussion Returned userInfo has envelopeId associated with DSMEnvelopeIdKey. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMSigningCancelledNotification object:viewController userInfo:userInfo];
  */
