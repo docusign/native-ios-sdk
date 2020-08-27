@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "A concluir a assinatura…";
 "Signing.FinishingSigning" = "A concluir a assinatura…";
 "Signing.Error.NoTagsPlaced" = "A assinatura não foi concluída com êxito. Certifique-se de que colocou uma etiqueta no documento.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "A transferir o documento…";
 "done" = "Concluído";
 "General.Next" = "Seguinte";

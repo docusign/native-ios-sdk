@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "Signiervorgang wird abgeschlossen ...";
 "Signing.FinishingSigning" = "Signiervorgang wird abgeschlossen ...";
 "Signing.Error.NoTagsPlaced" = "Der Signiervorgang konnte nicht abgeschlossen werden. Positionieren Sie mindestens ein Tag im Dokument.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "Dokument wird heruntergeladen ...";
 "done" = "Fertig";
 "General.Next" = "Weiter";

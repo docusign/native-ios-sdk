@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "署名の完了中...";
 "Signing.FinishingSigning" = "署名の完了中…";
 "Signing.Error.NoTagsPlaced" = "署名が正しく完了しませんでした。文書上にフィールドが配置されていることを確認してください。";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "文書のダウンロード中...";
 "done" = "完了";
 "General.Next" = "次へ";
