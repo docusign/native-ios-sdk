@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "Завершение подписания…";
 "Signing.FinishingSigning" = "Завершение подписания…";
 "Signing.Error.NoTagsPlaced" = "Подписывание не было завершено. Убедитесь, что для документа указан тег.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "Загрузка документа…";
 "done" = "Готово";
 "General.Next" = "Далее";

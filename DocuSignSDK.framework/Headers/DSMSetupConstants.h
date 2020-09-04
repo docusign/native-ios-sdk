@@ -168,9 +168,16 @@ extern NSString * const DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS;
 #pragma mark - Setup Constants - Telemtry
 
 /*! @brief Allows SDK to capture events with DocuSign Telemetry API.
- * Setting to "true" allows us to store events during critical flows such as login and signing. we also capture necessary data in case of crashes.
+ * Setting to "true" allows SDK to store events during critical flows such as login and signing. SDK also capture necessary data in case of crashes and syncs with DocuSign Telemetry API.
  * Note: If user logout from SDK, all unsynced events will be cleared from the cache.
  * Default value is "true"
  * Acceptable value is either "true" or "false".
  */
 extern NSString * const DSM_SETUP_ENABLE_TELEMETRY;
+
+/*! @brief Allows SDK to hide the email field in the consumer disclosure screen. Email field is shown by default to provide an optional email for an In-Person Signer.
+ * Set "true" to hide In Person Signer email in the consumer disclosure screen.
+ * Default value is "false"
+ * Acceptable value is either "true" or "false".
+ */
+extern NSString * const DSM_SETUP_DISABLE_EMAIL_IPS_FIELD_CD;

@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "正在完成簽署…";
 "Signing.FinishingSigning" = "正在完成簽署…";
 "Signing.Error.NoTagsPlaced" = "簽署未順利完成。請確定您已在文件中放置標記。";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "正在下載文件…";
 "done" = "完成";
 "General.Next" = "下一步";

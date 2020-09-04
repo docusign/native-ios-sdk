@@ -29,6 +29,8 @@
 "SigningAPI.finishing.signing" = "Completamento procedura di apposizione firma…";
 "Signing.FinishingSigning" = "Completamento procedura di apposizione firma…";
 "Signing.Error.NoTagsPlaced" = "Impossibile completare correttamente la firma. Controlla di aver posizionato un tag sul documento.";
+"Signing.InvalidVerificationTitle" = "Unable to Verify ID";
+"Signing.InvalidVerificationMessage" = "We’re unable to verify your ID to continue signing.";
 "Documents.DownloadingDocument" = "Download documento…";
 "done" = "Fine";
 "General.Next" = "Avanti";

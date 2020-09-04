@@ -11,7 +11,7 @@
 }
 ```
 
-Native SDK as of `v2.3.4` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround for now is to have all app targets build without bitcode. In order to disable bitcode, client app would need to set `Enable Bitcode` under `Build Options` to `No` for each of the targets.
+Native SDK as of `v2.3.5` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround for now is to have all app targets build without bitcode. In order to disable bitcode, client app would need to set `Enable Bitcode` under `Build Options` to `No` for each of the targets.
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
@@ -36,15 +36,15 @@ Native SDK as of `v2.3.4` does not support bitcode, if your integration is depen
 
 ### Fix: Ensure Client is fetching DocuSignSDK Binary
 
-* Close Xcode
-* Go to the solution directory and perform `pod deintegrate` to uninitialize the pods.
-* Remove pods & lock file with `rm Podfile.lock` & `rm -rf Pods/`
-* Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
-* Make sure `Podfile` has a correct entry, for example:
+1. Close Xcode
+2. Go to the solution directory and perform `pod deintegrate` to uninitialize the pods.
+3. Remove pods & lock file with `rm Podfile.lock` & `rm -rf Pods/`
+4. Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
+5. Make sure `Podfile` has a correct entry, for example:
   * `pod 'DocuSign'` or
-  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.3.4"`
-    * In case you are using specific branch to fetch `DocuSign` pod, additional steps to install [git-lfs](https://git-lfs.github.com/) are required as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
+  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
+    * In case you are using specific branch to fetch `DocuSign` pod, **additional steps are required** to install [git-lfs](https://git-lfs.github.com/) as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
     * Install git-lfs via brew: `brew install git-lfs`
     * Activate git-lfs next: `git lfs install`
-* `pod install` or `pod install --repo-update` 
-* Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`, If yes, open workspace and build. Report an issue if problem still persists.
+6. `pod install` or `pod install --repo-update` 
+7. Ensure `DocuSignSDK.framework/DocuSignSDK` binary file is available and is around `~105MB`, If yes, open workspace and build. Report an issue if problem still persists.
