@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.3.5] - 08/26/2020
+## [v2.3.5] - 09/04/2020
 
 ### Added
 * Embedded (Captive) Signing is now supported with  `presentCaptiveSigningWithPresentingController` via `DSMEnvelopesManager`. API reference available at [Embedded Signing](https://developers.docusign.com/esign-rest-api/guides/concepts/embedding). 
