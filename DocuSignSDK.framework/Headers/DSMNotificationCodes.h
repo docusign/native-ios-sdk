@@ -57,29 +57,29 @@ extern NSString * const DSMEnvelopeUncachedNotification;
 extern NSString * const DSMEnvelopeCacheFailedNotification;
 
 /*!
- * @brief Notification sent when process to start syncing cached-envelopes with docusign server either finishes normally or is terminated preemptively.
+ * @brief Notification sent when process to start syncing cached-envelopes with DocuSign server either finishes normally or is terminated preemptively.
  * @discussion Returns userInfo as nil. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeSyncingEndedNotification object:nil];
  */
 extern NSString * const DSMEnvelopeSyncingEndedNotification;
 
 /*!
- * @brief Notification sent when process to start syncing cached-envelopes with docusign server begins.
+ * @brief Notification sent when process to start syncing cached-envelopes with DocuSign server begins.
  * @discussion Returns userInfo with envelopes pending sync details. This can be posted on a thread other than MainThread. Each of the entries contains the dictionary of {DSMEnvelopeIdKey: envelopeId, DSMTemplateIdKey: templateId, DSMTransactionIdKey: transactionId} representing an envelope instance.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeSyncingStartedNotification object:nil];
  */
 extern NSString * const DSMEnvelopeSyncingStartedNotification;
 
 /*!
- * @brief Notification sent when process to start syncing cached-envelopes with docusign server fails because of some error.
- * @discussion Returned userInfo has envelopeId (cache uri) associated with DSMCacheURIKey key. This can be posted on a thread other than MainThread.
+ * @brief Notification sent when process to start syncing cached-envelopes with DocuSign server fails because of some error.
+ * @discussion Returned userInfo has envelopeId (cache URI) associated with DSMCacheURIKey key. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeSyncingFailedNotification object:nil userInfo:userInfo];
  */
 extern NSString * const DSMEnvelopeSyncingFailedNotification;
 
 /*!
- * @brief Notification sent when process to sync a cached-envelope succeeds with docusign server.
- * @discussion Returned userInfo contains: envelopeId associated with DSMEnvelopeIdKey, cache uri associated with DSMCacheURIKey and templateId associated with DSMTemplateIdKey. This can be posted on a thread other than MainThread.
+ * @brief Notification sent when process to sync a cached-envelope succeeds with DocuSign server.
+ * @discussion Returned userInfo contains: envelopeId associated with DSMEnvelopeIdKey, cache URI associated with DSMCacheURIKey and templateId associated with DSMTemplateIdKey. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeSyncingSucceededNotification object:nil userInfo:userInfo];
  */
 extern NSString * const DSMEnvelopeSyncingSucceededNotification;
@@ -94,7 +94,7 @@ extern NSString * const DSMEnvelopeSyncingSucceededNotification;
 extern NSString * const DSMFoundReadonlyAndRequiredTabsWithInvalidDefaultsNotification;
 
 /*!
- * @brief Notification sent when errors are detected with the offline envelope being persisted to coredata for progress save.
+ * @brief Notification sent when errors are detected with the offline envelope being persisted to CoreData for progress save.
  * @discussion Offline envelope is saved after it's created for offline signing and once a local signer finishes signing or a local signer choose to pause signing to be resumed later. Use the envelopeId to uniquely identify the envelope.
  */
 extern NSString * const DSMOfflineEnvelopeSaveErrorNotification;
@@ -102,9 +102,9 @@ extern NSString * const DSMOfflineEnvelopeSaveErrorNotification;
 /*!
  * @brief Notification sent when errors are detected with the template configuration during offline envelope signing.
  * @discussion This notification is sent in addition to other specific notifications such as DSMEnvelopeSyncingFailedNotification, DSMEnvelopeCacheFailedNotification and is meant to cover cases related to configuration errors in the template or signed envelope.
- * It's highly recommended to subscribe, log and handle this notification when DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY is used to supress the UI alerts during offline signing.
+ * It's highly recommended to subscribe, log and handle this notification when DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY is used to suppress the UI alerts during offline signing.
  * Notification will be sent irrespective of the optional SDK configuration DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY value being set as true or false.
- * UserInfo contains the error object with details on the cause, for example, a) duplicate recipients found with template recipients data or b) invalid formola tab configuration detected in template during offline envelope signing. Optionally, "AdditionalDetails" key points to details related to specific tab resulting in validation errors during offline signing.
+ * UserInfo contains the error object with details on the cause, for example, a) duplicate recipients found with template recipients data or b) invalid formula tab configuration detected in template during offline envelope signing. Optionally, "AdditionalDetails" key points to details related to specific tab resulting in validation errors during offline signing.
  * @see DSMSetupConstants.h
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMOfflineEnvelopeSigningErrorNotification object:nil userInfo:userInfo];
  */
@@ -117,19 +117,19 @@ extern NSString * const DSMOfflineEnvelopeSigningErrorNotification;
 extern NSString * const DSMAdditionalAccountDataFetchOrDeleteErrorNotification;
 
 #pragma mark Envelope Cache Status
-/*! @brief Envelope status represending successful caching; this status is sent with various Notification userInfo. */
+/*! @brief Envelope status representing successful caching; this status is sent with various Notification userInfo. */
 extern NSString * const DSMCacheDidAddStatus;
-/*! @brief Envelope status represending successful update of the cache status; this status is sent with various Notification userInfo. */
+/*! @brief Envelope status representing successful update of the cache status; this status is sent with various Notification userInfo. */
 extern NSString * const DSMCacheDidUpdateStatus;
-/*! @brief Envelope status represending successful uncaching of already cached envelope; this status is sent with various Notification userInfo. */
+/*! @brief Envelope status representing successful uncaching of already cached envelope; this status is sent with various Notification userInfo. */
 extern NSString * const DSMCacheDidRemoveStatus;
-/*! @brief Envelope status represending failure during caching; this status is sent with various Notification userInfo. */
+/*! @brief Envelope status representing failure during caching; this status is sent with various Notification userInfo. */
 extern NSString * const DSMCacheDidFailStatus;
 
 #pragma mark Notification Keys
 /*! @brief Notification userInfo key to represent CacheURI (recordId) of an envelope. */
 extern NSString * const DSMCacheURIKey;
-/*! @brief Notification userInfo key to represent EnvelopeId (also recordId) of an envelope. */
+/*! @brief Notification userInfo key to represent EnvelopeId (also recordId) associated with an envelope. */
 extern NSString * const DSMEnvelopeIdKey;
 /*! @brief Notification userInfo key to represent TemplateId of a template. */
 extern NSString * const DSMTemplateIdKey;
