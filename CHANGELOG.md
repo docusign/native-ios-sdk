@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.3.6] - 09/29/2020
+## [v2.3.6] - 10/15/2020
 
 ### Fixed
 * Fixes related to tabs placement in the document.
