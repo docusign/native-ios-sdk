@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.3.7] - 10/30/2020
+## [v2.3.7] - 11/02/2020
 
 ### Added
 * Additional SDK events and properties are captured and sent using DocuSign Telemetry API.
