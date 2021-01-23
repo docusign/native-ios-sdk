@@ -234,6 +234,11 @@ typedef enum {
  */
 @property (nonatomic,assign) NSInteger failedAttemptsToSync;
 
+/*!
+ * @brief When set to **true** the created envelope has responsive documents. [optional]
+ */
+@property (nonatomic,assign) BOOL disableResponsiveDocument;
+
 @end
 
 NS_ASSUME_NONNULL_END

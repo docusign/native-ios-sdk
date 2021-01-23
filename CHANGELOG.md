@@ -1,5 +1,11 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.3.8] - 01/22/2021
+
+### Added
+* Support client apps to send responsive documents using templates for responsive signing. Such templates need to be configured to use responsive documents.
+* New setup configuration `DSM_SETUP_ONLY_USE_COMPANY_NAME_WITH_CD` to allow client apps to customize Consumer Disclosures to use only company name.
+
 ## [v2.3.7] - 11/02/2020
 
 ### Added
