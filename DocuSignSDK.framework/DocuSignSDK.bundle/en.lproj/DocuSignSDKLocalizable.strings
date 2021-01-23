@@ -85,8 +85,9 @@
 "Signing.DocumentWillSendWhenConnected" = "The document will be sent as soon as a data connection is available.";
 "Signing.AllInPersonSignersCompleted" = "All In-Person Signers Have Completed";
 "ConsumerDisclosure.ConsumerDisclosure" = "Consumer Disclosure";
-"Signing.ofX" = " of %1$@";
-"Signing.XHasRequestedSignature" = "%1$@%2$@ has requested your signature.";
+"Signing.ofCompany" = " of %1$@";
+"Signing.XofCompanyHasRequestedSignature" = "%1$@%2$@ has requested your signature.";
+"Signing.CompanyHasRequestedSignature" = "%1$@ has requested your signature.";
 "Signing.Consent" = "By selecting %1$@ I consent to do business electronically with %2$@.";
 "Signing.ConsumerDisclosure" = "Doing Business Electronically";
 "Signing.CompletedSigning" = "Completed Signing";
@@ -95,6 +96,7 @@
 "General.Filter" = "Filter";
 "Documents.HostName" = "Host Name";
 "Documents.HostEmail" = "Host Email";
+"Documents.SignerName" = "Signer Name";
 "BuildEnvelope.EditSigner" = "Edit Signer";
 "BuildEnvelope.SwitchSigner" = "Switch Signer";
 "BuildEnvelope.DeleteSigner" = "Delete Signer";
