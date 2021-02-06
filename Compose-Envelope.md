@@ -3,7 +3,9 @@
 
 ## V1 Compose Envelope - Programmatically [Beta]
 
-### Use envelope builder to supply Signers with PDFs and Tabs among with other customizable options to directly launch signing ceremony in offline mode. This method allows client app to skip the DocuSign SDK UI components to add PDFs, Signers and Tabs.
+### Using EnvelopeBuilder & Resuming composed envelope
+
+Use envelope builder to supply Signers with PDFs and Tabs among with other customizable options to directly launch signing ceremony in offline mode. This method allows client app to skip the DocuSign SDK UI components to add PDFs, Signers and Tabs.
 
 [DSMEnvelopesManager](DocuSignSDK.framework/Headers/DSMEnvelopesManager.h) has the following interface defined that takes an `DSMEnvelopeDefinition` object to launch signing.
 
@@ -18,6 +20,20 @@
 - (void)composeEnvelopeWithEnvelopeDefinition:(DSMEnvelopeDefinition *)envelope
                                   signingMode:(DSMSigningMode)signingMode
                                    completion:(nullable void(^)(NSString *_Nullable envelopeId, NSError *error))completion;
+```
+
+Once the envelope has been composed and saved on the local device, resume envelope interface can be used to start the signing ceremony for local signers.
+
+```
+/*!
+ * @discussion Resume signing with a cached envelope. This call can be made when device is offline.
+ * @param presentingController controller will be presented on top of the given presentingController passed.
+ * @param envelopeId An Id of the envelope to be resumed.
+ * @param completion completion block to be executed after envelope signing has been resumed.
+ */
+- (void)resumeSigningEnvelopeWithPresentingController:(UIViewController *)presentingController
+                                           envelopeId:(NSString *)envelopeId
+                                           completion:(void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 ```
 
 ### How to customize DSMEnvelopeDefinition add Signers, PDFs and Tabs along with other details:
