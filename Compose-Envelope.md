@@ -1,7 +1,119 @@
 
 # DocuSign iOS SDK Compose Envelope
 
-## V1 Compose Envelope
+## V1 Compose Envelope - Programmatically [Beta]
+
+### Use envelope builder to supply Signers with PDFs and Tabs among with other customizable options to directly launch signing ceremony in offline mode. This method allows client app to skip the DocuSign SDK UI components to add PDFs, Signers and Tabs.
+
+[DSMEnvelopesManager](DocuSignSDK.framework/Headers/DSMEnvelopesManager.h) has the following interface defined that takes an `DSMEnvelopeDefinition` object to launch signing.
+
+```
+/*!
+ * @discussion Creates an envelope programmatically using DSMEnvelopeBuilder.
+ * @param signingMode compose envelope in either online or offline mode, see DSMSigningMode
+ * @param completion completion block to be executed after envelope is successfully created.
+ * @warning passing nil to a presentationController will not be able to load the offline envelope flow.
+ * @see DSMEnvelopeBuilder
+ */
+- (void)composeEnvelopeWithEnvelopeDefinition:(DSMEnvelopeDefinition *)envelope
+                                  signingMode:(DSMSigningMode)signingMode
+                                   completion:(nullable void(^)(NSString *_Nullable envelopeId, NSError *error))completion;
+```
+
+### How to customize DSMEnvelopeDefinition add Signers, PDFs and Tabs along with other details:
+
+The newly exposed interface in [DSMEnvelopesManager](DocuSignSDK.framework/Headers/DSMEnvelopesManager.h) uses `DSMEnvelopeBuilder` to customize the envelope definition. Commonly used builders with [`DSMEnvelopeBuilder`](DocuSignSDK.framework/Headers/DSMEnvelopeBuilder.h) are `DSMDocumentBuilder`, `DSMTabBuilder`, `DSMRecipientBuilder`, `DSMTextCustomFieldBuilder` and `DSMListCustomFieldBuilder`. 
+
+Here are some of the snippets that can be used to compose the `DSMEnvelopeDefinition`.
+
+```
+// Create a envelope with email and message
+DSMEnvelopeDefinition *envelope = [[[[DSMEnvelopeBuilder builder]
+                                          addEmailSubject: @"DocuSign: NDA.pdf"]
+                                          addEmailMessage: @"Hi Jane Wood, I'm sending you an NDA to sign and return, ...."]
+                                        build];
+
+// Create a document with pdf file and assign a name and id
+DSMEnvelopeDocument *document = [[[[[DSMDocumentBuilder builder]
+                                          addName: @"NDADocument"]
+                                          addDocumentId: 1]
+                                          addFilePath: [[NSBundle mainBundle] pathForResource: @"NDA" ofType: @"pdf"]] 
+                                        build];
+
+// Create an envelope recipient with name and email and assign an id and type with routing order
+DSMEnvelopeRecipient *recipient = [[[[[[DSMRecipientBuilder builderForType: DSMRecipientTypeSigner]
+                                          addRecipientId: 1]
+                                          addSignerName: @"Jane Wood"]
+                                          addSignerEmail: @"JaneWood@docusign.com"]
+                                          addRoutingOrder: 1] 
+                                        build];
+
+// Create a signature tab at a given position on a document page
+DSMEnvelopeTab *signTab = [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
+                                                          addName: @"Signature"]
+                                                          addRecipientId: 1]
+                                                          addDocumentId: 1]
+                                                          addFrame: CGRectMake(100, 300, 40, 50)]
+                                                          addPageNumber: 1
+                                                  ] build]
+
+// Create a text based tab at a given postion on a document page
+DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
+                                          addName: @"Name"]
+                                          addRecipientId: 1]
+                                          addFrame: CGRectMake(100, 200, 120, 30)]
+                                          addDocumentId: 1]
+                                          addPageNumber: 1] 
+                                        build];
+
+// Alternatively, all these could be chained with multiple builders.
+@try {
+  DSMEnvelopeDefinition *envelope = [[[[[[[DSMEnvelopeBuilder builder]
+                      addEnvelopeName: @"DocuSign NDA"]
+                      addEmailSubject: @"DocuSign: NDA.pdf"]
+                      addEmailMessage: @"Hi Jane Wood, I'm sending you an NDA to sign and return, ...."]
+                      addRecipient:[[[[[[DSMRecipientBuilder builderForType: DSMRecipientTypeSigner]
+                                          addRecipientId: 1]
+                                          addSignerName: @"Jane Wood"]
+                                          addSignerEmail: @"JaneWood@docusign.com"]
+                                          addTab: [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
+                                                          addName: @"Signature"]
+                                                          addRecipientId: 1]
+                                                          addDocumentId: 1]
+                                                          addFrame: CGRectMake(100, 300, 40, 50)]
+                                                          addPageNumber: 1
+                                                  ] build]
+                                    ] build]] 
+                      addDocument:[[[[[DSMDocumentBuilder builder]
+                                          addName: @"NDADocument"]
+                                          addDocumentId: 1]
+                                          addFilePath: [[NSBundle bundleForClass: [self class]] pathForResource: @"NDA" ofType: @"pdf"]
+                                  ] build]
+                ] build];
+  if (envelope) {
+    // Compose the envelope to automatically cache it
+    [self.envelopesManager composeEnvelopeWithEnvelopeDefinition: envelope
+                              signingMode: DSMSigningModeOffline
+                              completion: ^(NSString * _Nullable envelopeId, NSError * _Nonnull error) {
+                                    // error checks
+                                    if (error) { ... }
+
+                                    // Resume the envelope to start the signing process
+                                    [self.envelopesManager resumeSigningEnvelopeWithPresentingController: self
+                                            envelopeId: envelopeId
+                                            completion: ^(UIViewController * _Nullable presentedController, NSError * _Nullable error) {
+                                        // Handle error
+                                    }];                                
+                                }
+    ];
+  }
+} @catch (NSException *exception) {
+  // Handle exception
+}
+```
+Note: The beta interface can change in the final `v2.4` release.
+
+## V1 Compose Envelope - UI Components
 
 The Compose Envelope flow allows user the ability to create an envelope (adding documents, recipients, and tags) without previously downloading any templates, both online or offline where behaviour will differentiate the two after an envelope has been created.
 
