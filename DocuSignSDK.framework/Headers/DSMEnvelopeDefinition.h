@@ -3,4 +3,6 @@
 
 @interface DSMEnvelopeDefinition : DSMEnvelopeTemplate
 
+@property (nonatomic, strong) NSString *envelopeName;
+
 @end

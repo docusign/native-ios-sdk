@@ -59,6 +59,9 @@ typedef NS_ENUM(NSUInteger, DSMTabType);
 /*! @brief Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later. [optional]. */
 @property (nonatomic, copy) NSString *status;
 
+/*! @brief When set to true, the signer is required to fill out this tab.[optional]. */
+@property (nonatomic, assign) BOOL required;
+
 /*!
  * @brief The DSMTabFrame class object.
  * @see DSMTabFrame.h

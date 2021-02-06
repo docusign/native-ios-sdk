@@ -81,6 +81,20 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMTextTabFontProtocol.h>
 #import <DocuSignSDK/DSMTitle.h>
 #import <DocuSignSDK/DSMUserInfo.h>
+#import <DocuSignSDK/DSMEnvelopeBuilder.h>
+#import <DocuSignSDK/DSMDocumentBuilder.h>
+#import <DocuSignSDK/DSMRecipientBuilder.h>
+#import <DocuSignSDK/DSMTabBuilder.h>
+#import <DocuSignSDK/DSMTabBuilder.h>
+#import <DocuSignSDK/DSMEnvelopeTab.h>
+#import <DocuSignSDK/DSMEnvelopeDocument.h>
+#import <DocuSignSDK/DSMEnvelopeRecipient.h>
+#import <DocuSignSDK/DSMTextCustomFieldBuilder.h>
+#import <DocuSignSDK/DSMListCustomFieldBuilder.h>
+#import <DocuSignSDK/DSMEnvelopeTextCustomField.h>
+#import <DocuSignSDK/DSMEnvelopeListCustomField.h>
+
+
 
 //categories
 #import <DocuSignSDK/NSArray+DSMQuery.h>

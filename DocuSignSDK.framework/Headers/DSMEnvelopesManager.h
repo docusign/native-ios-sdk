@@ -129,6 +129,17 @@ NS_ASSUME_NONNULL_BEGIN
                                                       completion:(nullable void(^)(UIViewController *_Nullable presentedController))completion;
 
 /*!
+ * @discussion Creates an envelope programmatically using DSMEnvelopeBuilder.
+ * @param signingMode compose envelope in either online or offline mode, see DSMSigningMode
+ * @param completion completion block to be executed after envelope is successfully created.
+ * @warning passing nil to a presentationController will not be able to load the offline envelope flow.
+ * @see DSMEnvelopeBuilder
+ */
+- (void)composeEnvelopeWithEnvelopeDefinition:(DSMEnvelopeDefinition *)envelope
+                                  signingMode:(DSMSigningMode)signingMode
+                                   completion:(nullable void(^)(NSString *_Nullable envelopeId, NSError *error))completion;
+
+/*!
  * @discussion Start signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * @param presentingController controller will be presented on top of the given presentingController passed.
