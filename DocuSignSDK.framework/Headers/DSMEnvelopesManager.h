@@ -10,8 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @protocol DSMEnvelopesManagerOfflineSigningDelegate
- @abstract Offline signing delegate to receive events and customize signing session.
- @see DSMInPersonSigner DSMSigner
+ @abstract Offline signing delegate to receive events and customize signing session for recipients. Use the notifications to receive the events related to envelope offline signing, caching and syncing process. 
+ @see DSMInPersonSigner DSMSigner DSMNotificationCodes
  */
 @protocol DSMEnvelopesManagerOfflineSigningDelegate<NSObject>
 
