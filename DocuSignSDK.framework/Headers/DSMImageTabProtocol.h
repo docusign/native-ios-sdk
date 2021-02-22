@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @brief Scale of the image based tabs. */
 @property(nonatomic, copy) NSNumber *scaleValue;
 /*!
- @brief Optional flag to determin if the image tab is required.
+ @brief Optional flag to determine if the image tab is required.
  @see DSMTextTabProtocol.h
  */
 @property(nonatomic, assign) BOOL optional;

@@ -39,6 +39,10 @@ extern NSInteger const DSM_SETUP_API_TIMEOUT_DEFAULT_VALUE;
  */
 extern NSInteger const DSM_SETUP_API_TIMEOUT_MAX_VALUE;
 
+/*! @brief Maximum allowed pages in a single document for compose flow, set as 2000 pages.
+ */
+extern NSInteger const DSM_SETUP_SDK_MAX_PAGES_IN_DOCUMENT;
+
 #pragma mark - Setup Constants - Offline
 
 /*!

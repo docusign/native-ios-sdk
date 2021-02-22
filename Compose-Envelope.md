@@ -1,11 +1,13 @@
 
 # DocuSign iOS SDK Compose Envelope
 
-## V1 Compose Envelope - Programmatically [Beta]
+## V1 Compose Envelope - using EnvelopeDefinition [Beta]
 
 ### Using EnvelopeBuilder & Resuming composed envelope
 
-Use envelope builder to supply Signers with PDFs and Tabs among with other customizable options to directly launch signing ceremony in offline mode. This method allows client app to skip the DocuSign SDK UI components to add PDFs, Signers and Tabs.
+[DSMEnvelopeBuilder](/DocuSignSDK.framework/Headers/DSMEnvelopeBuilder.h) allows adding Signers, PDF-documents and Tabs among other customizable options to compose an envelope definition object and cache it with [DSMEnvelopeManager](/DocuSignSDK.framework/Headers/DSMEnvelopesManager.h). Afterwards, envelope definition object can be used to directly launch signing ceremony in offline mode using `resumeSigningEnvelopeWithPresentingController:...` method on [DSMEnvelopeManager](/DocuSignSDK.framework/Headers/DSMEnvelopesManager.h). This new flow to compose and resume envelope allows client apps to skip the [DocuSign SDK UI components](#v1-compose-envelope---ui-components) entirely to get documents signed with preassigned tabs and provides an alternative to using Compose-UI or using [Envelope Templates](/DocuSignSDK.framework/Headers/DSMTemplatesManager.h).
+
+#### Compose EnvelopeDefinition
 
 [DSMEnvelopesManager](DocuSignSDK.framework/Headers/DSMEnvelopesManager.h) has the following interface defined that takes an `DSMEnvelopeDefinition` object to launch signing.
 
@@ -22,6 +24,8 @@ Use envelope builder to supply Signers with PDFs and Tabs among with other custo
                                    completion:(nullable void(^)(NSString *_Nullable envelopeId, NSError *error))completion;
 ```
 
+#### Load Signing
+
 Once the envelope has been composed and saved on the local device, resume envelope interface can be used to start the signing ceremony for local signers.
 
 ```
@@ -36,7 +40,48 @@ Once the envelope has been composed and saved on the local device, resume envelo
                                            completion:(void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 ```
 
-### How to customize DSMEnvelopeDefinition add Signers, PDFs and Tabs along with other details:
+#### Syncing Signed Envelopes with DocuSign Server
+
+Finally, once the signing is complete the signed envelope is cached on device. The cached envelopes can be synced with `syncEnvelopes` method on `DSMEnvelopesManager`. 
+
+**Note:** *Offline Signing* account feature must be enabled to perform Sync successfully. Please connect [**DocuSign Support**](https://support.docusign.com/en/home) in order to get *Offline Signing* enabled. 
+
+```
+/*!
+ * @discussion Sync the pending envelopes on the device to create remote envelopes.
+ * An envelope can be in pending Sync state when
+ * a) created envelope's local InPersonSigner(s) or self-Signer have finished signing,
+ *   and either has no pending local InPersonSigner(s) or only has pending remote
+ *   signer(s) in next signing order.
+ * b) created envelope only has pending remote signer(s) in next signing order.
+ * @use When device is online and there has been sign and send Offline and pending sync to server.
+ * @use Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device.
+ * @discussion Relevant Notifications that can be used to track the progress of an envelope sync task: DSMEnvelopeSyncingStartedNotification, DSMEnvelopeSyncingSucceededNotification, DSMEnvelopeSyncingEndedNotification, DSMEnvelopeSyncingFailedNotification.
+ * @see DSMNotificationCodes
+ */
+- (void)syncEnvelopes;
+```
+
+#### Tracking Events
+
+Client apps may register for various notification, such as `DSMEnvelopeSyncingSucceededNotification`, to receive the details on various stages of signing & envelope syncing. Notification object with `userInfo` contains `envelopeId` of synced document on server. It’s recommended to implement other relevant notifications ([header file](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h)) to capture and log details. Take a look at header file for the important notifications to achieve desired results, some are:
+- `DSMSigningCompletedNotification`
+- `DSMSigningCancelledNotification`
+- `DSMEnvelopeSyncingFailedNotification`
+
+An example of another notification `DSMEnvelopeCachedNotification` from the [header file](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h).
+
+```
+/*!
+ * @brief Notification sent when caching is enabled for a given record (envelope).
+ * @discussion Returned userInfo contains envelopeId associated with DSMEnvelopeIdKey, templateId associated with DSMTemplateIdKey. This can be posted on a thread other than MainThread.
+ * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeCachedNotification object:nil userInfo:userInfo];
+ * Note: Enabling setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` would result in this notification being sent every time a local offline envelope is saved after local signer finishes signing.
+ */
+extern NSString * const DSMEnvelopeCachedNotification;
+```
+
+### Customizing DSMEnvelopeDefinition: Adding Signers, PDFs and Tabs using Builders
 
 The newly exposed interface in [DSMEnvelopesManager](DocuSignSDK.framework/Headers/DSMEnvelopesManager.h) uses `DSMEnvelopeBuilder` to customize the envelope definition. Commonly used builders with [`DSMEnvelopeBuilder`](DocuSignSDK.framework/Headers/DSMEnvelopeBuilder.h) are `DSMDocumentBuilder`, `DSMTabBuilder`, `DSMRecipientBuilder`, `DSMTextCustomFieldBuilder` and `DSMListCustomFieldBuilder`. 
 
@@ -111,14 +156,15 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
     [self.envelopesManager composeEnvelopeWithEnvelopeDefinition: envelope
                               signingMode: DSMSigningModeOffline
                               completion: ^(NSString * _Nullable envelopeId, NSError * _Nonnull error) {
-                                    // error checks
+                                    // error checks in case envelope compose failed. Also use notifications for caching related events.
                                     if (error) { ... }
 
                                     // Resume the envelope to start the signing process
                                     [self.envelopesManager resumeSigningEnvelopeWithPresentingController: self
                                             envelopeId: envelopeId
                                             completion: ^(UIViewController * _Nullable presentedController, NSError * _Nullable error) {
-                                        // Handle error
+                                        // error checks in case UI presentation failed. Use notifications for other events.
+                                        if (error) { ... }
                                     }];                                
                                 }
     ];
@@ -127,7 +173,10 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
   // Handle exception
 }
 ```
-Note: The beta interface can change in the final `v2.4` release.
+
+Note: This interface can change in the final `v2.4` release.
+
+
 
 ## V1 Compose Envelope - UI Components
 
