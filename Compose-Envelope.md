@@ -44,7 +44,7 @@ Once the envelope has been composed and saved on the local device, resume envelo
 
 Finally, once the signing is complete the signed envelope is cached on device. The cached envelopes can be synced with `syncEnvelopes` method on `DSMEnvelopesManager`. 
 
-**Note** [**Offline Signing**](https://support.docusign.com/en/home) Account feature must be enabled to perform Sync successfully. 
+**Note** *Offline Signing* account feature must be enabled to perform Sync successfully. Please connect [**DocuSign Support**](https://support.docusign.com/en/home) in order to get *Offline Signing* enabled. 
 
 ```
 /*!
