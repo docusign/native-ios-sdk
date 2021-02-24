@@ -1,7 +1,14 @@
 
 # DocuSign iOS SDK Compose Envelope
 
-## V1 Compose Envelope - using EnvelopeDefinition [Beta]
+## V1 Compose Envelope - using EnvelopeDefinition [Beta-3]
+
+### Changes in Beta-3
+
+- Compose Envelope: updated Builders for Tabs, Recipient & Document to receive strings for recipientId, tabId, documentId instead of Number.
+- Xamarin Specific: Fix for missing SignTab -- now tabs are rendered same as a native app.
+- Xamarin Specific: Known issue with Signature adoption, on-going investigation.
+- Xamarin Specific: Known issue with existing betas -- `LoginWith...:` methods on the `DSMManager` returns error related to keychain data persistence & fetch operations. For now, as a work around, ignore the error as it doesn't affect the sdk functionality significantly (e.g. initialize compose envelope, sign offline envelopes, etc). Planned fix for persistence & fetch keychain is for another beta release at a later date.
 
 ### Using EnvelopeBuilder & Resuming composed envelope
 
@@ -97,13 +104,13 @@ DSMEnvelopeDefinition *envelope = [[[[DSMEnvelopeBuilder builder]
 // Create a document with pdf file and assign a name and id
 DSMEnvelopeDocument *document = [[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: 1]
+                                          addDocumentId: "doc1"]
                                           addFilePath: [[NSBundle mainBundle] pathForResource: @"NDA" ofType: @"pdf"]] 
                                         build];
 
 // Create an envelope recipient with name and email and assign an id and type with routing order
 DSMEnvelopeRecipient *recipient = [[[[[[DSMRecipientBuilder builderForType: DSMRecipientTypeSigner]
-                                          addRecipientId: 1]
+                                          addRecipientId: @"FirstRecipient"]
                                           addSignerName: @"Jane Wood"]
                                           addSignerEmail: @"JaneWood@docusign.com"]
                                           addRoutingOrder: 1] 
@@ -112,8 +119,8 @@ DSMEnvelopeRecipient *recipient = [[[[[[DSMRecipientBuilder builderForType: DSMR
 // Create a signature tab at a given position on a document page
 DSMEnvelopeTab *signTab = [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
-                                                          addRecipientId: 1]
-                                                          addDocumentId: 1]
+                                                          addRecipientId: @"FirstRecipient"]
+                                                          addDocumentId: "doc1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
@@ -121,9 +128,9 @@ DSMEnvelopeTab *signTab = [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHer
 // Create a text based tab at a given postion on a document page
 DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                                           addName: @"Name"]
-                                          addRecipientId: 1]
+                                          addRecipientId: @"FirstRecipient"]
                                           addFrame: CGRectMake(100, 200, 120, 30)]
-                                          addDocumentId: 1]
+                                          addDocumentId: "doc1"]
                                           addPageNumber: 1] 
                                         build];
 
@@ -134,20 +141,20 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                       addEmailSubject: @"DocuSign: NDA.pdf"]
                       addEmailMessage: @"Hi Jane Wood, I'm sending you an NDA to sign and return, ...."]
                       addRecipient:[[[[[[DSMRecipientBuilder builderForType: DSMRecipientTypeSigner]
-                                          addRecipientId: 1]
+                                          addRecipientId: @"FirstRecipient"]
                                           addSignerName: @"Jane Wood"]
                                           addSignerEmail: @"JaneWood@docusign.com"]
                                           addTab: [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
-                                                          addRecipientId: 1]
-                                                          addDocumentId: 1]
+                                                          addRecipientId: @"FirstRecipient"]
+                                                          addDocumentId: "doc1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
                                     ] build]] 
                       addDocument:[[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: 1]
+                                          addDocumentId: "doc1"]
                                           addFilePath: [[NSBundle bundleForClass: [self class]] pathForResource: @"NDA" ofType: @"pdf"]
                                   ] build]
                 ] build];
