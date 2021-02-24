@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "DSMEnvelopeDocument.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class DSMDocument;
 
 /*!
@@ -19,17 +21,17 @@
  * @discussion add document name and return builder object.
  * @param name a string representing document name
  */
-- (DSMDocumentBuilder *)addName:(NSString *)name;
+- (DSMDocumentBuilder *)addName:(nonnull NSString *)name;
 /*!
- * @discussion add document id and return builder object.
- * @param docId a string representing document id
+ * @discussion add document id and return builder object. All of the tabs added to a recipient in envelope must belong to a valid document id.
+ * @param documentId a string representing document id
  */
-- (DSMDocumentBuilder *)addDocumentId:(NSUInteger)docId;
+- (DSMDocumentBuilder *)addDocumentId:(nonnull NSString *)documentId;
 /*!
  * @discussion add document file path in the bundle and return builder object.
  * @param filePath a string representing document file path
  */
-- (DSMDocumentBuilder *)addFilePath:(NSString *)filePath;
+- (DSMDocumentBuilder *)addFilePath:(nonnull NSString *)filePath;
 
 /*!
  * @discussion return the envelope document object
@@ -37,3 +39,5 @@
 - (DSMEnvelopeDocument *)build;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -3,6 +3,8 @@
 #import "DSMEnvelopeRecipient.h"
 #import "DSMEnvelopeTab.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @interface DSMRecipientBuilder
  * @abstract RecipientBuilder to construct an object of DSMEnvelopeRecipient which can be used with DSMEnvelopeBuilder.
@@ -19,10 +21,10 @@
 + (instancetype)builderForType:(DSMRecipientType)recipientType;
 
 /*!
- * @discussion add recipient id and return builder object.
+ * @discussion add recipient id and return builder object. All of the tabs added to the recipient should belong to a valid recipient added to envelope.
  * @param recipientId a string representing recipient id
  */
-- (DSMRecipientBuilder *)addRecipientId:(NSUInteger)recipientId;
+- (DSMRecipientBuilder *)addRecipientId:(NSString *)recipientId;
 /*!
  * @discussion add signer name and return builder object.
  * @param signerName a string representing signer name
@@ -65,4 +67,4 @@
 
 @end
 
-
+NS_ASSUME_NONNULL_END

@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "DSMEnvelopeTextCustomField.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @interface DSMTextCustomFieldBuilder
  * @abstract TextCustomFieldBuilder to construct an object of DSMEnvelopeTextCustomField.
@@ -15,9 +17,9 @@
 
 /*!
  * @discussion add custom text field id and return the builder object.
- * @param fieldId an unsigned integer representing custom field id
+ * @param fieldId an string (unique) representing custom field id.
  */
-- (DSMTextCustomFieldBuilder *)addFieldId:(NSUInteger)fieldId;
+- (DSMTextCustomFieldBuilder *)addFieldId:(NSString *)fieldId;
 /*!
  * @discussion add custom text field name and return the builder object.
  * @param name a string representing custom field name
@@ -40,3 +42,4 @@
 
 @end
 
+NS_ASSUME_NONNULL_END

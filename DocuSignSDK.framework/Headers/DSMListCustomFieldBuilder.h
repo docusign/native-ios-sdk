@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "DSMEnvelopeListCustomField.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @interface DSMListCustomFieldBuilder
  * @abstract ListCustomFieldBuilder to construct an object of DSMEnvelopeListCustomField.
@@ -14,9 +16,9 @@
 
 /*!
  * @discussion add custom list field id and return the builder object.
- * @param fieldId an unsigned integer representing custom field id
+ * @param fieldId a string (unique) representing custom field id
  */
-- (DSMListCustomFieldBuilder *)addFieldId:(NSUInteger)fieldId;
+- (DSMListCustomFieldBuilder *)addFieldId:(NSString *)fieldId;
 /*!
  * @discussion add custom list field name and return the builder object.
  * @param name a string representing custom field name
@@ -43,3 +45,5 @@
 - (DSMEnvelopeListCustomField *)build;
 
 @end
+
+NS_ASSUME_NONNULL_END
