@@ -3,6 +3,11 @@
 
 ## V1 Compose Envelope - using EnvelopeDefinition [Beta-3]
 
+### Changes in Beta-4
+
+- Xamarin Specific: Fix for the signature adoption issue. Tapping on a signature tab would open DocuSign SDK UI component to adopt signatures.
+- Xamarin Specific: Fix for the "Next Field" navigation. 
+
 ### Changes in Beta-3
 
 - Compose Envelope: updated Builders for Tabs, Recipient & Document to receive strings for recipientId, tabId, documentId instead of Number.
