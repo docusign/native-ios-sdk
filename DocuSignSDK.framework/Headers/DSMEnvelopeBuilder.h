@@ -7,6 +7,8 @@
 #import "DSMEnvelopeListCustomField.h"
 #import "DSMEnvelopeDefinition.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @interface DSMEnvelopeBuilder
  * @abstract EnvelopeBuilder to construct an object of DSMEnvelopeDefinition which can be used with envelope compose methods on EnvelopesManager.
@@ -98,3 +100,5 @@
 - (DSMEnvelopeDefinition *)build;
 
 @end
+
+NS_ASSUME_NONNULL_END

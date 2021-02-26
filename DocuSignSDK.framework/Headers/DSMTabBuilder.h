@@ -2,9 +2,11 @@
 #import "DSMTabType.h"
 #import "DSMEnvelopeTab.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @interface DSMTabBuilder
- * @abstract TabBuilder to construct an object of DSMEnvelopeTab which can be used with envelope compose methods on EnvelopesManager.
+ * @abstract TabBuilder to construct an object of DSMEnvelopeTab which can be used with envelope compose methods on EnvelopesManager. For each tab, a unique guid is assigned when it's built.
  * @see DSMEnvelopeBuilder DSMEnvelopesManager
  */
 @interface DSMTabBuilder : NSObject
@@ -17,22 +19,22 @@
 + (instancetype) builderForType:(DSMTabType)tabType;
 
 /*!
- * @discussion add document id for the tab and return builder
- * @param documentId an unsigned integer representing document id
+ * @discussion add document id for the tab and return builder. The document id should be same as one of the documents added to the envelope.
+ * @param documentId a unique string representing document id.
  */
-- (DSMTabBuilder *)addDocumentId:(NSUInteger)documentId;
+- (DSMTabBuilder *)addDocumentId:(NSString *)documentId;
 /*!
- * @discussion add recipient id for the tab and return builder
- * @param recipientId an unsigned integer representing recipient id
+ * @discussion add recipient id for the tab and return builder. The recipient id should be same as one of the recipients added to the envelope.
+ * @param recipientId a unique string representing recipient id
  */
-- (DSMTabBuilder *)addRecipientId:(NSUInteger)recipientId;
+- (DSMTabBuilder *)addRecipientId:(NSString *)recipientId;
 /*!
  * @discussion add frame of the tab (e.g. CGFrameMake(100, 100, 50, 40) for Sign Tab) and return builder.
  * @param frame a frame to draw tab within
  */
 - (DSMTabBuilder *)addFrame:(CGRect)frame;
 /*!
- * @discussion add page number for the tab and return builder
+ * @discussion add page number for the tab and return builder. 
  * @param pageNumber an integer representing tab's page number
  */
 - (DSMTabBuilder *)addPageNumber:(int)pageNumber;
@@ -78,3 +80,4 @@
 
 @end
 
+NS_ASSUME_NONNULL_END
