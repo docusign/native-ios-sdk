@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  * @interface DSMTabBuilder
- * @abstract TabBuilder to construct an object of DSMEnvelopeTab which can be used with envelope compose methods on EnvelopesManager. For each tab, a unique guid is assigned when it's built.
+ * @abstract TabBuilder to construct an object of DSMEnvelopeTab which can be used with envelope compose methods on EnvelopesManager. For each tab, a unique guid is assigned to `tabId` when built..
  * @see DSMEnvelopeBuilder DSMEnvelopesManager
  */
 @interface DSMTabBuilder : NSObject
