@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.4] - 03/05/2021
+
+### Added
+* New interface to create envelopes and start signing directly using [Compose Envelopes](Compose-Envelope.md) flow with `composeEnvelopeWithEnvelopeDefinition:signingMode:completion` in `DSMEnvelopesManager`. 
+
 ## [v2.3.8] - 01/22/2021
 
 ### Added

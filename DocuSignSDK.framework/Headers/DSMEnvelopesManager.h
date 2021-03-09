@@ -10,8 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @protocol DSMEnvelopesManagerOfflineSigningDelegate
- @abstract Offline signing delegate to receive events and customize signing session.
- @see DSMInPersonSigner DSMSigner
+ @abstract Offline signing delegate to receive events and customize signing session for recipients. Use the notifications to receive the events related to envelope offline signing, caching and syncing process. 
+ @see DSMInPersonSigner DSMSigner DSMNotificationCodes
  */
 @protocol DSMEnvelopesManagerOfflineSigningDelegate<NSObject>
 
@@ -127,6 +127,17 @@ NS_ASSUME_NONNULL_BEGIN
                                                  resumeWithDraft:(BOOL)resumeWithDraft
                                                         animated:(BOOL)animated
                                                       completion:(nullable void(^)(UIViewController *_Nullable presentedController))completion;
+
+/*!
+ * @discussion Creates an envelope programmatically using DSMEnvelopeBuilder.
+ * @param signingMode compose envelope in either online or offline mode, see DSMSigningMode
+ * @param completion completion block to be executed after envelope is successfully created.
+ * @warning passing nil to a presentationController will not be able to load the offline envelope flow.
+ * @see DSMEnvelopeBuilder
+ */
+- (void)composeEnvelopeWithEnvelopeDefinition:(DSMEnvelopeDefinition *)envelope
+                                  signingMode:(DSMSigningMode)signingMode
+                                   completion:(nullable void(^)(NSString *_Nullable envelopeId, NSError *error))completion;
 
 /*!
  * @discussion Start signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.

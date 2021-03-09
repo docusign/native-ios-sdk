@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (NSArray *)allSignersIncludingNeedsToView;
 /*!
- * @discussion Gives list of all inperson signers.
+ * @discussion Gives list of all in-person signers.
  * @return NSArray
  */
 - (NSArray *)allSignersAndInpersonSigners;
@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)anyCurrentRecipientsHaveDeclined;
 /*!
- * @discussion Returns true if all the recipients have completed (signing or decliend).
+ * @discussion Returns true if all the recipients have completed (signing or declined).
  * @return BOOL
  */
 - (BOOL)allRecipientsHaveCompletedOrDeclined;
