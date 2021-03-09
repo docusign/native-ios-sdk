@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.4.1] - 03/08/2021
+
+### Fixed
+* Tab palette placement works  with the compose envelope flow.
+
 ## [v2.4] - 03/05/2021
 
 ### Added
