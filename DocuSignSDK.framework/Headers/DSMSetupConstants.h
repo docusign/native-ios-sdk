@@ -198,4 +198,4 @@ extern NSString * const DSM_SETUP_ONLY_USE_COMPANY_NAME_WITH_CD;
  * Default value is "false"
  * Acceptable value is either "true" or "false".
  */
-extern NSString * const DSM_SETUP_HIDE_SIGNING_LOADING_INDICATOR_KEY;
+extern NSString * const DSM_SETUP_HIDE_ONLINE_SIGNING_LOADING_INDICATOR_KEY;
