@@ -1,19 +1,7 @@
 
 # DocuSign iOS SDK Compose Envelope
 
-## V1 Compose Envelope - using EnvelopeDefinition [Beta-3]
-
-### Changes in Beta-4
-
-- Xamarin Specific: Fix for the signature adoption issue. Tapping on a signature tab would open DocuSign SDK UI component to adopt signatures.
-- Xamarin Specific: Fix for the "Next Field" navigation. 
-
-### Changes in Beta-3
-
-- Compose Envelope: updated Builders for Tabs, Recipient & Document to receive strings for recipientId, tabId, documentId instead of Number.
-- Xamarin Specific: Fix for missing SignTab -- now tabs are rendered same as a native app.
-- Xamarin Specific: Known issue with Signature adoption, on-going investigation.
-- Xamarin Specific: Known issue with existing betas -- `LoginWith...:` methods on the `DSMManager` returns error related to keychain data persistence & fetch operations. For now, as a work around, ignore the error as it doesn't affect the sdk functionality significantly (e.g. initialize compose envelope, sign offline envelopes, etc). Planned fix for persistence & fetch keychain is for another beta release at a later date.
+## V1 Compose Envelope - using EnvelopeDefinition
 
 ### Using EnvelopeBuilder & Resuming composed envelope
 
@@ -109,7 +97,7 @@ DSMEnvelopeDefinition *envelope = [[[[DSMEnvelopeBuilder builder]
 // Create a document with pdf file and assign a name and id
 DSMEnvelopeDocument *document = [[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: "doc1"]
+                                          addDocumentId: @"doc1"]
                                           addFilePath: [[NSBundle mainBundle] pathForResource: @"NDA" ofType: @"pdf"]] 
                                         build];
 
@@ -125,7 +113,7 @@ DSMEnvelopeRecipient *recipient = [[[[[[DSMRecipientBuilder builderForType: DSMR
 DSMEnvelopeTab *signTab = [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
                                                           addRecipientId: @"FirstRecipient"]
-                                                          addDocumentId: "doc1"]
+                                                          addDocumentId: @"doc1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
@@ -135,7 +123,7 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                                           addName: @"Name"]
                                           addRecipientId: @"FirstRecipient"]
                                           addFrame: CGRectMake(100, 200, 120, 30)]
-                                          addDocumentId: "doc1"]
+                                          addDocumentId: @"doc1"]
                                           addPageNumber: 1] 
                                         build];
 
@@ -152,14 +140,14 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                                           addTab: [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
                                                           addRecipientId: @"FirstRecipient"]
-                                                          addDocumentId: "doc1"]
+                                                          addDocumentId: @"doc1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
                                     ] build]] 
                       addDocument:[[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: "doc1"]
+                                          addDocumentId: @"doc1"]
                                           addFilePath: [[NSBundle bundleForClass: [self class]] pathForResource: @"NDA" ofType: @"pdf"]
                                   ] build]
                 ] build];
@@ -185,9 +173,6 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
   // Handle exception
 }
 ```
-
-Note: This interface can change in the final `v2.4` release.
-
 
 
 ## V1 Compose Envelope - UI Components
