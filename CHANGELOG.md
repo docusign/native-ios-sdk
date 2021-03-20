@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.4.1] - 03/19/2021
+
+### Changed
+* Online Signing loading indicator is displayed by default for all signing sessions.
+
+### Added
+* New setup configuration `DSM_SETUP_HIDE_ONLINE_SIGNING_LOADING_INDICATOR_KEY` to allow client apps to hide the Online Signing loading spinner.
+
 ## [v2.4] - 03/05/2021
 
 ### Added

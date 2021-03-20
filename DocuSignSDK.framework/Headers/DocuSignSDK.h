@@ -69,6 +69,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMSigningMode.h>
 #import <DocuSignSDK/DSMTab.h>
 #import <DocuSignSDK/DSMTabFrame.h>
+#import <DocuSignSDK/DSMTabFrame+Additions.h>
 #import <DocuSignSDK/DSMTabImageData.h>
 #import <DocuSignSDK/DSMTabs.h>
 #import <DocuSignSDK/DSMTabType.h>

@@ -192,3 +192,10 @@ extern NSString * const DSM_SETUP_DISABLE_EMAIL_IPS_FIELD_CD;
  * Acceptable value is either "true" or "false".
  */
 extern NSString * const DSM_SETUP_ONLY_USE_COMPANY_NAME_WITH_CD;
+
+/*! @brief Allows SDK to hide the online signing loading spinner that is shown prior to the blue progress bar for Online Signing.
+ * Set "true" to hide the online signing loading indicator.
+ * Default value is "false"
+ * Acceptable value is either "true" or "false".
+ */
+extern NSString * const DSM_SETUP_HIDE_ONLINE_SIGNING_LOADING_INDICATOR_KEY;

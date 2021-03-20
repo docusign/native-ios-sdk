@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (DSMTabBuilder *)isLocked:(BOOL)isLocked;
 /*!
  * @discussion add a boolean flag representing optionality on tab and return builder
- * @param isLocked a boolean representing if the tab is optional
+ * @param isOptional a boolean representing if the tab is optional
  */
 - (DSMTabBuilder *)isOptional:(BOOL)isOptional;
 /*!
