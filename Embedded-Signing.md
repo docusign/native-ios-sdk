@@ -3,7 +3,7 @@
 
 ## Embedded Signing
 
-[Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender as only sender could retrieve the signing URL. Additional details are available on [eSign guide for Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/). 
+[Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign guide for Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/). 
 
 ### A. User Authentication 
 
@@ -88,8 +88,26 @@ In above methods, `completion` block would return an `error` if presentation fai
 
 Native iOS SDK handles the redirection and dismisses the signing ceremony to return control to the client-app.
 
-#### Tracking Events
+#### **Tracking Events**
 
 Client apps may register for various notification, such as `DSMEnvelopeSyncingSucceededNotification`, to receive the details on various stages of signing. Notification object with `userInfo` contains `envelopeId` and other relevant information. Other relevant notifications for Online Signing and SDK events can be found in the ([header file](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h)). Some of the important notifications are:
 - `DSMSigningCompletedNotification`
 - `DSMSigningCancelledNotification`
+
+Swift sample to register and handle `DSMSigningCancelledNotification`:
+
+```      
+   override func viewDidLoad() {
+        super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(onSigningCancelled(_:)), name: NSNotification.Name(rawValue: "DSMSigningCancelledNotification"), object: nil)        
+   }
+
+    @objc func onSigningCancelled(_ notification:Notification) {
+        // Handle the notification
+        guard let envelopeId = notification.userInfo?[DSMEnvelopeIdKey] as? String else {
+
+        }
+        ...
+    }
+```
