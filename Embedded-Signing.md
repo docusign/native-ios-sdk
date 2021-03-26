@@ -3,7 +3,7 @@
 
 ## Embedded Signing
 
-[Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign guide for Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/). 
+[Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
 
 ### A. User Authentication 
 
@@ -33,7 +33,7 @@
                   completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
 ```
 
-### B. Retriving signing URL and presenting signing request 
+### B. Retriving signing URL and C. Presenting signing request 
 
 Native SDK has the following method to do both retrieve the signing URL and load captive signing session for an authenticated sender account. It also makes an extra API call to fetch recipient information such as `userName` and `email`. 
 
