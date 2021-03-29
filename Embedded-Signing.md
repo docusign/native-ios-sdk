@@ -1,7 +1,7 @@
 
 # DocuSign iOS SDK - Embedded Signing
 
-## Embedded Signing with SDK
+## Embedded Signing
 
 [Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
 
@@ -110,111 +110,4 @@ Swift sample to register and handle `DSMSigningCancelledNotification`:
         }
         ...
     }
-```
-
-## Embedded Signing with WKWebView
-
-`WKWebView` could be used to load a signing URL that is retrieved via the [API interation](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) outside the client app. Such `signingURL` can be directly loaded on iOS with `WKWebView:loadRequest` method:
-
-```
-/*! @abstract Navigates to a requested URL.
- @param request The request specifying the URL to which to navigate.
- @result A new navigation for the given request.
- */
-- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;
-
-```
-
-### Using WKUIDelegate
-
-App would also need to implement some of the `WKUIDelegate` methods, to handle additional navigationURL and actions for handling:
-
-```
-/*! @abstract Creates a new web view.
- @param webView The web view invoking the delegate method.
- @param configuration The configuration to use when creating the new web
- view. This configuration is a copy of webView.configuration.
- @param navigationAction The navigation action causing the new web view to
- be created.
- @param windowFeatures Window features requested by the webpage.
- @result A new web view or nil.
- @discussion The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
-
- If you do not implement this method, the web view will cancel the navigation.
- */
-- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures;
-```
-
-### Using WKNavigationDelegate
-
-App may also implement `WKNavigationDelegate` methods for further customization and handling any errors or events resulting from navigation actions.
-
-```
-/*! @abstract Decides whether to allow or cancel a navigation after its
- response is known.
- @param webView The web view invoking the delegate method.
- @param navigationResponse Descriptive information about the navigation
- response.
- @param decisionHandler The decision handler to call to allow or cancel the
- navigation. The argument is one of the constants of the enumerated type WKNavigationResponsePolicy.
- @discussion If you do not implement this method, the web view will allow the response, if the web view can show it.
- */
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler;
-```
-
-Customization to allow or cancel a navigation based on certain actions and url parameters.
-
-```
-/*! @abstract Decides whether to allow or cancel a navigation.
- @param webView The web view invoking the delegate method.
- @param navigationAction Descriptive information about the action
- triggering the navigation request.
- @param decisionHandler The decision handler to call to allow or cancel the
- navigation. The argument is one of the constants of the enumerated type WKNavigationActionPolicy.
- @discussion If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.
- */
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-
-   ... 
-   NSURL *navigationURL = navigationAction.request.URL;
-   NSString *urlLowercase = [[navigationURL absoluteString] lowercaseString];
-   // Error: session timeout
-   if ([urlLowercase containsString:@"sessiontimeout"]) {
-      ... // Log & process timeout
-      return;
-   }
-
-   ...
-   // Capturing additional events
-   if ([[navigationURL.host lowercaseString] isEqualToString:@"docusignink"]) {
-      NSDictionary *params = [self dictionaryWithURLEncodedString:navigationURL.query];
-      NSString *event = [[params valueForKey:@"event"] lowercaseString];
-      // Process events such as completion of signing
-      if ([event isEqualToString:@"signing_complete"]) {
-         ...
-      }
-   }
-}
-```
-
-Handling navigation finish callbacks. 
-
-```
-/*! @abstract Invoked when a main frame navigation completes.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
- */
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation;
-```
-
-Error logging for failed navigation. 
-
-```
-/*! @abstract Invoked when an error occurs during a committed main frame
- navigation.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
- @param error The error that occurred.
- */
-- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error;
 ```
