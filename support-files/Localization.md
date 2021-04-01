@@ -9,7 +9,6 @@
 - Italian (it)
 - Japanese (ja)
 - Korean (ko)
-- Polish (pl)
 - Portuguese Brazil / Portugal (pt-BR/pt-PT)
 - Russian (ru)
 - Spanish (es)
