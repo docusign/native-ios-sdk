@@ -3,6 +3,7 @@
 ### DocuSign Native iOS SDK supports following languages:
 
 - Chinese Simplified & Traditional (zh-Hans/zh-Hant)
+- Dutch (nl)
 - English (en)
 - French (fr)
 - German (de)
