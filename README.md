@@ -47,6 +47,7 @@ Support
   * [Telemetry Details](support-files/Telemetry-Details.md)  
 * Open an [issue](https://github.com/docusign/native-ios-sdk/issues).
 * We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
+* [Supported languages](support-files/Localization.md) with SDK localization.
 
 License
 =======
