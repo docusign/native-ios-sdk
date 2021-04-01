@@ -47,7 +47,6 @@ Support
   * [Telemetry Details](support-files/Telemetry-Details.md)  
   * [Embedded Signing](Embedded-Signing)
   * [Composing Envelopes](Compose-Envelope.md)
-  * 
 * Open an [issue](https://github.com/docusign/native-ios-sdk/issues).
 * We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
 
