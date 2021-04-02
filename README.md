@@ -45,6 +45,8 @@ Support
   * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
   * [Using Envelope Defaults](Using-Envelope-Defaults.md)
   * [Telemetry Details](support-files/Telemetry-Details.md)  
+  * [Embedded Signing](Embedded-Signing.md)
+  * [Composing Envelopes](Compose-Envelope.md)
 * Open an [issue](https://github.com/docusign/native-ios-sdk/issues).
 * We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
 * [Supported languages](support-files/Localization.md) with SDK localization.
