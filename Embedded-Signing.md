@@ -7,7 +7,7 @@
 
 ### A. User Authentication 
 
-[DSMManager](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMManager.h) has multiple ways to login with SDK, the following method is the recommended interface to use.
+[DSMManager](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMManager.h) has multiple ways to login with SDK, the following method is the recommended interface to use once the client-app has a valid access token -- additional details on how to [get an access token](https://developers.docusign.com/platform/auth).
 
 ```
 /*!
@@ -31,6 +31,34 @@
                         host:(NSURL *)host
                integratorKey:(NSString *)integratorKey
                   completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
+```
+
+Sample swift code to perform setup and login.
+
+```
+// Invoke sdk setup with custom configurations
+var configurations = DSMManager.defaultConfigurations()
+configurations[DSM_SETUP_POWERED_BY_DOCUSIGN_ENABLED] = DSM_SETUP_FALSE_VALUE
+DSMManager.setup(withConfiguration: configurations)
+
+// Login with DocuSign SDK using accessToken
+let demoHostUrl = URL(string: "https://demo.docusign.net/restapi")
+let accessToken = ? // AccessToken as fetched with auth API 
+DSMManager.login(withAccessToken: accessToken, 
+                 accountId: "", 
+                 userId: "", 
+                 userName: "John Wood", 
+                 email: "john.wood@dsxtr.com", 
+                 host: demoHostUrl, 
+                 integratorKey: "") { accountInfo, error in
+                     if let error = error {
+                        // handle and log sdk login error
+                        ...
+                        return
+                     }
+                     // login is successful, process `accountInfo` as needed
+                     ...
+            }
 ```
 
 ### B. Retriving signing URL and C. Presenting signing request 
@@ -84,6 +112,28 @@ Additionally, the following interface is available if the integrated app already
 
 In above methods, `completion` block would return an `error` if presentation fails for any reason. `presentedController` can be used to dismiss the Signing under progress if needed. SDK utilizes [notifications](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h) to relay information related to errors and events. 
 
+Sample swift code to retrieve the signing-URL and present the signing ceremony.
+
+```
+let presentingViewController = self
+let envelopeId = ? // captive (embedded) envelope guid
+let clientUserId = ? // client user id as configured during envelope creation
+DSMEnvelopesManager().presentCaptiveSigning(withPresenting: presentingViewController,
+                                            envelopeId: envelopeId,
+                                            recipientUserName: "John Wood",
+                                            recipientEmail: "john.wood@dsxtr.com",
+                                            recipientClientUserId: clientUserId,
+                                            animated: true { viewController, error in
+                                                if let error = error {
+                                                   // handle error
+                                                   ...
+                                                   return
+                                                }
+                                                // use viewController as needed (e.g. force dismiss if client app need to exit DocuSign Signing Ceremony)
+                                                ...
+                                            }
+```
+
 ### D. Redirecting the User
 
 Native iOS SDK handles the redirection and dismisses the signing ceremony to return control to the client-app.
@@ -97,19 +147,19 @@ Client apps may register for various notification, such as `DSMEnvelopeSyncingSu
 Swift sample to register and handle `DSMSigningCancelledNotification`:
 
 ```      
-   override func viewDidLoad() {
-        super.viewDidLoad()
+override func viewDidLoad() {
+   super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(onSigningCancelled(_:)), name: NSNotification.Name(rawValue: "DSMSigningCancelledNotification"), object: nil)        
+   NotificationCenter.default.addObserver(self, selector: #selector(onSigningCancelled(_:)), name: NSNotification.Name(rawValue: "DSMSigningCancelledNotification"), object: nil)        
+}
+
+@objc func onSigningCancelled(_ notification:Notification) {
+   // Handle the notification
+   guard let envelopeId = notification.userInfo?[DSMEnvelopeIdKey] as? String else {
+      // log the envelopeId for signing cancelled event
    }
-
-    @objc func onSigningCancelled(_ notification:Notification) {
-        // Handle the notification
-        guard let envelopeId = notification.userInfo?[DSMEnvelopeIdKey] as? String else {
-
-        }
-        ...
-    }
+   ...
+}
 ```
 
 ## Embedded Signing with WKWebView
