@@ -18,7 +18,7 @@ Installation
 
 **CocoaPods**
 
-Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-started.html) to install CocoaPods via `gem install cocoapods` command and initialize the project. Take a look at sample projects included here [swift app](docusign-sdk-sample-swift/) and [objective-c app](docusign-sdk-sample-objc/).
+Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-started.html) to install CocoaPods via `gem install cocoapods` command and initialize the project. 
 
 * Add `pod 'DocuSign'` to podfile to target(s) in your project. Example: [Swift Sample App Podfile](docusign-sdk-sample-swift/Podfile)
 * Run `pod install` in the same directory as your `Podfile` to get the DocuSign Native iOS SDK pod. This should result in `Installing DocuSign (2.2.5)` output on the console and corresponding changes in the `Podfile.lock`.
@@ -26,6 +26,7 @@ Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-star
 * Launch modified `.xcworkspace` project file with Xcode and use workspace going forward instead of `.xcodeproj` file.
   * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md) with the CocoaPods
 
+Additional information related to cocoapods is also avaiable with [swift app](docusign-sdk-sample-swift/), [objective-c app](docusign-sdk-sample-objc/) and [swiftUI app](docusign-sdk-sample-swiftui/).
 
 **Manual Integration Guide**
 
@@ -47,9 +48,12 @@ Support
   * [Telemetry Details](support-files/Telemetry-Details.md)  
   * [Embedded Signing](Embedded-Signing.md)
   * [Composing Envelopes](Compose-Envelope.md)
+* Sample apps: 
+  * [swift](docusign-sdk-sample-swift/): Templates, Offline Envelopes, Events
+  * [objective-c](docusign-sdk-sample-objc/): Templates, Offline Envelopes, Events
+  * [swiftUI](docusign-sdk-sample-swiftui/): Captive (Embedded) Signing
 * Open an [issue](https://github.com/docusign/native-ios-sdk/issues).
 * We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
-* [Supported languages](support-files/Localization.md) with SDK localization.
 
 License
 =======
