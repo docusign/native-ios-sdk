@@ -46,6 +46,8 @@ Support
   * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
   * [Using Envelope Defaults](Using-Envelope-Defaults.md)
   * [Telemetry Details](support-files/Telemetry-Details.md)  
+  * [Embedded Signing](Embedded-Signing.md)
+  * [Composing Envelopes](Compose-Envelope.md)
 * Sample apps: 
   * [swift](docusign-sdk-sample-swift/): Templates, Offline Envelopes, Events
   * [objective-c](docusign-sdk-sample-objc/): Templates, Offline Envelopes, Events

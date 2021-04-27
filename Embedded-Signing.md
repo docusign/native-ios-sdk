@@ -5,7 +5,7 @@
 
 [Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
 
-In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps.
+In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps to sign a Captive (Embedded) Signing Envelope.
 
 ### A. User Authentication 
 
@@ -45,7 +45,7 @@ DSMManager.setup(withConfiguration: configurations)
 
 // Login with DocuSign SDK using accessToken
 let demoHostUrl = URL(string: "https://demo.docusign.net/restapi")
-let accessToken = ? // AccessToken as fetched with auth API
+let accessToken = ? // AccessToken as fetched with auth API 
 DSMManager.login(withAccessToken: accessToken, 
                  accountId: "", 
                  userId: "", 
