@@ -29,7 +29,6 @@ private extension ContentView {
             return
         }
         
-        /*
         DSMManager.login(withAccessToken: "-your-access-token-",
                          accountId: "-your-account-id-",
                          userId: "-your-user-id-",
@@ -40,13 +39,6 @@ private extension ContentView {
             
                 self.handlePostLogin(accountInfo: accountInfo, error: error)
             
-        }*/
-        
-        DSMManager.login(withEmail: "ashok_stage@dsxtr.com",
-                         password: "123qwerty",
-                         integratorKey: "DOCU-190f53a1-4615-4928-9709-5aa9cc3c60d3",
-                         host: hostURL) { accountInfo, error in
-                            self.handlePostLogin(accountInfo: accountInfo, error: error)
         }
     }
     
@@ -55,7 +47,7 @@ private extension ContentView {
             print("Error logging in: " + error.localizedDescription)
         } else {
             print("User authenticated!")
-            let envelopeId = "0e8ff0d3-4548-4f21-9a2f-4c0fd99d03fd"
+            let envelopeId = "-your-envelope-id-"
             let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
             if var topController = keyWindow?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
@@ -71,7 +63,7 @@ private extension ContentView {
             return
         }
         // Make sure the client user id is same as the created envelope.
-        let clientUserId = "ashok_stage@dsxtr.com"
+        let clientUserId = "-your-client-user-id-"
         // Invoke captive signing session with envelopeId & clientUserId to fetch the signingURL with SDK and load the signing session.
         DSMEnvelopesManager().presentCaptiveSigning(withPresenting: presentingViewController,
                                                     envelopeId: envelopeId,
