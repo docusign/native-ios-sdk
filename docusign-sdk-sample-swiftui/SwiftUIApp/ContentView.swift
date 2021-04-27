@@ -29,7 +29,6 @@ private extension ContentView {
             return
         }
         
-        /*
         DSMManager.login(withAccessToken: "-your-access-token-",
                          accountId: "-your-account-id-",
                          userId: "-your-user-id-",
@@ -40,13 +39,6 @@ private extension ContentView {
             
                 self.handlePostLogin(accountInfo: accountInfo, error: error)
             
-        }*/
-        
-        DSMManager.login(withEmail: "ashok_stage@dsxtr.com",
-                         password: "123qwerty",
-                         integratorKey: "DOCU-190f53a1-4615-4928-9709-5aa9cc3c60d3",
-                         host: hostURL) { accountInfo, error in
-                            self.handlePostLogin(accountInfo: accountInfo, error: error)
         }
     }
     
