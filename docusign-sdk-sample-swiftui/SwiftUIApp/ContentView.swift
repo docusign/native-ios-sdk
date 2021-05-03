@@ -23,9 +23,9 @@ struct ContentView: View {
 
 private extension ContentView {
     func loginDocuSign() {
-        // For demo, use `"https://demo.docusign.net/restapi"`
+        // For stage, use `"https://stage.docusign.net/restapi"`
         // For prod, use `"https://docusign.net/restapi"`
-        guard let hostURL = URL(string: "https://stage.docusign.net/restapi") else {
+        guard let hostURL = URL(string: "https://demo.docusign.net/restapi") else {
             return
         }
         
@@ -47,7 +47,7 @@ private extension ContentView {
             print("Error logging in: " + error.localizedDescription)
         } else {
             print("User authenticated!")
-            let envelopeId = "-your-envelope-id-"
+            let envelopeId = "-your-captive-signing-envelope-id-"
             let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
             if var topController = keyWindow?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
@@ -63,7 +63,7 @@ private extension ContentView {
             return
         }
         // Make sure the client user id is same as the created envelope.
-        let clientUserId = "-your-client-user-id-"
+        let clientUserId = "-client-user-id-for-recipient-in-envelope-"
         // Invoke captive signing session with envelopeId & clientUserId to fetch the signingURL with SDK and load the signing session.
         DSMEnvelopesManager().presentCaptiveSigning(withPresenting: presentingViewController,
                                                     envelopeId: envelopeId,
