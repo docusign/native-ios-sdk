@@ -77,25 +77,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary<NSString *, id> *)defaultConfigurations;
 
 /*!
- @method loginWithEmail
- @brief Sets up DocuSign user account for SDK usage. Only supported login mode is online.
- @param email  DocuSign username (email) of the user using SDK for sign and send
- @param password  DocuSign password of the user using SDK for sign and send
- @param integratorKey DocuSign integratorKey for the client application
- @param host DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
- @param completion block to be executed after user account is setup
- @see DSMAccountInfo.h
- */
-+ (void)loginWithEmail:(NSString *)email
-              password:(NSString *)password
-         integratorKey:(NSString *)integratorKey
-                  host:(NSURL *)host
-            completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
-
-/*!
  @method loginWithAccessToken
  @brief Sets up DocuSign user account for SDK usage in OAuth case.
- @param accessToken  DocuSign oAuthToken
+ @param accessToken  DocuSign oAuthToken (JWT)
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
  @param userName  DocuSign username of the user using SDK for sign and send
@@ -115,8 +99,25 @@ NS_ASSUME_NONNULL_BEGIN
                   completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
 
 /*!
+ @method loginWithEmail
+ @brief [Deprecated] Sets up DocuSign user account for SDK usage. Only supported login mode is online. Further details on auth update can be found at: https://developers.docusign.com/platform/auth/migrate/
+ @param email  DocuSign username (email) of the user using SDK for sign and send
+ @param password  DocuSign password of the user using SDK for sign and send
+ @param integratorKey DocuSign integratorKey for the client application
+ @param host DocuSign host where user is signed up with DocuSign (e.g. "https://demo.docusign.net/restapi")
+ @param completion block to be executed after user account is setup
+ @see DSMAccountInfo.h
+ */
++ (void)loginWithEmail:(NSString *)email
+              password:(NSString *)password
+         integratorKey:(NSString *)integratorKey
+                  host:(NSURL *)host
+            completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion
+    DEPRECATED_MSG_ATTRIBUTE("use loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:completion");
+
+/*!
  @method loginWithApiPassword
- @brief Sets up DocuSign user account for SDK usage in OAuth case.
+ @brief [Deprecated] Sets up DocuSign user account for SDK usage in OAuth case.  Further details on auth update can be found at: https://developers.docusign.com/platform/auth/migrate/
  @param apiPassword  DocuSign apiPassword
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
@@ -134,7 +135,8 @@ NS_ASSUME_NONNULL_BEGIN
                        email:(NSString *)email
                         host:(NSURL *)host
                integratorKey:(NSString *)integratorKey
-                  completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
+                  completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion
+    DEPRECATED_MSG_ATTRIBUTE("use loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:completion");
 
 /*!
  @method fetchSettingsWithAccountInfo

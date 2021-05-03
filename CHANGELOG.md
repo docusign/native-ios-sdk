@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5] - 05/07/2021
+
+### Changed
+* Deprecation for the legacy auth methods in `DSMManager`. 
+
 ## [v2.4.1] - 03/19/2021
 
 ### Changed
