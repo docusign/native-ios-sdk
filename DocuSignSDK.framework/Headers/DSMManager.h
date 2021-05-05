@@ -52,6 +52,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setupWithConfiguration:(NSDictionary <NSString *, id> *)configuration;
 
 /*!
+@method setConfigurationValue
+@brief Update a configured value associated with a key.
+Example:
+    [DSMManager setConfigurationValue:@(DSMTabComparisonStrictMatch) key:DSM_SETUP_TAB_DEFAULTS_COMPARISON];
+@see DSMSetupConstants.h
+*/
++ (void)setConfigurationValue:(id)value key:(NSString *)key;
+
+/*!
  @method configuredValueForSetupKey
  @brief query saved configuration value for a given key. If no custom configuration found, it will return the default value for given configuration key. @see defaultConfigurations
  */
