@@ -3,6 +3,7 @@
 ## [v2.5] - 05/07/2021
 
 ### Changed
+* Fixes related to embedded-signing finish later. `DSMSigningCancelledNotification` Notification is now sent with additional parameter associated with `exitReason` key in `userInfo`.
 * Deprecation for the legacy auth methods in `DSMManager`. 
 
 ## [v2.4.1] - 03/19/2021

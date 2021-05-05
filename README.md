@@ -8,8 +8,8 @@ For detailed instructions and getting started with DocuSign Sandbox, please refe
 Requirements
 ============
 - The SDK is written in Objective-C, but will work with projects in Objective-C or Swift (4.2 and later).
-- Requires iOS 11 or later.
-- It is recommended that developers use Xcode 11.1 or later.
+- Requires iOS 12 or later.
+- It is recommended that developers use Xcode 12.0 or later.
 
 Installation
 =============
@@ -45,6 +45,7 @@ Support
 * Guides: 
   * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
   * [Using Envelope Defaults](Using-Envelope-Defaults.md)
+  * [Privacy - Usage Permissions](support-files/Permissions-Requirements.md) for Camera, Photo Library, Contacts and Location Access.
   * [Telemetry Details](support-files/Telemetry-Details.md)  
   * [Embedded Signing](Embedded-Signing.md)
   * [Composing Envelopes](Compose-Envelope.md)
