@@ -42,19 +42,23 @@ Support
 * Refer the [Getting Started](https://developers.docusign.com/ios_sdk/developer.html) and [Integration](https://developers.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details on creating DocuSign Sandbox Account, Integration and using SDK Core Interfaces.
 * [Reference Docs](https://developers.docusign.com/ios_sdk/refdocs/html/annotated.html) to browse the latest developer documentation including API reference and public header files.
 * Review [Change Log](CHANGELOG.md)
-* Guides: 
+
+Guides: 
  * [Integration Troubleshooting](support-files/Integration-Troubleshooting.md)
  * [Using Envelope Defaults](Using-Envelope-Defaults.md)
  * [Privacy - Usage Permissions](support-files/Permissions-Requirements.md) for Camera, Photo Library, Contacts and Location Access.
  * [Telemetry Details](support-files/Telemetry-Details.md)  
  * [Embedded Signing](Embedded-Signing.md)
  * [Composing Envelopes](Compose-Envelope.md)
-* Sample apps: 
+
+Sample apps: 
  * [swift](docusign-sdk-sample-swift/): Templates, Offline Envelopes, Events
  * [objective-c](docusign-sdk-sample-objc/): Templates, Offline Envelopes, Events
  * [swiftUI](docusign-sdk-sample-swiftui/): Captive (Embedded) Signing
+
+Reaching out: 
 * Open an [issue](https://github.com/docusign/native-ios-sdk/issues).
-* We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
+* DocuSign also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
 
 License
 =======
