@@ -164,6 +164,15 @@ override func viewDidLoad() {
 }
 ```
 
+#### Notification `userInfo` Keys & Signing failure reasons
+
+- `DSMEnvelopeIdKey` is added to `userInfo` with any of the Online Signing notifications.
+- `DSMAdditionalInfo` is added to `userInfo` when user views a completed document and exits signing.
+- `DSMErrorKey` is added to `userInfo` when Signing encounters an error. In case of Embedded Signing, for an example it would contain api returned error when `get /envelopes/{envelopeId}/receipients` fails.
+- `DSMSigningExitReasonKey` is added to `userInfo` when signer decides to `decline` or `cancel` using `Finish Later`. The value contains `cancel` or `decline`. This new key will be available with v2.5.
+- `DSMSigningModeKey` is added to `userInfo` with all of the Signing Notifications. In case of Embedded Signing, it’s value is set as `online`.
+- Further details can be found on [Notification Keys section](/DocuSignSDK.framework/Headers/DSMNotificationCodes.h#L129).
+
 ## Embedded Signing with WKWebView
 
 `WKWebView` could be used to load a signing URL that is retrieved via the [API interation](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) and available for the mobile app to use. Using this alternative to SDK would require handling custom events and further customization to reach the desired UX. For any Online Signing Component or API related questions, best to reach out to [DocuSign Support](https://support.docusign.com/contactSupport) or post a question on [StackOverflow](https://stackoverflow.com/questions/tagged/docusignapi).
