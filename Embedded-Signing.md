@@ -169,7 +169,7 @@ override func viewDidLoad() {
 - `DSMEnvelopeIdKey` is added to `userInfo` with any of the Online Signing notifications.
 - `DSMAdditionalInfo` is added to `userInfo` when user views a completed document and exits signing.
 - `DSMErrorKey` is added to `userInfo` when Signing encounters an error. In case of Embedded Signing, for an example it would contain api returned error when `get /envelopes/{envelopeId}/receipients` fails.
-- `DSMSigningExitReasonKey` is added to `userInfo` when signer decides to `decline` or `cancel` using `Finish Later`. The value contains `cancel` or `decline`. This new key will be available with v2.5.
+- `DSMSigningExitReasonKey` is added to `userInfo` when signer decides to `decline` or `cancel` using `Finish Later`. The value contains `cancel` or `decline`.
 - `DSMSigningModeKey` is added to `userInfo` with all of the Signing Notifications. In case of Embedded Signing, it’s value is set as `online`.
 - Further details can be found on [Notification Keys section](/DocuSignSDK.framework/Headers/DSMNotificationCodes.h#L129).
 
