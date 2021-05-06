@@ -4,7 +4,7 @@
 
 ### Changed
 * Fixes related to embedded-signing finish later. `DSMSigningCancelledNotification` Notification is now sent with additional parameter associated with `exitReason` key in `userInfo`.
-* Deprecation for the legacy auth methods in `DSMManager`. 
+* Deprecation for the legacy auth methods in `DSMManager`. The deprecated methods are `loginWithEmail:password:integratorKey:host:completion` and `loginWithApiPassword:accountId:userId:username:email:host:integratorKey:completion`.
 
 ## [v2.4.1] - 03/19/2021
 
