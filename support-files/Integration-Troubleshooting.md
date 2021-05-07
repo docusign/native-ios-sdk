@@ -20,7 +20,7 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 ### Simulator Release Build and Run - `Xcode 12.4`
 
 * Swift Compiler Error
-  * ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64
+  * `ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64`
 
 This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an [issue](https://github.com/docusign/native-ios-sdk/issues) if this is a blocker.
 **Workaround:** Use `Debug` in the `Release Configuration` when building for Simulator.
@@ -52,7 +52,8 @@ This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme f
 4. Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 5. Make sure `Podfile` has a correct entry, for example:
   * `pod 'DocuSign'` or
-  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
+  * Using Specific Commit: `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :commit => "3ed4ed6985e44d12c99ae7a9f2b5bda66dd00b4d"`
+  * Using Specific Branch: `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
     * In case you are using specific branch to fetch `DocuSign` pod, **additional steps are required** to install [git-lfs](https://git-lfs.github.com/) as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
     * Install git-lfs via brew: `brew install git-lfs`
     * Activate git-lfs next: `git lfs install`
