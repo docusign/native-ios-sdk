@@ -22,7 +22,10 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 * Swift Compiler Error
   * ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64
 
-This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an issue if this is a blocker.
+This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an [issue](https://github.com/docusign/native-ios-sdk/issues) if this is a blocker.
+**Workaround:** Use `Debug` in the `Release Configuration` when building for Simulator.
+![building for iOS Simulator Error - Screenshot](simulator-build-release-archieve-issue.png)
+
 
 ### Error when building project:
 
