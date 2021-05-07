@@ -87,7 +87,7 @@ Example:
 
 /*!
  @method loginWithAccessToken
- @brief Sets up DocuSign user account for SDK usage in OAuth case.
+ @brief Sets up DocuSign user account for SDK usage in OAuth case. For a logged in account, `userinfo` endpoint can be used to fetch additional information. Further details on `userinfo` can be found at: https://developers.docusign.com/platform/auth/reference/user-info/
  @param accessToken  DocuSign oAuthToken (JWT)
  @param accountId  DocuSign accountId of the user using SDK for sign and send
  @param userId  DocuSign userId of the user using SDK for sign and send
