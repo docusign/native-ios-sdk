@@ -17,6 +17,13 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 
 ## 2. Undefined Symbols
 
+### Simulator Release Build and Run - `Xcode 12.4`
+
+* Swift Compiler Error
+  * ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64
+
+This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an issue if this is a blocker.
+
 ### Error when building project:
 
 * Undefined symbol:
