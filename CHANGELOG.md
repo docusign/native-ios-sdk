@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.5] - 05/07/2021
+## [v2.5] - 05/10/2021
 
 ### Deprecated
 * Deprecation for the legacy auth methods in `DSMManager`. The deprecated methods are `loginWithEmail:password:integratorKey:host:completion` and `loginWithApiPassword:accountId:userId:username:email:host:integratorKey:completion`.
