@@ -15,7 +15,7 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
-## 2. Undefined Symbols
+## 2. Simulator Build fails for `arm64`
 
 ### Simulator Release Build and Run - `Xcode 12.4`
 
@@ -23,9 +23,28 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
   * `ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64`
 
 This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an [issue](https://github.com/docusign/native-ios-sdk/issues) if this is a blocker.
-**Workaround:** Use `Debug` in the `Release Configuration` when building for Simulator.
+
 ![building for iOS Simulator Error - Screenshot](simulator-build-release-archieve-issue.png)
 
+### Fix with the `Podfile` 
+
+First, update the `Podfile` `post_install` section at the end of the Podfile with the following snippet. This would exclude `arm64` architecture for all simulator builds.
+
+```
+# Add at the end of the `Podfile` to Exclude Architecture `arm64` for simulator builds
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
+```
+
+Next, open your app Target's settings. In `Project` -> `Build Settings` -> Under `Excluded Architectures` add following for `Debug` and `Release` configurations:
+- Debug: `Any iOS Simulator SDK` : `arm64`
+- Release: `Any iOS Simulator SDK` : `arm64`
+![Simulator Builds - Excluding arm64 Architecture](simulator-build-excluded-architectures-arm64.png)
+
+## 3. Undefined Symbols
 
 ### Error when building project:
 
