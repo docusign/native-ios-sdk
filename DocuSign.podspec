@@ -41,5 +41,7 @@ Pod::Spec.new do |s|
   # Update the source path for new release
   s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5/DocuSignSDK.zip"}
   s.source_files = 'DocuSignSDK.framework/Headers/*.h'
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+	s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
