@@ -17,14 +17,15 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 
 ## 2. Simulator Build fails for `arm64`
 
-### Simulator Release Build and Run - `Xcode 12.4`
+### Simulator Build error - `Xcode 12`
 
-* Swift Compiler Error
-  * `ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64`
+* `ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64`
 
-This is a known issue that happens with `SDK v2.5 and earlier` when App Scheme for `Run` has `Release` selected for the Simulator targets. Please raise an [issue](https://github.com/docusign/native-ios-sdk/issues) if this is a blocker.
+This is a known issue that happens with Xcode12 based builds for `iphonesimulator*`. For example, this is reproducible by editing App Scheme for `Run` to select `Release` for the Simulator targets. 
 
 ![building for iOS Simulator Error - Screenshot](simulator-build-release-archieve-issue.png)
+
+With SDK `v2.5`, `pod install` will automatically set `"EXCLUDED_ARCHS[sdk=iphonesimulator*]"` as `YES` to resolve this issue. For earlier builds, follow the next section to resolve it with `Podfile` edit.
 
 ### Fix with the `Podfile` 
 
@@ -39,9 +40,11 @@ post_install do |installer|
 end
 ```
 
-Next, open your app Target's settings. In `Project` -> `Build Settings` -> Under `Excluded Architectures` add following for `Debug` and `Release` configurations:
+Next, after performing `pod install`, open your app **Project's** settings. In `Project` -> `Build Settings` -> Under `Excluded Architectures` add following for `Debug` and `Release` configurations:
 - Debug: `Any iOS Simulator SDK` : `arm64`
 - Release: `Any iOS Simulator SDK` : `arm64`
+
+Also ensure similar setting for app **Target's** setting.
 ![Simulator Builds - Excluding arm64 Architecture](simulator-build-excluded-architectures-arm64.png)
 
 ## 3. Undefined Symbols
