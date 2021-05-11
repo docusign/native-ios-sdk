@@ -121,8 +121,7 @@ Example:
               password:(NSString *)password
          integratorKey:(NSString *)integratorKey
                   host:(NSURL *)host
-            completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion
-    DEPRECATED_MSG_ATTRIBUTE("use loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:completion");
+            completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
 
 /*!
  @method loginWithApiPassword
@@ -144,8 +143,7 @@ Example:
                        email:(NSString *)email
                         host:(NSURL *)host
                integratorKey:(NSString *)integratorKey
-                  completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion
-    DEPRECATED_MSG_ATTRIBUTE("use loginWithAccessToken:accountId:userId:userName:email:host:integratorKey:completion");
+                  completion:(void(^)(DSMAccountInfo *_Nullable accountInfo, NSError *_Nullable error))completion;
 
 /*!
  @method fetchSettingsWithAccountInfo
