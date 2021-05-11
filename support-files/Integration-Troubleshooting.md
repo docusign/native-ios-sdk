@@ -15,7 +15,39 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
-## 2. Undefined Symbols
+## 2. Simulator Build fails for `arm64`
+
+### Simulator Build error - `Xcode 12`
+
+* `ld: building for iOS Simulator, but linking in dylib built for iOS, file '.../Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture arm64`
+
+This is a known issue that happens with Xcode12 based builds for `iphonesimulator*`. For example, this is reproducible by editing App Scheme for `Run` to select `Release` for the Simulator targets. 
+
+![building for iOS Simulator Error - Screenshot](simulator-build-release-archieve-issue.png)
+
+With SDK `v2.5`, `pod install` will automatically set `"EXCLUDED_ARCHS[sdk=iphonesimulator*]"` as `YES` to resolve this issue. For earlier builds, follow the next section to resolve it with `Podfile` edit.
+
+### Fix with the `Podfile` 
+
+First, update the `Podfile` `post_install` section at the end of the Podfile with the following snippet. This would exclude `arm64` architecture for all simulator builds.
+
+```
+# Add at the end of the `Podfile` to Exclude Architecture `arm64` for simulator builds
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
+```
+
+Next, after performing `pod install`, open your app **Project's** settings. In `Project` -> `Build Settings` -> Under `Excluded Architectures` add following for `Debug` and `Release` configurations:
+- Debug: `Any iOS Simulator SDK` : `arm64`
+- Release: `Any iOS Simulator SDK` : `arm64`
+
+Also ensure similar setting for app **Target's** setting.
+![Simulator Builds - Excluding arm64 Architecture](simulator-build-excluded-architectures-arm64.png)
+
+## 3. Undefined Symbols
 
 ### Error when building project:
 
@@ -42,7 +74,8 @@ Native SDK as of `v2.3.8` does not support bitcode, if your integration is depen
 4. Clean CocoaPods `DocuSign` pods in cache with `pod cache clean 'DocuSign' --all`
 5. Make sure `Podfile` has a correct entry, for example:
   * `pod 'DocuSign'` or
-  * `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
+  * Using Specific Commit: `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :commit => "3ed4ed6985e44d12c99ae7a9f2b5bda66dd00b4d"`
+  * Using Specific Branch: `pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "beta-branch-name"`
     * In case you are using specific branch to fetch `DocuSign` pod, **additional steps are required** to install [git-lfs](https://git-lfs.github.com/) as `pod install` fetches binary framework (>100MB file) via git-lfs hooks.
     * Install git-lfs via brew: `brew install git-lfs`
     * Activate git-lfs next: `git lfs install`

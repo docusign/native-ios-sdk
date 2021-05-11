@@ -5,11 +5,11 @@
 
 [Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
 
-In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps to sign a Captive (Embedded) Signing Envelope.
+In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps.
 
 ### A. User Authentication 
 
-[DSMManager](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMManager.h) has multiple ways to login with SDK, the following method is the recommended interface to use once the client-app has a valid access token -- additional details on how to [get an access token](https://developers.docusign.com/platform/auth).
+[DSMManager](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMManager.h) has multiple ways to login with SDK, the following method is the recommended interface to use once the client-app has a valid access token -- additional details on how to [get an access token](https://developers.docusign.com/platform/auth). Once authenticated, [`userinfo`](https://developers.docusign.com/platform/auth/reference/user-info/) can be used to fetch additional properties such as `userId`, `username`, etc required for login.
 
 ```
 /*!
@@ -45,7 +45,7 @@ DSMManager.setup(withConfiguration: configurations)
 
 // Login with DocuSign SDK using accessToken
 let demoHostUrl = URL(string: "https://demo.docusign.net/restapi")
-let accessToken = ? // AccessToken as fetched with auth API 
+let accessToken = ? // AccessToken as fetched with auth API
 DSMManager.login(withAccessToken: accessToken, 
                  accountId: "", 
                  userId: "", 
@@ -163,6 +163,15 @@ override func viewDidLoad() {
    ...
 }
 ```
+
+#### Notification `userInfo` Keys & Signing failure reasons
+
+- `DSMEnvelopeIdKey` is added to `userInfo` with any of the Online Signing notifications.
+- `DSMAdditionalInfo` is added to `userInfo` when user views a completed document and exits signing.
+- `DSMErrorKey` is added to `userInfo` when Signing encounters an error. In case of Embedded Signing, for an example it would contain api returned error when `get /envelopes/{envelopeId}/receipients` fails.
+- `DSMSigningExitReasonKey` is added to `userInfo` when signer decides to `decline` or `cancel` using `Finish Later`. The value contains `cancel` or `decline`.
+- `DSMSigningModeKey` is added to `userInfo` with all of the Signing Notifications. In case of Embedded Signing, it’s value is set as `online`.
+- Further details can be found on [Notification Keys section](/DocuSignSDK.framework/Headers/DSMNotificationCodes.h#L129).
 
 ## Embedded Signing with WKWebView
 
