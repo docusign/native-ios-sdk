@@ -145,6 +145,20 @@ extern NSString * const DSMErrorKey;
  * @see DSMSigningMode
  */
 extern NSString * const DSMSigningModeKey;
+/*!
+* @brief Notification userInfo key to represent envelope signing exit reason (user declined to sign vs user cancelled signing ceremony)
+*/
+extern NSString * const DSMSigningExitReasonKey;
+/*!
+ * @brief Notification userInfo value to represent envelope signing exit reason - decline
+ * @see DSMSigningExitReason
+ */
+extern NSString * const DSMSigningExitReasonDecline;
+/*!
+ * @brief Notification userInfo value to represent envelope signing exit reason - cancel
+ * @see DSMSigningExitReason
+ */
+extern NSString * const DSMSigningExitReasonCancel;
 
 #pragma GCC visibility pop
 
