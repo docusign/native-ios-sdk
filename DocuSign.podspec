@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/docusign/native-ios-sdk'
-  s.screenshots     = 'https://developers.docusign.com/ios_sdk/images/signature-phone.png', 'https://developers.docusign.com/ios_sdk/images/fields.png'
+  s.screenshots      = 'https://developers.docusign.com/docs/ios-sdk/images/signature-phone.png', 'https://developers.docusign.com/docs/ios-sdk/images/fields.png'
   s.license          = { :type => 'DOCUSIGN SOFTWARE LICENSE AGREEMENT', :file => 'LICENSE.txt' }
   s.author           = { 'DocuSign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocuSignAPI'
