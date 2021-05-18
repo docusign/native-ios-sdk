@@ -14,6 +14,6 @@
 - Russian (ru)
 - Spanish (es)
 
-These languages are used automatically depending on the preferred language set in the DocuSign Account for web components (e.g. Online Signing) used in the SDK. For components using native iOS UI (e.g. Offline Signing), SDK will use the app language setting. 
+These languages are used automatically depending on the preferred language set in the DocuSign Account for web components (e.g. Online Signing) used in the SDK. For components using native iOS UI (e.g. Offline Signing), SDK will use the app language setting. For more details refer [Extensive Language support](https://www.docusign.com/how-it-works/global) for Signing and Sending.
 
 Raise [an issue](https://github.com/docusign/native-ios-sdk/issues) or reach to DocuSign Support Professional if an additional language needs to be supported.
