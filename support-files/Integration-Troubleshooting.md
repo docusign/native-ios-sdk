@@ -51,13 +51,11 @@ Also ensure similar value is set for app **Target's** setting.
 
 ### Fix with the `podspec`
 
-Any Framework project that's integrating with the DocuSign SDK and using `podspec` to distribute the sdk, make the following change in `podspec` to propagate the `EXCLUDED_ARCHS` settings for `arm64` below. 
-
-`pod_target_xcconfig` & `user_target_scconfig` is set with `arm64` for `'EXCLUDED_ARCHS[sdk=iphonesimulator*]'` key.
+Any Framework project that's integrating with the DocuSign SDK and using `podspec` to distribute the sdk, make the following change in your sdk `podspec` to propagate the `EXCLUDED_ARCHS` settings for `arm64` below to all targets. It's achieved by setting architecture exclusion in `pod_target_xcconfig` & `user_target_scconfig` for `'EXCLUDED_ARCHS[sdk=iphonesimulator*]'` key and using `arm64` as value.
 
 ```
   # Propagate the `arm64` in the `EXCLUDED_ARCHS` setting. Replace `spec_name` with correct name.
-	spec_name.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec_name.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec_name.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 ```
 
@@ -67,22 +65,22 @@ More context around the `podspec` changes.
 Pod::Spec.new do |s|
   ... 
   ...
-	s.summary =  "iOS Framework Wrapper to integrate with another DocuSign pod"	
-	s.swift_version = '5.0'
+  s.summary =  "iOS Framework Wrapper to integrate with another DocuSign pod"	
+  s.swift_version = '5.0'
 
   # Define the dependency on 'DocuSign' pod
-	s.dependency 'DocuSign', '2.5.0'
+  s.dependency 'DocuSign', '2.5.0'
 	
   # Propagate the `arm64` in the `EXCLUDED_ARCHS` setting.
-	s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   # A sample test_spec
-	s.test_spec 'FrameworkWrapperTests' do |test_spec|
-	  test_spec.source_files = 'FrameworkWrapperTests/Tests/**/*.swift'
-		test_spec.resources = 'FrameworkWrapperTests/Resources/**/*.{plist,json,png,bundle}'
-		test_spec.test_type = :unit
-	end
+  s.test_spec 'FrameworkWrapperTests' do |test_spec|
+    test_spec.source_files = 'FrameworkWrapperTests/Tests/**/*.swift'
+    test_spec.resources = 'FrameworkWrapperTests/Resources/**/*.{plist,json,png,bundle}'
+    test_spec.test_type = :unit
+  end
 end
 ```
 
