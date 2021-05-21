@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 	s.homepage = "https://www.docusign.com/developer-center"
 	s.source =  { :git => "https://github.com/docusign/native-ios-sdk.git", :branch => "master" }
 	s.summary =  "DocuSign iOS Framework to sign and send in your iOS apps"
-	s.version = "2.5"
+	s.version = "2.5.1"
 	s.platform = :ios, '9.0'
 	s.license = 'DOCUSIGN API SDK LICENSE'
 	s.requires_arc = true
