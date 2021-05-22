@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
 	s.preserve_paths  = 'DocuSignSDK.xcframework'
 	#s.public_header_files = 'DocuSignSDK.xcframework/**/Headers/*.h'
 	s.vendored_frameworks  = 'DocuSignSDK.xcframework'
-	#s.resource   = 'DocuSignSDK.xcframework/DocuSignSDK.bundle'
+	s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
 end
