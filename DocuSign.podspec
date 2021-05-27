@@ -31,13 +31,14 @@ Pod::Spec.new do |s|
   s.author           = { 'DocuSign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocuSignAPI'
 
-  s.platform = :ios, '9.0'
-  s.ios.deployment_target = '9.0'
+  s.platform = :ios, '10.0'
+  s.ios.deployment_target = '10.0'
   s.requires_arc = true
   s.preserve_paths = 'DocuSignSDK.xcframework'
   s.vendored_frameworks = 'DocuSignSDK.xcframework'
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
   s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.1/DocuSignSDK.zip"}
+  s.public_header_files = 'DocuSignSDK.xcframework/**/Headers/*.h'
   
 end
