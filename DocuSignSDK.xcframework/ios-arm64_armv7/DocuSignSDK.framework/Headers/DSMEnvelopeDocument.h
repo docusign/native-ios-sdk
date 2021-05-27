@@ -1,4 +1,4 @@
-#import "DSMDocument.h"
+#import <DSMDocument.h>
 
 @interface DSMEnvelopeDocument : DSMDocument
 

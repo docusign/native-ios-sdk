@@ -1,4 +1,4 @@
-#import "DSMTabImageData.h"
+#import <DSMTabImageData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

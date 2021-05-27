@@ -1,4 +1,4 @@
-#import "DSMTabFrame.h"
+#import <DSMTabFrame.h>
 
 @interface DSMTabFrame (Additions)
 

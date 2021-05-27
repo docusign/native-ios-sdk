@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "DSMEnvelopeTemplate.h"
+#import <DSMEnvelopeTemplate.h>
 
 @interface DSMEnvelopeDefinition : DSMEnvelopeTemplate
 

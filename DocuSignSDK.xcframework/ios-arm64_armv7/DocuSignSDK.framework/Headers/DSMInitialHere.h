@@ -1,5 +1,5 @@
-#import "DSMTab.h"
-#import "DSMImageTabProtocol.h"
+#import <DSMTab.h>
+#import <DSMImageTabProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

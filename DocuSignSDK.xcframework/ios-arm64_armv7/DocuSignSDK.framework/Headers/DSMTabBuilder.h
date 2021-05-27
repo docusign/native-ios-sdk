@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "DSMTabType.h"
-#import "DSMEnvelopeTab.h"
+#import <DSMTabType.h>
+#import <DSMEnvelopeTab.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

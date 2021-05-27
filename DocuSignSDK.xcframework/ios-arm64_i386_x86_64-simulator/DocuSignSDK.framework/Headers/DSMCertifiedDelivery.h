@@ -1,4 +1,4 @@
-#import "DSMRecipient.h"
+#import <DSMRecipient.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /*!

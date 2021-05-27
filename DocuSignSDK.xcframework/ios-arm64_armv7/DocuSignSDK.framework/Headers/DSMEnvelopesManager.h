@@ -1,7 +1,7 @@
 //  DSMEnvelopesManager.h
 //  DocuSignSDK
 #import <Foundation/Foundation.h>
-#import "DSMSigningMode.h"
+#import <DSMSigningMode.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "DSMRecipientType.h"
-#import "DSMEnvelopeRecipient.h"
-#import "DSMEnvelopeTab.h"
+#import <DSMRecipientType.h>
+#import <DSMEnvelopeRecipient.h>
+#import <DSMEnvelopeTab.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

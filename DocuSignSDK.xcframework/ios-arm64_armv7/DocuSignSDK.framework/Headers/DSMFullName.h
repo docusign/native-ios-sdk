@@ -1,5 +1,5 @@
-#import "DSMTab.h"
-#import "DSMTextTabFontProtocol.h"
+#import <DSMTab.h>
+#import <DSMTextTabFontProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
