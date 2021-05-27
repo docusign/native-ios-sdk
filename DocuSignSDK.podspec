@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 	s.license = 'DOCUSIGN API SDK LICENSE'
 	s.requires_arc = true
 	s.preserve_paths  = 'DocuSignSDK.xcframework'
-	#s.public_header_files = 'DocuSignSDK.xcframework/**/Headers/*.h'
+	s.public_header_files = 'DocuSignSDK.xcframework/**/Headers/*.h'
 	s.vendored_frameworks  = 'DocuSignSDK.xcframework'
 	s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
 end
