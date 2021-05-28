@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
 	
         #s.public_header_files = 'DocuSignSDK.xcframework/**/Headers/*.h'
 
-	s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/DocuSignSDK/**"',
-                            'HEADER_SEARCH_PATHS' => '$(SDKROOT)' }
+#	s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/DocuSignSDK/**"',
+ #                           'HEADER_SEARCH_PATHS' => '$(SDKROOT)' }
 
         s.vendored_frameworks  = 'DocuSignSDK.xcframework'
 	s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
