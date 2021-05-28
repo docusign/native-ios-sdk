@@ -1,10 +1,10 @@
 //  DSMTemplatesManager.h
 //  DocuSignSDK
 #import <Foundation/Foundation.h>
-#import <DSMTemplateCacheState.h>
-#import <DSMDocumentInsertAtPosition.h>
-#import <DSMSigningMode.h>
-#import <DSMTextCustomField.h>
+#import <DocuSignSDK/DSMTemplateCacheState.h>
+#import <DocuSignSDK/DSMDocumentInsertAtPosition.h>
+#import <DocuSignSDK/DSMSigningMode.h>
+#import <DocuSignSDK/DSMTextCustomField.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

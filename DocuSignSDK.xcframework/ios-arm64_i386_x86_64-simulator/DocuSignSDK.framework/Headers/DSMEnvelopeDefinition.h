@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <DSMEnvelopeTemplate.h>
+#import <DocuSignSDK/DSMEnvelopeTemplate.h>
 
 @interface DSMEnvelopeDefinition : DSMEnvelopeTemplate
 

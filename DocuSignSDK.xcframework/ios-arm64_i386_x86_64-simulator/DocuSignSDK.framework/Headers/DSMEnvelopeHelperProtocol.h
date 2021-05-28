@@ -1,6 +1,6 @@
 //  DSMEnvelopeHelperProtocol.h
 //  DocuSignSDK
-#import <DSMRecipientType.h>
+#import <DocuSignSDK/DSMRecipientType.h>
 
 @class DSMRecipient;
 @class DSMRecipients;

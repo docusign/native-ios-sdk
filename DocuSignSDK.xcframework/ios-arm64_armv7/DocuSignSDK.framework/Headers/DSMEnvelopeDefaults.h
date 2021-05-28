@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import <DSMEnvelopeDefaults.h>
-#import <DSMRecipientDefault.h>
-#import <DSMCustomFields.h>
+#import <DocuSignSDK/DSMEnvelopeDefaults.h>
+#import <DocuSignSDK/DSMRecipientDefault.h>
+#import <DocuSignSDK/DSMCustomFields.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

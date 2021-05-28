@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import <DSMRecipientType.h>
-#import <DSMEnvelopeRecipient.h>
-#import <DSMEnvelopeTab.h>
+#import <DocuSignSDK/DSMRecipientType.h>
+#import <DocuSignSDK/DSMEnvelopeRecipient.h>
+#import <DocuSignSDK/DSMEnvelopeTab.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

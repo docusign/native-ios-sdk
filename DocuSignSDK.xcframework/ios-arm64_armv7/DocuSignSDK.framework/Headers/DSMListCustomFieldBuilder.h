@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <DSMEnvelopeListCustomField.h>
+#import <DocuSignSDK/DSMEnvelopeListCustomField.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

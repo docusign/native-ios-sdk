@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <DSMTabType.h>
-#import <DSMEnvelopeTab.h>
+#import <DocuSignSDK/DSMTabType.h>
+#import <DocuSignSDK/DSMEnvelopeTab.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

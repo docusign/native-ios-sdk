@@ -1,4 +1,4 @@
-#import <DSMTabFrame.h>
+#import <DocuSignSDK/DSMTabFrame.h>
 
 @interface DSMTabFrame (Additions)
 

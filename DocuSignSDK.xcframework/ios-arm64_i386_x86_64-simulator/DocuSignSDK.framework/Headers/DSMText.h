@@ -1,6 +1,6 @@
-#import <DSMTab.h>
-#import <DSMTextTabProtocol.h>
-#import <DSMTextTabFontProtocol.h>
+#import <DocuSignSDK/DSMTab.h>
+#import <DocuSignSDK/DSMTextTabProtocol.h>
+#import <DocuSignSDK/DSMTextTabFontProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

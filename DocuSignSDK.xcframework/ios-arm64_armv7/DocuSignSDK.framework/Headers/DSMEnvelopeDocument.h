@@ -1,4 +1,4 @@
-#import <DSMDocument.h>
+#import <DocuSignSDK/DSMDocument.h>
 
 @interface DSMEnvelopeDocument : DSMDocument
 

@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
-#import <DSMDocumentBuilder.h>
-#import <DSMTextCustomField.h>
-#import <DSMEnvelopeDocument.h>
-#import <DSMEnvelopeRecipient.h>
-#import <DSMEnvelopeTextCustomField.h>
-#import <DSMEnvelopeListCustomField.h>
-#import <DSMEnvelopeDefinition.h>
+#import <DocuSignSDK/DSMDocumentBuilder.h>
+#import <DocuSignSDK/DSMTextCustomField.h>
+#import <DocuSignSDK/DSMEnvelopeDocument.h>
+#import <DocuSignSDK/DSMEnvelopeRecipient.h>
+#import <DocuSignSDK/DSMEnvelopeTextCustomField.h>
+#import <DocuSignSDK/DSMEnvelopeListCustomField.h>
+#import <DocuSignSDK/DSMEnvelopeDefinition.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
