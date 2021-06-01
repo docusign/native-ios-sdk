@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.5.1'
+  s.version          = '2.5.2'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
 # This description is used to generate tags and improve search results.
