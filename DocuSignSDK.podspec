@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 	s.summary =  "DocuSign iOS Framework to sign and send in your iOS apps"
 	
 
-        s.version = "2.5.4"
+        s.version = "2.5.1"
 	s.platform = :ios, '10.0'
         s.ios.deployment_target = '10.0'
 
