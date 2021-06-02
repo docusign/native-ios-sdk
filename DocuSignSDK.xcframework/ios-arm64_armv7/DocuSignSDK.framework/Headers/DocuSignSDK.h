@@ -35,6 +35,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMEnvelopeDefinition.h>
 #import <DocuSignSDK/DSMEnvelopeHelperProtocol.h>
 #import <DocuSignSDK/DSMEnvelopesManager.h>
+#import <DocuSignSDK/DSMEnvelopesManager+DSMInternalAdditions.h>
 #import <DocuSignSDK/DSMEnvelopeTemplate.h>
 #import <DocuSignSDK/DSMEnvelopeTemplateDefinition.h>
 #import <DocuSignSDK/DSMErrorDetails.h>
