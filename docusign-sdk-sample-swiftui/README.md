@@ -9,3 +9,8 @@ Install
 * Launch `SwiftUIApp.xcworkspace` with XCode `12.4` or above
 * Please see the [Getting Started](https://developers.docusign.com/ios_sdk/developer.html) and [Integration](https://developers.docusign.com/ios_sdk/developer.html) section on the **Developer's Site** for more details.
 
+Sample Feature Implementation
+=============
+
+* Embedded Captive Signing 
+* Login with AccessToken
