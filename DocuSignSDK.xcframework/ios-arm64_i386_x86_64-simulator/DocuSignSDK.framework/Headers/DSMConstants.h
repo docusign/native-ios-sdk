@@ -31,5 +31,12 @@ extern NSString * const DSM_ENVELOPE_COREDATA_PERSISTENCE_FAILED_REASON;
 extern NSString * const DSM_ENVELOPE_CREATION_ONLINEMODE_UNSUPPORTED;
 extern NSString * const DSM_ENVELOPE_WITH_INVALID_TEXT_TAB_DEFAULTS_REASON;
 extern NSString * const DSM_ENVELOPE_RESUME_FAILED_REASON;
-extern NSString * const DSM_ENVELOPE_CAPTIVE_RECIPIENTS_ERROR;
 extern NSString * const DSM_ENVELOPE_IMPORT_ERROR;;
+
+#pragma mark - Captive Signing
+extern NSString * const DSM_ENVELOPE_CAPTIVE_RECIPIENTS_ERROR;
+
+#pragma mark - Signature Adoption
+extern NSString * const DSM_SIGNATURE_GET_ERROR;
+extern NSString * const DSM_SIGNATURE_SET_ERROR;
+extern NSString * const DSM_SETTINGS_GET_ERROR;

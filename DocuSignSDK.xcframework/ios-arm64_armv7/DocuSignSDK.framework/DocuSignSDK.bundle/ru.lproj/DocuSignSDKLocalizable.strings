@@ -144,6 +144,8 @@
 "Signing.DrawYourSignature" = "Поставьте свою подпись";
 "SignatureAdoption.TakePhoto.Initials" = "Убедитесь, что ваши инициалы находятся в области просмотра выше";
 "SignatureAdoption.TakePhoto.Signature" = "Убедитесь, что ваша подпись находится в области просмотра выше";
+"SignatureAdoption.TakePhoto.Contrast" = "Контраст:";
+"SignatureAdoption.TakePhoto.Retake" = "Переснять";
 "SignatureAdoption.UseFont.Initials.placeholder" = "Введите инициалы";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Введите полное имя";
 "Error.CaptureError" = "Разрешить доступ к камере";

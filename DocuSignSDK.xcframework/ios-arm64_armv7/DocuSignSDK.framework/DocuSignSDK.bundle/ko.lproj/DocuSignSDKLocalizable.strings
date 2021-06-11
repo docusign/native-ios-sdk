@@ -144,6 +144,8 @@
 "Signing.DrawYourSignature" = "서명 쓰기";
 "SignatureAdoption.TakePhoto.Initials" = "이니셜이 위의 표시 영역 밖으로 벗어나지 않도록 합니다";
 "SignatureAdoption.TakePhoto.Signature" = "서명이 위의 표시 영역 밖으로 벗어나지 않도록 합니다";
+"SignatureAdoption.TakePhoto.Contrast" = "대비:";
+"SignatureAdoption.TakePhoto.Retake" = "다시 촬영";
 "SignatureAdoption.UseFont.Initials.placeholder" = "이니셜 입력";
 "SignatureAdoption.UseFont.Signature.placeholder" = "전체 이름 입력";
 "Error.CaptureError" = "카메라 액세스 허용";

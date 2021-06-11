@@ -144,6 +144,8 @@
 "Signing.DrawYourSignature" = "Disegna la tua firma";
 "SignatureAdoption.TakePhoto.Initials" = "Assicurati che le tue iniziali siano all’interno dell'area di visualizzazione sopra";
 "SignatureAdoption.TakePhoto.Signature" = "Assicurati che la tua firma sia all’interno dell'area di visualizzazione sopra";
+"SignatureAdoption.TakePhoto.Contrast" = "Contrasto:";
+"SignatureAdoption.TakePhoto.Retake" = "Scatta ancora";
 "SignatureAdoption.UseFont.Initials.placeholder" = "Inserisci le iniziali";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Inserisci il nome completo";
 "Error.CaptureError" = "Consenti l'accesso alla fotocamera";

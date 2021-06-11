@@ -144,6 +144,8 @@
 "Signing.DrawYourSignature" = "繪製簽署";
 "SignatureAdoption.TakePhoto.Initials" = "確認姓名縮寫位於上方的檢視區域內";
 "SignatureAdoption.TakePhoto.Signature" = "確認簽章位於上方的檢視區域內";
+"SignatureAdoption.TakePhoto.Contrast" = "對比：";
+"SignatureAdoption.TakePhoto.Retake" = "重拍";
 "SignatureAdoption.UseFont.Initials.placeholder" = "輸入姓名縮寫";
 "SignatureAdoption.UseFont.Signature.placeholder" = "請輸入全名";
 "Error.CaptureError" = "允許存取相機";
