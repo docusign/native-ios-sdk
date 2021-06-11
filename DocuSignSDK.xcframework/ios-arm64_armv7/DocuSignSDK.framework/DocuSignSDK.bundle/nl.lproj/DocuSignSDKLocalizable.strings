@@ -144,8 +144,6 @@
 "Signing.DrawYourSignature" = "Uw handtekening plaatsen";
 "SignatureAdoption.TakePhoto.Initials" = "Zorg dat uw paraaf in het bovenstaande weergavegebied is geplaatst";
 "SignatureAdoption.TakePhoto.Signature" = "Zorg dat uw handtekening in het bovenstaande weergavegebied is geplaatst";
-"SignatureAdoption.TakePhoto.Contrast" = "Contrast:";
-"SignatureAdoption.TakePhoto.Retake" = "Opnieuw nemen";
 "SignatureAdoption.UseFont.Initials.placeholder" = "Voer paraaf in";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Voer volledige naam in";
 "Error.CaptureError" = "Cameratoegang toestaan";

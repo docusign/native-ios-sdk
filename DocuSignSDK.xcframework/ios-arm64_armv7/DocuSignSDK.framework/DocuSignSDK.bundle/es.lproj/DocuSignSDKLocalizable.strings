@@ -35,7 +35,7 @@
 "General.Finish" = "Finalizar";
 "Signing.Error.LoadingRecipientView" = "Se ha producido un error al cargar la vista de destinatarios.";
 "Network.SessionTimeout" = "Sesión caducada";
-"Network.SecurityReasonsSessionTimeout" = "Lo sentimos, su sesión de firma ha expirado por motivos de seguridad.";
+"Network.SecurityReasonsSessionTimeout" = "Lo sentimos, su sesión de firma ha caducado por motivos de seguridad.";
 "General.TryAgain" = "Inténtelo de nuevo";
 "Documents.LoadingDocument" = "Cargando el documento…";
 "Documents.Error.DocumentErrorOccurred" = "Se ha producido un error en el documento";
@@ -144,8 +144,6 @@
 "Signing.DrawYourSignature" = "Dibujar firma";
 "SignatureAdoption.TakePhoto.Initials" = "Asegúrese de que sus iniciales estén dentro del área de visualización superior";
 "SignatureAdoption.TakePhoto.Signature" = "Asegúrese de que su firma está dentro del área de visualización superior";
-"SignatureAdoption.TakePhoto.Contrast" = "Contraste:";
-"SignatureAdoption.TakePhoto.Retake" = "Repetir";
 "SignatureAdoption.UseFont.Initials.placeholder" = "Escriba sus iniciales";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Introduzca su nombre completo";
 "Error.CaptureError" = "Permitir acceso a la cámara";

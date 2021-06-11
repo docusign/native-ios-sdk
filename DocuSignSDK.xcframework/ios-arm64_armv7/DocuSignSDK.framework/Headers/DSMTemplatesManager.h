@@ -5,8 +5,6 @@
 #import <DocuSignSDK/DSMDocumentInsertAtPosition.h>
 #import <DocuSignSDK/DSMSigningMode.h>
 #import <DocuSignSDK/DSMTextCustomField.h>
-#import <DocuSignSDK/DSMEnvelopeTemplateResults.h>
-#import <DocuSignSDK/DSMUserFilterType.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -47,35 +45,6 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  * @param completionBlock The completion block to be execute once the list of templates is retrieved.
  */
 - (void)listTemplatesWithCompletion:(nullable void(^)(NSArray<DSMEnvelopeTemplateDefinition *> *_Nullable envelopeTemplateDefinitions, NSError *_Nullable error))completionBlock;
-
-/*!
- * @discussion Retrieves the list of templates available to the currently logged in user based on searchText.
- * @param searchText searches the templates based on the text provided. If set to nil, fetches templates based on other params.
- * @param completionBlock The completion block to be execute once the list of templates is retrieved.
- * @warning This method requires internet connectivity and not suitable for offline use.
-*/
-- (void)listTemplatesWithSearchText:(nullable NSString *)searchText
-                         Completion:(void(^)(DSMEnvelopeTemplateResults *_Nullable envelopeTemplateResults,
-                                             NSError *_Nullable error))completionBlock;
-/*!
- * @discussion Retrieves the list of templates available to the currently logged in user based on search parameters
- * @param searchText searches the templates based on the text provided. If set to nil, fetches templates based on other params.
- * @param startPosition the position from which remaining templates are returned. Typically used for pagination.
- * @param count the number of templates to be retrived. if set to nil then search returns all the Templates from startPosition.
- * @param folderIds an Array of folder ids from which templates are fetched. when set to nil, search will be conducted on root folder.
- * @param templateType the source of the Templates to be fetched from. @see DSMTemplatesType.h
- * @param ascendingOrder retrieves templates in ascending order.
- * @param completionBlock The completion block to be execute once the list of templates is retrieved.
- * @warning This method requires internet connectivity and not suitable for offline use.
-*/
-- (void)listTemplatesWithSearchText:(nullable NSString *)searchText
-                      startPosition:(NSNumber *)startPosition
-                              count:(nullable NSNumber *)count
-                          folderIds:(nullable NSArray <NSString *>*)folderIds
-                         filterType:(DSMUserFilterType)templateType
-                     ascendingOrder:(BOOL)ascendingOrder
-                         Completion:(void(^)(DSMEnvelopeTemplateResults *_Nullable envelopeTemplateResults,
-                                             NSError *_Nullable error))completionBlock;
 /*!
  * @discussion Retrieves the list of templates available to the currently logged in user matching the given predicate.
  * @param predicate The predicate to match the templates with. A predicate of nil returns all templates.
@@ -96,18 +65,10 @@ typedef NS_ENUM(NSUInteger, DSMSearchOptions) {
  */
 - (void)listTemplatesWithTemplateName:(NSString *)templateName searchOptions:(DSMSearchOptions)options completion:(nullable void(^)(NSArray<DSMEnvelopeTemplateDefinition *> *_Nullable envelopeTemplateDefinitions, NSError *_Nullable error))completionBlock;
 /*!
- * @discussion Retrieves the list of template folders for the currently logged in user.
+ * @discussion Retrieve the list of template folders for the currently logged in user.
  * @param completionBlock The completion block to be execute once the list of template folders is retrieved.
  */
 - (void)listTemplateFoldersWithCompletion:(nullable void(^)(NSArray<DSMFolder *> *_Nullable folders, NSError *_Nullable error))completionBlock;
-/*!
- * @discussion Retrieve the list of template folders for logged in user based on user filter.
- * @param filterType Narrows down the resulting folder list by ownership.
- * @param completionBlock The completion block to be execute once the list of template folders is retrieved.
- * @see DSMUserFilterType.h
- */
-- (void)listTemplateFoldersWithUserFilter:(DSMUserFilterType)filterType
-                               completion:(nullable void(^)(NSArray<DSMFolder *> *_Nullable folders, NSError *_Nullable error))completionBlock;
 /*!
  * @discussion Returns the cached state of a template. This call can be made when device is offline.
  * @param templateId An ID of the template whose status is enquired.

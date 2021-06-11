@@ -144,8 +144,6 @@
 "Signing.DrawYourSignature" = "Écrire votre signature";
 "SignatureAdoption.TakePhoto.Initials" = "Assurez‑vous que votre paraphe se trouve dans la zone de prévisualisation ci‑dessus";
 "SignatureAdoption.TakePhoto.Signature" = "Assurez‑vous que votre signature se trouve dans la zone de prévisualisation ci‑dessus";
-"SignatureAdoption.TakePhoto.Contrast" = "Contraste :";
-"SignatureAdoption.TakePhoto.Retake" = "Reprendre";
 "SignatureAdoption.UseFont.Initials.placeholder" = "Saisissez un paraphe";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Saisissez un nom complet";
 "Error.CaptureError" = "Autoriser l’accès à la caméra";
@@ -163,7 +161,7 @@
 "BuildEnvelope.Remote" = "À distance";
 "Signing.CC" = "c.c.";
 "Signing.NotSet" = "Pas encore défini";
-"Signing.AddressRecipients" = "Adresse des destinataires";
+"Signing.AddressRecipients" = "Adresser à des destinataires";
 "Signing.AcknowledgeReceipt" = "Accuser réception";
 "Signing.ManageEnvelope" = "Gérer l’enveloppe";
 "Signing.ManageRecipients" = "Gérer les destinataires";

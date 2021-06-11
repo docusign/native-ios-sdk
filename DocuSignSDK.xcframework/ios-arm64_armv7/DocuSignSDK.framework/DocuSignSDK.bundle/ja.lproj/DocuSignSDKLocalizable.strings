@@ -144,11 +144,6 @@
 "Signing.DrawYourSignature" = "署名を手書きで入力";
 "SignatureAdoption.TakePhoto.Initials" = "イニシャルが上の表示領域内に写るようにしてください";
 "SignatureAdoption.TakePhoto.Signature" = "署名が上の表示領域内に写るようにしてください";
-<<<<<<< HEAD
-"SignatureAdoption.TakePhoto.Contrast" = "コントラスト:";
-"SignatureAdoption.TakePhoto.Retake" = "再撮影";
-=======
->>>>>>> develop
 "SignatureAdoption.UseFont.Initials.placeholder" = "イニシャルの入力";
 "SignatureAdoption.UseFont.Signature.placeholder" = "氏名を入力";
 "Error.CaptureError" = "カメラへのアクセス";

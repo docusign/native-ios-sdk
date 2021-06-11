@@ -144,11 +144,6 @@
 "Signing.DrawYourSignature" = "Desenhar a sua assinatura";
 "SignatureAdoption.TakePhoto.Initials" = "Certifique-se de que as suas iniciais estão dentro da área de visualização acima";
 "SignatureAdoption.TakePhoto.Signature" = "Certifique-se de que a sua assinatura está dentro da área de visualização acima";
-<<<<<<< HEAD
-"SignatureAdoption.TakePhoto.Contrast" = "Contraste:";
-"SignatureAdoption.TakePhoto.Retake" = "Refazer";
-=======
->>>>>>> develop
 "SignatureAdoption.UseFont.Initials.placeholder" = "Introduzir iniciais";
 "SignatureAdoption.UseFont.Signature.placeholder" = "Introduza o nome completo";
 "Error.CaptureError" = "Permitir o acesso à câmara";

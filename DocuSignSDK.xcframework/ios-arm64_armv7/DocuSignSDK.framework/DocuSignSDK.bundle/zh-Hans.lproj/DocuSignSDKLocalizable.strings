@@ -144,8 +144,6 @@
 "Signing.DrawYourSignature" = "绘制您的签名";
 "SignatureAdoption.TakePhoto.Initials" = "确保您的签名位于上述查看区域内。";
 "SignatureAdoption.TakePhoto.Signature" = "确保您的签名位于上述查看区域内。";
-"SignatureAdoption.TakePhoto.Contrast" = "对比度：";
-"SignatureAdoption.TakePhoto.Retake" = "重拍";
 "SignatureAdoption.UseFont.Initials.placeholder" = "请输入缩写签名";
 "SignatureAdoption.UseFont.Signature.placeholder" = "输入全名";
 "Error.CaptureError" = "允许相机访问";

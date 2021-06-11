@@ -11,9 +11,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
  List of all the headers exposed to client application they define the interfaces and models for communication with SDK.
  */
 #import <DocuSignSDK/DSMAccountInfo.h>
-#import <DocuSignSDK/DSMAdoptedSignature.h>
 #import <DocuSignSDK/DSMAgent.h>
-#import <DocuSignSDK/DSMAllButUpsideDownOrientableProtocol.h>
 #import <DocuSignSDK/DSMAppearance.h>
 #import <DocuSignSDK/DSMAttachment.h>
 #import <DocuSignSDK/DSMAuthenticationMethod.h>
@@ -70,14 +68,12 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMSigner.h>
 #import <DocuSignSDK/DSMSignHere.h>
 #import <DocuSignSDK/DSMSigningMode.h>
-#import <DocuSignSDK/DSMSignatureService.h>
 #import <DocuSignSDK/DSMTab.h>
 #import <DocuSignSDK/DSMTabFrame.h>
 #import <DocuSignSDK/DSMTabFrame+Additions.h>
 #import <DocuSignSDK/DSMTabImageData.h>
 #import <DocuSignSDK/DSMTabs.h>
 #import <DocuSignSDK/DSMTabType.h>
-#import <DocuSignSDK/DSMUserFilterType.h>
 #import <DocuSignSDK/DSMTemplateCacheState.h>
 #import <DocuSignSDK/DSMTemplatesManager.h>
 #import <DocuSignSDK/DSMTemplatesManagerDelegate.h>
@@ -87,9 +83,6 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMTextTabFontProtocol.h>
 #import <DocuSignSDK/DSMTitle.h>
 #import <DocuSignSDK/DSMUserInfo.h>
-#import <DocuSignSDK/DSMEnvelopeTemplateResults.h>
-
-// Envelope Composition
 #import <DocuSignSDK/DSMEnvelopeBuilder.h>
 #import <DocuSignSDK/DSMDocumentBuilder.h>
 #import <DocuSignSDK/DSMRecipientBuilder.h>
@@ -103,12 +96,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMEnvelopeTextCustomField.h>
 #import <DocuSignSDK/DSMEnvelopeListCustomField.h>
 
-// Categories
+//categories
 #import <DocuSignSDK/NSArray+DSMQuery.h>
 #import <DocuSignSDK/NSString+DSMAdditions.h>
 #import <DocuSignSDK/UIBarButtonItem+DSMBlocks.h>
-
-// Signature Adoption - DocuSign App
-#import <DocuSignSDK/DSMSignatureCaptureDelegate.h>
-#import <DocuSignSDK/DSMSignatureCaptureType.h>
-#import <DocuSignSDK/DSMSignatureCaptureMethod.h>

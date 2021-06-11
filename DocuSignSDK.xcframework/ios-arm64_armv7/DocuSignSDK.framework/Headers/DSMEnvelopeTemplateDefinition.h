@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class DSMUserInfo, DSMRecipients;
+@class DSMUserInfo;
 /*!
  @class DSMEnvelopeTemplateDefinition
  */
@@ -57,16 +57,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @see DSMUserInfo.h
  */
 @property(nonatomic, strong) DSMUserInfo *owner;
-
-/*!
- * @brief The DSMRecipients class object.
-*/
-@property(nonatomic, strong, nullable) DSMRecipients *recipients;
-
-/*!
- * @brief This error is generated when template is not compatible with Docusign Mobile App.
- */
-@property(nonatomic, strong, nullable) NSError *onlineSupportError;
 
 @end
 
