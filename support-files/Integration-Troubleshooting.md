@@ -11,7 +11,7 @@
 }
 ```
 
-Native SDK as of `v2.3.8` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround for now is to have all app targets build without bitcode. In order to disable bitcode, client app would need to set `Enable Bitcode` under `Build Options` to `No` for each of the targets.
+Native SDK as of `v2.3.8` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround, for now, is to have all app targets build without bitcode. To disable bitcode, the client app would need to set `Enable Bitcode` under `Build Options` to `No` for every target.
 
 ![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
@@ -29,7 +29,9 @@ With SDK `v2.5`, `pod install` will automatically set `"EXCLUDED_ARCHS[sdk=iphon
 
 ### Fix with the `Podfile` 
 
-First, update the `Podfile` `post_install` section at the end of the Podfile with the following snippet. This would exclude `arm64` architecture for all simulator builds.
+An app integrating with the DocuSign SDK (before `v2.5` release) could follow this section to resolve the `arm64` error or perform `pod update 'DocuSign'` to get `v2.5` or higher. Any Framework project that's integrated with DocuSignSDK, follow the ["Fix with the `podspec`"](https://github.com/docusign/native-ios-sdk/blob/master/support-files/Integration-Troubleshooting.md#fix-with-the-podspec) below.
+
+First, update the `Podfile` `post_install` section at the end of the Podfile with the following snippet. It would result in excluding `arm64` architecture for all simulator builds.
 
 ```
 # Add at the end of the `Podfile` to Exclude Architecture `arm64` for simulator builds
@@ -44,8 +46,45 @@ Next, after performing `pod install`, open your app **Project's** settings. In `
 - Debug: `Any iOS Simulator SDK` : `arm64`
 - Release: `Any iOS Simulator SDK` : `arm64`
 
-Also ensure similar setting for app **Target's** setting.
+Also ensure similar value is set for app **Target's** setting.
 ![Simulator Builds - Excluding arm64 Architecture](simulator-build-excluded-architectures-arm64.png)
+
+### Fix with the `podspec`
+
+Any Framework project integrating with the DocuSign SDK and using `podspec` to distribute the SDK, make the following change in your SDK `podspec` to propagate the `EXCLUDED_ARCHS` settings for `arm64` below to all targets. It's achieved by setting architecture exclusion in `pod_target_xcconfig` & `user_target_scconfig` for `'EXCLUDED_ARCHS[sdk=iphonesimulator*]'` key and using `arm64` as value.
+
+```
+  # Propagate the `arm64` in the `EXCLUDED_ARCHS` setting. Replace `spec_name` with correct name.
+  spec_name.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec_name.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+```
+
+Here is some more context around the `podspec` changes for a Swift-based framework using 'DocuSign' pod as a dependency.
+
+```
+Pod::Spec.new do |s|
+  ... 
+  ...
+  s.summary =  "iOS Framework Wrapper to integrate with DocuSign pod as dependency"	
+  s.swift_version = '5.0'
+
+  # Define the dependency on 'DocuSign' pod
+  s.dependency 'DocuSign', '2.5.0'
+	
+  # Propagate the `arm64` in the `EXCLUDED_ARCHS` setting.
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
+  # A sample test_spec
+  s.test_spec 'FrameworkWrapperTests' do |test_spec|
+    test_spec.source_files = 'FrameworkWrapperTests/Tests/**/*.swift'
+    test_spec.resources = 'FrameworkWrapperTests/Resources/**/*.{plist,json,png,bundle}'
+    test_spec.test_type = :unit
+  end
+end
+```
+
+Note: Above snippet would need some change if your SDK uses the `xcconfig` in a different way to manage multiple targets.
 
 ## 3. Undefined Symbols
 
@@ -61,8 +100,8 @@ Also ensure similar setting for app **Target's** setting.
 ### Root cause:
 
 * Invalid binary file: `DocuSignSDK.framework/DocuSignSDK`
-  * In projects with symbol missing issue, `DocuSignSDK` binary file size is in a few KB.
-  * `DocuSignSDK` binary file under the framework directory isn't getting fetched correctly via the CocoaPods `pod install`. Correct `DocuSignSDK` binary is over 100MB, for example, the correct binary size as of `v2.2.5` is `105.8MB`. 
+  * In projects with missing symbol issues, `DocuSignSDK` binary file size is in a few KB.
+  * `DocuSignSDK` binary file under the framework directory isn't getting fetched correctly via the CocoaPods `pod install`. Correct `DocuSignSDK` binary is over 100MB. For example, the correct binary size as of `v2.2.5` is `105.8MB`. 
 
 ![Valid DocuSign SDK binary file - Screenshot](docusignsdk-binary-via-pods.png)
 
