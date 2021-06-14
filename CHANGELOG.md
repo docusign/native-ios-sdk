@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.5.1] - 06/02/2021 [Softlaunch]
+## [v2.5.1] - 06/14/2021
 
 ### Added
 * Native-iOS-SDK is built with Xcode12.5 and now includes XCFramework as the primary framework for CocoaPods distribution.
