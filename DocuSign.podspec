@@ -1,21 +1,10 @@
-#
 # Be sure to run `pod lib lint DocuSign.podspec' to ensure this is a
 # valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.5.1'
+  s.version          = '2.5.2'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
   DocuSign Native iOS Framework to sign and send in your iOS apps:
@@ -38,6 +27,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'DocuSignSDK.xcframework'
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.1/DocuSignSDK.zip"}
+  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.2/DocuSignSDK.zip"}
   
 end
