@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.5.2] - 06/14/2021
+## [v2.5.2] - 06/15/2021
 
 ### Fixed
 * IPA export no longer fails for certain conditions.
