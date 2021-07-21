@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5.3 - beta] - 07/21/2021
+
+### Added
+* New interface to launch captive signing using recipient view url with `presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion:` in `DSMEnvelopesManager`. 
+
 ## [v2.5.2] - 06/15/2021
 
 ### Fixed
