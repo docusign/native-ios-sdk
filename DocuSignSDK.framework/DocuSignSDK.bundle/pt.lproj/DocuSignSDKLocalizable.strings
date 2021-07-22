@@ -133,6 +133,8 @@
 "Templates.Recipient" = "Destinatário";
 "Templates.ErrorMessageLength" = "O comprimento da mensagem excede os 2000 carateres.";
 "SignatureAdoption.Create" = "Criar";
+"SignatureAdoption.Next" = "Seguinte";
+"SignatureAdoption.Initials" = "Iniciais";
 "SignatureAdoption.Draw" = "Desenhar";
 "SignatureAdoption.UseFont" = "Utilizar tipo de letra";
 "SignatureAdoption.TakePhoto" = "Tirar fotografia";

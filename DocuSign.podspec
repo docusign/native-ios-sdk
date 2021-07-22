@@ -1,11 +1,11 @@
+#
 # Be sure to run `pod lib lint DocuSign.podspec' to ensure this is a
 # valid spec before submitting.
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.5.2'
+  s.version          = '2.5.3'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
-
   s.description      = <<-DESC
   DocuSign Native iOS Framework to sign and send in your iOS apps:
   - The DocuSign Native iOS SDK is compatible with both Swift and Objective-C applications.
@@ -15,18 +15,20 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/docusign/native-ios-sdk'
-  s.screenshots      = 'https://developers.docusign.com/docs/ios-sdk/images/signature-phone.png', 'https://developers.docusign.com/docs/ios-sdk/images/fields.png'  
+  s.screenshots      = 'https://developers.docusign.com/docs/ios-sdk/images/signature-phone.png', 'https://developers.docusign.com/docs/ios-sdk/images/fields.png'
   s.license          = { :type => 'DOCUSIGN SOFTWARE LICENSE AGREEMENT', :file => 'LICENSE.txt' }
   s.author           = { 'DocuSign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocuSignAPI'
 
-  s.platform = :ios, '10.0'
-  s.ios.deployment_target = '10.0'
+  s.platform = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
   s.requires_arc = true
-  s.preserve_paths = 'DocuSignSDK.xcframework'
-  s.vendored_frameworks = 'DocuSignSDK.xcframework'
-  s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
+  s.preserve_paths = 'DocuSignSDK.framework'
+  s.public_header_files = 'DocuSignSDK.framework/Headers/*.h'
+  s.vendored_frameworks = 'DocuSignSDK.framework'
+  s.resource = 'DocuSignSDK.framework/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.2/DocuSignSDK.zip"}
-  
+  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.3-beta/DocuSignSDK.zip"}
+  s.source_files = 'DocuSignSDK.framework/Headers/*.h'
+
 end

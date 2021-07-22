@@ -81,7 +81,7 @@
 "Signing.NextField" = "Volgende veld";
 "Common.Continue" = "Doorgaan";
 "Signing.PassBackToHost" = "Terugsturen naar host";
-"Signing.SigningComplete" = "서명 완료";
+"Signing.SigningComplete" = "Ondertekenen voltooid";
 "Signing.DocumentWillSendWhenConnected" = "Het document wordt verzonden zodra er een gegevensverbinding beschikbaar is.";
 "Signing.AllInPersonSignersCompleted" = "Alle ondertekenaars die in persoon moeten ondertekenen zijn klaar";
 "ConsumerDisclosure.ConsumerDisclosure" = "Consumenteninformatie";
@@ -105,7 +105,7 @@
 "Signing.SelectARole" = "Selecteer een rol";
 "BuildEnvelope.SelectRole" = "Rol (één selecteren)";
 "General.Role" = "Rol";
-"Signing.InPersonSigner" = "Ondertekenaar in persoon";
+"Signing.InPersonSigner" = "Ondertekenaar op locatie";
 "Signing.RemoteSigner" = "Ondertekenaar op afstand";
 "Signing.ReceiveACopy" = "Een kopie ontvangen";
 "Signing.SignersWhoAreWithYou" = "Ondertekenaars die bij u zijn";
@@ -133,6 +133,8 @@
 "Templates.Recipient" = "ontvanger";
 "Templates.ErrorMessageLength" = "Lengte van bericht kan niet meer dan 2000 tekens zijn.";
 "SignatureAdoption.Create" = "Aanmaken";
+"SignatureAdoption.Next" = "Volgende";
+"SignatureAdoption.Initials" = "Paraaf";
 "SignatureAdoption.Draw" = "Plaatsen";
 "SignatureAdoption.UseFont" = "Lettertype gebruiken";
 "SignatureAdoption.TakePhoto" = "Foto nemen";

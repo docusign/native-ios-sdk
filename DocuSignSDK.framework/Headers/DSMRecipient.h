@@ -166,10 +166,15 @@ typedef NS_ENUM(NSUInteger, DSMRecipientType);
  */
 - (BOOL)isSentOrDelivered;
 /*!
- * @discussion Returns true if recipient status is completed or declined or signed.
+ * @discussion Returns true if recipient status is completed, signed or declined.
  * @return BOOL
  */
 - (BOOL)hasCompletedOrDeclined;
+/*!
+ * @discussion Returns true if recipient completed, signed or declined before the last cached time.
+ * @return BOOL
+ */
+- (BOOL)hasCompletedOrDeclinedBeforeCachedDate:(NSDate *)cachedDate;
 /*!
  * @discussion Returns true if signer is a digital certificate Signer.
  * @return BOOL

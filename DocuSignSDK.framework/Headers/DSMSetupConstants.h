@@ -64,11 +64,20 @@ extern NSString * const DSM_SETUP_OFFLINE_SIGNING_HIDE_SWITCH_RECIPIENT_UI_KEY;
 /*!
  * @brief Allow progress of an offline envelope to be saved locally after a local signer completes signing. It also enables the UI components to conditionally allow progress save of an offline envelope. Default behavior is to have save progress disable during offline signing.
  * Acceptable value is either "true" or "false".
- * Default value is "false".
+ * Default value is "true".
  * Note: Enabling this would result in receiving the `DSMEnvelopeCachedNotification` notification multiple times during offline signing ceremony.
  * @see DSMNotificationCodes.h
  */
 extern NSString * const DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY;
+
+/*!
+* @brief Allow exiting a offline envelope signing session without discarding the progress. Using this option will hide "Discard Progress" option. Default behavior is to have save "Sign Later" hidden during offline signing.
+* Acceptable value is either "true" or "false".
+* Default value is "false".
+* Note: Enabling this would result in receiving the `DSMEnvelopeCachedNotification` notification during offline signing ceremony.
+* @see DSMNotificationCodes.h
+*/
+extern NSString * const DSM_SETUP_ENABLE_OFFLINE_SIGNING_SIGN_LATER_WITHOUT_DISCARD_KEY;
 
 #pragma mark - Setup Constants - Offline Tab Conversion
 /*!
@@ -96,6 +105,13 @@ extern NSString * const DSM_SETUP_ICLOUD_DOCUMENT_ENABLED;
  * Default value is "false" and it reuses a valid authentication session for a given user.
  */
 extern NSString * const DSM_SETUP_FORCE_LOGIN_REFRESH_AUTHENTICATION_SESSION;
+
+/*!
+ * @brief Allows offline signing to download certificate to be saved on to the device for preview. Enabling this would download the certificate pdf along with documents for Offline signing if DSM_SETUP_OFFLINE_SIGNING_COC_ENABLED is set as "true".
+ * Default value is "false".
+ * Acceptable value is either "true" or "false".
+ */
+extern NSString * const DSM_SETUP_OFFLINE_SIGNING_COC_ENABLED;
 
 /*!
  * @brief Allow templates with numberTabs to be downloaded for offline signing. Enabling this would auto-convert the numberTabs to the text-tabs and remove any merge-field info if DSM_SETUP_OFFLINE_SIGNING_SET_MERGEFIELD_AS_NIL_FOR_TABS_CONVERSION is set as "true".
