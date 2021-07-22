@@ -133,8 +133,6 @@
 "Templates.Recipient" = "收件人";
 "Templates.ErrorMessageLength" = "消息长度不能超过 2000 个字符。";
 "SignatureAdoption.Create" = "创建";
-"SignatureAdoption.Next" = "下一步";
-"SignatureAdoption.Initials" = "首字母";
 "SignatureAdoption.Draw" = "繪製";
 "SignatureAdoption.UseFont" = "使用字体";
 "SignatureAdoption.TakePhoto" = "拍照";

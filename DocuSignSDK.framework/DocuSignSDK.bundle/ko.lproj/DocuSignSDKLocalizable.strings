@@ -133,8 +133,6 @@
 "Templates.Recipient" = "수신인";
 "Templates.ErrorMessageLength" = "메시지는 2,000자를 초과할 수 없습니다.";
 "SignatureAdoption.Create" = "생성";
-"SignatureAdoption.Next" = "다음";
-"SignatureAdoption.Initials" = "이니셜";
 "SignatureAdoption.Draw" = "그리기";
 "SignatureAdoption.UseFont" = "글꼴 사용";
 "SignatureAdoption.TakePhoto" = "사진 촬영";

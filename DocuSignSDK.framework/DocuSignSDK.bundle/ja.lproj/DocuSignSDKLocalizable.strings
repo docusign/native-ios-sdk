@@ -133,8 +133,6 @@
 "Templates.Recipient" = "受信者";
 "Templates.ErrorMessageLength" = "メッセージは2,000文字以下で入力してください。";
 "SignatureAdoption.Create" = "作成";
-"SignatureAdoption.Next" = "次へ";
-"SignatureAdoption.Initials" = "イニシャル";
 "SignatureAdoption.Draw" = "手書き";
 "SignatureAdoption.UseFont" = "キー入力";
 "SignatureAdoption.TakePhoto" = "写真の撮影";

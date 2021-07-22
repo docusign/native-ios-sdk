@@ -135,8 +135,6 @@ extern NSString * const DSMEnvelopeIdKey;
 extern NSString * const DSMTemplateIdKey;
 /*! @brief Notification userInfo key to represent TransactionId of an envelope. TransactionIds are only used for offline envelopes which are created on the device using a template or pdf documents. */
 extern NSString * const DSMTransactionIdKey;
-/*! @brief Notification userInfo key to represent the combined size in Mb of all the documents of the envelope. */
-extern NSString * const DSMCombinedDocumentSizeKey;
 /*! @brief Notification userInfo key to represent any additional info sent in addition.
  */
 extern NSString * const DSMAdditionalInfo;
@@ -147,6 +145,20 @@ extern NSString * const DSMErrorKey;
  * @see DSMSigningMode
  */
 extern NSString * const DSMSigningModeKey;
+/*!
+* @brief Notification userInfo key to represent envelope signing exit reason (user declined to sign vs user cancelled signing ceremony)
+*/
+extern NSString * const DSMSigningExitReasonKey;
+/*!
+ * @brief Notification userInfo value to represent envelope signing exit reason - decline
+ * @see DSMSigningExitReason
+ */
+extern NSString * const DSMSigningExitReasonDecline;
+/*!
+ * @brief Notification userInfo value to represent envelope signing exit reason - cancel
+ * @see DSMSigningExitReason
+ */
+extern NSString * const DSMSigningExitReasonCancel;
 
 #pragma GCC visibility pop
 

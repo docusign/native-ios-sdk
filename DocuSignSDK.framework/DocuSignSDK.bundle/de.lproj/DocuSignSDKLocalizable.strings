@@ -133,8 +133,6 @@
 "Templates.Recipient" = "Empfänger";
 "Templates.ErrorMessageLength" = "Die Nachricht darf max. 2.000 Zeichen lang sein.";
 "SignatureAdoption.Create" = "Erstellen";
-"SignatureAdoption.Next" = "Weiter";
-"SignatureAdoption.Initials" = "Initialen";
 "SignatureAdoption.Draw" = "Zeichnen";
 "SignatureAdoption.UseFont" = "Schriftart verwenden";
 "SignatureAdoption.TakePhoto" = "Foto aufnehmen";
@@ -177,7 +175,7 @@
 "Common.FullName" = "Vollständiger Name";
 "Tagging.TagName.InitialHere" = "Initialen setzen";
 "General.Text" = "Text";
-"General.Title" = "Stellenbezeichnung";
+"General.Title" = "Titel";
 "Tagging.TagName.Unsupported" = "Nicht unterstützt";
 "Common.Action.Delete" = "Löschen";
 "Offline.Envelope.SignAndSend.CAPSLOCK" = "SIGNIEREN + SENDEN";

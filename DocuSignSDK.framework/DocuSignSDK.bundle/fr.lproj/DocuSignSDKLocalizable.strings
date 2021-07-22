@@ -133,8 +133,6 @@
 "Templates.Recipient" = "destinataire";
 "Templates.ErrorMessageLength" = "Le message ne peut pas contenir plus de 2 000 caractères.";
 "SignatureAdoption.Create" = "Créer";
-"SignatureAdoption.Next" = "Suivant";
-"SignatureAdoption.Initials" = "Paraphe";
 "SignatureAdoption.Draw" = "Écrire";
 "SignatureAdoption.UseFont" = "Utiliser une police";
 "SignatureAdoption.TakePhoto" = "Prendre une photo";

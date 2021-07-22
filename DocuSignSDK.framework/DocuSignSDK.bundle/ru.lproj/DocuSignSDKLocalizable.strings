@@ -133,8 +133,6 @@
 "Templates.Recipient" = "получатель";
 "Templates.ErrorMessageLength" = "Длина сообщения не может превышать 2000 символов.";
 "SignatureAdoption.Create" = "Создать";
-"SignatureAdoption.Next" = "Далее";
-"SignatureAdoption.Initials" = "Инициалы";
 "SignatureAdoption.Draw" = "Создать подпись";
 "SignatureAdoption.UseFont" = "Использовать шрифт";
 "SignatureAdoption.TakePhoto" = "Сделать фото";

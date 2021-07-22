@@ -4,7 +4,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DSMTabs;
 @class DSMRecipientSignatureInformation;
-@class DSMConsumerDisclosure;
 
 /*!
  @class DSMSigner
@@ -69,11 +68,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief TODO:Doc
  */
 @property(nonatomic, copy) NSString *emailRecipientPostSigningURL;
-
-/*!
- * @brief Consumer Disclosure associated with the signer.
- */
-@property(nonatomic, strong) DSMConsumerDisclosure *consumerDisclosure;
 
 @end
 

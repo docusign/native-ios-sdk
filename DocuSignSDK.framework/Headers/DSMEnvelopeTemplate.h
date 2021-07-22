@@ -239,10 +239,6 @@ typedef enum {
  */
 @property (nonatomic,assign) BOOL disableResponsiveDocument;
 
-/* When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients. \n\nIf the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information. [optional]
- */
-@property(nonatomic) NSString* useDisclosure;
-
 @end
 
 NS_ASSUME_NONNULL_END

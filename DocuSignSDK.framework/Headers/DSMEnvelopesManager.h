@@ -2,7 +2,6 @@
 //  DocuSignSDK
 #import <Foundation/Foundation.h>
 #import "DSMSigningMode.h"
-#import "DSMEnvelopeCacheState.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -95,25 +94,17 @@ NS_ASSUME_NONNULL_BEGIN
                                            completion:(void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
 /*!
- * @discussion Retrieve all cached envelopes without the pdf documents. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
- * @return NSArray <DSMEnvelopeDefinition *>, array containing entire envelope definition(s). Empty array if no cached envelopes are found.
+ * @discussion Retrieve all cached envelopes. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
+ * @return NSArray <DSMEnvelopeDefinition *>, array containing entire envelope definition(s)
  * @see DSMEnvelopeDefinition DSMNotificationCodes DSMTemplatesManager
  */
 - (NSArray *)cachedEnvelopes;
 
 /*!
  * @discussion Retrieve envelopeIds for all cached envelopes. Compared to cachedEnvelopes, this has only envelopeId in the array. This call can be made when device is offline.
- * @return NSArray <NSString *> array containing strings representing unique envelopeId(s). Empty array if no cached envelopes are found.
+ * @return NSArray <NSString *> array containing strings representing unique envelopeId(s)
  */
 - (NSArray <NSString *> *)cachedEnvelopeIds;
-
-/*!
- * @discussion Returns the cached state of an envelope. This call can be made when device is offline.
- * @param envelopeId An ID of the envelope whose status is enquired.
- * @return DSMTemplateCacheState
- * @see DSMTemplateCacheState.h
- */
-- (DSMEnvelopeCacheState)cacheStateOfEnvelopeWithId:(NSString *)envelopeId;
 
 /*!
  * @discussion Remove all cached envelopes. This call can be made when device is offline.
@@ -167,6 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Note: a) `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
  * b) An extra API call is made to fetch `recipientUserName` & `recipientEmail` for the given `envelopeId` and `recipientClientUserId`.
  * c) In case if no unique recipient is found with given `recipientClientUserId`, `DSMSigningCancelledNotification` notification is sent with additional details.
+ * Note: Captive-Signing disables the native-ui-components for the signing ceremony associated with the `DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` setup configuration.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
  * @param recipientClientUserId clientUserId of the captive recipient in the envelope.
@@ -184,6 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
+ * Note: Captive-Signing disables the native-ui-components for the signing ceremony associated with the `DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` setup configuration.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
  * @param recipientUserName userName of the captive recipient in the envelope.
@@ -204,6 +197,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @discussion Start captive/embedded signing a remote envelope with the given envelopeId. It presents the required modal which can be dismissed if desired with the view-controller returned with completion block.
  * Note: `envelopeId` should match the id of the remote envelope ready to sign on the account under use.
+ * Note: Captive-Signing disables the native-ui-components for the signing ceremony associated with the `DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` setup configuration.
  * @param presentingController controller will be presented on top of the given presentingController passed.
  * @param envelopeId envelopeId of the remote envelope with which to start Signing process.
  * @param recipientUserName userName of the captive recipient in the envelope.
@@ -222,6 +216,33 @@ NS_ASSUME_NONNULL_BEGIN
                                           recipientId:(NSString *_Nullable)recipientId
                                              animated:(BOOL)animated
                                            completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
+
+/*!
+* @discussion Start captive/embedded signing a remote envelope with the given embedded-signing-url. It presents
+the required modal which can be dismissed if desired with the view-controller returned with the completion block. This
+method can be used directly without the SDK `login` flow with `accessToken`.
+* Note: Captive-Signing disables the native-ui-components for the signing ceremony associated with the
+`DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` setup configuration.
+* @param presentingController controller will be presented on top of the given presentingController passed.
+* @param signingUrl embedded-envelope signing url that is used to load signing ceremony.
+* @param envelopeId `envelopeId` should match the guid of the remote envelope ready to sign with the
+embedded-signing-url on the account under use. This is being used for DocuSign telemetry, error tracing,
+performance issues detection, etc.
+* @param recipientId unique `recipientId` representing the recipient in a given envelope. This is being used for
+DocuSign telemetry, error tracing, performance issue detection, etc.
+* @param animated If the presentation of sign and send be animated or not.
+* @param completion Completion block to be executed after signing has been presented or if an error is
+encountered.
+* @warning passing nil to a presentationController will not be able to load the Signing.
+* @see DSMNotificationCodes.h
+*/
+- (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
+                                           signingUrl:(NSString *)signingUrl
+                                           envelopeId:(NSString *)envelopeId
+                                          recipientId:(NSString * _Nullable)recipientId
+                                             animated:(BOOL)animated
+                                           completion:(nullable void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable
+                                                                        error))completion;
 
 /*!
  * @discussion Returns whether there is a current cached envelope in draft status. Once an envelope is successfully synced, it's deleted from the cache on the device. This can be used to determine whether presenting compose envelope flow should be resumed with the draft envelope. There can only be one draft cached envelope at a given time. This call can be made when device is offline.
