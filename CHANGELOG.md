@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5.3 - beta] - 07/23/2021
+
+### Fixed
+* Fixes related to embedded-signing session time out. When session times out during Captive Signing with Url, `DSMSigningCancelledNotification` Notification is now sent with additional parameter associated with `exitReason` key in `userInfo`.
+
 ## [v2.5.3 - beta] - 07/21/2021
 
 ### Added

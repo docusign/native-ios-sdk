@@ -160,6 +160,13 @@ extern NSString * const DSMSigningExitReasonDecline;
  */
 extern NSString * const DSMSigningExitReasonCancel;
 
+
+/*!
+ * @brief Notification userInfo value to represent envelope signing exit reason - token expired
+ * @see DSMSigningExitReason
+ */
+extern NSString * const DSMSigningExitReasonTokenExpired;
+
 #pragma GCC visibility pop
 
 #endif /* DSMNotificationCodes_h */

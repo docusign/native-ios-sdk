@@ -6,7 +6,7 @@ target 'SwiftUIApp' do
   use_frameworks!
 
   # Pods for SwiftUIApp
-  pod 'DocuSign'
+  pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.5.3-beta"
 
   target 'SwiftUIAppTests' do
     inherit! :search_paths
