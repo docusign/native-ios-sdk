@@ -177,6 +177,12 @@ Example:
 + (BOOL)logout;
 
 /*!
+@method clearAllWebCookies
+@abstract clear/clean all docusign related cookies generated in online signing ceremony. This method gives explicit control to clean cookies after each signing session.
+*/
++ (void)clearAllWebCookies;
+
+/*!
  @method isSessionActiveWithEmail
  @brief Returns whether there is an active user authentication session.
  @param email DocuSign username (email) of the user using SDK for sign and send

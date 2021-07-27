@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5.3 - beta] - 07/27/2021
+
+### Added
+* New interface to clear web cookies `clearAllWebCookies` on `DSMManager`.
+
+### Fixed
+* Fixes related to embedded-signing cookie management.
+
 ## [v2.5.3 - beta] - 07/23/2021
 
 ### Fixed
