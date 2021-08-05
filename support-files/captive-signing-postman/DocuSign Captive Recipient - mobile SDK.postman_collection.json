@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "5d9c8286-9d93-4ab1-b495-dc57058d514f",
+		"name": "DocuSign Captive Recipient - mobile SDK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Envelope - Captive Signer - Simple case (final)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"envelopeId\", pm.response.json().envelopeId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-DocuSign-Authentication",
+						"value": "<DocuSignCredentials><Username>{{username}}</Username><Password>{{password}}</Password><IntegratorKey>{{ikey}}</IntegratorKey></DocuSignCredentials>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n  \"documents\": [\r\n    {\r\n      \"documentId\": \"1\",\r\n      \"name\": \"blank.pdf\",\r\n      \"fileExtension\": \"pdf\",\r\n      \"documentBase64\": \"\"\r\n    }\r\n  ],\r\n  \"recipients\":{\r\n      \"signers\":[\r\n          {\"recipientId\":\"1\",\"routingOrder\":\"1\",\"clientUserId\":\"1\",\"email\":\"hostEmail@dsxtr.com\",\"name\":\"hostName\", \"requireIdLookup\": \"false\", \"tabs\": {\r\n                \"signHereTabs\": [{\r\n                    \"xPosition\": \"100\",\r\n                    \"yPosition\": \"100\",\r\n                    \"documentId\": \"1\",\r\n                    \"pageNumber\": \"1\"\r\n                }],\r\n                \"initialHereTabs\": [{\r\n                    \"xPosition\": \"200\",\r\n                    \"yPosition\": \"100\",\r\n                    \"documentId\": \"1\",\r\n                    \"pageNumber\": \"1\"\r\n                }]\r\n            }}\r\n      ]\r\n  },\r\n  \"status\": \"sent\",\r\n  \"emailSubject\": \"one recipient envelope - subject\",\r\n  \"emailBlurb\": \"one recipient envelope - email\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/accounts/{{account}}/envelopes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"{{account}}",
+						"envelopes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gets the status of recipients for an envelope. Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-DocuSign-Authentication",
+						"value": "<DocuSignCredentials><Username>{{username}}</Username><Password>{{password}}</Password><IntegratorKey>{{ikey}}</IntegratorKey></DocuSignCredentials>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/accounts/{{account}}/c5a1d0aa-b754-4737-81f9-fbb6b34e3d9d/recipients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"{{account}}",
+						"c5a1d0aa-b754-4737-81f9-fbb6b34e3d9d",
+						"recipients"
+					]
+				},
+				"description": "###### Client libraries: Envelopes::listRecipients\nRetrieves the status of all recipients in a single envelope and identifies the current recipient in the routing list. \n\nThe `currentRoutingOrder` property of the response contains the `routingOrder` value of the current recipient indicating that the envelope has been sent to the recipient, but the recipient has not completed their actions."
+			},
+			"response": []
+		},
+		{
+			"name": "Captive Recipient Url - Captive Signer - Simple case (final)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-DocuSign-Authentication",
+						"value": "<DocuSignCredentials><Username>{{username}}</Username><Password>{{password}}</Password><IntegratorKey>{{ikey}}</IntegratorKey></DocuSignCredentials>"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"returnUrl\": \"https://www.docusign.com/devcenter\",\n  \"userName\": \"Triston Gilbert\",\n  \"email\": \"thomas_template_demo@dsxtr.com\",\n  \"authenticationMethod\": \"email\", \n  \"clientUserId\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/accounts/{{account}}/envelopes/06a04067-7850-4fae-924c-28a2f5b70fed/views/recipient",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"{{account}}",
+						"envelopes",
+						"06a04067-7850-4fae-924c-28a2f5b70fed",
+						"views",
+						"recipient"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
