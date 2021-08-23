@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5.3 - beta] - 08/23/2021
+
+### Added
+* This update enables client apps to access external links during captive signing experience.
+
 ## [v2.5.3 - beta] - 07/27/2021
 
 ### Added
