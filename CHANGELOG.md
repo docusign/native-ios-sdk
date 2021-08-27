@@ -1,4 +1,8 @@
 # DocuSign Native iOS SDK Changelog
+## [v2.5.3 - beta] - 08/27/2021
+
+### Added
+* New setup configuration `DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION` to disable location tracking during captive signing.
 
 ## [v2.5.3 - beta] - 08/23/2021
 

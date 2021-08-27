@@ -204,8 +204,16 @@ extern NSString * const DSM_SETUP_ONLY_USE_COMPANY_NAME_WITH_CD;
  */
 extern NSString * const DSM_SETUP_HIDE_ONLINE_SIGNING_LOADING_INDICATOR_KEY;
 
+#pragma mark - Setup Constants - Captive Signing
+
 /*! @brief Allows Captive Signing to load in the language code specified.
  * If this setting is not enabled, SDK loads Captive Signing using the current device locale.
  * Acceptable values are "es" , "pt" etc.
  */
 extern NSString * const DSM_SETUP_CAPTIVE_SIGNING_USE_LANGUAGE_CODE;
+
+/*! @brief Allows Captive Signing to disable location permission.
+ * Set "true" to hide the location permission.
+ * Default value is "false"
+ */
+extern NSString * const DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION;
