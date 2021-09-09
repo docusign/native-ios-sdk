@@ -43,6 +43,10 @@ extern NSInteger const DSM_SETUP_API_TIMEOUT_MAX_VALUE;
  */
 extern NSInteger const DSM_SETUP_SDK_MAX_PAGES_IN_DOCUMENT;
 
+/*! @brief Default value for captive signing, set as device locale.
+*/
+extern NSString * const DSM_SETUP_LANGUAGE_CODE_DEFAULT_VALUE;
+
 #pragma mark - Setup Constants - Offline
 
 /*!
@@ -199,3 +203,17 @@ extern NSString * const DSM_SETUP_ONLY_USE_COMPANY_NAME_WITH_CD;
  * Acceptable value is either "true" or "false".
  */
 extern NSString * const DSM_SETUP_HIDE_ONLINE_SIGNING_LOADING_INDICATOR_KEY;
+
+#pragma mark - Setup Constants - Captive Signing
+
+/*! @brief Allows Captive Signing to load in the language code specified.
+ * If this setting is not enabled, SDK loads Captive Signing using the current device locale.
+ * Acceptable values are "es" , "pt" etc.
+ */
+extern NSString * const DSM_SETUP_CAPTIVE_SIGNING_USE_LANGUAGE_CODE;
+
+/*! @brief Allows Captive Signing to disable location permission.
+ * Set "true" to hide the location permission.
+ * Default value is "false"
+ */
+extern NSString * const DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION;

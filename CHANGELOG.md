@@ -1,5 +1,16 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.5.3] - 09/09/2021
+
+### Added
+* New interface to launch captive signing using recipient view url with `presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion:` in `DSMEnvelopesManager`. 
+* New interface to clear web cookies `clearAllWebCookies` on `DSMManager`.
+* New setup configuration `DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION` to disable location tracking during captive signing.
+
+### Fixed
+* Fixes related to embedded-signing session time out. When session times out during Captive Signing with Url, `DSMSigningCancelledNotification` Notification is now sent with additional parameter associated with `exitReason` key in `userInfo`.
+* Fixed `DSMDocumentBuilderException` that is caused when a filePath is passed to `DSMDocumentBuilder`.
+
 ## [v2.5.2] - 06/15/2021
 
 ### Fixed

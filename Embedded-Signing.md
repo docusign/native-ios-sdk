@@ -142,7 +142,8 @@ Native iOS SDK handles the redirection and dismisses the signing ceremony to ret
 
 #### **Tracking Events**
 
-Client apps may register for various notification, such as `DSMEnvelopeSyncingSucceededNotification`, to receive the details on various stages of signing. Notification object with `userInfo` contains `envelopeId` and other relevant information. Other relevant notifications for Online Signing and SDK events can be found in the ([header file](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h)). Some of the important notifications are:
+Client apps may register for various notification, such as `DSMEnvelopeSyncingSucceededNotification`, to receive the details on various stages of signing. <br>
+Notification object with `userInfo` contains `envelopeId` and other relevant information. Other relevant notifications for Online Signing and SDK events can be found in the ([header file](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.framework/Headers/DSMNotificationCodes.h)). Some of the important notifications are:
 - `DSMSigningCompletedNotification`
 - `DSMSigningCancelledNotification`
 
@@ -172,6 +173,34 @@ override func viewDidLoad() {
 - `DSMSigningExitReasonKey` is added to `userInfo` when signer decides to `decline` or `cancel` using `Finish Later`. The value contains `cancel` or `decline`.
 - `DSMSigningModeKey` is added to `userInfo` with all of the Signing Notifications. In case of Embedded Signing, it’s value is set as `online`.
 - Further details can be found on [Notification Keys section](/DocuSignSDK.framework/Headers/DSMNotificationCodes.h#L129).
+
+## Embedded signing without SDK authentication
+
+The Native iOS SDK untethers Captive Signing from authentication and directly launches the signing experience using the Captive Recipient Signing URL. <br>
+This method relies on the integrating client application to independently retrieve the signing URL for the given envelope and recipient in order to view and capture signatures once the Native SDK `setup` call is complete. <br>
+When using this interface, there is no need to perform login or logout for the SDK user. One caveat is to use the signing URL within a short span of time (five minutes) before it expires. 
+
+This sample Swift code demonstrates retrieving the signing URL and presenting the signing experience using the presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion: API on DSMEnvelopesManager.
+
+```
+let presentingViewController = self
+let signingUrl = <signing-url> // the embedded signing url as retrieved with client backend integration
+let envelopeId = <created-envelope-id> // captive (embedded) envelope guid
+let recipientId = <custom-recipient-id> // captive (embedded) recipient id used to create envelope
+DSMEnvelopesManager().presentCaptiveSigning(withPresenting: presentingViewController,
+    signingUrl: signingUrl,
+    envelopeId: envelopeId,
+    recipientId: recipientId,
+    animated: true { viewController, error in
+    if let error = error {
+      // handle error
+      ...
+      return
+    }
+    // Use viewController as needed (for instance, force-dismiss if the client app needs to exit DocuSign signing experience)
+    ...
+}
+```
 
 ## Embedded Signing with WKWebView
 

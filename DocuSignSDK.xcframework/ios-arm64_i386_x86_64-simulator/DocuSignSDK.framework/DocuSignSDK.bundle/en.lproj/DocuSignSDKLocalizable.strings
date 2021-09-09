@@ -3,7 +3,7 @@
 "Recipients.hosted.by" = "Hosted by %1$@";
 "Signing.UnknownSigner" = "Unknown Signer";
 "Signing.XSigned" = "%1$@ signed!";
-"Signing.ElectronicBusinessConsent" = "By selecting BEGIN SIGNING, you consent to do business electronically with %1$@";
+"Signing.ElectronicBusinessConsent" = "By selecting BEGIN SIGNING, I consent to do business electronically with %1$@.";
 "General.Email" = "Email";
 "Recipients.AddRecipient" = "Add Recipient";
 "Documents.EditRecipient" = "Edit Recipient";
@@ -88,7 +88,7 @@
 "Signing.ofCompany" = " of %1$@";
 "Signing.XofCompanyHasRequestedSignature" = "%1$@%2$@ has requested your signature.";
 "Signing.CompanyHasRequestedSignature" = "%1$@ has requested your signature.";
-"Signing.Consent" = "By selecting %1$@ I consent to do business electronically with %2$@.";
+"Signing.Consent" = "By selecting %1$@, I consent to do business electronically with %2$@.";
 "Signing.ConsumerDisclosure" = "Doing Business Electronically";
 "Signing.CompletedSigning" = "Completed Signing";
 "Signing.ReadyToSign" = "Ready To Sign";

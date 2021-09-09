@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.5.2'
+  s.version          = '2.5.3'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/docusign/native-ios-sdk'
-  s.screenshots      = 'https://developers.docusign.com/docs/ios-sdk/images/signature-phone.png', 'https://developers.docusign.com/docs/ios-sdk/images/fields.png'  
+  s.screenshots      = 'https://developers.docusign.com/docs/ios-sdk/images/signature-phone.png', 'https://developers.docusign.com/docs/ios-sdk/images/fields.png'
   s.license          = { :type => 'DOCUSIGN SOFTWARE LICENSE AGREEMENT', :file => 'LICENSE.txt' }
   s.author           = { 'DocuSign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocuSignAPI'
@@ -27,6 +27,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'DocuSignSDK.xcframework'
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.2/DocuSignSDK.zip"}
-  
+  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.3/DocuSignSDK.zip"}
 end
