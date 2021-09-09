@@ -48,6 +48,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMInitialHere.h>
 #import <DocuSignSDK/DSMInPersonSigner.h>
 #import <DocuSignSDK/DSMIntermediary.h>
+#import <DocuSignSDK/DSMLanguageConstants.h>
 #import <DocuSignSDK/DSMListCustomField.h>
 #import <DocuSignSDK/DSMLoggingLevel.h>
 #import <DocuSignSDK/DSMManager.h>

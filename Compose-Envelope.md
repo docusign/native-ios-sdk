@@ -97,7 +97,7 @@ DSMEnvelopeDefinition *envelope = [[[[DSMEnvelopeBuilder builder]
 // Create a document with pdf file and assign a name and id
 DSMEnvelopeDocument *document = [[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: @"doc1"]
+                                          addDocumentId: @"1"]
                                           addFilePath: [[NSBundle mainBundle] pathForResource: @"NDA" ofType: @"pdf"]] 
                                         build];
 
@@ -113,7 +113,7 @@ DSMEnvelopeRecipient *recipient = [[[[[[DSMRecipientBuilder builderForType: DSMR
 DSMEnvelopeTab *signTab = [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
                                                           addRecipientId: @"FirstRecipient"]
-                                                          addDocumentId: @"doc1"]
+                                                          addDocumentId: @"1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
@@ -123,7 +123,7 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                                           addName: @"Name"]
                                           addRecipientId: @"FirstRecipient"]
                                           addFrame: CGRectMake(100, 200, 120, 30)]
-                                          addDocumentId: @"doc1"]
+                                          addDocumentId: @"1"]
                                           addPageNumber: 1] 
                                         build];
 
@@ -140,14 +140,14 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
                                           addTab: [[[[[[[DSMTabBuilder builderForType: DSMTabTypeSignHere]
                                                           addName: @"Signature"]
                                                           addRecipientId: @"FirstRecipient"]
-                                                          addDocumentId: @"doc1"]
+                                                          addDocumentId: @"1"]
                                                           addFrame: CGRectMake(100, 300, 40, 50)]
                                                           addPageNumber: 1
                                                   ] build]
                                     ] build]] 
                       addDocument:[[[[[DSMDocumentBuilder builder]
                                           addName: @"NDADocument"]
-                                          addDocumentId: @"doc1"]
+                                          addDocumentId: @"1"]
                                           addFilePath: [[NSBundle bundleForClass: [self class]] pathForResource: @"NDA" ofType: @"pdf"]
                                   ] build]
                 ] build];

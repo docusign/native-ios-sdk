@@ -81,6 +81,19 @@ Example:
 + (NSInteger)configuredValueForSetupKeyAPITimeout;
 
 /*!
+@method configuredValueForLanguageCode
+@brief query saved configuration value for DSM_SETUP_CAPTIVE_SIGNING_USE_LANGUAGE_CODE key.
+*/
++ (NSString *)configuredValueForLanguageCode;
+
+/*!
+@method setCaptiveSigningLanguageCode
+@brief Sets the language code for captive signing. This loads signing in the language specified. Default value is DSM_SETUP_LANGUAGE_CODE_DEFAULT_VALUE which uses the device's current locale.
+@see DSMLanguageConstants.h
+*/
++ (void)setCaptiveSigningLanguageCode:(NSString *)languageCode;
+
+/*!
  @brief default configurations
  */
 + (NSDictionary<NSString *, id> *)defaultConfigurations;
@@ -162,6 +175,12 @@ Example:
  @see DSMTemplatesManager to manage cached templates
  */
 + (BOOL)logout;
+
+/*!
+@method clearAllWebCookies
+@abstract clear/clean all docusign related cookies generated in online signing ceremony. This method gives explicit control to clean cookies after each signing session.
+*/
++ (void)clearAllWebCookies;
 
 /*!
  @method isSessionActiveWithEmail

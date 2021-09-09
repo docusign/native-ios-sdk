@@ -218,6 +218,33 @@ NS_ASSUME_NONNULL_BEGIN
                                            completion:(void (^ _Nullable)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
 /*!
+* @discussion Start captive/embedded signing a remote envelope with the given embedded-signing-url. It presents
+the required modal which can be dismissed if desired with the view-controller returned with the completion block. This
+method can be used directly without the SDK `login` flow with `accessToken`.
+* Note: Captive-Signing disables the native-ui-components for the signing ceremony associated with the
+`DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS` setup configuration.
+* @param presentingController controller will be presented on top of the given presentingController passed.
+* @param signingUrl embedded-envelope signing url that is used to load signing ceremony.
+* @param envelopeId `envelopeId` should match the guid of the remote envelope ready to sign with the
+embedded-signing-url on the account under use. This is being used for DocuSign telemetry, error tracing,
+performance issues detection, etc.
+* @param recipientId unique `recipientId` representing the recipient in a given envelope. This is being used for
+DocuSign telemetry, error tracing, performance issue detection, etc.
+* @param animated If the presentation of sign and send be animated or not.
+* @param completion Completion block to be executed after signing has been presented or if an error is
+encountered.
+* @warning passing nil to a presentationController will not be able to load the Signing.
+* @see DSMNotificationCodes.h
+*/
+- (void)presentCaptiveSigningWithPresentingController:(UIViewController *)presentingController
+                                           signingUrl:(NSString *)signingUrl
+                                           envelopeId:(NSString *)envelopeId
+                                          recipientId:(NSString * _Nullable)recipientId
+                                             animated:(BOOL)animated
+                                           completion:(nullable void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable
+                                                                        error))completion;
+
+/*!
  * @discussion Returns whether there is a current cached envelope in draft status. Once an envelope is successfully synced, it's deleted from the cache on the device. This can be used to determine whether presenting compose envelope flow should be resumed with the draft envelope. There can only be one draft cached envelope at a given time. This call can be made when device is offline.
  * @return BOOL, true if there is a cached draft envelope
  */
