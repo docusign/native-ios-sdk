@@ -5,6 +5,6 @@ target 'docusign-sdk-sample-objc' do
 
   # Pods for docusign-sdk-sample-objc
   pod 'ProgressHUD'
-  pod 'DocuSign'
+  pod 'DocuSign', :git => 'https://github.com/docusign/native-ios-sdk.git', :branch => "release/2.5.3-legacy"
 
 end

@@ -1,4 +1,11 @@
 # DocuSign Native iOS SDK Changelog
+
+## [v2.5.3] - 09/09/2021
+
+### Changed
+* Native-iOS-SDK is build with legacy build system.
+* Updated podfile for sample apps.
+
 ## [v2.5.3 - beta] - 08/27/2021
 
 ### Added
