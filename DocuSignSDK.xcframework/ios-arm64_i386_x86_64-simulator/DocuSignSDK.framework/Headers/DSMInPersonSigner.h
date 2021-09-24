@@ -3,7 +3,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class DSMTabs;
+@class DSMOfflineAttributes;
 @class DSMRecipientSignatureInformation;
+@class DSMConsumerDisclosure;
 
 /*!
  @class DSMInPersonSigner
@@ -63,6 +65,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief TODO:Doc
  */
 @property(nonatomic, copy) NSString *inPersonSigningType;
+
+/*!
+ * @brief Consumer Disclosure associated with the in person signer.
+ */
+@property(nonatomic, strong) DSMConsumerDisclosure *consumerDisclosure;
 
 @end
 

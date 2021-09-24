@@ -4,7 +4,7 @@
 /*!
  * @typedef DSMTemplateCacheState
  * @brief A list of template cache states.
- * @constant DSMTemplateCacheStateUncached Template is unchached.
+ * @constant DSMTemplateCacheStateUncached Template is uncached.
  * @constant DSMTemplateCacheStateInProgress Template cache is in progress.
  * @constant DSMTemplateCacheStateUpdateInProgress Template cache is being updated.
  * @constant DSMTemplateCacheStateCached Template is cached.

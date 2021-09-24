@@ -11,7 +11,9 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
  List of all the headers exposed to client application they define the interfaces and models for communication with SDK.
  */
 #import <DocuSignSDK/DSMAccountInfo.h>
+#import <DocuSignSDK/DSMAdoptedSignature.h>
 #import <DocuSignSDK/DSMAgent.h>
+#import <DocuSignSDK/DSMAllButUpsideDownOrientableProtocol.h>
 #import <DocuSignSDK/DSMAppearance.h>
 #import <DocuSignSDK/DSMAttachment.h>
 #import <DocuSignSDK/DSMAuthenticationMethod.h>
@@ -25,6 +27,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMContact.h>
 #import <DocuSignSDK/DSMContactManager.h>
 #import <DocuSignSDK/DSMCustomFields.h>
+#import <DocuSignSDK/DSMConsumerDisclosure.h>
 #import <DocuSignSDK/DSMDateSigned.h>
 #import <DocuSignSDK/DSMDocument.h>
 #import <DocuSignSDK/DSMDocumentInsertAtPosition.h>
@@ -35,10 +38,13 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMEnvelopeDefinition.h>
 #import <DocuSignSDK/DSMEnvelopeHelperProtocol.h>
 #import <DocuSignSDK/DSMEnvelopesManager.h>
+#import <DocuSignSDK/DSMEnvelopesManager+Additions.h>
+#import <DocuSignSDK/DSMEnvelopesManager+DSMInternalAdditions.h>
 #import <DocuSignSDK/DSMEnvelopesManager+DSMInternalAdditions.h>
 #import <DocuSignSDK/DSMEnvelopeTemplate.h>
 #import <DocuSignSDK/DSMEnvelopeTemplateDefinition.h>
 #import <DocuSignSDK/DSMErrorDetails.h>
+#import <DocuSignSDK/DSMErrorCodes.h>
 #import <DocuSignSDK/DSMExpirations.h>
 #import <DocuSignSDK/DSMFolder.h>
 #import <DocuSignSDK/DSMFormula.h>
@@ -65,16 +71,19 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMRecipientSignatureInformation.h>
 #import <DocuSignSDK/DSMRecipientType.h>
 #import <DocuSignSDK/DSMReminders.h>
+#import <DocuSignSDK/DSMSender.h>
 #import <DocuSignSDK/DSMSetupConstants.h>
 #import <DocuSignSDK/DSMSigner.h>
 #import <DocuSignSDK/DSMSignHere.h>
 #import <DocuSignSDK/DSMSigningMode.h>
+#import <DocuSignSDK/DSMSignatureService.h>
 #import <DocuSignSDK/DSMTab.h>
 #import <DocuSignSDK/DSMTabFrame.h>
 #import <DocuSignSDK/DSMTabFrame+Additions.h>
 #import <DocuSignSDK/DSMTabImageData.h>
 #import <DocuSignSDK/DSMTabs.h>
 #import <DocuSignSDK/DSMTabType.h>
+#import <DocuSignSDK/DSMUserFilterType.h>
 #import <DocuSignSDK/DSMTemplateCacheState.h>
 #import <DocuSignSDK/DSMTemplatesManager.h>
 #import <DocuSignSDK/DSMTemplatesManagerDelegate.h>
@@ -84,6 +93,7 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMTextTabFontProtocol.h>
 #import <DocuSignSDK/DSMTitle.h>
 #import <DocuSignSDK/DSMUserInfo.h>
+#import <DocuSignSDK/DSMEnvelopeTemplateResults.h>
 #import <DocuSignSDK/DSMEnvelopeBuilder.h>
 #import <DocuSignSDK/DSMDocumentBuilder.h>
 #import <DocuSignSDK/DSMRecipientBuilder.h>
@@ -97,7 +107,13 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMEnvelopeTextCustomField.h>
 #import <DocuSignSDK/DSMEnvelopeListCustomField.h>
 
-//categories
+// Categories
 #import <DocuSignSDK/NSArray+DSMQuery.h>
 #import <DocuSignSDK/NSString+DSMAdditions.h>
 #import <DocuSignSDK/UIBarButtonItem+DSMBlocks.h>
+
+// Signature Adoption - DocuSign App
+#import <DocuSignSDK/DSMSignatureCaptureDelegate.h>
+#import <DocuSignSDK/DSMSignatureCaptureType.h>
+#import <DocuSignSDK/DSMSignatureCaptureMethod.h>
+#import <DocuSignSDK/DSMSignatureCaptureConfiguration.h>

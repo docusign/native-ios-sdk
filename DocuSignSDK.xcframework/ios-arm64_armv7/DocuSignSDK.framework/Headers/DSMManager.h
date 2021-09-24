@@ -169,7 +169,7 @@ Example:
 
 /*!
  @method logout
- @abstract logout and clean/clear all local storage and user data. Note: Invoking this method will also remove any of the offline signed envelopes.
+ @abstract logout and clean/delete all local storage and user data. Note: Invoking this method will also remove any of the offline signed envelopes.
  @result boolean representing success with logout
  @see DSMEnvelopesManager to manage cached envelopes
  @see DSMTemplatesManager to manage cached templates
@@ -181,6 +181,12 @@ Example:
 @abstract clear/clean all docusign related cookies generated in online signing ceremony. This method gives explicit control to clean cookies after each signing session.
 */
 + (void)clearAllWebCookies;
+
+/*!
+@method deleteTemporarySandboxFiles
+@abstract clear/delete all files from the temporary sandbox directory -- `NSTemporaryDirectory()`.
+*/
++ (void)deleteTemporarySandboxFiles;
 
 /*!
  @method isSessionActiveWithEmail
