@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.6] - 09/27/2021
+
+### Added
+
+* SDK introduced the support for Offline Signing with Remote Envelopes.
+* A new interface `canDownloadEnvelopeWithId:completion` on `DSMEnvelopesManager` provides an interface to check if a remote envelope can be downloaded for offline signing.
+* Another method `downloadEnvelopeWithId:completion` on `DSMEnvelopesManager` provides this interface to download remote envelope for offline signing.
+
 ## [v2.5.3] - 09/09/2021
 
 ### Added
