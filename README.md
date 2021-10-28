@@ -1,14 +1,14 @@
 ![DocuSign Logo](images/docusign.svg)
 # DocuSign Native iOS SDK
 
-The DocuSign Native iOS SDK is a framework for Objective-C and Swift projects. Using the SDK, you can integrate DocuSign's online and offline signing features into your iOS application.
+The DocuSign Native iOS SDK is a framework for Objective-C and Swift projects. Using the SDK, you can integrate DocuSign's online and offline signing features into your iOS application. Leverage native iOS UI components to integrate with the DocuSign ecosystem and use various features in your app.
 
 Please refer to the [official site](https://developers.docusign.com/ios_sdk/) for detailed instructions and getting started with DocuSign Sandbox.
 
 Requirements
 ============
-- The SDK is written in Objective-C but will work with projects in Objective-C or Swift (4.2 and later).
-- Requires iOS 12 or later.
+- The SDK is written in Objective-C but will work with projects in Objective-C or Swift (5 and later).
+- Requires iOS 13 or later.
 - It is recommended that developers use Xcode 12.0 or later.
 
 Installation
