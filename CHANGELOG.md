@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.6.0] - 11/03/2021
+
+### Fixed
+* Fixes related to background tasks on embedded-signing.
+
+### Removed
+* Removed legacy auth methods in `DSMManager`. The deprecated methods are `loginWithEmail:password:integratorKey:host:completion` and `loginWithApiPassword:accountId:userId:username:email:host:integratorKey:completion`.
+
 ## [v2.5.3] - 09/09/2021
 
 ### Added
