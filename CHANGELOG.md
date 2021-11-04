@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.6.0] - 11/03/2021
+
+### Fixed
+* Fixes related to background tasks on embedded-signing.
+
 ## [v2.5.3] - 09/09/2021
 
 ### Changed
