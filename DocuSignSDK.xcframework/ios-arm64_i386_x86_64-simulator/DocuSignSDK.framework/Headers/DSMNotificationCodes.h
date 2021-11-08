@@ -8,7 +8,7 @@
 #pragma mark notification name
 
 /*!
- * @brief Notification sent when envelope signing is completed in online or offline mode by all current signers.
+ * @brief Notification sent when envelope signing is completed in online or offline mode by all current signers. In case of offline signing the envelope will be ready for syncing after `DSMEnvelopeCachedNotification` is sent.
  * @discussion Returned userInfo contains signingMode associated with DSMSigningModeKey and templateId associated with DSMTemplateIdkey. Returned userInfo also contains envelopeId associated with DSMEnvelopeIdKey only when online signing; during offline signing, envelopeId for signed envelope is sent with DSMEnvelopeCachedNotification.
  * Conforming to DSMEnvelopesManagerOfflineSigningDelegate allows client apps to receive callback events associated with recipient selection or individual recipient events for start and finish offline signing.
  * This can be posted on a thread other than MainThread.
@@ -35,7 +35,7 @@ extern NSString * const DSMSigningCancelledNotification;
  */
 extern NSString * const DSMEnvelopeOnlineSendFailedNotification;
 /*!
- * @brief Notification sent when caching is enabled for a given record (envelope).
+ * @brief Notification sent when caching is enabled for a given record (envelope). An envelope is cached when a signer finishes offline signing or saves the progress and exits the signing process. 
  * @discussion Returned userInfo contains envelopeId associated with DSMEnvelopeIdKey, templateId associated with DSMTemplateIdKey. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeCachedNotification object:nil userInfo:userInfo];
  * Note: Enabling setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` would result in this notification being sent every time a local offline envelope is saved after local signer finishes signing.

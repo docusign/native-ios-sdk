@@ -52,6 +52,7 @@ Guides:
  * [Composing Envelopes](Compose-Envelope.md)
 
 Sample apps: 
+ * For SDK version `2.6.0` and above refer our latest: [TGK Financial Sample App](https://github.com/docusign/sample-app-tgk-financial-ios/)
  * [swift](docusign-sdk-sample-swift/): Templates, Offline Envelopes, Events
  * [objective-c](docusign-sdk-sample-objc/): Templates, Offline Envelopes, Events
  * [swiftUI](docusign-sdk-sample-swiftui/): Captive (Embedded) Signing
