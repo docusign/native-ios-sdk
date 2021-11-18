@@ -27,7 +27,7 @@ extern NSString * const DSM_LANGUAGE_CODE_FOR_FRENCH;
 extern NSString * const DSM_LANGUAGE_CODE_FOR_FRENCH_CANADA;
 
 extern NSString * const DSM_LANGUAGE_CODE_FOR_GERMAN;
-extern NSString * const DSM_LANGUAGE_CODE_FOR_FRENCH_GREEK;
+extern NSString * const DSM_LANGUAGE_CODE_FOR_GREEK;
 
 extern NSString * const DSM_LANGUAGE_CODE_FOR_HEBREW;
 extern NSString * const DSM_LANGUAGE_CODE_FOR_HINDI;

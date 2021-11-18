@@ -1,9 +1,8 @@
 # Be sure to run `pod lib lint DocuSign.podspec' to ensure this is a
 # valid spec before submitting.
-
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.5.2'
+  s.version          = '2.7.0'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
@@ -20,15 +19,15 @@ Pod::Spec.new do |s|
   s.author           = { 'DocuSign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocuSignAPI'
 
-  s.platform = :ios, '9.0'
-  s.ios.deployment_target = '9.0'
+  s.platform = :ios, '10.0'
+  s.ios.deployment_target = '10.0'
   s.requires_arc = true
   s.preserve_paths = 'DocuSignSDK.framework'
   s.public_header_files = 'DocuSignSDK.framework/Headers/*.h'
   s.vendored_frameworks = 'DocuSignSDK.framework'
   s.resource = 'DocuSignSDK.framework/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.5.2/DocuSignSDK-framework.zip"}
+  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.7/DocuSignSDK-framework.zip"}
   s.source_files = 'DocuSignSDK.framework/Headers/*.h'
 
 end

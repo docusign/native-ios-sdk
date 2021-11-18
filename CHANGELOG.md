@@ -1,5 +1,12 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.7.0] - 11/18/2021
+
+### Fixed
+* Fix Issue with RadioGroupTabs https://github.com/docusign/native-ios-sdk/issues/103
+* Fix Locale Name for Greek
+* Fix issue with UIViewController Initialization for iOS 15
+
 ## [v2.6.0] - 11/03/2021
 
 ### Fixed
