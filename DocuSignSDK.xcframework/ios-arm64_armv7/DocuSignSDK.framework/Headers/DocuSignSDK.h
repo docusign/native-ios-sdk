@@ -96,6 +96,8 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMListCustomFieldBuilder.h>
 #import <DocuSignSDK/DSMEnvelopeTextCustomField.h>
 #import <DocuSignSDK/DSMEnvelopeListCustomField.h>
+#import <DocuSignSDK/DSMRadio.h>
+#import <DocuSignSDK/DSMRadioGroup.h>
 
 //categories
 #import <DocuSignSDK/NSArray+DSMQuery.h>
