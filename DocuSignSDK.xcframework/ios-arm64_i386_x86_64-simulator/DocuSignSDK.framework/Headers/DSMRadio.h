@@ -19,6 +19,6 @@
 /*! @brief When set to **true**, the signer cannot change the data of the custom tab. [optional] */
 @property(nonatomic, assign) BOOL  locked;
 /*! @brief Parent radio group */
-@property (nonatomic, weak) DSMRadioGroup *radioGroup;
+@property (nonatomic) NSString *radioGroupName;
 
 @end

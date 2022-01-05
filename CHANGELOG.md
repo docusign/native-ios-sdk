@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.8.0] - 01/05/2022
+
+### Added
+* DocuSign-ESign REST API endpoints are now available to use with Native-iOS-SDK. DocuSign-ESign (`DSES*`) interface exposes functionality in addition to the regular DocuSign-Mobile (`DSM*`) classes. Newly added headers are part of `DocuSignSDK.framework/Headers/DSES*.h` files and could be used with `DSESApiClient` and corresonding Api service (e.g. `DSESAccountsApi`).
+
 ## [v2.7.0] - 11/18/2021
 
 ### Fixed
