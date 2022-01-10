@@ -26,6 +26,14 @@ Refer to [Getting Started Guide](https://guides.cocoapods.org/using/getting-star
 * Launch modified `.xcworkspace` project file with Xcode and use workspace going forward instead of `.xcodeproj` file.
   * Refer to [Integration Troubleshooting](support-files/Integration-Troubleshooting.md) in case of any issues.
 
+**Manual Integration Guide**
+
+Use these steps to manually integrate the DocuSign framework in case your project doesn't use CocoaPods.
+
+* Download the [DocuSignSDK.zip](DocuSignSDK.zip) and unarchive it. 
+* Copy the `DocuSignSDK.xcframework` to the root folder of your app and follow the steps on the [Integration](https://developers.docusign.com/ios_sdk/developer.html) section.
+
+
 Sample Apps
 =============
 
@@ -41,14 +49,7 @@ TGK is a DocuSign sample application demonstrating how the DocuSign iOS SDK can 
 3. Captive Signing
     * Allowing users to sign even if they don't have a DocuSign account.
 
-Additional information related to cocoapods is also avaiable with [old swift app](docusign-sdk-sample-swift/), [objective-c app](docusign-sdk-sample-objc/) and [swiftUI app](docusign-sdk-sample-swiftui/).
-
-**Manual Integration Guide**
-
-Use these steps to manually integrate the DocuSign framework in case your project doesn't use CocoaPods.
-
-* Download the [DocuSignSDK.zip](DocuSignSDK.zip) and unarchive it. 
-* Copy the `DocuSignSDK.framework` to the root folder of your app and follow the steps on the [Integration](https://developers.docusign.com/ios_sdk/developer.html) section.
+Additional information related to cocoapods is also available with [old swift app](docusign-sdk-sample-swift/), [objective-c app](docusign-sdk-sample-objc/) and [swiftUI app](docusign-sdk-sample-swiftui/).
 
 
 Support
