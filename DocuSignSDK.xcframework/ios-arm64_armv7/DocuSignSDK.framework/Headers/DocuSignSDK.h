@@ -98,6 +98,17 @@ FOUNDATION_EXPORT const unsigned char DocuSignSDKVersionString[];
 #import <DocuSignSDK/DSMEnvelopeListCustomField.h>
 #import <DocuSignSDK/DSMRadio.h>
 #import <DocuSignSDK/DSMRadioGroup.h>
+#import <DocuSignSDK/DSESApiClient.h>
+
+// load API classes for accessing endpoints
+#import <DocuSignSDK/DSESAccountsApi.h>
+#import <DocuSignSDK/DSESAuthenticationApi.h>
+#import <DocuSignSDK/DSESCustomTabsApi.h>
+#import <DocuSignSDK/DSESDiagnosticsApi.h>
+#import <DocuSignSDK/DSESEnvelopesApi.h>
+#import <DocuSignSDK/DSESFoldersApi.h>
+#import <DocuSignSDK/DSESTemplatesApi.h>
+#import <DocuSignSDK/DSESUsersApi.h>
 
 //categories
 #import <DocuSignSDK/NSArray+DSMQuery.h>
