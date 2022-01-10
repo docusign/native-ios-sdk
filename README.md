@@ -33,22 +33,6 @@ Use these steps to manually integrate the DocuSign framework in case your projec
 * Download the [DocuSignSDK.zip](DocuSignSDK.zip) and unarchive it. 
 * Copy the `DocuSignSDK.xcframework` to the root folder of your app and follow the steps on the [Integration](https://developers.docusign.com/ios_sdk/developer.html) section.
 
-
-Sample Apps
-=============
-
-TGK is a DocuSign sample application demonstrating how the DocuSign iOS SDK can be used to in a Host iOS app related to Investments. TGK is written in Swift using UIKit and Story boards. You can find a live instance running at "Link needed here for Appetize"
-
-[TGK Financial Swift sample app](https://github.com/docusign/sample-app-tgk-financial-ios) demonstrates the following:
-1. Authentication
-    * [Authentication Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant)
-2. Offline Enevelope Creation and Signing
-    * Ability to create and DSEnvelopeDefinition Object with tabs and recipients.
-    * Ability to start offline signing.
-    * Ability to Sync the Offline signed envelopes back to DocuSign Cloud once the internet connection is available.
-3. Captive Signing
-    * Allowing users to sign even if they don't have a DocuSign account.
-
 Additional information related to cocoapods is also available with [old swift app](docusign-sdk-sample-swift/), [objective-c app](docusign-sdk-sample-objc/) and [swiftUI app](docusign-sdk-sample-swiftui/).
 
 
