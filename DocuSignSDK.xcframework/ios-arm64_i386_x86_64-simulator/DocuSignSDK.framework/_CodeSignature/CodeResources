@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		uXt450N3jZN0yxkIW3tpFABBXB8=
+		cJTCGG/gFtTFeTLnXpS5F7kpjQQ=
 		</data>
 		<key>DSMAddRecipientCell.nib</key>
 		<data>
@@ -114,15 +114,15 @@
 		</data>
 		<key>DSMComposeEnvelope.storyboardc/UIViewController-J6Y-TF-fns.nib/objects-11.0+.nib</key>
 		<data>
-		6koxZk/Bj/5o5Ssms4+q64y4W6w=
+		MiMIstQ8D5Goqr16nkNOkZe/UMM=
 		</data>
 		<key>DSMComposeEnvelope.storyboardc/UIViewController-J6Y-TF-fns.nib/objects-12.3+.nib</key>
 		<data>
-		xtZ7uCzkJpRE9kk7foJCSbdUczg=
+		kZZuzGZ+MDn7aT2AxyRlOn+zm/Q=
 		</data>
 		<key>DSMComposeEnvelope.storyboardc/UIViewController-J6Y-TF-fns.nib/runtime.nib</key>
 		<data>
-		6koxZk/Bj/5o5Ssms4+q64y4W6w=
+		MiMIstQ8D5Goqr16nkNOkZe/UMM=
 		</data>
 		<key>DSMComposeEnvelope.storyboardc/bPt-b9-CBg-view-Dcw-an-zRi.nib/objects-11.0+.nib</key>
 		<data>
@@ -567,7 +567,7 @@
 		</data>
 		<key>DocuSignSDK.momd/VersionInfo.plist</key>
 		<data>
-		GNXZnkdlfVmn2fjRxr6E9Z6fuDk=
+		F23z6a+XGv8QoidBsU60sCcfQ7M=
 		</data>
 		<key>DocuSignSDK1_to_DocuSignSDK2.cdm</key>
 		<data>
@@ -653,10 +653,6 @@
 		<data>
 		zP/imywU2mh2g62oaZGJLBAPIBg=
 		</data>
-		<key>Headers/DSESClientContext.h</key>
-		<data>
-		2x2doHVJ8FVzr7Sh/VLgrQ+5B6c=
-		</data>
 		<key>Headers/DSESCompany.h</key>
 		<data>
 		VunzmmjMxSY0tmZ0NTo19FRVE9I=
@@ -676,10 +672,6 @@
 		<key>Headers/DSESConsumerDisclosure.h</key>
 		<data>
 		gdqkcMMZJfKLL4LqduHnk3xaELI=
-		</data>
-		<key>Headers/DSESConsumerDisclosureApi.h</key>
-		<data>
-		8SwD95tupjKmwsU7T2GFjYt+rsU=
 		</data>
 		<key>Headers/DSESCorrectViewRequest.h</key>
 		<data>
@@ -840,10 +832,6 @@
 		<key>Headers/DSESExpirations.h</key>
 		<data>
 		YniR4oowSaMHB6VgZ9WzsMz/Fmc=
-		</data>
-		<key>Headers/DSESFailedTelemetryEvent.h</key>
-		<data>
-		tDadSurcoFyYlE3hKVUPIBHW5gs=
 		</data>
 		<key>Headers/DSESFileType.h</key>
 		<data>
@@ -1109,10 +1097,6 @@
 		<data>
 		6UjM57WaCPt4o3LqLJMbePfDJ78=
 		</data>
-		<key>Headers/DSESSignResponse.h</key>
-		<data>
-		rwM9zzPNALA1UQB9jhtF+DRHm+Y=
-		</data>
 		<key>Headers/DSESSigner.h</key>
 		<data>
 		eNoGS96bSIZC7bh5URPh+55TYGo=
@@ -1156,22 +1140,6 @@
 		<key>Headers/DSESTabs.h</key>
 		<data>
 		YQ4kr9LMvHO35FbW+p6pUKnbl10=
-		</data>
-		<key>Headers/DSESTelemetryApi.h</key>
-		<data>
-		2qMkCu0k0LAH10hhTxngwo8Qyf4=
-		</data>
-		<key>Headers/DSESTelemetryEvent.h</key>
-		<data>
-		XY26qfx5D+fft5bkjqGAwZT7ZZk=
-		</data>
-		<key>Headers/DSESTelemetryEvents.h</key>
-		<data>
-		rUGlWeYNnSVaSX5C5i9kOpo+oK8=
-		</data>
-		<key>Headers/DSESTelemetryEventsResponse.h</key>
-		<data>
-		ZtKXyYM3CIpzdtaoJsRoj3iZZRY=
 		</data>
 		<key>Headers/DSESTemplateCustomFields.h</key>
 		<data>
@@ -1267,7 +1235,7 @@
 		</data>
 		<key>Headers/DSMAppearance.h</key>
 		<data>
-		ImeSZ/rIDJdG8P0F+qAm0VGdRWo=
+		8FlM4Y/7P5eT5OeTvF8ELS57Oj0=
 		</data>
 		<key>Headers/DSMAttachment.h</key>
 		<data>
@@ -1657,10 +1625,6 @@
 		<data>
 		G7lHEUisoQGzvMyQLzU9VU9I0aw=
 		</data>
-		<key>Headers/DSM_JSONModelLib.h</key>
-		<data>
-		zc4q8SDaYQ+50La4i+xKre5JQ78=
-		</data>
 		<key>Headers/DSM_JSONValueTransformer.h</key>
 		<data>
 		uulL+mcRFKO19yPJHUw+G4r6qOU=
@@ -1695,7 +1659,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GdITs9HnmHXHySf844OihZOCMAM=
+		SyHm8tLgNYRyokbEGE2nHzM6ukM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2739,11 +2703,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uXt450N3jZN0yxkIW3tpFABBXB8=
+			cJTCGG/gFtTFeTLnXpS5F7kpjQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			VExlQjagPOJOahzJSc2vKtizbqaoe8/Him7/iDzLv7s=
+			8gpYbFHpMOSlFI/TGlqK64feBoJcXlsFhJTlHoQPJ9w=
 			</data>
 		</dict>
 		<key>DSMAddRecipientCell.nib</key>
@@ -3036,33 +3000,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6koxZk/Bj/5o5Ssms4+q64y4W6w=
+			MiMIstQ8D5Goqr16nkNOkZe/UMM=
 			</data>
 			<key>hash2</key>
 			<data>
-			oRvO3mDS7rqv9Sx+WussNT+EQBfEBPvG5UCZDC4q270=
+			dBDlYrgylrPWxhxJEBrw1rEClBe+RdlK4Oo8gMRqJ3s=
 			</data>
 		</dict>
 		<key>DSMComposeEnvelope.storyboardc/UIViewController-J6Y-TF-fns.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xtZ7uCzkJpRE9kk7foJCSbdUczg=
+			kZZuzGZ+MDn7aT2AxyRlOn+zm/Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			1BHXwwsnHhLb5g5AhZCd2b7WdzGSkMb5NfTO2U8hP8I=
+			a3EIvrFGfBsURBAC4iVQvJIF3HsmH0qQqmkMW9d9MXs=
 			</data>
 		</dict>
 		<key>DSMComposeEnvelope.storyboardc/UIViewController-J6Y-TF-fns.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6koxZk/Bj/5o5Ssms4+q64y4W6w=
+			MiMIstQ8D5Goqr16nkNOkZe/UMM=
 			</data>
 			<key>hash2</key>
 			<data>
-			oRvO3mDS7rqv9Sx+WussNT+EQBfEBPvG5UCZDC4q270=
+			dBDlYrgylrPWxhxJEBrw1rEClBe+RdlK4Oo8gMRqJ3s=
 			</data>
 		</dict>
 		<key>DSMComposeEnvelope.storyboardc/bPt-b9-CBg-view-Dcw-an-zRi.nib/objects-11.0+.nib</key>
@@ -4129,11 +4093,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GNXZnkdlfVmn2fjRxr6E9Z6fuDk=
+			F23z6a+XGv8QoidBsU60sCcfQ7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			RwWvHZomUmZnDkwqyghiVfzgtBZ7VVSXjd91PhV2sfc=
+			+EMCUtrSixGuylM0Db1DmZGVsCTggfT2ub+XOJtXEqY=
 			</data>
 		</dict>
 		<key>DocuSignSDK1_to_DocuSignSDK2.cdm</key>
@@ -4367,17 +4331,6 @@
 			Jnm9rsjSlMK77hsI44gSnLx1/je1obnrg0aUNGoYRKo=
 			</data>
 		</dict>
-		<key>Headers/DSESClientContext.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2x2doHVJ8FVzr7Sh/VLgrQ+5B6c=
-			</data>
-			<key>hash2</key>
-			<data>
-			4pgYMIDf94HcZprb7j30Tw4KwsgHwn1baW77dVOyKn8=
-			</data>
-		</dict>
 		<key>Headers/DSESCompany.h</key>
 		<dict>
 			<key>hash</key>
@@ -4431,17 +4384,6 @@
 			<key>hash2</key>
 			<data>
 			CTW8pvq+p9zYXf9KVo95FRzl8ruwI2ejFAB0pV7K5Js=
-			</data>
-		</dict>
-		<key>Headers/DSESConsumerDisclosureApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8SwD95tupjKmwsU7T2GFjYt+rsU=
-			</data>
-			<key>hash2</key>
-			<data>
-			gBquY1mKwfOuqfgorQMcDWyN/b65M9kBnizSJIfHSrQ=
 			</data>
 		</dict>
 		<key>Headers/DSESCorrectViewRequest.h</key>
@@ -4882,17 +4824,6 @@
 			<key>hash2</key>
 			<data>
 			xnf/RWwwwQvysc8x+cb1dEpPg77dWhLKAKYF8C4pNa4=
-			</data>
-		</dict>
-		<key>Headers/DSESFailedTelemetryEvent.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tDadSurcoFyYlE3hKVUPIBHW5gs=
-			</data>
-			<key>hash2</key>
-			<data>
-			+QROA8EjEFpAoaqtGHoQFQtEOXveSBzlPYN50VPbh4o=
 			</data>
 		</dict>
 		<key>Headers/DSESFileType.h</key>
@@ -5621,17 +5552,6 @@
 			YABRQs5zZwxxlUqyq5gOJPMDgwahP1lNv+amVYgV2vE=
 			</data>
 		</dict>
-		<key>Headers/DSESSignResponse.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rwM9zzPNALA1UQB9jhtF+DRHm+Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			v+jqTHtaFPL5yRKn4xQrGGpc6+t7KRtnIoWtHTB/XiU=
-			</data>
-		</dict>
 		<key>Headers/DSESSigner.h</key>
 		<dict>
 			<key>hash</key>
@@ -5751,50 +5671,6 @@
 			<key>hash2</key>
 			<data>
 			RpVKLwKAu/EqcCpdQYMvb+8J/USBSz2qnpDEGHZlRHk=
-			</data>
-		</dict>
-		<key>Headers/DSESTelemetryApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2qMkCu0k0LAH10hhTxngwo8Qyf4=
-			</data>
-			<key>hash2</key>
-			<data>
-			HfVEAi/+fM0iuIBk4tTbJDg3UGXiNtYg+PKR5+nlhf4=
-			</data>
-		</dict>
-		<key>Headers/DSESTelemetryEvent.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XY26qfx5D+fft5bkjqGAwZT7ZZk=
-			</data>
-			<key>hash2</key>
-			<data>
-			gtYix7VysD2URenzBS64NhBnOrIhSBMnCM/ETxdXuUA=
-			</data>
-		</dict>
-		<key>Headers/DSESTelemetryEvents.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rUGlWeYNnSVaSX5C5i9kOpo+oK8=
-			</data>
-			<key>hash2</key>
-			<data>
-			3dJ9im7uknGM5tV7qKo0i/UjW5yaEz2OAR3plrBB1IQ=
-			</data>
-		</dict>
-		<key>Headers/DSESTelemetryEventsResponse.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZtKXyYM3CIpzdtaoJsRoj3iZZRY=
-			</data>
-			<key>hash2</key>
-			<data>
-			f4wjTpooc/y1DbcCFeT2Lc7XzgCoMrmUEFGd7eHXPXg=
 			</data>
 		</dict>
 		<key>Headers/DSESTemplateCustomFields.h</key>
@@ -6054,11 +5930,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ImeSZ/rIDJdG8P0F+qAm0VGdRWo=
+			8FlM4Y/7P5eT5OeTvF8ELS57Oj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			SxiKQw8CfSFBv3H6+/m6ze3ChOadat56FNXbb7AEKzw=
+			4LkwwNwD+MEz4eoU2yuFhQ8vsRmZkWBu3D9vQlA9S9E=
 			</data>
 		</dict>
 		<key>Headers/DSMAttachment.h</key>
@@ -7126,17 +7002,6 @@
 			<key>hash2</key>
 			<data>
 			KSA5Ijov02wg5BpX3wb/eyfWhIg4KHF+0rJT0PEC14o=
-			</data>
-		</dict>
-		<key>Headers/DSM_JSONModelLib.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zc4q8SDaYQ+50La4i+xKre5JQ78=
-			</data>
-			<key>hash2</key>
-			<data>
-			1MubmxnRDt1PVFo1cj6d4mcKsh9CdgEGzTw3wg5As0A=
 			</data>
 		</dict>
 		<key>Headers/DSM_JSONValueTransformer.h</key>

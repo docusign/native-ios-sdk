@@ -1,5 +1,16 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.9.0] - 02/15/2022
+
+### Added
+* DocuSign Native iOS SDK supports Bitcode.
+
+### Removed
+* Removed the `DSMAppearance` method to set navigation bar tint color separately `+ (void)setNavigationBarTintColor:(UIColor *)color;`. 
+
+### Changed
+* Added `backgroundTintColor` and `fontSize` as additional parameters to set navigation bar text attributes with `DSMAppearance`. The updated method is `+ (void)setNavigationBarTitleTextColor:(UIColor *)textColor backgroundTintColor:(UIColor *)backgroundTintColor fontSize:(CGFloat)fontSize;`.
+
 ## [v2.8.0] - 01/05/2022
 
 ### Added

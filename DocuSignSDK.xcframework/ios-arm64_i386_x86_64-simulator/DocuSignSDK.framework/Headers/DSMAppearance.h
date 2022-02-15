@@ -6,17 +6,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DSMAppearance : NSObject
 /*!
-* @discussion Set navigation bar tint color.
-* @param color color to be set.
-* @warning If not set it will use the default settings.
-*/
-+ (void)setNavigationBarTintColor:(UIColor *)color;
-/*!
- * @discussion Set navigation bar title text color.
- * @param color color to be set.
+ * @discussion Set navigation bar title text color with default background tint color and font size.
+ * @param textColor text color to be set.
  * @warning If not set it will use the default settings.
  */
-+ (void)setNavigationBarTitleTextColor:(UIColor *)color;
++ (void)setNavigationBarTitleTextColor:(UIColor *)textColor;
+
+/*!
+ * @discussion Set navigation bar title text color with background tint color.
+ * @param textColor text color to be set.
+ * @param backgroundTintColor background color to be set.
+ * @param fontSize title font size to be set, default value is `18.0`.
+ * @warning If not set it will use the default settings.
+ */
++ (void)setNavigationBarTitleTextColor:(UIColor *)textColor backgroundTintColor:(UIColor *)backgroundTintColor fontSize:(CGFloat)fontSize;
 /*!
  * @discussion Set navigation bar title text font color.
  * @param font font to be set.
