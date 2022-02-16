@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint DocuSign.podspec' to ensure this is a
 # valid spec before submitting.
 Pod::Spec.new do |s|
-  s.name             = 'DocuSign'
+  s.name             = 'DocuSign-framework'
   s.version          = '2.7.0'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
