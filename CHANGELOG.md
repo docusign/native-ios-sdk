@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v2.9.0] - 02/15/2022
+## [v2.9.0] - 02/17/2022
 
 ### Added
 * DocuSign Native iOS SDK supports Bitcode.
