@@ -3,17 +3,19 @@
 
 ## 1. Bitcode
 
-### DocuSignSDK does not contain bitcode
+### Bitcode is supported with v2.9 onwards
+
+Use DocuSign Native iOS SDK v2.9 or higher to enable Bitcode in your app.
+
+Native SDK `v2.8` or prior does not support bitcode, if your integration is dependent on **Bitcode**, do update with `pod update 'DocuSign'` to fetch `v2.9` or higher.
+
+Following error occurs with integrations that are using `v2.8` or prior releases.
 
 ```
 {
   Apple XCode build error: '/Users/appName.Apps/Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target. file '/Users/appName.Apps/Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK' for architecture armv7
 }
 ```
-
-Native SDK as of `v2.5.1` does not support bitcode, if your integration is dependent on **Bitcode**, do raise an [issue](https://github.com/docusign/native-ios-sdk/issues). The workaround, for now, is to have all app targets build without bitcode. To disable bitcode, the client app would need to set `Enable Bitcode` under `Build Options` to `No` for every target.
-
-![Disable Bitcode for App Targets - Screenshot](disable-bitcode-app-targets.png)
 
 ## 2. Simulator Build fails for `arm64`
 
