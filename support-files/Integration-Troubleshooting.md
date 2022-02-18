@@ -3,11 +3,11 @@
 
 ## 1. Bitcode
 
-### Bitcode is supported with v2.9 onwards
+### v2.9 supports Bitcode enabled integrations.
 
-Use DocuSign Native iOS SDK v2.9 or higher to enable Bitcode in your app.
+Use DocuSign Native iOS SDK `v2.9` or higher to enable Bitcode in your app.
 
-Native SDK `v2.8` or prior does not support bitcode, if your integration is dependent on **Bitcode**, do update with `pod update 'DocuSign'` to fetch `v2.9` or higher.
+Native SDK `v2.8` or prior does not support bitcode, if your integration is dependent on **Bitcode**, perform pod update with `pod update 'DocuSign'` to fetch `v2.9` or higher.
 
 Following error occurs with integrations that are using `v2.8` or prior releases.
 
