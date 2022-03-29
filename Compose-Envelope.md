@@ -174,7 +174,6 @@ DSMEnvelopeTab *nameTab = [[[[[[[DSMTabBuilder builderForType:DSMTabTypeText]
 }
 ```
 
-
 ## Compose Envelope - UI Components
 
 The Compose Envelope flow allows user the ability to create an envelope (adding documents, recipients, and tags) without previously downloading any templates, both online or offline where behaviour will differentiate the two after an envelope has been created.
