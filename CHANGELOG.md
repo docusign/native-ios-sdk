@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
     
-## [v2.10.0] - 03/23/2022
+## [v2.10.0] - 03/28/2022
 
 _Now DocuSign XCFramework is built with Xcode13.3._
 
