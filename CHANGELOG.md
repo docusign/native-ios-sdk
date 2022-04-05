@@ -3,7 +3,7 @@
 ## [v2.10.1] - 04/04/2022
 
 ### Fixed
-* DocuSign telemetry improvements and resolved an issue with reporting.
+* DocuSign telemetry improvements with a resolved issue related to reporting events.
 
 ## [v2.10.0] - 03/23/2022
 
