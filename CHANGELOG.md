@@ -1,6 +1,11 @@
 # DocuSign Native iOS SDK Changelog
-    
-## [v2.10.0] - 03/28/2022
+
+## [v2.10.1] - 04/04/2022
+
+### Fixed
+* DocuSign telemetry improvements with a resolved issue related to reporting events.
+
+## [v2.10.0] - 03/23/2022
 
 _Now DocuSign XCFramework is built with Xcode13.3._
 
@@ -8,7 +13,7 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 * Offline envelope sending is now blocked if no tabs are added to any of the recipients.
 * Turn off location prompt when signing is in progress. Removed the associated configuration `DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION`. Refer the online guide to [disable location tracking](https://support.docusign.com/en/articles/Disabling-DocuSign-Geolocation-during-Signing) during Signing.
 
-## [v2.9.0] - 02/17/2022
+## [v2.9.0] - 02/15/2022
 
 ### Added
 * DocuSign Native iOS SDK supports Bitcode.
