@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.11] - 06/07/2022
+
+### Fixed
+* Radio tabs during offline signing processes the `locked` and `selected` attributes correctly.
+
 ## [v2.10.1] - 04/04/2022
 
 ### Fixed
