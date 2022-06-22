@@ -4,3 +4,4 @@ DocuSignSDK.xcframework/ios-arm64_i386_x86_64-simulator/DocuSignSDK.framework/Do
 docusign-sdk-sample-swift/Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK filter=lfs diff=lfs merge=lfs -text
 docusign-sdk-sample-swiftui/Pods/DocuSign/DocuSignSDK.framework/DocuSignSDK filter=lfs diff=lfs merge=lfs -text
 DocuSignSDK.zip filter=lfs diff=lfs merge=lfs -text
+Debug-Builds/arm64-excluded/DocuSignSDK.framework/DocuSignSDK filter=lfs diff=lfs merge=lfs -text
