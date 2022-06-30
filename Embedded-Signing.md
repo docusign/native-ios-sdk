@@ -7,7 +7,7 @@
 
 In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps. [TGK Swift Sample app](https://github.com/docusign/sample-app-tgk-financial-ios) also has code samples to perform authentication and Embedded Signing. 
 
-In order to use Embedded Signing without authentication, refer to [this section](https://github.com/docusign/native-ios-sdk/edit/master/Embedded-Signing.md#embedded-signing-without-sdk-authentication) below.
+In order to use Embedded Signing without authentication, refer to [this section](https://github.com/docusign/native-ios-sdk/blob/master/Embedded-Signing.md#embedded-signing-without-sdk-authentication) below.
 
 ### A. User Authentication 
 
