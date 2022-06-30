@@ -3,9 +3,11 @@
 
 ## Embedded Signing with SDK
 
-[Embedded Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
+[Embedded or Captive Signing](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) enables users to view and sign documents within the app using generated signing URLs for each of the envelope. To present the signing request in the app UI, the logged in SDK user must be the document sender and have access to the sent envelope to retrieve the signing URL. Additional details are available on [eSign concepts page](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/embedding/) and [eSign API guide](https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/) for Embedded Signing. 
 
-In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps.
+In addition to the guide below, [`Swift UI` based sample app](./docusign-sdk-sample-swiftui/README.md) also contains all the required steps. [TGK Swift Sample app](https://github.com/docusign/sample-app-tgk-financial-ios) also has code samples to perform authentication and Embedded Signing. 
+
+In order to use Embedded Signing without authentication, refer to [this section](https://github.com/docusign/native-ios-sdk/edit/master/Embedded-Signing.md#embedded-signing-without-sdk-authentication) below.
 
 ### A. User Authentication 
 
@@ -180,7 +182,7 @@ The Native iOS SDK untethers Captive Signing from authentication and directly la
 This method relies on the integrating client application to independently retrieve the signing URL for the given envelope and recipient in order to view and capture signatures once the Native SDK `setup` call is complete. <br>
 When using this interface, there is no need to perform login or logout for the SDK user. One caveat is to use the signing URL within a short span of time (five minutes) before it expires. 
 
-This sample Swift code demonstrates retrieving the signing URL and presenting the signing experience using the presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion: API on DSMEnvelopesManager.
+This sample Swift code demonstrates retrieving the signing URL and presenting the signing experience using the `presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion:` API on [DSMEnvelopesManager](https://github.com/docusign/native-ios-sdk/blob/master/DocuSignSDK.xcframework/ios-arm64_armv7/DocuSignSDK.framework/Headers/DSMEnvelopesManager.h).
 
 ```
 let presentingViewController = self
