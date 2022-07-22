@@ -1,5 +1,11 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v2.4.2] - 07/22/2022
+
+### Fixed
+* Login with user name and password callback not triggering
+* Unit tests hanging for iOS 15
+
 ## [v2.4.1] - 03/19/2021
 
 ### Changed
