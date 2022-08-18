@@ -17,7 +17,7 @@
 /*! @brief When set to **true**, the signer is required to fill out this tab [optional] */
 @property(nonatomic, assign) BOOL required;
 /*! @brief When set to **true**, the signer cannot change the data of the custom tab. [optional] */
-@property(nonatomic, assign) BOOL  locked;
+@property(nonatomic, assign) BOOL locked;
 /*! @brief Parent radio group */
 @property (nonatomic) NSString *radioGroupName;
 

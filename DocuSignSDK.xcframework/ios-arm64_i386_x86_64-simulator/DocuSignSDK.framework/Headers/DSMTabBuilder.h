@@ -65,14 +65,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (DSMTabBuilder *)addScaleValue:(CGFloat)scaleValue;
 /*!
  * @discussion add a boolean flag representing lock on tab and return builder
- * @param isLocked a boolean representing if the tab is locked
+ * @param locked a boolean representing if the tab is locked
  */
-- (DSMTabBuilder *)isLocked:(BOOL)isLocked;
+- (DSMTabBuilder *)isLocked:(BOOL)locked;
 /*!
- * @discussion add a boolean flag representing optionality on tab and return builder
+ * @discussion add a boolean flag representing optionality on the tab and return the builder
  * @param isOptional a boolean representing if the tab is optional
  */
 - (DSMTabBuilder *)isOptional:(BOOL)isOptional;
+/*!
+ * @discussion add a boolean flag representing selection on the radio or checkbox tab and return the builder.
+ * @param selected a boolean representing if the radio or checkbox tab is selected
+ * @note If an existing radio tab is selected in the same radio group, it'll be set as unselected in the process of adding a new radio tab which is selected.
+ */
+- (DSMTabBuilder *)isSelected:(BOOL)selected;
 /*!
  * @discussion Creates an envelope tab using the DSMTabBuilder
  */
