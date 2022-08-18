@@ -2,12 +2,11 @@
 
 ## [v2.12] - 08/18/2022
 
-### Added
-* New Config key `DSM_SETUP_DISABLE_CUSTOMFIELD_DOCUSIGNIT` to control Custom tab `AppName=DocuSignIt` from being sent with all envelopes. The default of this config is `False`, enabling it will only send this custom tab with Sign and Return envelopes, where the signer (not hosted or in person signing) email is the same as the sender email.
+### Added 
+* New setup configuration key `DSM_SETUP_DISABLE_CUSTOMFIELD_DOCUSIGNIT` to control Custom tab `AppName=DocuSignIt` from being sent with all envelopes. The default of this config is `False`. Enabling it with `True` will only send this custom tab with Sign and Return envelopes. A Sign and Return envelope has a Signer (not a host or in-person-signer) with email that is the same as the Sender email. 
 
-### Fixed
-* Radio Buttons and tabs in general were not maintaining `value` attribute offline, now it can be used to identify tabs.
-
+### Fixed 
+* Radio Buttons and tabs in general were not maintaining `value` attribute offline, now it can be used to identify tabs. 
 
 ## [v2.11] - 06/07/2022
 
