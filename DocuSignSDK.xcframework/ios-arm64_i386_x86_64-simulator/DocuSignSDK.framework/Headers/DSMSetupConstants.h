@@ -173,6 +173,12 @@ extern NSString * const DSM_SETUP_RECIPIENT_DEFAULTS_CASE_INSENSITIVELY_MATCH_RO
  */
 extern NSString * const DSM_SETUP_ONLINE_SIGNING_DISABLE_NATIVE_COMPONENTS;
 
+/*! @brief Disable Custom Field DocuSignIt when not Sign and Return envelopes are needed.
+ * Set "true" to remove the Custom Field from envelopes if they are not Sign & Return.
+ * Default value is "false"
+ */
+extern NSString * const DSM_SETUP_DISABLE_CUSTOMFIELD_DOCUSIGNIT;
+
 #pragma mark - Setup Constants - Telemetry
 
 /*! @brief Allows SDK to capture events with DocuSign Telemetry API.
