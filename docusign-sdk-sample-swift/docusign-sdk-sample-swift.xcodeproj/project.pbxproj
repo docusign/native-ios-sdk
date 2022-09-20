@@ -372,7 +372,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-resources.sh",
-				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.xcframework/ios-arm64_armv7/DocuSignSDK.framework/DocuSignSDK.bundle",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.xcframework/ios-arm64_i386_x86_64-simulator/DocuSignSDK.framework/DocuSignSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -408,13 +409,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift-frameworks.sh",
-				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/DocuSign/DocuSignSDK.framework/DocuSignSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -579,10 +580,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "docusign-sdk-sample-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,10 +603,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "docusign-sdk-sample-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.docusign.ios-sdk.dev.docusign-sdk-sample-swift-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

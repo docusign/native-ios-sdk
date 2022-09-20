@@ -48,25 +48,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         if (isUsernameFormatValid(username: email) && isPasswordFormatValid(password: password))
         {
-            DSMManager.login(withEmail: email,
-                             password: password,
-                             integratorKey: integratorKey,
-                             host: hostUrl) { (accountInfo, error) in
-                SVProgressHUD.dismiss()
-                
-                if (error != nil)
-                {
-                    NSLog("Error logging in")
-                    // display error prompt
-                    self.promptError(err: error)
-                }
-                else
-                {
-                    NSLog("User authenticated")
-                    // segue to main navigation controller
-                    self.performSegue(withIdentifier: "segueMainNav", sender: nil)
-                }
-            }
+//            DSMManager.login(withEmail: email,
+//                             password: password,
+//                             integratorKey: integratorKey,
+//                             host: hostUrl) { (accountInfo, error) in
+//                SVProgressHUD.dismiss()
+//                
+//                if (error != nil)
+//                {
+//                    NSLog("Error logging in")
+//                    // display error prompt
+//                    self.promptError(err: error)
+//                }
+//                else
+//                {
+//                    NSLog("User authenticated")
+//                    // segue to main navigation controller
+//                    self.performSegue(withIdentifier: "segueMainNav", sender: nil)
+//                }
+//            }
         }
     }
 

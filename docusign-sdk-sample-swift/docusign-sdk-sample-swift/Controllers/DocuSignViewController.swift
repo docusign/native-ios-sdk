@@ -22,7 +22,6 @@ class DocuSignViewController: UIViewController
         self.styleUIElements()
 
         // set sdk styling
-        DSMAppearance.setNavigationBarTintColor(UIColor(red: 46.0/255, green: 109.0/255, blue: 164.0/255, alpha: 1.0))
         DSMAppearance.setBarButtonItemsTintColor(UIColor.white)
 
         let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId()

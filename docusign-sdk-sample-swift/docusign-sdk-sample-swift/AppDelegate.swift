@@ -12,6 +12,7 @@ import DocuSignSDK
 import UIKit
 
 
+@available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -128,7 +129,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack (iOS 9)
     
-    @available(iOS 9.0, *)
     lazy var managedObjectContext: NSManagedObjectContext = {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
@@ -138,7 +138,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack (iOS 10)
     
-    @available(iOS 10.0, *)
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "docusign_sdk_sample_swift")
         container.loadPersistentStores(completionHandler: {
