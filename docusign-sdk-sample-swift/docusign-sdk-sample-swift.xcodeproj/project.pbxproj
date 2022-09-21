@@ -10,6 +10,9 @@
 		4109864B20C8B21D00A8F290 /* UtilityBill.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4109864A20C8B21D00A8F290 /* UtilityBill.pdf */; };
 		4109864D20C9AF2E00A8F290 /* TGK_Capital_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4109864C20C9AF2E00A8F290 /* TGK_Capital_Logo.png */; };
 		4156B414248D7664006FF895 /* NSString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4156B413248D7664006FF895 /* NSString+Extensions.swift */; };
+		6435915E28DBADAB00514F42 /* ci_post_clone.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6435915B28DBADAB00514F42 /* ci_post_clone.sh */; };
+		6435915F28DBADAB00514F42 /* ci_post_xcodebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6435915C28DBADAB00514F42 /* ci_post_xcodebuild.sh */; };
+		6435916028DBADAB00514F42 /* ci_pre_xcodebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6435915D28DBADAB00514F42 /* ci_pre_xcodebuild.sh */; };
 		BCAC47AADB9EDD280BACA1C9 /* Pods_docusign_sdk_sample_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF1A4A7E1C12F710D762798 /* Pods_docusign_sdk_sample_swift.framework */; };
 		C90C9E711F4233A900163557 /* Portfolio.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C90C9E701F4233A900163557 /* Portfolio.pdf */; };
 		C92BA8311F3B560A00C1B0E9 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BA8301F3B560A00C1B0E9 /* PortfolioViewController.swift */; };
@@ -72,6 +75,9 @@
 		4156B413248D7664006FF895 /* NSString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extensions.swift"; sourceTree = "<group>"; };
 		55934BA433CE7A268F417193 /* Pods-docusign-sdk-sample-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		5FF1A4A7E1C12F710D762798 /* Pods_docusign_sdk_sample_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_docusign_sdk_sample_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6435915B28DBADAB00514F42 /* ci_post_clone.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
+		6435915C28DBADAB00514F42 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		6435915D28DBADAB00514F42 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		7CB37B84E32C35A44CB7B992 /* Pods-docusign-sdk-sample-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusign-sdk-sample-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-docusign-sdk-sample-swift/Pods-docusign-sdk-sample-swift.release.xcconfig"; sourceTree = "<group>"; };
 		C90C9E701F4233A900163557 /* Portfolio.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Portfolio.pdf; sourceTree = "<group>"; };
 		C92BA8301F3B560A00C1B0E9 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortfolioViewController.swift; path = Controllers/PortfolioViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6435915A28DBAC9400514F42 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6435915B28DBADAB00514F42 /* ci_post_clone.sh */,
+				6435915C28DBADAB00514F42 /* ci_post_xcodebuild.sh */,
+				6435915D28DBADAB00514F42 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		B3D2E5239DCCEA128FF6A199 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +173,7 @@
 		C9FF30FE1F321A000076D6CA = {
 			isa = PBXGroup;
 			children = (
+				6435915A28DBAC9400514F42 /* ci_scripts */,
 				C9FF31091F321A000076D6CA /* docusign-sdk-sample-swift */,
 				C9FF31081F321A000076D6CA /* Products */,
 				B3D2E5239DCCEA128FF6A199 /* Pods */,
@@ -346,6 +363,7 @@
 				4109864B20C8B21D00A8F290 /* UtilityBill.pdf in Resources */,
 				C9FF31431F3243D00076D6CA /* OpenSans-SemiBold.ttf in Resources */,
 				4109864D20C9AF2E00A8F290 /* TGK_Capital_Logo.png in Resources */,
+				6435915E28DBADAB00514F42 /* ci_post_clone.sh in Resources */,
 				C9FF313B1F3243D00076D6CA /* OpenSans-Bold.ttf in Resources */,
 				C9FF312E1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf in Resources */,
 				C9FF312D1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf in Resources */,
@@ -356,8 +374,10 @@
 				C9FF31441F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				C9FF313A1F3243D00076D6CA /* LICENSE.txt in Resources */,
 				C9FF315D1F3397C60076D6CA /* AppointmentTableViewCell.xib in Resources */,
+				6435916028DBADAB00514F42 /* ci_pre_xcodebuild.sh in Resources */,
 				C9FF313F1F3243D00076D6CA /* OpenSans-Italic.ttf in Resources */,
 				C9FF313E1F3243D00076D6CA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				6435915F28DBADAB00514F42 /* ci_post_xcodebuild.sh in Resources */,
 				C9FF313D1F3243D00076D6CA /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
