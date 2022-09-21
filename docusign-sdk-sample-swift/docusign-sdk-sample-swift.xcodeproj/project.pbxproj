@@ -155,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				6435915B28DBADAB00514F42 /* ci_post_clone.sh */,
-				6435915C28DBADAB00514F42 /* ci_post_xcodebuild.sh */,
 				6435915D28DBADAB00514F42 /* ci_pre_xcodebuild.sh */,
+				6435915C28DBADAB00514F42 /* ci_post_xcodebuild.sh */,
 			);
 			path = ci_scripts;
 			sourceTree = "<group>";
