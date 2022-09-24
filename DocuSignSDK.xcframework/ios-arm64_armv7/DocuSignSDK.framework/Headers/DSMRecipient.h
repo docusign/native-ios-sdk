@@ -7,6 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class DSMAttachment;
 @class DSMRecipientEmailNotification;
 @class DSMSignature;
+@class DSMRecipientPhoto;
 @class DSMOfflineAttributes;
 
 typedef NS_ENUM(NSUInteger, DSMRecipientType);
@@ -85,6 +86,10 @@ typedef NS_ENUM(NSUInteger, DSMRecipientType);
  * @brief TODO:Doc
  */
 @property(nonatomic, copy) NSArray<DSMAttachment *> *recipientAttachments;
+/*!
+ * @brief TODO:Doc
+ */
+@property (nonatomic, strong) DSMRecipientPhoto *recipientPhoto;
 /*!
  * @brief Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.\n\nMaximum Length: 1000 characters. [optional]
  */
@@ -166,10 +171,15 @@ typedef NS_ENUM(NSUInteger, DSMRecipientType);
  */
 - (BOOL)isSentOrDelivered;
 /*!
- * @discussion Returns true if recipient status is completed or declined or signed.
+ * @discussion Returns true if recipient status is completed, signed or declined.
  * @return BOOL
  */
 - (BOOL)hasCompletedOrDeclined;
+/*!
+ * @discussion Returns true if recipient completed, signed or declined before the last cached time.
+ * @return BOOL
+ */
+- (BOOL)hasCompletedOrDeclinedBeforeCachedDate:(NSDate *)cachedDate;
 /*!
  * @discussion Returns true if signer is a digital certificate Signer.
  * @return BOOL
@@ -180,6 +190,11 @@ typedef NS_ENUM(NSUInteger, DSMRecipientType);
  * @return BOOL
  */
 - (BOOL)matchesUserWithUserID:(NSString *)userID;
+/*!
+ * @discussion Returns true if the recipient has an anchor tab.
+ * @return BOOL
+ */
+- (BOOL)hasAnchorTab;
 
 @end
 

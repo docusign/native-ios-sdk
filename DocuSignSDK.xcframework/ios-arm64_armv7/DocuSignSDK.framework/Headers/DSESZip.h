@@ -19,7 +19,7 @@
 /*  [optional]
  */
 @property(nonatomic) NSString* useDash4;
-/* A regular expressionn used to validate input for the tab. [optional]
+/* A regular expression used to validate input for the tab. [optional]
  */
 @property(nonatomic) NSString* validationPattern;
 /* The message displayed if the custom tab fails input validation (either custom of embedded). [optional]

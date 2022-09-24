@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
  * - `loginWithAPIPassword:accountId:userId:userName:email:host:integratorKey:completion:`
  * - `loginWithUserId:password:integratorKey:host:completion:`
  *
- * When a successful login is done when online, `accountInfo` can be persisted securly in the client app for future use.
+ * When a successful login is done when online, `accountInfo` can be persisted securely in the client app for future use.
  * For example, Apple's Keychain Services can be used for securely persisting sensitive information.
  * If the network is unavailable, client app may use `loginWithAccessToken` or `loginWithAPIPassword` to continue the login process when device is offline.
  * All of the offline functionality will be available when offline login is done.

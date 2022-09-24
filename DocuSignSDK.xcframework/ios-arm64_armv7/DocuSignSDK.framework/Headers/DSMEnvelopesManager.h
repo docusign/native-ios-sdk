@@ -2,6 +2,7 @@
 //  DocuSignSDK
 #import <Foundation/Foundation.h>
 #import <DocuSignSDK/DSMSigningMode.h>
+#import <DocuSignSDK/DSMEnvelopeCacheState.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -78,10 +79,27 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)syncEnvelopes;
 
 /*!
+ * @discussion Sync the pending envelope on the device to DocuSign servers. This is done for a specific envelope.
+ * @param envelopeId An Id of the envelope to be sync.
+ * @see DSMNotificationCodes
+ */
+- (void)syncEnvelopeWithId:(NSString *)envelopeId;
+
+/*!
+ * @discussion Cancel the sync process.
+ */
+- (void)cancelSync;
+
+/*!
  * @discussion Remove a cached envelope. This call can be made when device is offline.
  * @param envelopeId An Id of the envelope to be removed.
  */
 - (void)removeCachedEnvelopeWithId:(NSString *)envelopeId;
+
+/*!
+ * @discussion Return `true` if the envelope can be resumed for offline signing.
+ */
+- (BOOL)canResumeSigningEnvelopeWithId:(NSString *)envelopeId;
 
 /*!
  * @discussion Resume signing with a cached envelope. This call can be made when device is offline.
@@ -94,22 +112,36 @@ NS_ASSUME_NONNULL_BEGIN
                                            completion:(void(^)(UIViewController *_Nullable presentedController, NSError *_Nullable error))completion;
 
 /*!
- * @discussion Retrieve all cached envelopes. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
- * @return NSArray <DSMEnvelopeDefinition *>, array containing entire envelope definition(s)
+ * @discussion Retrieve all cached envelopes without the pdf documents. Envelopes can be filtered with "envelopeId". Many notifications, such as DSMEnvelopeCachedNotification, include "envelopeId" in the userInfo.  Data validation or extraction for an offline completed envelope should be done before invoking the sync. Once an envelope is successfully synced, it's deleted from the cache on the device. This call can be made when device is offline.
+ * @return NSArray <DSMEnvelopeDefinition *>, array containing entire envelope definition(s). Empty array if no cached envelopes are found.
  * @see DSMEnvelopeDefinition DSMNotificationCodes DSMTemplatesManager
  */
 - (NSArray *)cachedEnvelopes;
 
 /*!
  * @discussion Retrieve envelopeIds for all cached envelopes. Compared to cachedEnvelopes, this has only envelopeId in the array. This call can be made when device is offline.
- * @return NSArray <NSString *> array containing strings representing unique envelopeId(s)
+ * @return NSArray <NSString *> array containing strings representing unique envelopeId(s). Empty array if no cached envelopes are found.
  */
 - (NSArray <NSString *> *)cachedEnvelopeIds;
+
+/*!
+ * @discussion Returns the cached state of an envelope. This call can be made when device is offline.
+ * @param envelopeId An ID of the envelope whose status is enquired.
+ * @return DSMTemplateCacheState
+ * @see DSMTemplateCacheState.h
+ */
+- (DSMEnvelopeCacheState)cacheStateOfEnvelopeWithId:(NSString *)envelopeId;
 
 /*!
  * @discussion Remove all cached envelopes. This call can be made when device is offline.
  */
 - (void)removeCachedEnvelopes;
+
+/*!
+ * @discussion Retrieve envelopeIds for all envelopes currently under sync.
+ * @return NSArray <NSString *> array containing strings representing unique envelopeId(s). Empty array if no sync in progress envelopes are found.
+ */
+- (NSArray <NSString *> *)syncInProgressEnvelopeIds;
 
 /*!
  * @discussion Start creating an envelope to manually add documents, recipients and tags. Client app is responsible for detecting network to present view controller.

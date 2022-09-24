@@ -40,6 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setBarButtonItemsTintColor:(UIColor *)color;
 /*!
+ * @discussion Set bar button items tint color.
+ * @param color color to be set.
+ * @param [in] rightBarButtonsTintColor (Optional) tint color for the right bar button items.
+ * @warning If not set it will use the default settings.
+ */
++ (void)setBarButtonItemsTintColor:(UIColor *)color rightBarButtonsTintColor:(UIColor * _Nullable)rightBarButtonsTintColor;
+/*!
  * @discussion Set search bar tint color.
  * @param color color to be set.
  * @warning If not set it will use the default settings.

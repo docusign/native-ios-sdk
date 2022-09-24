@@ -36,6 +36,9 @@
 /*  [optional]
  */
 @property(nonatomic) NSString* containsPdfFormFields;
+/*  [optional]
+ */
+@property(nonatomic) NSString *display;
 
 @property(nonatomic) DSESErrorDetails* errorDetails;
 

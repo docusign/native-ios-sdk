@@ -1,13 +1,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <DocuSignSDK/DSM_JsonModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class DSMUserInfo;
+@class DSMUserInfo, DSMRecipients;
 /*!
  @class DSMEnvelopeTemplateDefinition
  */
-@interface DSMEnvelopeTemplateDefinition : NSObject
+@interface DSMEnvelopeTemplateDefinition : DSM_JSONModel
 /*!  @brief The unique identifier of the template. If this is not provided, DocuSign will generate a value. [optional]
  */
 @property(nonatomic, copy) NSString *templateId;
@@ -57,6 +58,16 @@ NS_ASSUME_NONNULL_BEGIN
  * @see DSMUserInfo.h
  */
 @property(nonatomic, strong) DSMUserInfo *owner;
+
+/*!
+ * @brief The DSMRecipients class object.
+*/
+@property(nonatomic, strong, nullable) DSMRecipients *recipients;
+
+/*!
+ * @brief This error is generated when template is not compatible with Docusign Mobile App.
+ */
+@property(nonatomic, strong, nullable) NSError *onlineSupportError;
 
 @end
 

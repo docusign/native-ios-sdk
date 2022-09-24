@@ -131,11 +131,11 @@ typedef enum {
 /*!
  * @brief Indicates the date and time the item was created. [optional]
  */
-@property (nonatomic, copy) NSDate *createdDateTime;
+@property (nonatomic, copy, nullable) NSDate *createdDateTime;
 /*!
  * @brief The date and time the item was last modified. [optional]
  */
-@property (nonatomic, copy) NSDate *lastModifiedDateTime;
+@property (nonatomic, copy, nullable) NSDate *lastModifiedDateTime;
 /*!
  * @brief For DocuSign use only. [optional]
  */
@@ -143,7 +143,7 @@ typedef enum {
 /*!
  * @brief The date and time the envelope was sent. [optional]
  */
-@property (nonatomic, copy) NSDate *sentDateTime;
+@property (nonatomic, copy, nullable) NSDate *sentDateTime;
 /*!
  * @brief Specifies the date and time this item was completed. [optional]
  */
@@ -171,7 +171,7 @@ typedef enum {
 /*!
  * @brief The data and time the status changed. [optional]
  */
-@property (nonatomic, copy) NSDate *statusChangedDateTime;
+@property (nonatomic, copy, nullable) NSDate *statusChangedDateTime;
 /*!
  * @brief Contains a URI for an endpoint that you can use to retrieve combined document.
  */
@@ -238,6 +238,21 @@ typedef enum {
  * @brief When set to **true** the created envelope has responsive documents. [optional]
  */
 @property (nonatomic,assign) BOOL disableResponsiveDocument;
+
+/* When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients. \n\nIf the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information. [optional]
+ */
+@property(nonatomic) NSString* useDisclosure;
+
+/*!
+ * @brief When set to **true**, Envelope is opened with offline signing ceremony. [optional]
+ */
+@property (nonatomic, assign) BOOL isOfflineSigningUnderProgress;
+
+/*!
+ * @discussion Return true if the envelope has a tab with anchor attributes for a recipient.
+ * @return Boolean value
+ */
+- (BOOL)hasAnchorTab;
 
 @end
 

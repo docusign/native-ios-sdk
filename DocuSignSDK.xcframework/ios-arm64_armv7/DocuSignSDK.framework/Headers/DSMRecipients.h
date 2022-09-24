@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <DocuSignSDK/DSM_JSONModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -7,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @class DSMRecipients
  */
-@interface DSMRecipients : NSObject
+@interface DSMRecipients : DSM_JSONModel
 /*!
  * @brief A complex type containing information about the Signer recipient. [optional]
  * @see DSMSigner.h
@@ -100,6 +101,12 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion Removes a recipient from corresponding recipients array.
  */
 - (void)removeRecipient:(DSMRecipient *)recipient;
+
+/*!
+ * @discussion Returns true if any recipient has an anchor tab.
+ * @return BOOL
+ */
+- (BOOL)anyRecipientWithAnchorTab;
 
 #pragma mark - Recipient Switching (Native)
 /*!

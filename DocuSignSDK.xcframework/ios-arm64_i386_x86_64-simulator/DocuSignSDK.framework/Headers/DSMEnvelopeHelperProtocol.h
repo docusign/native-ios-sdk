@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) NSInteger currentRoutingOrder;
 /*!
- * @discussion Gives list of docuemnts for a Template.
+ * @discussion Gives list of documents for a Template.
  * @return NSOrderedSet ( NSArray<DSMDocument *> *documents;)
  * @see DSMDocument.h
  */
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSOrderedSet *)allSigners;
 /*!
- * @discussion Gives list of inclomplete local signers.
+ * @discussion Gives list of incomplete local signers.
  * @return NSOrderedSet
  * @see DSMSigner.h and DSMInPersonSigner.h
  */
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSOrderedSet *)recipientsOfType:(DSMRecipientType)recipientType;
 /*!
- * @discussion If envelope is signed by atleast one remote signer/inperson signer in current session.
+ * @discussion If envelope is signed by one remote signer/inperson signer in current session.
  * @return BOOL
  */
 - (BOOL)isRemoteEnvelopeSignedByAtLeastOneSignerInCurrentSession;

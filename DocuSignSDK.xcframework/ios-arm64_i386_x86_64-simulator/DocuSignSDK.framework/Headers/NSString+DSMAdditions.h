@@ -38,4 +38,23 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)dsm_stringWithErrorCode:(NSInteger)errorCode withErrorReason:(NSString *)errorReason;
 @end
 
+@interface NSString (DSMAttributed)
+
+- (NSAttributedString * _Nullable)dsm_attributedStringFromText:(NSString *)fullString
+                                              substringsToBold:(NSArray <NSString *> *)substringsToBold;
+
+- (NSArray <NSValue *> * _Nullable)dsm_findRangesOfSubstring:(NSString *)substring
+                                      withRegexPatternString:(NSString *)regexPatternString;
+
+- (NSAttributedString * _Nullable)dsm_boldifyStringForRanges:(NSArray <NSValue *> *)rangesToBold
+                                                    boldFont:(UIFont *)boldFont;
+
+@end
+
+@interface NSString (DSMSignature)
+
++ (NSString *)dsm_initialsWithName:(NSString *)name;
+
+@end
+
 NS_ASSUME_NONNULL_END

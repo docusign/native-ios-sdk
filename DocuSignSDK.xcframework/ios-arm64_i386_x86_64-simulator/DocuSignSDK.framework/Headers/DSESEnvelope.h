@@ -10,7 +10,7 @@
 #import <DocuSignSDK/DSESNotification.h>
 #import <DocuSignSDK/DSESLockInformation.h>
 #import <DocuSignSDK/DSESEmailSettings.h>
-
+#import <DocuSignSDK/DSESSender.h>
 
 @protocol DSESEnvelope
 @end
@@ -131,5 +131,13 @@
 /* When set to **true**, indicates that this module is enabled on the account. [optional]
  */
 @property(nonatomic) NSString* is21CFRPart11;
+
+/* When set to **true**, indicates that signer can sign envelope on mobile. [optional]
+ */
+@property(nonatomic) NSString* signerCanSignOnMobile;
+
+/* Sender of the envelope.
+ */
+@property(nonatomic) DSESSender* sender;
 
 @end

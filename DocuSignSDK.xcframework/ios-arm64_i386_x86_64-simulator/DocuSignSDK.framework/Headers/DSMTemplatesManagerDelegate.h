@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)templatesManager:(DSMTemplatesManager *)templatesManager cacheInProgressTemplateWithId:(NSString *)templateId;
 /*!
- * @brief Cache template delegate callback when template allready exists in Cache but needs to be updated with recent data is in progress.
+ * @brief Cache template delegate callback when template already exists in Cache but needs to be updated with recent data is in progress.
  * @option templateId TemplateId which is to be cached/updated.
  * @see DSMTemplatesManager.h
  */
