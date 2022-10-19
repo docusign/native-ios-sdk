@@ -72,6 +72,9 @@
 + (NSArray *)testEnvironments;
 + (NSDictionary *)prodEnvironments;
 
++ (NSString *)getNetworkMode;
++ (NSString *)getSubnetworkMode;
+
 #pragma mark - Whitelisted Events
 
 + (void)cacheAuthenticationEventWithSuccess;

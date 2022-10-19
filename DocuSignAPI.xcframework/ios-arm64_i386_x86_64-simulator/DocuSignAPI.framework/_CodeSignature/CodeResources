@@ -4,61 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/libswiftCore.dylib</key>
-		<data>
-		K2JSgeh0Xag//YKIHwPVLtvlSG8=
-		</data>
-		<key>Frameworks/libswiftCoreData.dylib</key>
-		<data>
-		wCwkng5pVRS0I9Cjj2Qp4Z/mHjk=
-		</data>
-		<key>Frameworks/libswiftCoreFoundation.dylib</key>
-		<data>
-		JMVBYNwT3asmxOmwfAfCLEQtv7w=
-		</data>
-		<key>Frameworks/libswiftCoreGraphics.dylib</key>
-		<data>
-		og4ECAL51U2jPJMz4wZfv30emDo=
-		</data>
-		<key>Frameworks/libswiftCoreImage.dylib</key>
-		<data>
-		YFptn48umgSKrrnIsSfGJ61g8cA=
-		</data>
-		<key>Frameworks/libswiftDarwin.dylib</key>
-		<data>
-		rfGL4akQxDceLviio/zCNr/DKuU=
-		</data>
-		<key>Frameworks/libswiftDispatch.dylib</key>
-		<data>
-		ZJJrG69QQRrdrlUPsTQK9K0QPOA=
-		</data>
-		<key>Frameworks/libswiftFoundation.dylib</key>
-		<data>
-		5QWk26azDY4tD0S+DXNTntc0hPw=
-		</data>
-		<key>Frameworks/libswiftMetal.dylib</key>
-		<data>
-		BR6GwLTf/pNVK8Pa84xC6a4flSg=
-		</data>
-		<key>Frameworks/libswiftObjectiveC.dylib</key>
-		<data>
-		sG2Dpu9c9pa2o2dntFgzGmm2ANo=
-		</data>
-		<key>Frameworks/libswiftQuartzCore.dylib</key>
-		<data>
-		RFls//HXF/gbgt4/Kc8EgVj03ZY=
-		</data>
-		<key>Frameworks/libswiftUIKit.dylib</key>
-		<data>
-		1YDa0uQrd2lb5sdzBsjraux8+Wk=
-		</data>
-		<key>Frameworks/libswiftos.dylib</key>
-		<data>
-		sDoKWkQkRq8Fz6nDVCS1yAJLm0g=
-		</data>
 		<key>Headers/DocuSignAPI-Swift.h</key>
 		<data>
-		YaEmzCWGHqisypyDAMcN/WrC5+0=
+		K/Q5KHI1v2XYIEsZ+rwz6wgV6go=
 		</data>
 		<key>Headers/DocuSignAPI.h</key>
 		<data>
@@ -66,43 +14,79 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OFBos1fd8/QYn4pBYG/n2gbdU3Y=
+		W8xyb4mv/+FCkPFHqylhSNNds8o=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1ing4DTm4bKD5I/77MNb3l99J1k=
+		5IDoV22yZys4qOf8G9naw8q658Y=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fTpaPr8M0kkN/IlquQckMGPpyhI=
+		OZBYwEiTuwMsZzvG4jWXvaJGUuI=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ft/1S/g7E0otF+e2mIixjzHOsm8=
+		yW0PsHxMwVGaFlmwIyXp29NBeIA=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		5IDoV22yZys4qOf8G9naw8q658Y=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftinterface</key>
+		<data>
+		OZBYwEiTuwMsZzvG4jWXvaJGUuI=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		yW0PsHxMwVGaFlmwIyXp29NBeIA=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		a3pVcYRSYTbZXTPXBUhEuqugn9o=
+		++hsBpSeQu8va5Hco1ocwzoLY8Y=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Go4Rjll55KGjknzJpDThkfN/pM8=
+		/F+2gDAxoD9s7Zzkk8NXbcTg6L0=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1fOLCYTjbqz7uhQSUZeE33Lvj1o=
+		x8s+RstD02pThxaI9LAEXbjGzXQ=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftdoc</key>
+		<data>
+		++hsBpSeQu8va5Hco1ocwzoLY8Y=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftinterface</key>
+		<data>
+		/F+2gDAxoD9s7Zzkk8NXbcTg6L0=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftmodule</key>
+		<data>
+		x8s+RstD02pThxaI9LAEXbjGzXQ=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ACW4vWapB+JmWr+U8V5YWiMjZzU=
+		+blkmP8ffaJoIJ2LSDLSXupJiOs=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		tQGQI3b742ckBu2tV4Eihdguln0=
+		pQ5ofdrnKEX33EVWpUcD+ycL9DM=
 		</data>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8KJNJAA2NWJ5PEBIhOLYWQFYUew=
+		IXQwfz0CgafldK7ofFm49SzBeRU=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftdoc</key>
+		<data>
+		+blkmP8ffaJoIJ2LSDLSXupJiOs=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftinterface</key>
+		<data>
+		pQ5ofdrnKEX33EVWpUcD+ycL9DM=
+		</data>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftmodule</key>
+		<data>
+		IXQwfz0CgafldK7ofFm49SzBeRU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -111,158 +95,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/libswiftCore.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			K2JSgeh0Xag//YKIHwPVLtvlSG8=
-			</data>
-			<key>hash2</key>
-			<data>
-			5dTCvNnqGG7Oj3KE5M3rjdcGgpJBEWMJf/kakV5Vs0M=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreData.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wCwkng5pVRS0I9Cjj2Qp4Z/mHjk=
-			</data>
-			<key>hash2</key>
-			<data>
-			fNZdwIfvq7My/u27/btHZhDBAeh1eUodd3jLLumVLpM=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreFoundation.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JMVBYNwT3asmxOmwfAfCLEQtv7w=
-			</data>
-			<key>hash2</key>
-			<data>
-			soZbs2fdlbxgX35FB36Vfbw2jzZ9+0A9hBtnRtjE26s=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreGraphics.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			og4ECAL51U2jPJMz4wZfv30emDo=
-			</data>
-			<key>hash2</key>
-			<data>
-			WELaAiYYWiyGyDMlsXR+aCzuz2GVKxbqSWmJEJmxhF8=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreImage.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			YFptn48umgSKrrnIsSfGJ61g8cA=
-			</data>
-			<key>hash2</key>
-			<data>
-			/Cp9qjg50mC/PVJJa3Nu7Pl/q3zoYgd69cCWzO0AKbc=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftDarwin.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rfGL4akQxDceLviio/zCNr/DKuU=
-			</data>
-			<key>hash2</key>
-			<data>
-			2jm3nDwE4m6OIGk3zHHF909iWNwhEKmfQwLC5fja498=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftDispatch.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZJJrG69QQRrdrlUPsTQK9K0QPOA=
-			</data>
-			<key>hash2</key>
-			<data>
-			PPxmUhjEtw9jwsF+9amezjcFla2NRuGYSSEJT/5/GDI=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftFoundation.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5QWk26azDY4tD0S+DXNTntc0hPw=
-			</data>
-			<key>hash2</key>
-			<data>
-			sAIhEBc06KWAmlYkzF5zUFyyJPxU0sHlmJOKGDpaH8Y=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftMetal.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BR6GwLTf/pNVK8Pa84xC6a4flSg=
-			</data>
-			<key>hash2</key>
-			<data>
-			+3Jw7w/Lzob9axMp6vOHBVAjW4fyIp3FF8n+v0Apxtw=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftObjectiveC.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			sG2Dpu9c9pa2o2dntFgzGmm2ANo=
-			</data>
-			<key>hash2</key>
-			<data>
-			M960qRjdM/wZkF6x/pl99r0PxDyUCsiIS2Jybqom/kQ=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftQuartzCore.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RFls//HXF/gbgt4/Kc8EgVj03ZY=
-			</data>
-			<key>hash2</key>
-			<data>
-			wXhhBhpy6Fy0UAAi0GjYAqQmf0zJQYm2G7bbQejS+do=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftUIKit.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1YDa0uQrd2lb5sdzBsjraux8+Wk=
-			</data>
-			<key>hash2</key>
-			<data>
-			6IX5mvVVvXnxsAkJ+aR3SGCw5b/+fevntO3TcfAnLMs=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftos.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			sDoKWkQkRq8Fz6nDVCS1yAJLm0g=
-			</data>
-			<key>hash2</key>
-			<data>
-			SQ8jFEHC8NFCdrL5j0Rmz+WKd3s3z+UYbxqEn0ETZu0=
-			</data>
-		</dict>
 		<key>Headers/DocuSignAPI-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YaEmzCWGHqisypyDAMcN/WrC5+0=
+			K/Q5KHI1v2XYIEsZ+rwz6wgV6go=
 			</data>
 			<key>hash2</key>
 			<data>
-			7Bwn7zu6R0rn70KvrT/Cyc9FKQRmCtgdG0zFFy53aPY=
+			Eerw5lUBwWXgIm65x/m2NKbnBvOejSq3a4XSM/NUmI8=
 			</data>
 		</dict>
 		<key>Headers/DocuSignAPI.h</key>
@@ -280,99 +121,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1ing4DTm4bKD5I/77MNb3l99J1k=
+			5IDoV22yZys4qOf8G9naw8q658Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			a8hXRBEzfIvStsqBf0IO2mU+KQ+ByXqsigmiCvqFKbA=
+			SasztfJMrc8wYZP4HB0LBXa0bRb8jwD+mPT2tay23Mc=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fTpaPr8M0kkN/IlquQckMGPpyhI=
+			OZBYwEiTuwMsZzvG4jWXvaJGUuI=
 			</data>
 			<key>hash2</key>
 			<data>
-			z9l/VeRgkCcq4fK1f5mB9qOH0SqE3UIr4kBFBndMyv0=
+			jLmAlYXPIc62wGxQn16nKhLadVgFR848TcWaK26KGNY=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ft/1S/g7E0otF+e2mIixjzHOsm8=
+			yW0PsHxMwVGaFlmwIyXp29NBeIA=
 			</data>
 			<key>hash2</key>
 			<data>
-			KuxHKNOkXBD7+xiPAHfoNamboNYJug7TdpLIR9sasrw=
+			BMaW3RAHXgXiDmGXOQhe3B9MnwmaUafzS/rY52n/GUo=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5IDoV22yZys4qOf8G9naw8q658Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			SasztfJMrc8wYZP4HB0LBXa0bRb8jwD+mPT2tay23Mc=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OZBYwEiTuwMsZzvG4jWXvaJGUuI=
+			</data>
+			<key>hash2</key>
+			<data>
+			jLmAlYXPIc62wGxQn16nKhLadVgFR848TcWaK26KGNY=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yW0PsHxMwVGaFlmwIyXp29NBeIA=
+			</data>
+			<key>hash2</key>
+			<data>
+			BMaW3RAHXgXiDmGXOQhe3B9MnwmaUafzS/rY52n/GUo=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			a3pVcYRSYTbZXTPXBUhEuqugn9o=
+			++hsBpSeQu8va5Hco1ocwzoLY8Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			KDYjvwwGU01QANeN3A8c9EhjYrwyGiOOyjGXQj5KrAc=
+			JbruUwT93tsiKGlmS1gaRxWnl2NA78fGCwpz3QXkKTA=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Go4Rjll55KGjknzJpDThkfN/pM8=
+			/F+2gDAxoD9s7Zzkk8NXbcTg6L0=
 			</data>
 			<key>hash2</key>
 			<data>
-			PDhuRYp30EIaD2pONHf0/0MNLvrZbV5Q97OYeFoyolM=
+			y9aL4q6T7Zz5oUTGNR+xqcz4sFYMarpIk4tzU30D1eE=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1fOLCYTjbqz7uhQSUZeE33Lvj1o=
+			x8s+RstD02pThxaI9LAEXbjGzXQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			9CH9518iGSYGIp5rliMK55D+7XeupslO+vM4kuMrHXI=
+			je2QLEyPBBwTjS6DWRWeYnfaA4EQo6kSfw8d02Th284=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			++hsBpSeQu8va5Hco1ocwzoLY8Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			JbruUwT93tsiKGlmS1gaRxWnl2NA78fGCwpz3QXkKTA=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/F+2gDAxoD9s7Zzkk8NXbcTg6L0=
+			</data>
+			<key>hash2</key>
+			<data>
+			y9aL4q6T7Zz5oUTGNR+xqcz4sFYMarpIk4tzU30D1eE=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/i386.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			x8s+RstD02pThxaI9LAEXbjGzXQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			je2QLEyPBBwTjS6DWRWeYnfaA4EQo6kSfw8d02Th284=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ACW4vWapB+JmWr+U8V5YWiMjZzU=
+			+blkmP8ffaJoIJ2LSDLSXupJiOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			L9egXhLdoPoiccylySCMay4CSnoOp1rVRfev879smEY=
+			cCbpUk7Qzjiv691Ztxm5dmTSjn7qEq/GM5HN96HBbFc=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tQGQI3b742ckBu2tV4Eihdguln0=
+			pQ5ofdrnKEX33EVWpUcD+ycL9DM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ljtdojCnqbl35kcbTq7VbUMi2lNkucYQd7sWSOZI0c0=
+			ubQHTe0jQzx5aUY0TElmDyXmIWgdX+tI4L6Z5LALp1k=
 			</data>
 		</dict>
 		<key>Modules/DocuSignAPI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8KJNJAA2NWJ5PEBIhOLYWQFYUew=
+			IXQwfz0CgafldK7ofFm49SzBeRU=
 			</data>
 			<key>hash2</key>
 			<data>
-			084S/vOfQ6nkrBmjnJASKlQLc0iCipJ2DJpg2aer7A0=
+			b7XjWX45qt8lg/62UDLjtU0vQG1DqwofBAdNQeYJg8A=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+blkmP8ffaJoIJ2LSDLSXupJiOs=
+			</data>
+			<key>hash2</key>
+			<data>
+			cCbpUk7Qzjiv691Ztxm5dmTSjn7qEq/GM5HN96HBbFc=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pQ5ofdrnKEX33EVWpUcD+ycL9DM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ubQHTe0jQzx5aUY0TElmDyXmIWgdX+tI4L6Z5LALp1k=
+			</data>
+		</dict>
+		<key>Modules/DocuSignAPI.swiftmodule/x86_64.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IXQwfz0CgafldK7ofFm49SzBeRU=
+			</data>
+			<key>hash2</key>
+			<data>
+			b7XjWX45qt8lg/62UDLjtU0vQG1DqwofBAdNQeYJg8A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
