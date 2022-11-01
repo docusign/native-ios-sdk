@@ -1,1 +1,3 @@
-{"bundleDisplayName":"DocuSignSDK","bundleIdentifier":"docusign.DocuSignSDK","schemaVersion":{"major":0,"minor":1,"patch":0}}
+[{"bundleDisplayName":"DocuSignSDK","bundleIdentifier":"docusign.DocuSignSDK","schemaVersion":{"major":0,"minor":1,"patch":0}},
+    {"bundleDisplayName":"DocuSignAPI","bundleIdentifier":"com.DocuSign.DocuSIgnAPI","schemaVersion":{"major":0,"minor":1,"patch":0}}
+    ]
