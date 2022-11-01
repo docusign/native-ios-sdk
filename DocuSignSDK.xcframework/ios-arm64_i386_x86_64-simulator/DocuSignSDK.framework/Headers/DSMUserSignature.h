@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <DocuSignSDK/DSESObject.h>
 
-
 @interface DSMUserSignature : DSESObject
 
 @property (nonatomic, copy) NSString *adoptedDateTime;

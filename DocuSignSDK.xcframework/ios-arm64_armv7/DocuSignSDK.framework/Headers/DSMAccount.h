@@ -44,6 +44,7 @@ typedef enum {
 - (void)syncAdditionalDataWithCompletion:(DSMErrorBlock)completion;
 
 - (BOOL)canOfflineSend;
+- (BOOL)signerCanSignOnMobile;
 - (DSMSignAndReturnMethod)shouldSignAndReturnWithMethod;
 
 @end

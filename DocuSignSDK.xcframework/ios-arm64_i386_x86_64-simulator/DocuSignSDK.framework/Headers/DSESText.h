@@ -25,7 +25,7 @@
 /* The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets. \nMaximum Length: 2000 characters.\n\n*Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be: \n\n[Line1]+[Line2]+[Tax] [optional]
  */
 @property(nonatomic) NSString* formula;
-/* A regular expressionn used to validate input for the tab. [optional]
+/* A regular expression used to validate input for the tab. [optional]
  */
 @property(nonatomic) NSString* validationPattern;
 /* The message displayed if the custom tab fails input validation (either custom of embedded). [optional]

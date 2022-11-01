@@ -248,6 +248,7 @@
 #import <DocuSignSDK/DSESRecipientSAMLAuthentication.h>
 #import <DocuSignSDK/DSESRecipientSMSAuthentication.h>
 #import <DocuSignSDK/DSESRecipientSignatureInformation.h>
+#import <DocuSignSDK/DSESRecipientSignaturesInformation.h>
 //#import <DocuSignSDK/DSESRecipientSignatureProvider.h>
 //#import <DocuSignSDK/DSESRecipientSignatureProviderOptions.h>
 #import <DocuSignSDK/DSESRecipientUpdateResponse.h>
@@ -512,19 +513,19 @@ extern NSString *const DSESResponseObjectErrorKey;
  *
  * @return The request id.
  */
--(NSNumber*)  envelopeCreateWithCompletionBlock:(NSString*) path
-                                         method:(NSString*) method
-                                     pathParams:(NSDictionary *) pathParams
-                                    queryParams:(NSDictionary*) queryParams
-                                     formParams:(NSDictionary *) formParams
-                                          files:(NSDictionary *) files
-                                           body:(id) body
-                                   headerParams:(NSDictionary*) headerParams
-                                   authSettings: (NSArray *) authSettings
-                             requestContentType:(NSString*) requestContentType
-                            responseContentType:(NSString*) responseContentType
-                                   responseType:(NSString *) responseType
-                                completionBlock:(void (^)(id, NSError *))completionBlock;
+-(NSNumber*)  multipartRequestWithPath:(NSString*) path
+                                method:(NSString*) method
+                            pathParams:(NSDictionary *) pathParams
+                           queryParams:(NSDictionary*) queryParams
+                            formParams:(NSDictionary *) formParams
+                                 files:(NSDictionary *) files
+                                  body:(id) body
+                          headerParams:(NSDictionary*) headerParams
+                          authSettings: (NSArray *) authSettings
+                    requestContentType:(NSString*) requestContentType
+                   responseContentType:(NSString*) responseContentType
+                          responseType:(NSString *) responseType
+                       completionBlock:(void (^)(id, NSError *))completionBlock;
 
 /**
  * Custom security policy

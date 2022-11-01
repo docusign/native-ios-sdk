@@ -1,11 +1,12 @@
 #import <Foundation/Foundation.h>
+#import <DocuSignSDK/DSM_JSONModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @class DSMUserInfo
  */
-@interface DSMUserInfo : NSObject
+@interface DSMUserInfo : DSM_JSONModel
 
 /*! @brief The user name of the authenticated user */
 @property(nonatomic, copy) NSString *userName;

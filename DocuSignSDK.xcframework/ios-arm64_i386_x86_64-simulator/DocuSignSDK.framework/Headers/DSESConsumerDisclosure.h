@@ -5,5 +5,7 @@
 
 @property (nonatomic) NSString *accountEsignId;
 @property (nonatomic) NSString *esignAgreement;
+@property (nonatomic) NSString *mustAgreeToEsign;
+@property (nonatomic) NSString *companyName;
 
 @end

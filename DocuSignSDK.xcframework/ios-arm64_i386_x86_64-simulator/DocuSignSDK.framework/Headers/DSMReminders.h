@@ -11,11 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL reminderEnabled;
 /*!
- * @brief An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient. [optional]
+ * @brief An integer that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient. [optional]
  */
 @property (nonatomic, copy) NSNumber *reminderDelay;
 /*!
- * @brief An interger that sets the interval, in days, between reminder emails. [optional]
+ * @brief An integer that sets the interval, in days, between reminder emails. [optional]
  */
 @property (nonatomic, copy) NSNumber *reminderFrequency;
 

@@ -34,11 +34,19 @@ extern NSString * const DSMSigningCancelledNotification;
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeOnlineSendFailedNotification object:nil userInfo:userInfo];
  */
 extern NSString * const DSMEnvelopeOnlineSendFailedNotification;
+
+/*!
+ * @brief Notification sent when caching is started for an envelope.
+ * @discussion Returned userInfo contains envelopeId associated with DSMEnvelopeIdKey, transactionId associated with DSMTransactionIdKey. This can be posted on a thread other than MainThread.
+ * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeStartedToCacheNotification object:nil userInfo:userInfo];
+ */
+extern NSString * const DSMEnvelopeStartedToCacheNotification;
+
 /*!
  * @brief Notification sent when caching is enabled for a given record (envelope). An envelope is cached when a signer finishes offline signing or saves the progress and exits the signing process. 
  * @discussion Returned userInfo contains envelopeId associated with DSMEnvelopeIdKey, templateId associated with DSMTemplateIdKey. This can be posted on a thread other than MainThread.
  * [[NSNotificationCenter defaultCenter] postNotificationName:DSMEnvelopeCachedNotification object:nil userInfo:userInfo];
- * Note: Enabling setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` would result in this notification being sent every time a local offline envelope is saved after local signer finishes signing.
+ * Note: Enabling setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` would result in this notification being sent every time a local offline envelope is saved after local signer finishes signing. Use `DSMIsLocalEnvelopeCacheUpdateKey` in `userInfo` to identify if the sent event is associated with a fresh download of a remote envelope vs progressive save of the cached copy when a signer acts on the downloaded envelope.
  */
 extern NSString * const DSMEnvelopeCachedNotification;
 
@@ -116,6 +124,12 @@ extern NSString * const DSMOfflineEnvelopeSigningErrorNotification;
  */
 extern NSString * const DSMAdditionalAccountDataFetchOrDeleteErrorNotification;
 
+/*!
+ * @brief Notification sent when an offline envelope is Send from template.
+ * @discussion UserInfo contains the templateId and a boolean flag to determine if envelope only has remote signer.
+ */
+extern NSString * const DSMWillSendEnvelopeFromTemplateNotification;
+
 #pragma mark Envelope Cache Status
 /*! @brief Envelope status representing successful caching; this status is sent with various Notification userInfo. */
 extern NSString * const DSMCacheDidAddStatus;
@@ -131,10 +145,21 @@ extern NSString * const DSMCacheDidFailStatus;
 extern NSString * const DSMCacheURIKey;
 /*! @brief Notification userInfo key to represent EnvelopeId (also recordId) associated with an envelope. */
 extern NSString * const DSMEnvelopeIdKey;
+/*! @brief Notification userInfo key to represent Envelope Name (also emailSubject) associated with an envelope. */
+extern NSString * const DSMEnvelopeNameKey;
+/*! @brief Notification userInfo key to represent a Boolean value as NSNumber. It's true, if the event is associated with updating locally saved cached envelope. It's false, when download (caching) a remote document for the first time. `DSMEnvelopeCachedNotification` could be sent multiple times during an offline signing session. Use `DSMIsLocalEnvelopeCacheUpdateKey` in `userInfo` to identify if the sent event is associated with a fresh download of a remote envelope vs progressive save of the cached copy when a signer acts on the downloaded envelope. */
+extern NSString * const DSMIsLocalEnvelopeCacheUpdateKey;
+/*! @brief Notification userInfo key to represent a Boolean value as NSNumber. It's true, it represents the envelope only having Remote Signers and no Local Signer. It's false, represent that some of the signers are Local (Active user should either sign or host signing). Use  `DSMHasOnlyRemoteSignersKey` in `userInfo` to identify if the will send event for envelope from template has any Local signers that should sign before Caching/Syncing the envelope. */
+extern NSString * const DSMHasOnlyRemoteSignersKey;
+
+/*! @brief Notification userInfo key to represent a Boolean value as NSNumber. It's true, it represents the envelope having In Person Signers. It's false, represent that there isn't any InPerson Signers to the envelope. Use  `DSMHasInPersonSignersKey` in `userInfo` to identify if the will send event for envelope from template has any InPerson Signers or not. */
+extern NSString * const DSMHasInPersonSignersKey;
 /*! @brief Notification userInfo key to represent TemplateId of a template. */
 extern NSString * const DSMTemplateIdKey;
 /*! @brief Notification userInfo key to represent TransactionId of an envelope. TransactionIds are only used for offline envelopes which are created on the device using a template or pdf documents. */
 extern NSString * const DSMTransactionIdKey;
+/*! @brief Notification userInfo key to represent the combined size in Mb of all the documents of the envelope. */
+extern NSString * const DSMCombinedDocumentSizeKey;
 /*! @brief Notification userInfo key to represent any additional info sent in addition.  Example, when viewing a completed captive signing envelope, this key would be non-nil.
  */
 extern NSString * const DSMAdditionalInfo;
@@ -160,7 +185,6 @@ extern NSString * const DSMSigningExitReasonDecline;
  * @see DSMSigningExitReason
  */
 extern NSString * const DSMSigningExitReasonCancel;
-
 
 /*!
  * @brief Notification userInfo value to represent envelope signing exit reason - token expired

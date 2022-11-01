@@ -20,7 +20,7 @@
 #import <DocuSignSDK/DSESErrorDetails.h>
 #import <DocuSignSDK/DSESRecipientSignatureInformation.h>
 #import <DocuSignSDK/DSESRecipientSMSAuthentication.h>
-
+#import <DocuSignSDK/DSESConsumerDisclosure.h>
 
 @protocol DSESInPersonSigner
 @end
@@ -179,5 +179,15 @@
 /* To request that a recipient sign with a Standards Based Signature, include the recipientSignatureProviders parameter in the Envelopes: create call’s recipients::signer object.
  */
 @property(nonatomic) NSArray* recipientSignatureProviders;
+
+/*
+ Not part of the API response. Added it to support CD conversion.
+ */
+@property(nonatomic) DSESConsumerDisclosure* consumerDisclosure;
+
+/*
+ Not part of the API response. Added it to support Sign with Photo for Offline signing.
+ */
+@property(nonatomic) NSString* recipientPhotoImageDataBase64;
 
 @end

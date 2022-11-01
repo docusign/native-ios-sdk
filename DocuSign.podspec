@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '2.11'
+  s.version          = '3.0.0'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
@@ -23,9 +23,11 @@ Pod::Spec.new do |s|
   s.platform = :ios, '10.0'
   s.ios.deployment_target = '10.0'
   s.requires_arc = true
-  s.preserve_paths = 'DocuSignSDK.xcframework'
-  s.vendored_frameworks = 'DocuSignSDK.xcframework'
+  s.preserve_paths = ['DocuSignSDK.xcframework', 'DocuSignAPI.xcframework']
+  s.vendored_frameworks = [
+		"DocuSignSDK.xcframework",
+		"DocuSignAPI.xcframework"]
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/2.11/DocuSignSDK.zip"}
+  s.source = { :http => "https://github.com/docusign/native-ios-sdk/raw/release/3.0.0/DocuSignSDK.zip"}
 end

@@ -1,5 +1,12 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.0] - 08/18/2022
+### Added
+* New REST ESignature APIs added all in Swift
+* Support for Envelope Caching
+* Support for Template Search and filtering
+* Support for new Signature pallet
+
 ## [v2.12] - 08/18/2022
 
 ### Added 

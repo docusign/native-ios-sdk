@@ -15,7 +15,7 @@
 #import <DocuSignSDK/DSESCarbonCopy.h>
 #import <DocuSignSDK/DSESErrorDetails.h>
 #import <DocuSignSDK/DSESIntermediary.h>
-
+#import <DocuSignSDK/DSESWitness.h>
 
 @protocol DSESRecipients
 @end
@@ -43,6 +43,11 @@
 /* Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected. [optional]
  */
 @property(nonatomic) NSArray<DSESInPersonSigner>* inPersonSigners;
+
+/* Reference [witnesses](https://developers.docusign.com/esign-rest-api/reference/Templates/TemplateRecipients/list)
+ */
+@property(nonatomic) NSArray<DSESWitness>* witnesses;
+
 /*  [optional]
  */
 @property(nonatomic) NSString* recipientCount;
