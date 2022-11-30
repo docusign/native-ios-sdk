@@ -31,7 +31,9 @@ typedef NS_ENUM(NSInteger, DSMErrorCode) {
     DSMErrorCodeEnvelopeWithSupplementalDocument,
     DSMErrorCodeEnvelopeWasModifiedWhileInOffline,
     DSMErrorCodeSignatureIdInvalidParameter,
-    DSMErrorCodeTemplateNotificationHasInvalidAttribute
+    DSMErrorCodeTemplateNotificationHasInvalidAttribute,
+    DSMErrorCodeBase64SignatureConversionFailed,
+    DSMErrorCodeInvalidSignatureType
 };
 
 #endif /* DSMErrorCodes_h */

@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)dsm_isValidUUID;
 + (BOOL)dsm_isEmptyOrNil:(NSString *)input;
 
+- (NSString *)withPrefix:(NSString *)prefix;
+
 @end
 
 @interface NSString (DSMUUID)

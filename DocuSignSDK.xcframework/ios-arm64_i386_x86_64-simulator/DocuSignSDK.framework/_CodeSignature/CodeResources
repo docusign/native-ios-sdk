@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		SxA90qfcrArLsEbLw7eWg2Zb140=
+		LvDk73MfpYiC57lhVMe/C+a4Uwc=
 		</data>
 		<key>DSMAddRecipientCell.nib</key>
 		<data>
@@ -557,9 +557,13 @@
 		<data>
 		3RIFhGuo7nO0k3uKsjfa0YR5s0c=
 		</data>
-		<key>DocuSignSDK.momd/DocuSignSDK 11.omo</key>
+		<key>DocuSignSDK.momd/DocuSignSDK 12.mom</key>
 		<data>
-		Z0Mm7C3TGu2bEAzI4FulbuOV7E4=
+		y/GR7JIhhvwIF2XHL9JaIv/pVzo=
+		</data>
+		<key>DocuSignSDK.momd/DocuSignSDK 12.omo</key>
+		<data>
+		n+sFaSIvrH+6frzkOSMpnBSq3fk=
 		</data>
 		<key>DocuSignSDK.momd/DocuSignSDK 2.mom</key>
 		<data>
@@ -599,7 +603,7 @@
 		</data>
 		<key>DocuSignSDK.momd/VersionInfo.plist</key>
 		<data>
-		WSD0LwPrIn4YI0qgO6KZ1M5YKpw=
+		PMx432PG7i4jEGgorKeuWht39PE=
 		</data>
 		<key>DocuSignSDK1_to_DocuSignSDK2.cdm</key>
 		<data>
@@ -1327,7 +1331,7 @@
 		</data>
 		<key>Headers/DSMCheckbox.h</key>
 		<data>
-		M7Hq5nZWTo4Jv7n6rVVrKsJYVIg=
+		FtL3JxhbzViznmUR3uCWh/laI8I=
 		</data>
 		<key>Headers/DSMCompany.h</key>
 		<data>
@@ -1403,7 +1407,7 @@
 		</data>
 		<key>Headers/DSMEnvelopeHelperProtocol.h</key>
 		<data>
-		e52VLo2USzSqsjygSwFu8THyK+8=
+		RJDf+ciGeB2nLV/9Cyl3GJEkRLU=
 		</data>
 		<key>Headers/DSMEnvelopeListCustomField.h</key>
 		<data>
@@ -1447,7 +1451,7 @@
 		</data>
 		<key>Headers/DSMErrorCodes.h</key>
 		<data>
-		kiG8DRHPaiP72tocHceDxgni+9k=
+		fviTQHiFaZNt1LUt9FLb+6a77+A=
 		</data>
 		<key>Headers/DSMErrorDetails.h</key>
 		<data>
@@ -1547,7 +1551,7 @@
 		</data>
 		<key>Headers/DSMRecipientBuilder.h</key>
 		<data>
-		/RbAhGyziI5dc9SeD5Anm+9ddmY=
+		iESCqYMZa72kVqfMcs9Y1BAjh+4=
 		</data>
 		<key>Headers/DSMRecipientDefault.h</key>
 		<data>
@@ -1619,7 +1623,7 @@
 		</data>
 		<key>Headers/DSMTabBuilder.h</key>
 		<data>
-		g0X77CQNWT7S31B9fZrwGsVZVik=
+		g3DsL9SK1dsu8xu094KQmXhyaIQ=
 		</data>
 		<key>Headers/DSMTabFrame+Additions.h</key>
 		<data>
@@ -1639,7 +1643,7 @@
 		</data>
 		<key>Headers/DSMTabs.h</key>
 		<data>
-		pDa5NUgl1sVw01IXoABhluQR8a8=
+		wDb+KEwSXfu5z7V9P0TYQyJbooE=
 		</data>
 		<key>Headers/DSMTelemetryHandler.h</key>
 		<data>
@@ -1763,7 +1767,7 @@
 		</data>
 		<key>Headers/NSString+DSMAdditions.h</key>
 		<data>
-		kRqEFCLARyqvkqjLLu5Gas4T2ac=
+		z04C7bwiTUpe4a51WdcojdI+SNE=
 		</data>
 		<key>Headers/Number.h</key>
 		<data>
@@ -1775,7 +1779,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YiydThiLyTQsEFVvhnOcHPNpPB0=
+		sNzrZOMHKLH2xvcCi/tVU4nevoI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2819,11 +2823,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SxA90qfcrArLsEbLw7eWg2Zb140=
+			LvDk73MfpYiC57lhVMe/C+a4Uwc=
 			</data>
 			<key>hash2</key>
 			<data>
-			DQMB9FUqbM03EmeLoDl3yo6cilB+zH9C/Y+SOjfu5Q4=
+			IJowQuiuEvzhUD0tf2zFqJ5uUXFk5VQOK58V4y/DajM=
 			</data>
 		</dict>
 		<key>DSMAddRecipientCell.nib</key>
@@ -4183,15 +4187,26 @@
 			09ELazSCivmon4NEvJJ2yLLyFvDuMWVviTL2I+J89cg=
 			</data>
 		</dict>
-		<key>DocuSignSDK.momd/DocuSignSDK 11.omo</key>
+		<key>DocuSignSDK.momd/DocuSignSDK 12.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Z0Mm7C3TGu2bEAzI4FulbuOV7E4=
+			y/GR7JIhhvwIF2XHL9JaIv/pVzo=
 			</data>
 			<key>hash2</key>
 			<data>
-			AJx013s9ifuD5Cfvb0+PPlmpiNa11Ukr8b3kQpy0Sfo=
+			y4W1xB5pKB2JL0CA3PCoh9WostVjaJykiVybL39PTIU=
+			</data>
+		</dict>
+		<key>DocuSignSDK.momd/DocuSignSDK 12.omo</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			n+sFaSIvrH+6frzkOSMpnBSq3fk=
+			</data>
+			<key>hash2</key>
+			<data>
+			m2oDrvn6j6ya3T3EXQY32x2Cm3bNAKMDovLXB0Matqw=
 			</data>
 		</dict>
 		<key>DocuSignSDK.momd/DocuSignSDK 2.mom</key>
@@ -4297,11 +4312,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WSD0LwPrIn4YI0qgO6KZ1M5YKpw=
+			PMx432PG7i4jEGgorKeuWht39PE=
 			</data>
 			<key>hash2</key>
 			<data>
-			v7dXmrh4PyB3IkGj+WVX4azDRMpRN4huhyB7yE0joWE=
+			Z9zBLV+81pBTu51bvOavt8VR3vCJ3J8gSx0McbaXjMc=
 			</data>
 		</dict>
 		<key>DocuSignSDK1_to_DocuSignSDK2.cdm</key>
@@ -6299,11 +6314,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			M7Hq5nZWTo4Jv7n6rVVrKsJYVIg=
+			FtL3JxhbzViznmUR3uCWh/laI8I=
 			</data>
 			<key>hash2</key>
 			<data>
-			56+FqcsorMzkZkeltjYjsZUrOxWlqlPwxTFoiGrshzI=
+			lIYZDKqbaWVTTdZ+7d4RdeylirMduHikubrYmfWJUAU=
 			</data>
 		</dict>
 		<key>Headers/DSMCompany.h</key>
@@ -6508,11 +6523,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e52VLo2USzSqsjygSwFu8THyK+8=
+			RJDf+ciGeB2nLV/9Cyl3GJEkRLU=
 			</data>
 			<key>hash2</key>
 			<data>
-			BWyhzXBFbAciVC/uADtWDdspz7Q39vCBYabnJcx4FAA=
+			qPZCuiexSZyFCvHdd4l4oJ21kvKPRWtuVHFrKpfCkbk=
 			</data>
 		</dict>
 		<key>Headers/DSMEnvelopeListCustomField.h</key>
@@ -6629,11 +6644,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kiG8DRHPaiP72tocHceDxgni+9k=
+			fviTQHiFaZNt1LUt9FLb+6a77+A=
 			</data>
 			<key>hash2</key>
 			<data>
-			tbBp9+4qA5pEggzSb8B3pwEu5Fg1vaZ4r8S6UtKL3aM=
+			xTs3s41ZTKU0af8Qd7wok6akC95Jeh4Qrh0fr9xJvAM=
 			</data>
 		</dict>
 		<key>Headers/DSMErrorDetails.h</key>
@@ -6904,11 +6919,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/RbAhGyziI5dc9SeD5Anm+9ddmY=
+			iESCqYMZa72kVqfMcs9Y1BAjh+4=
 			</data>
 			<key>hash2</key>
 			<data>
-			aTFUUdqx7DiZpzP5qasPFENk/brkyIrXmJzbSTBVQcg=
+			peTwW2y6sHYCf+OxRaYt1JmKRGE7JHzWxBvbjXU/PRs=
 			</data>
 		</dict>
 		<key>Headers/DSMRecipientDefault.h</key>
@@ -7102,11 +7117,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g0X77CQNWT7S31B9fZrwGsVZVik=
+			g3DsL9SK1dsu8xu094KQmXhyaIQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			MJCOJce6bLMoONsJh6HqtxEHAaQeFEVoctAE7tN97Po=
+			bFIcZACBxMOKSu6Iq3vNTRQPJrnfhQdWiNMNntsUPDA=
 			</data>
 		</dict>
 		<key>Headers/DSMTabFrame+Additions.h</key>
@@ -7157,11 +7172,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pDa5NUgl1sVw01IXoABhluQR8a8=
+			wDb+KEwSXfu5z7V9P0TYQyJbooE=
 			</data>
 			<key>hash2</key>
 			<data>
-			xQc4p3TYt03SbA7l7RRkMitXdEv+DCKvabBIh3BV5tQ=
+			qHGRmZ/CGw+EOz0DYY0kiZWlQLDhoT7GwOTGrvLd4pY=
 			</data>
 		</dict>
 		<key>Headers/DSMTelemetryHandler.h</key>
@@ -7498,11 +7513,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kRqEFCLARyqvkqjLLu5Gas4T2ac=
+			z04C7bwiTUpe4a51WdcojdI+SNE=
 			</data>
 			<key>hash2</key>
 			<data>
-			IV6+OljypUfBQijBPjvWhCp5yYIfzQkeDEDCKlxBBVU=
+			YYWKzYjO+VEFXR2xaaryWbJgCwbRn9Ej1+GJwm+WkD8=
 			</data>
 		</dict>
 		<key>Headers/Number.h</key>

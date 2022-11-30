@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class DSMCompany;
 @class DSMRadioGroup;
 @class DSMFormula;
+@import DocuSignAPI;
 
 /*!
  @class DSMTabs
@@ -62,6 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @see DSMFormula.h
  */
 @property(nonatomic, copy) NSArray<DSMFormula *> *formulaTabs;
+
+/*! @brief An array containing  tab Group Tabs. [optional]
+ * @see DSAPITabGroup.swift
+ */
+@property(nonatomic, copy) NSArray<DSAPITabGroup *> *tabGroupTabs;
 /*!
  @method allTabs
  @abstract Return a set containing all tabs.

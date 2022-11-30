@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @brief Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field. [optional]. */
 @property(nonatomic, assign) BOOL requireInitialOnSharedChange;
 
+@property(nonatomic, copy) NSArray<NSString *> * tabGroupLabels;
+
 @end
 
 NS_ASSUME_NONNULL_END

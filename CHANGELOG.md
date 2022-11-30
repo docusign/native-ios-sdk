@@ -1,5 +1,12 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.1] - 11/22/2022
+### Added
+* Checkbox tab and groups are supported with the DSMEnvelopeDefaults. Use `true` and `false` with checkbox `tabLabel` i.e. `Data Label` to set the default value.
+* Radio tab and groups are supported with the `DSMEnvelopeDefaults`. Use `true` and `false` with radio `tabValue` i.e. `Radio Button Values`, a difference when compared to `Checkbox`, to set the default value.
+### Fixed
+* Bug fixes and enhancements related to offline & online signing for Tab Groups & other features.
+
 ## [v3.0.0] - 11/01/2022
 ### Added
 * New REST ESignature APIs added all in Swift
