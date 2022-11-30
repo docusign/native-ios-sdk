@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <DocuSignSDK/DSMTabType.h>
 #import <DocuSignSDK/DSMEnvelopeTab.h>
+@import DocuSignAPI;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -58,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @param groupName a string representing tab's groupName
  */
 - (DSMTabBuilder *)addGroupName:(NSString *)groupName;
+/*!
+ * @discussion add a tab group tab and return builder
+ * @param tabGroup a Object representing tab's tabGroup Object
+ */
+- (DSMTabBuilder *)addTabGroup:(DSAPITabGroup *)tabGroup;
 /*!
  * @discussion add a tab scale value and return builder
  * @param scaleValue a string representing tab's scale

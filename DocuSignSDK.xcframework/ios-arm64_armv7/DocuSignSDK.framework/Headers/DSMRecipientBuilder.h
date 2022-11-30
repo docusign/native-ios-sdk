@@ -2,6 +2,7 @@
 #import <DocuSignSDK/DSMRecipientType.h>
 #import <DocuSignSDK/DSMEnvelopeRecipient.h>
 #import <DocuSignSDK/DSMEnvelopeTab.h>
+@import DocuSignAPI;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -55,6 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @param tab an object of envelope tab
  */
 - (DSMRecipientBuilder *)addTab:(DSMEnvelopeTab *)tab;
+/*!
+ * @discussion add an TabGroup for the recipient and return builder object.
+ * @param tabGroup an object of TabGroup
+ */
+- (DSMRecipientBuilder *)addTabGroup:(DSAPITabGroup *)tabGroup;
 /*!
  * @discussion add an array of envelope tabs for the recipient and return builder object.
  * @param tabs an array of envelope tabs

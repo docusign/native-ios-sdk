@@ -7024,8 +7024,7 @@ SWIFT_CLASS("_TtC11DocuSignAPI13DSAPITabGroup")
 /// This property indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position. Required. May be zero.
 @property (nonatomic, copy) NSString * _Nullable yPosition;
 @property (nonatomic, strong) DSAPIPropertyMetadata * _Nullable yPositionMetadata;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class DSAPIText;
@@ -16230,8 +16229,7 @@ SWIFT_CLASS("_TtC11DocuSignAPI13DSAPITabGroup")
 /// This property indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position. Required. May be zero.
 @property (nonatomic, copy) NSString * _Nullable yPosition;
 @property (nonatomic, strong) DSAPIPropertyMetadata * _Nullable yPositionMetadata;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class DSAPIText;

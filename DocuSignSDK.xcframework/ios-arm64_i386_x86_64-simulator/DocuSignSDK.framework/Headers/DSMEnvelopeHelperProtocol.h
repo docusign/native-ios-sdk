@@ -8,6 +8,7 @@
 @class DSMTab;
 @class DSMRadioGroup;
 @class DSMRadio;
+@class DSMTabs;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -66,6 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSSet *)tagsForDocument:(DSMDocument * _Nullable)document;
 - (NSSet *)tagsForSigner:(DSMRecipient * _Nullable)signer;
 - (NSArray <DSMRadioGroup *> *)radioGroupsForSigner:(DSMRecipient * _Nullable)signer;
+- (DSMTabs *)dsmtabsForSigner:(DSMRecipient * _Nullable)signer;
 
 - (BOOL)isSelfSign;
 
