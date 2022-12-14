@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.2] - 12/11/2022
+### Fixed 
+* Fix Bug for Envelope resume after saving Issue 137( https://github.com/docusign/native-ios-sdk/issues/137)
+
+
 ## [v3.0.1] - 11/22/2022
 ### Added
 * Checkbox tab and groups are supported with the DSMEnvelopeDefaults. Use `true` and `false` with checkbox `tabLabel` i.e. `Data Label` to set the default value.
