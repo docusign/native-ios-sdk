@@ -1,5 +1,12 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.3] - 02/08/2022
+### Added
+* Support to Paper signing through Fax flow with a new Signing Exit Notification reason `DSMSigningExitReasonFaxPending`
+
+### Fixed
+* Issue with Templates to disable templates with SBS recipients
+
 ## [v3.0.2] - 12/11/2022
 ### Fixed 
 * Fix Bug for Envelope resume after saving Issue 137( https://github.com/docusign/native-ios-sdk/issues/137)
