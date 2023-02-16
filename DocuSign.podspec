@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '3.0.2'
+  s.version          = '3.0.3'
   s.summary          = 'DocuSign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
