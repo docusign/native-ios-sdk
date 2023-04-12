@@ -1,5 +1,13 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.4] - 03/24/2022
+### Added
+* Allow sending online envelopes with templates that have recipients with SBS (Standard Based Signature) by default.
+* New setup configuration `DSM_SETUP_DISABLE_STANDARD_BASED_SIGNATURE` to disable template sends that have SBS.
+
+### Fixed
+* Fix issue with Resuming envelopes created offline Issue #143
+
 ## [v3.0.3] - 02/08/2022
 ### Added
 * Support to Paper signing through Fax flow with a new Signing Exit Notification reason `DSMSigningExitReasonFaxPending`
