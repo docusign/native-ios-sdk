@@ -1,5 +1,15 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.0.5] - 05/15/2023
+### Added
+* [Conditional Tabs](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/tabs/conditional-fields/) are now supported for Templates and envelopes created locally (Envelopes downloaded from remote server are not supported yet)
+
+### Changed
+* During Offline Signing, `Sign Later` is now preferred option to be shown for all envelopes created on device using documents or templates. `Discard Progress` option is now deprecated.
+
+### Fixed
+* Checkbox group validation has been updated to resolve [issue #145](https://github.com/docusign/native-ios-sdk/issues/145).
+
 ## [v3.0.4] - 03/24/2023
 ### Added
 * Allow sending online envelopes with templates that have recipients with SBS (Standard Based Signature) by default.
