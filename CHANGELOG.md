@@ -5,7 +5,7 @@
 * *(iOS 12+)* Support for OAuthLogin with helper functions for Authentication to DocuSign. If you use oAuth no need to create your own Authentication browser you can simply call `loginWithOAuthEnv` and pass the needed params to authenticate to DocuSignSDK.
 
 ### Changed
-* Added two new parameters to *Optional* params to `loginWithAccessToken` method for `refreshToken` and `expiresIn` in case of oAuth happening from Host App side.
+* Added two new parameters *Optional* to `loginWithAccessToken` method for `refreshToken` and `expiresIn` in case of oAuth happening from Host App side.
 * Prep work for spinning off DocuSignAPI as a separate Pod.
 
 ### Removed
