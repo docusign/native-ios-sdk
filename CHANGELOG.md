@@ -1,5 +1,16 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.1.0] - 06/14/2023
+### Added
+* *(iOS 12+)* Support for OAuthLogin with helper functions for Authentication to DocuSign. If you use oAuth no need to create your own Authentication browser you can simply call `loginWithOAuthEnv` and pass the needed params to authenticate to DocuSignSDK.
+
+### Changed
+* Added two new parameters *Optional* to `loginWithAccessToken` method for `refreshToken` and `expiresIn` in case of oAuth happening from Host App side.
+* Prep work for spinning off DocuSignAPI as a separate Pod.
+
+### Removed
+* Legacy Libraries (KeyChain)
+
 ## [v3.0.5] - 05/15/2023
 ### Added
 * [Conditional Tabs](https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/tabs/conditional-fields/) are now supported for Templates and envelopes created locally (Envelopes downloaded from remote server are not supported yet)

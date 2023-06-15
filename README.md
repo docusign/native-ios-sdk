@@ -32,7 +32,7 @@ Additional information related to cocoapods is also avaiable with [swift app](do
 
 Use these steps to manually integrate the DocuSign framework in case your project doesn't use CocoaPods.
 
-* Download the [DocuSignSDK.zip](DocuSignSDK.zip) and unarchive it. 
+* Download the [DocuSignSDK.zip](https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.1.0/DocuSignSDK.zip) and unarchive it.
 * Copy the extracted folder to your project and add `DocuSignSDK.xcframework` and `DocuSignAPI.xcframework` to your dependencies. Also add `DocuSignSDK.bundle` to your project resources.
 
 Support
