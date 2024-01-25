@@ -1,9 +1,9 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v3.2.0] - 01/18/2024
+## [v3.2.0] - 01/25/2024
 ### Added
 * Support for Sending online Templates with Signing Groups.
-* Support Xcode 17 Requirements for Signing Certification and Privacy Manifest.
+* Support Xcode 15 Requirements for Signing Certification and Privacy Manifest.
 * Support for Conditional Tabs for offline downloaded envelopes.
 * Added Configuration `DSM_SETUP_DISABLE_APPEARANCE` to Disable Applying Appearance changes Automatically on SDK setup [Issue #130](https://github.com/docusign/native-ios-sdk/issues/130)
 
