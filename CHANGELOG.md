@@ -1,5 +1,15 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.2.0] - 01/18/2024
+### Added
+* Support for Sending online Templates with Signing Groups.
+* Support Xcode 17 Requirements for Signing Certification and Privacy Manifest.
+* Support for Conditional Tabs for offline downloaded envelopes.
+* Added Configuration `DSM_SETUP_DISABLE_APPEARANCE` to Disable Applying Appearance changes Automatically on SDK setup [Issue #130](https://github.com/docusign/native-ios-sdk/issues/130)
+
+### Fixed
+* Fixes in Request layer and API calls setup.
+
 ## [v3.1.0] - 06/14/2023
 ### Added
 * *(iOS 12+)* Support for OAuthLogin with helper functions for Authentication to DocuSign. If you use oAuth no need to create your own Authentication browser you can simply call `loginWithOAuthEnv` and pass the needed params to authenticate to DocuSignSDK.
