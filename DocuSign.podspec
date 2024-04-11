@@ -2,7 +2,7 @@
 # valid spec before submitting.
 
 Pod::Spec.new do |s|
-  s.name             = 'Docusign'
+  s.name             = 'DocuSign'
   s.version          = '3.3.0'
   s.summary          = 'Docusign Native iOS Framework to sign and send in your iOS apps'
 
