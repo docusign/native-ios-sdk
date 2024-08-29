@@ -1,5 +1,9 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.3.0] - 04/11/2024
+### Changed
+* Branding update.
+
 ## [v3.2.0] - 01/25/2024
 ### Added
 * Support for Sending online Templates with Signing Groups.
