@@ -25,8 +25,6 @@
 		C9FF31181F321A000076D6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31161F321A000076D6CA /* LaunchScreen.storyboard */; };
 		C9FF31241F323BBD0076D6CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF31231F323BBD0076D6CA /* LoginViewController.swift */; };
 		C9FF31271F323C860076D6CA /* tgk-financial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31261F323C860076D6CA /* tgk-financial.jpg */; };
-		C9FF312D1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */; };
-		C9FF312E1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */; };
 		C9FF313A1F3243D00076D6CA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9FF312F1F3243D00076D6CA /* LICENSE.txt */; };
 		C9FF313B1F3243D00076D6CA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31301F3243D00076D6CA /* OpenSans-Bold.ttf */; };
 		C9FF313C1F3243D00076D6CA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9FF31311F3243D00076D6CA /* OpenSans-BoldItalic.ttf */; };
@@ -89,8 +87,6 @@
 		C9FF31191F321A000076D6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9FF31231F323BBD0076D6CA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		C9FF31261F323C860076D6CA /* tgk-financial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tgk-financial.jpg"; sourceTree = "<group>"; };
-		C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adobe Garamond Pro Bold.ttf"; sourceTree = "<group>"; };
-		C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adobe Garamond Pro Bold Italic.ttf"; sourceTree = "<group>"; };
 		C9FF312F1F3243D00076D6CA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C9FF31301F3243D00076D6CA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		C9FF31311F3243D00076D6CA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -247,8 +243,6 @@
 				C9FF31371F3243D00076D6CA /* OpenSans-Regular.ttf */,
 				C9FF31381F3243D00076D6CA /* OpenSans-SemiBold.ttf */,
 				C9FF31391F3243D00076D6CA /* OpenSans-SemiBoldItalic.ttf */,
-				C9FF312B1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf */,
-				C9FF312C1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,8 +341,6 @@
 				C9FF31431F3243D00076D6CA /* OpenSans-SemiBold.ttf in Resources */,
 				4109864D20C9AF2E00A8F290 /* TGK_Capital_Logo.png in Resources */,
 				C9FF313B1F3243D00076D6CA /* OpenSans-Bold.ttf in Resources */,
-				C9FF312E1F3240730076D6CA /* Adobe Garamond Pro Bold Italic.ttf in Resources */,
-				C9FF312D1F3240730076D6CA /* Adobe Garamond Pro Bold.ttf in Resources */,
 				C9FF31151F321A000076D6CA /* Assets.xcassets in Resources */,
 				C9FF313C1F3243D00076D6CA /* OpenSans-BoldItalic.ttf in Resources */,
 				C9FF31101F321A000076D6CA /* Main.storyboard in Resources */,

@@ -10,23 +10,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Adobe Garamond Pro Bold Italic.ttf">
-            <string>AGaramondPro-BoldItalic</string>
-        </array>
-        <array key="Adobe Garamond Pro Bold.ttf">
-            <string>AGaramondPro-Bold</string>
-        </array>
-        <array key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
-        </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans-Regular</string>
-        </array>
-        <array key="OpenSans-SemiBold.ttf">
-            <string>OpenSans-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -48,7 +31,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="cgY-Ga-jQG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AGaramondPro-Bold" family="Adobe Garamond Pro" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,7 +39,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="MxB-z2-mby"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AGaramondPro-BoldItalic" family="Adobe Garamond Pro" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
