@@ -1,5 +1,16 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.4.0] - 09/20/2024
+
+### Fixed
+* Authorization issue that prevented some of the network calls to be successfully completed with DocusignAPI SDK.
+* Network calls with boolean parameters on DocusignAPI SDK interface now allows nil values as well. With earlier versions, these parameters were sent as either default true or false.
+* Optional Sign and Initial tabs show the dependent tabs correctly when used with conditional setup.
+
+### Changed
+* Templates with multichannel (SMS, Whatsapp) delivery recipients are currently blocked. Reach out to customer support or raise an issue on Github if you need this supported.
+* Outdated fonts replaced with modern assets.
+
 ## [v3.3.0] - 04/11/2024
 ### Changed
 * Branding update.
