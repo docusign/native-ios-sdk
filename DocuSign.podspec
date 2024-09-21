@@ -29,5 +29,5 @@ Pod::Spec.new do |s|
 		"DocuSignAPI.xcframework"]
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.3.0/DocuSignSDK.zip"}
+  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.4.0/DocuSignSDK.zip"}
 end
