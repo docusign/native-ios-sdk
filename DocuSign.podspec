@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '3.4.0'
+  s.version          = '3.5.0'
   s.summary          = 'Docusign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
@@ -29,5 +29,5 @@ Pod::Spec.new do |s|
 		"DocuSignAPI.xcframework"]
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.4.0/DocuSignSDK.zip"}
+  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.5.0/DocuSignCombined.zip"}
 end

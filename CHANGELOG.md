@@ -1,5 +1,15 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v3.5.0] - 01/06/2025
+
+### Added
+* SPM Support - Use version 3.5.0 and refer to instructions on [SwiftPackageManager.md](https://github.com/docusign/native-ios-sdk/blob/master/SwiftPackageManager.md).
+* Xcode 16 support.
+
+### Changed
+* Updated some DSAPI Models to combine common properties for Recipients and Tabs.
+* Updated Contacts fetch to retrieve Phone numbers in addition to email.
+
 ## [v3.4.0] - 09/20/2024
 
 ### Fixed
@@ -62,7 +72,7 @@
 * Issue with Templates to disable templates with SBS recipients
 
 ## [v3.0.2] - 12/11/2022
-### Fixed 
+### Fixed
 * Fix Bug for Envelope resume after saving Issue 137( https://github.com/docusign/native-ios-sdk/issues/137)
 
 
@@ -82,11 +92,11 @@
 
 ## [v2.12] - 08/18/2022
 
-### Added 
-* New setup configuration key `DSM_SETUP_DISABLE_CUSTOMFIELD_DOCUSIGNIT` to control Custom tab `AppName=DocuSignIt` from being sent with all envelopes. The default of this config is `False`. Enabling it with `True` will only send this custom tab with Sign and Return envelopes. A Sign and Return envelope has a Signer (not a host or in-person-signer) with email that is the same as the Sender email. 
+### Added
+* New setup configuration key `DSM_SETUP_DISABLE_CUSTOMFIELD_DOCUSIGNIT` to control Custom tab `AppName=DocuSignIt` from being sent with all envelopes. The default of this config is `False`. Enabling it with `True` will only send this custom tab with Sign and Return envelopes. A Sign and Return envelope has a Signer (not a host or in-person-signer) with email that is the same as the Sender email.
 
-### Fixed 
-* Radio Buttons and tabs in general were not maintaining `value` attribute offline, now it can be used to identify tabs. 
+### Fixed
+* Radio Buttons and tabs in general were not maintaining `value` attribute offline, now it can be used to identify tabs.
 
 ## [v2.11] - 06/07/2022
 
@@ -112,7 +122,7 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 * DocuSign Native iOS SDK supports Bitcode.
 
 ### Removed
-* Removed the `DSMAppearance` method to set navigation bar tint color separately `+ (void)setNavigationBarTintColor:(UIColor *)color;`. 
+* Removed the `DSMAppearance` method to set navigation bar tint color separately `+ (void)setNavigationBarTintColor:(UIColor *)color;`.
 
 ### Changed
 * Added `backgroundTintColor` and `fontSize` as additional parameters to set navigation bar text attributes with `DSMAppearance`. The updated method is `+ (void)setNavigationBarTitleTextColor:(UIColor *)textColor backgroundTintColor:(UIColor *)backgroundTintColor fontSize:(CGFloat)fontSize;`.
@@ -140,7 +150,7 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 ## [v2.5.3] - 09/09/2021
 
 ### Added
-* New interface to launch captive signing using recipient view url with `presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion:` in `DSMEnvelopesManager`. 
+* New interface to launch captive signing using recipient view url with `presentCaptiveSigningWithPresentingController:signingUrl:envelopeId:recipientId:animated:completion:` in `DSMEnvelopesManager`.
 * New interface to clear web cookies `clearAllWebCookies` on `DSMManager`.
 * New setup configuration `DSM_SETUP_CAPTIVE_SIGNING_DISABLE_LOCATION_PERMISSION` to disable location tracking during captive signing.
 
@@ -180,7 +190,7 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 ## [v2.4] - 03/05/2021
 
 ### Added
-* New interface to create envelopes and start signing directly using [Compose Envelopes](Compose-Envelope.md) flow with `composeEnvelopeWithEnvelopeDefinition:signingMode:completion` in `DSMEnvelopesManager`. 
+* New interface to create envelopes and start signing directly using [Compose Envelopes](Compose-Envelope.md) flow with `composeEnvelopeWithEnvelopeDefinition:signingMode:completion` in `DSMEnvelopesManager`.
 
 ## [v2.3.8] - 01/22/2021
 
@@ -201,11 +211,11 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 ## [v2.3.5] - 09/04/2020
 
 ### Added
-* Embedded (Captive) Signing is now supported with  `presentCaptiveSigningWithPresentingController` via `DSMEnvelopesManager`. API reference available at [Embedded Signing](https://developers.docusign.com/esign-rest-api/guides/concepts/embedding). 
+* Embedded (Captive) Signing is now supported with  `presentCaptiveSigningWithPresentingController` via `DSMEnvelopesManager`. API reference available at [Embedded Signing](https://developers.docusign.com/esign-rest-api/guides/concepts/embedding).
 * New setup configuration `DSM_SETUP_DISABLE_EMAIL_IPS_FIELD_CD` to allow client apps to hide the email field when the consumer disclosure screen is displayed.
 
 ### Fixed
-* Bug fixes and enhancements. 
+* Bug fixes and enhancements.
 
 ## [v2.3.4] - 07/17/2020
 
@@ -213,7 +223,7 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 * Now `fontSize` property on the text tabs is used during offline signing. Tab level, `fontSize` ranges from `size7` to `size72`.  
 
 ### Fixed
-* Bug fixes and enhancements. 
+* Bug fixes and enhancements.
 
 ## [v2.3.3] - 07/08/2020
 
@@ -254,8 +264,8 @@ _Now DocuSign XCFramework is built with Xcode13.3._
 ### Added
 * Ability to save signing session of an offline envelop locally on a device and ability to resume signing progress for the saved envelope at a later time. `DSMEnvelopesManager` allows presenting an offline signing session with a previously saved envelope on same device using `+[DSMEnvelopesManager resumeSigningEnvelopeWithPresentingController:envelopeId:completion`.
 * New setup configuration `DSM_SETUP_ENABLE_OFFLINE_SIGNING_SAVE_ENVELOPE_PROGRESS_KEY` to enable the UI components to prompt users to save progress of an offline signed envelope to a device locally. If this configuration is enabled, by default it's disabled, `DSMEnvelopeCachedNotification` is sent whenever a local signer finishes signing session, this notification also contains the `envelopeId` that can be used later to resume signing progress of a saved envelope.
-* Additional notification `DSMOfflineEnvelopeSaveErrorNotification` is sent if an envelope fails to save on device with error under `DSM_ENVELOPE_SAVE_ERROR` domain. 
-* Resuming a fully signed envelope, which is ready for sync, is not allowed and it results in a new error under `DSM_ENVELOPE_RESUME_ERROR` domain. 
+* Additional notification `DSMOfflineEnvelopeSaveErrorNotification` is sent if an envelope fails to save on device with error under `DSM_ENVELOPE_SAVE_ERROR` domain.
+* Resuming a fully signed envelope, which is ready for sync, is not allowed and it results in a new error under `DSM_ENVELOPE_RESUME_ERROR` domain.
 
 ## [v2.2.2] - 01/30/2020
 
