@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v3.5.0] - 01/02/2025
+## [v3.5.0] - 01/06/2025
 
 ### Added
 * SPM Support - Use version 3.5.0 and refer to instructions on [SwiftPackageManager.md](https://github.com/docusign/native-ios-sdk/blob/master/SwiftPackageManager.md).
