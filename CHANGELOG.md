@@ -10,7 +10,6 @@
 * Updated some DSAPI Models to combine common properties for Recipients and Tabs.
 * Updated Contacts fetch to retrieve Phone numbers in addition to email.
 
-
 ## [v3.4.0] - 09/20/2024
 
 ### Fixed
