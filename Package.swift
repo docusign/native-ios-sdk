@@ -4,15 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "Docusign",
+    name: "DocusignSDK",
     products: [
         .library(name: "DocuSignSDK", targets: ["DocuSignSDK"]),
         .library(name: "DocuSignAPI", targets: ["DocuSignAPI"]),
+        .library(name: "DocusignNative", targets: ["DocusignNative"]),
         ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .binaryTarget(name: "DocuSignSDK", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.5.0/DocuSignSDK.zip", checksum: "200a4c1245afe669ca04913e8d8c3494a64e9e9445302067d74fe9fb44a8a2eb"),
-        .binaryTarget(name: "DocuSignAPI", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/3.5.0/DocuSignAPI.zip", checksum: "e95bf8f205de1f6e68169207a995a29fd3e57c96a16daccd0de93558e19047cb"),
+        .binaryTarget(name: "DocuSignSDK", url: "https://artifactory.docusignhq.com/artifactory/docusign-apps/DocuSignSDK_iOS/iOSSDKCDN-848684+4.0.0/DocuSignSDK.zip", checksum: "786b161ab3f03c44a4236feaa95b5ce7781f9eff071631ab8942e6c175bad5b3"),
+        .binaryTarget(name: "DocuSignAPI", url: "https://artifactory.docusignhq.com/artifactory/docusign-apps/DocuSignSDK_iOS/iOSSDKCDN-848684+4.0.0/DocuSignAPI.zip", checksum: "ebd4d38da5689c06d78dcac2dcc7cbfe73f470bfc032ebd9d8bffce0b5490f7a"),
+        .binaryTarget(name: "DocusignNative", url: "https://artifactory.docusignhq.com/artifactory/docusign-apps/DocuSignSDK_iOS/iOSSDKCDN-848684+4.0.0/DocusignNative.zip", checksum: "7f90ce4e4de951fa71e956ebea30f14d38f16a4a6d82bdc9f69b5989c128f747"),
         ]
 )
