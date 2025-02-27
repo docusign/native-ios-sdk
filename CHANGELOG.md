@@ -3,15 +3,15 @@
 ## [v4.0.0] - 03/03/2025
 
 ### Added
-* Added Configuration `DSM_SETUP_ENABLE_OFFLINE_NORMALIZE_ROTATED_DOCUMENTS_KEY` to allow SDK to detect page rotation on documents and adjust it to ensure tags are rendered upright.
+* Configuration `DSM_SETUP_ENABLE_OFFLINE_NORMALIZE_ROTATED_DOCUMENTS_KEY` to allow the SDK to detect page rotation on documents and adjust it to ensure tags are rendered upright.
   
 ### Changed
-* Native signing Library for offline signing has been totally refactored, improving usablilty and performance of SDK, also reduced SDK size by *75%*.
-* Replaced methods for offline envelope signing and offline template sending. Please Refer to migration guide here [MigrationGuidev4.0.0.md](https://github.com/docusign/native-ios-sdk/blob/master/MigrationGuidev4.0.0.md).
+* The native signing library for offline signing has been completely refactored, improving usability and performance of the SDK, and **reducing the SDK size by 75%**.
+* Replaced methods for offline envelope signing and offline template sending. Please refer to migration guide here [MigrationGuidev4.0.0.md](https://github.com/docusign/native-ios-sdk/blob/master/MigrationGuidev4.0.0.md).
 
 ### Deprecated
-* Compose Envelope using UI flow `presentComposeEnvelopeControllerWithPresentingController`.
-* Non PDF files conversion (eg. .docx and .jpeg etc.) when creating an Envelope using `DSMEnvelopeDefinition`.
+* Compose envelopes using UI flow `presentComposeEnvelopeControllerWithPresentingController`.
+* Non-PDF files conversion (eg. .docx and .jpeg etc.) when creating an envelope using `DSMEnvelopeDefinition`.
 
 ## [v3.5.0] - 01/06/2025
 
