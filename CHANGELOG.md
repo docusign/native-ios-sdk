@@ -1,5 +1,10 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v4.0.1] - 04/03/2025
+
+### Fixed
+* Conditional Logic for optional signature and initials tab now works for all cases.
+
 ## [v4.0.0] - 03/03/2025
 
 ### Added
