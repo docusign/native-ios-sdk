@@ -1,6 +1,18 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v4.0.1] - 04/09/2025
+## [v4.1.0] - 01/08/2025
+
+### Added
+* Now supports xcode26 and iOS26.
+* 1DS, Online Signing v2, is supported. Captive signing also works with 1DS.
+* Online signing now supports TSP event and handles status redirect to finalize the success or decline.
+* Initial support for Attachment and Dropdown tabs added.
+
+### Fixed
+* Recipient Defaults didn't honor the `remove` flag in some cases.
+* Various UX updates, network calls optimization and other bug fixes.
+
+## [v4.0.1] - 04/01/2025
 
 ### Fixed
 * Conditional Logic for optional signature and initials tab now works for all cases.
