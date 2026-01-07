@@ -12,7 +12,7 @@
 * Recipient Defaults didn't honor the `remove` flag in some cases.
 * Various UX updates, network calls optimization and other bug fixes.
 
-## [v4.0.1] - 04/01/2025
+## [v4.0.1] - 04/09/2025
 
 ### Fixed
 * Conditional Logic for optional signature and initials tab now works for all cases.
