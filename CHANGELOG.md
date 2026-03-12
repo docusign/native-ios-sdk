@@ -3,7 +3,7 @@
 ## [v4.1.1] - 03/12/2026
 
 ### Fixed
-* Fix issues/186: During low-quality network conditions, the sync routine ended up sending false-negative failed notification instead of succeeded notification.
+* Fix [#186](https://github.com/docusign/native-ios-sdk/issues/186): During low-quality network conditions, the sync routine ended up sending false-negative failed notification instead of succeeded notification.
 
 ### Added
 * Sync Notifications have a network reachability info added with "networkReachability" key.
