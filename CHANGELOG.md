@@ -2,12 +2,12 @@
 
 ## [v4.1.1] - 04/02/2026
 
+### Added
+* Sync Notifications have a network reachability info added with "networkReachability" key.
+
 ### Update
 * Update for issues/186: During low-quality network conditions, the sync routine ended up sending false-negative failed notification instead of succeeded notification. Fortified the logic around it and additional checks have been added.
 * DSMEnvelopesManager syncEnvelope(withId:) sends a specific envelope to sync with server and also bypass the max-sync attempt block to retry syncing a failing envelope.
-
-### Added
-* Sync Notifications have a network reachability info added with "networkReachability" key.
 
 ## [v4.1.0] - 01/08/2026
 
