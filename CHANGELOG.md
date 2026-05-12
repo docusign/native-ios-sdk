@@ -1,5 +1,19 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v4.2.0] - 05/12/2026
+
+### Update
+
+* *Signature Capature UX*: Modernized the interface for Take Photo capabilities, including new cropping functionality and contrast adjustments. This update is available for both Offline and Online Signing modes.
+
+### Added
+
+* *Captive Signing*: now supports the menu options such as *Print*, *Download* and also *Download Separate PDFs*. 
+
+### Fixed
+
+* Resolved a multi-part error that previously prevented successful synchronization.
+
 ## [v4.1.1] - 04/02/2026
 
 ### Added
