@@ -1,5 +1,31 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v4.3.0] - 08/14/2026
+
+### Added
+* Signers can now adopt a signature by selecting from available font styles via the new `DSMSignatureFontStylesViewController`; the selected font key and rendered images are delivered through an updated delegate callback.
+* `signerName` property on `DSMSignatureContainerViewController` to supply the signer's name directly rather than via delegate.
+* `+adoptFontStyleSignature:name:initials:completion:` class method on `DSMEnvelopesHandler` for programmatic font-style signature adoption.
+* SPM distribution support with improved Package.swift template for easier SDK integration.
+* Diagnostic error reporting to surface the root cause of offline signing failures.
+* Visual border for Optional SignHere and Initials tabs during offline signing.
+
+### Changed
+* `DSMSignatureCaptureDelegate` updated with richer callback `-signatureCapture:didFinishSelectingFontStyle:name:initials:signatureImage:initialsImage:` replacing `DSMSignatureAdoptionUseFontDelegate`.
+* `shouldHideUseFonts` renamed to `shouldHideFontStyles` on `DSMSignatureContainerViewController`.
+* Updated error strings for Templates to provide clearer user-facing messages.
+
+### Removed
+* `-getSignatureName` delegate method from `DSMSignatureCaptureDelegate`; set `signerName` on `DSMSignatureContainerViewController` instead.
+* `+[DSMSignatureContainerViewController nextButtonTapped]` class method.
+
+### Fixed
+* Font style selection not applying correctly during signing.
+* Next field navigation and text field auto-focus behavior corrected for offline signing.
+* Radio button tags missing during offline signing of downloaded envelopes.
+* Text tab height changes when content is entered; minimum tab height now correctly enforced.
+* Fixed double JavaScript invocation causing signing backend errors.
+
 ## [v4.2.0] - 05/12/2026
 
 ### Update
