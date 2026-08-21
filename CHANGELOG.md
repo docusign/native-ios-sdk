@@ -1,6 +1,6 @@
 # DocuSign Native iOS SDK Changelog
 
-## [v4.3.0] - 08/14/2026
+## [v4.3.0] - 08/21/2026
 
 ### Added
 * Signers can now adopt a signature by selecting from available font styles via the new `DSMSignatureFontStylesViewController`; the selected font key and rendered images are delivered through an updated delegate callback.
