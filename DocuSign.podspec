@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Docusign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocusignAPI'
 
-  s.platform = :ios, '12.0'
-  s.ios.deployment_target = '12.0'
+  s.platform = :ios, '15.0'
+  s.ios.deployment_target = '15.0'
   s.requires_arc = true
   s.preserve_paths = ['DocuSignSDK.xcframework', 'DocuSignAPI.xcframework']
   s.vendored_frameworks = [
