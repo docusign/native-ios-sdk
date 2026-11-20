@@ -1,8 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '15.0'
 
 target 'docusign-sdk-sample-objc' do
-
   # Pods for docusign-sdk-sample-objc
   pod 'ProgressHUD'
   pod 'DocuSign'
