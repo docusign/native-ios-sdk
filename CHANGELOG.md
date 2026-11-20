@@ -1,5 +1,15 @@
 # DocuSign Native iOS SDK Changelog
 
+## [v4.4.0] - 11/19/2026
+
+### Changed
+* Added support for Xcode 27 and iOS 27. The SDK now builds with the Xcode 27 toolchain and runs on iOS 27 devices and simulators.
+* Raised the minimum supported deployment target to iOS 15.0 (previously iOS 12.0) across the SDK, API, and Native layers, the CocoaPods podspec, and the SPM package manifests.
+
+### Fixed
+* Datesigned tab being overwritten everytime envelope is rendered. 
+* Captive (embedded) signing fails to launch for certain accounts.
+
 ## [v4.3.0] - 08/21/2026
 
 ### Added
