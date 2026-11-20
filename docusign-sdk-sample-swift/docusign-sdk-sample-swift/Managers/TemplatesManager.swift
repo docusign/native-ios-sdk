@@ -6,6 +6,7 @@
 //  Copyright © 2017 DocuSign. All rights reserved.
 //
 
+import DocusignNative
 import DocuSignSDK
 import Foundation
 
@@ -16,6 +17,7 @@ class TemplatesManager
     
     // DSM Template Manager
     var templatesManager: DSMTemplatesManager?
+    var nativeSigningManager: NativeSigningManager?
     
     // list of template definitions
     var templateDefinitions: [DSMEnvelopeTemplateDefinition]?
@@ -27,6 +29,10 @@ class TemplatesManager
         if (templatesManager == nil)
         {
             templatesManager = DSMTemplatesManager()
+        }
+        if (nativeSigningManager == nil)
+        {
+            nativeSigningManager = NativeSigningManager()
         }
     }
     
@@ -96,26 +102,38 @@ class TemplatesManager
         envelopeDefaults.tabValueDefaults = tabData
         envelopeDefaults.customFields = customFields
         
-        templatesManager?.presentSendTemplateControllerWithTemplate (
-            withId: templateId,
-            envelopeDefaults: envelopeDefaults,
-            pdfToInsert: pdfData,
-            insertAtPosition: .end,
-            signingMode: onlineSign ? .online : .offline,
-            presenting: controller,
-            animated: true) { (view, error) in
-                if let error = error {
-                    NSLog("Error encountered during signing: \(error.localizedDescription)")
+        if onlineSign {
+            templatesManager?.presentSendTemplateControllerForOnlineSigning(
+                withTemplateId: templateId,
+                envelopeDefaults: envelopeDefaults,
+                presenting: controller,
+                animated: true
+            ) { (view, error) in
+                NSLog("DocuSign Native iOS SDK - Online signing callback completed")
+                completionHandler(view, error)
+            }
+        } else {
+            Task { @MainActor in
+                do {
+                    let view = try await self.nativeSigningManager?.presentSendTemplate(
+                        presentingViewController: controller,
+                        templateId: templateId,
+                        envelopeDefaults: envelopeDefaults,
+                        insertAtPosition: .end,
+                        pdfToInsert: pdfData,
+                        animated: true
+                    )
+                    if view == nil {
+                        NSLog("Warning: Encountered `nil view` during offline signing.")
+                    } else {
+                        NSLog("DocuSign Native iOS SDK - Offline UI components active")
+                    }
+                    completionHandler(view, nil)
+                } catch {
+                    NSLog("Error encountered during offline signing: \(error.localizedDescription)")
+                    completionHandler(nil, error)
                 }
-                if view == nil {
-                    // `view` is `nil` if all of the signers pending for signature are remote
-                    // A) Envelope is sent to next remote signer, should receive `DSMSigningCompletedNotification` during online signing.
-                    // B) Or in case of offline signing, envelope is successfully cached and now awaiting sync.
-                    NSLog("Warning: Encountered `nil view` during signing.")
-                } else {
-                    // DocuSign SDK UI components are active if >=1 local signers are pending signature
-                    NSLog("DocuSign Native iOS SDK - UI components active")
-                }
+            }
         }
     }
 }

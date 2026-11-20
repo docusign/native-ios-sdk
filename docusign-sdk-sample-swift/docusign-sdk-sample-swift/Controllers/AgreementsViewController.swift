@@ -73,7 +73,7 @@ class AgreementsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // create a new cell if needed or reuse an old one
-        let cell: TemplateTableViewCell =  self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TemplateTableViewCell!
+        let cell: TemplateTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TemplateTableViewCell
         
         return cell
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 
 class AttachmentViewController: UIViewController
@@ -16,7 +17,7 @@ class AttachmentViewController: UIViewController
     @IBOutlet weak var btn_barSkip: UIBarButtonItem!
     @IBOutlet weak var btn_attach: UIButton!
     @IBOutlet weak var lbl_attach: UILabel!
-    @IBOutlet weak var vw_document: UIWebView!
+    @IBOutlet weak var vw_document: WKWebView!
 
 
     // MARK: UI Lifecycle Methods
@@ -38,13 +39,13 @@ class AttachmentViewController: UIViewController
     @IBAction func attachButtonTapped(_ sender: Any)
     {
         // load PDF included in bundle
-        //var pdfFileName = "Portfolio"
-        var pdfFileName = "UtilityBill"
+        //let pdfFileName = "Portfolio"
+        let pdfFileName = "UtilityBill"
         if let documentURL = Bundle.main.url(forResource: pdfFileName, withExtension: "pdf", subdirectory: nil, localization: nil)
         {
             do {
                 let data = try Data(contentsOf: documentURL)
-                self.vw_document.load(data, mimeType: "application/pdf", textEncodingName: "", baseURL: documentURL.deletingLastPathComponent())
+                self.vw_document.load(data, mimeType: "application/pdf", characterEncodingName: "", baseURL: documentURL.deletingLastPathComponent())
                 self.vw_document.isHidden = false
                 
                 // hide attach button

@@ -56,7 +56,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     {
         
         // create a new cell if needed or reuse an old one
-        let cell: AppointmentTableViewCell =  self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! AppointmentTableViewCell!
+        let cell: AppointmentTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! AppointmentTableViewCell
 
         return cell
     }

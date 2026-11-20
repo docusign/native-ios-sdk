@@ -7,6 +7,7 @@
 //
 
 
+import DocuSignAPI
 import DocuSignSDK
 import SVProgressHUD
 import UIKit
@@ -25,6 +26,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
 
         // pre-populate the user credentials fields with defaults (if provided)
+        tf_username.placeholder = "Email"
+        tf_password.placeholder = "OAuth Access Token (leave blank for OAuth web login)"
         tf_username.text = ProfileManager.Static.defaultUsername
         tf_password.text = ProfileManager.Static.defaultPassword
         tf_password.delegate = self
@@ -34,39 +37,48 @@ class LoginViewController: UIViewController, UITextFieldDelegate
 
     @IBAction func signInButtonTapped(_ sender: Any)
     {
-        SVProgressHUD.show(withStatus: "Authenticating...")
-        
         guard let email = tf_username.text else {
             return
         }
         
-        guard let password = tf_password.text else {
+        let accessToken = tf_password.text ?? ""
+        let integratorKey = ProfileManager.Static.integratorKey
+        let accountId = ProfileManager.Static.accountId
+        guard let hostUrl = ProfileManager.Static.demoHostApi else {
             return
         }
-        let integratorKey = ProfileManager.Static.integratorKey
-        let hostUrl: URL! = ProfileManager.Static.demoHostApi
         
-        if (isUsernameFormatValid(username: email) && isPasswordFormatValid(password: password))
-        {
-            DSMManager.login(withEmail: email,
-                             password: password,
-                             integratorKey: integratorKey,
-                             host: hostUrl) { (accountInfo, error) in
+        let handleCompletion: (DSMAccountInfo?, Error?) -> Void = { accountInfo, error in
+            DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
-                
-                if (error != nil)
-                {
-                    NSLog("Error logging in")
-                    // display error prompt
+                if let error = error {
+                    NSLog("Error logging in: \(error.localizedDescription)")
                     self.promptError(err: error)
-                }
-                else
-                {
+                } else {
                     NSLog("User authenticated")
-                    // segue to main navigation controller
                     self.performSegue(withIdentifier: "segueMainNav", sender: nil)
                 }
             }
+        }
+        
+        if !accessToken.isEmpty && accessToken != "<MY-OAUTH-ACCESS-TOKEN-HERE>" && isUsernameFormatValid(username: email) {
+            SVProgressHUD.show(withStatus: "Authenticating...")
+            DSMManager.login(withAccessToken: accessToken,
+                             accountId: accountId,
+                             userId: ProfileManager.Static.userId,
+                             userName: ProfileManager.Static.userName,
+                             email: email,
+                             host: hostUrl,
+                             integratorKey: integratorKey,
+                             refreshToken: nil,
+                             expiresIn: nil,
+                             completion: handleCompletion)
+        } else {
+            DSMManager.login(withOAuthEnv: .demo,
+                             accountId: accountId,
+                             redirectUri: ProfileManager.Static.redirectUri,
+                             integratorKey: integratorKey,
+                             completion: handleCompletion)
         }
     }
 

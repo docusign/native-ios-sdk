@@ -21,15 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var configurations = DSMManager.defaultConfigurations()
         // hide offline signing alerts
         configurations[DSM_SETUP_OFFLINE_SIGNING_HIDE_ALERTS_KEY] = DSM_SETUP_TRUE_VALUE
-        
-        if #available(iOS 11.0, *) {
-            // icloud entitlement is not required for iOS 11+ - set constant to true to enable document picker usage
-            configurations[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_TRUE_VALUE
-        } else {
-            // icloud entitlement (icloud documents) is required for iOS 10 and below for document picker usage
-            // if icloud is enabled, then this constant should be set to DSM_SETUP_TRUE_VALUE
-            configurations[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_FALSE_VALUE
-        }
+        // icloud entitlement is not required for iOS 11+ - set constant to true to enable document picker usage
+        configurations[DSM_SETUP_ICLOUD_DOCUMENT_ENABLED] = DSM_SETUP_TRUE_VALUE
         
         //configuration[DSM_SETUP_DISABLE_CONTACTS_USAGE_KEY] = DSM_SETUP_TRUE_VALUE
         
@@ -79,10 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) ->
         UIInterfaceOrientationMask
     {
-        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {
+        if UIDevice.current.userInterfaceIdiom == .pad {
             return .all
         } else {
-            //return .portrait // to mimic the crash for IOSSDK-494
             return .allButUpsideDown
         }
     }
