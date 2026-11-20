@@ -3,6 +3,7 @@ DocuSign Native iOS SDK - Sample App in Swift
 
 Requirements
 =============
+Docusign SDK v4.4.0 supports
 * iOS 15.0 or later
 * Xcode 16.0 or later
 
