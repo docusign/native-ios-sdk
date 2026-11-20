@@ -384,13 +384,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-resources.sh",
-				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework/DocuSignSDK.bundle",
-				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.xcframework/ios-arm64/DocuSignSDK.framework/DocuSignSDK.bundle",
+				"${PODS_ROOT}/DocuSign/DocuSignSDK.xcframework/ios-arm64_x86_64-simulator/DocuSignSDK.framework/DocuSignSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DocuSignSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,11 +425,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-docusign-sdk-sample-objc/Pods-docusign-sdk-sample-objc-frameworks.sh",
-				"${PODS_ROOT}/DocuSign/DocuSignSDK.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/DocuSign/DocuSignSDK.framework/DocuSignSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/DocuSign/DocuSignAPI.framework/DocuSignAPI",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocuSignAPI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
