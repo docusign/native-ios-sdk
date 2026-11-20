@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DocuSign'
-  s.version          = '4.3.0'
+  s.version          = '4.4.0'
   s.summary          = 'Docusign Native iOS Framework to sign and send in your iOS apps'
 
   s.description      = <<-DESC
@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Docusign' => 'devcenter@docusign.com' }
   s.social_media_url = 'https://twitter.com/DocusignAPI'
 
-  s.platform = :ios, '12.0'
-  s.ios.deployment_target = '12.0'
+  s.platform = :ios, '15.0'
+  s.ios.deployment_target = '15.0'
   s.requires_arc = true
   s.preserve_paths = ['DocuSignSDK.xcframework', 'DocuSignAPI.xcframework']
   s.vendored_frameworks = [
@@ -29,5 +29,5 @@ Pod::Spec.new do |s|
 		"DocuSignAPI.xcframework"]
   s.resource   = 'DocuSignSDK.xcframework/**/DocuSignSDK.bundle'
   # Update the source path for new release
-  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.3.0/DocuSignCombined.zip"}
+  s.source = { :http => "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.4.0/DocuSignCombined.zip"}
 end

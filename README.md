@@ -10,8 +10,8 @@ Please refer to the [official site](https://developers.docusign.com/docs/mobile-
 
 Requirements
 ============
-- Requires iOS 13 or later.
-- It is recommended that developers use Xcode 12.0 or later.
+- Requires iOS 15 or later.
+- It is recommended that developers use Xcode 13.0 or later.
 
 Installation
 =============

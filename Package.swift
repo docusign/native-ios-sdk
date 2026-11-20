@@ -11,8 +11,8 @@ let package = Package(
         .library(name: "DocusignNative", targets: ["DocusignNative"]),
         ],
     targets: [
-        .binaryTarget(name: "DocuSignSDK", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.3.0/DocuSignSDK.zip", checksum: "cee5facc466f795b6bccb03ce875cfec5ce41930032cedbb2604572a9160d133"),
-        .binaryTarget(name: "DocuSignAPI", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.3.0/DocuSignAPI.zip", checksum: "07c6cd3364009eabdaeb2bd76b43bae524adc95ecd329338950e9628e866bfd1"),
-        .binaryTarget(name: "DocusignNative", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.3.0/DocusignNative.zip", checksum: "bf23a2830d948cc0251ff7d28cb820f7673baf0957b03a6e1d88bbe92b2af855"),
+        .binaryTarget(name: "DocuSignSDK", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.4.0/DocuSignSDK.zip", checksum: "26bd63d37a86a1ca5ad6f9fda67cad37d47818e285934763275a5bfc8d4328cc"),
+        .binaryTarget(name: "DocuSignAPI", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.4.0/DocuSignAPI.zip", checksum: "4b25054643c19404bc1c189fa7233579096895dfc7783739406e4905ff43ce78"),
+        .binaryTarget(name: "DocusignNative", url: "https://docucdn-a.akamaihd.net/prod/docusigniossdk/4.4.0/DocusignNative.zip", checksum: "4b4f30f169227bea3526a93844d1a61f8c19e9b5d44a1ca10f53a95c19f6d292"),
         ]
 )
