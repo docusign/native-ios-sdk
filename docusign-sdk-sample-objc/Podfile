@@ -2,7 +2,6 @@
 platform :ios, '15.0'
 
 target 'docusign-sdk-sample-objc' do
-
   # Pods for docusign-sdk-sample-objc
   pod 'ProgressHUD'
   pod 'DocuSign'
