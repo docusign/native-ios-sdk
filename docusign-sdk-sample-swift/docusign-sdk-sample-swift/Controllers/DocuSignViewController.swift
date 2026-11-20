@@ -22,7 +22,11 @@ class DocuSignViewController: UIViewController
         self.styleUIElements()
 
         // set sdk styling
-        DSMAppearance.setNavigationBarTintColor(UIColor(red: 46.0/255, green: 109.0/255, blue: 164.0/255, alpha: 1.0))
+        DSMAppearance.setNavigationBarTitleTextColor(
+            UIColor.white,
+            backgroundTintColor: UIColor(red: 46.0/255, green: 109.0/255, blue: 164.0/255, alpha: 1.0),
+            fontSize: 18.0
+        )
         DSMAppearance.setBarButtonItemsTintColor(UIColor.white)
 
         let templateId: String = ProfileManager.sharedInstance.getCurrentTemplateId()
@@ -36,15 +40,10 @@ class DocuSignViewController: UIViewController
         TemplatesManager.sharedInstance.displayTemplateForSignature(templateId: templateId, controller: self, tabData: tabData, recipientData: recipientData, customFields:customFields, onlineSign: onlineSign, attachmentUrl: attachmentUrl) { (controller, errMsg) in
             
             // return to client screen
-            let vcIndex = self.navigationController?.viewControllers.index(where: { (viewController) -> Bool in
-                if let _ = viewController as? ClientViewController {
-                    return true
-                }
-                return false
-            })
-            
-            let clientVC = self.navigationController?.viewControllers[vcIndex!] as! ClientViewController
-            self.navigationController?.popToViewController(clientVC, animated: true)
+            if let vcIndex = self.navigationController?.viewControllers.firstIndex(where: { $0 is ClientViewController }),
+               let clientVC = self.navigationController?.viewControllers[vcIndex] as? ClientViewController {
+                self.navigationController?.popToViewController(clientVC, animated: true)
+            }
         }
     }
 

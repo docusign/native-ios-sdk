@@ -7,7 +7,7 @@ extension String {
    */
    static func developerNotesTitle(with sdkVersion:Bool) -> String {
         if sdkVersion {
-            return "Developer's Notes (\(DSMManager.buildVersion())"
+            return "Developer's Notes (\(DSMManager.buildVersion()))"
         }
         return "Developer's Notes"
   }

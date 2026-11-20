@@ -35,9 +35,15 @@ class ProfileManager
         // integrator key from your DS account goes here
         static let integratorKey: String = "<MY-INTEGRATOR-KEY-HERE>"
 
+        // OAuth / account configuration from your DS developer sandbox account
+        static let accountId: String = "<MY-ACCOUNT-ID-HERE>"
+        static let userId: String = "<MY-USER-ID-HERE>"
+        static let userName: String = "<MY-USER-NAME-HERE>"
+        static let redirectUri: String = "<MY-REDIRECT-URI-HERE>"
+
         // optionally include credentials in order to pre-populate user login info
-        static let defaultUsername: String =  "<MY-USERNAME-HERE>"
-        static let defaultPassword: String = "<MY-PASSWORD-HERE>"
+        static let defaultUsername: String = "<MY-EMAIL-HERE>"
+        static let defaultPassword: String = "<MY-OAUTH-ACCESS-TOKEN-HERE>"
         
         // keys for custom fields on template
         static let tabKey_name: String = "Text dc02e5f6-ff92-4d84-b13d-d82f4c886e81"
